@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.myhost-container {
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.host-cohost {
+    height: auto;
+    width: 50%;
+    padding-top: 3em;
+}
+
+.host {
+    display: flex;
+    flex-direction: column;
+}
+
+.hosted-by{
+    font-size: 22px;
+}
+
+
+.contact-host {
+    width: 50%;
+    text-align: left;
+}
+
+.contact {
+    list-style-type: none;
+    font-size: 15.7px;
+    padding-top: 7em;
+   
+}
+
+.contact li {
+    padding-bottom: 1em;
+}
+
+.contact-btn-div {
+    padding-top: 1em;
+}
+
+.contact-btn {
+    background-color: white;
+    padding: 15px 32px;
+    border-radius: 9px;
+    border-width: 1px;
+    font-size: 16px;
+    width: 159px;
+}
+
+.payment-protect {
+    display: flex;
+    padding-top: 1em;
+}
+
+.thingstoknow {
+    display: flex;
+}
