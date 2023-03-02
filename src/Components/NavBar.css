@@ -63,3 +63,63 @@
 .nav-links-buttons:hover {
     background-color: rgba(211, 211, 211, .25);
 }
+
+.nav-bar-lang-btn-container {
+    position: relative;
+    top: -2px;
+}
+
+#nav-bar-lang-btn {
+    display: inline;
+    padding: 14px 16px 10px 16px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#nav-bar-lang-btn:hover {
+    background-color: rgba(211, 211, 211, .25);
+}
+
+#nav-bar-lang-btn svg {
+    height: 16px;
+    width: 16px;
+    fill: #222222;
+}
+
+.nav-bar-profile-menu-container {
+    position: relative;
+    top: -4px;
+}
+
+#nav-bar-profile-menu-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 5px 5px 12px;
+    border: 1px solid rgba(211, 211, 211, .7);
+    border-radius: 50px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+#nav-bar-profile-menu-btn:hover {
+    box-shadow: 0 1px 1px 1px rgba(211, 211, 211, .65);
+}
+
+.nav-bar-profile-menu-btn-hamburger i {
+    width: 16px;
+    height: 16px;
+    margin-top: 8px;
+}
+
+.nav-bar-profile-menu-btn-user {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    fill: #717171;
+    margin-left: 10px;
+}
