@@ -1,7 +1,12 @@
 function Footer () {
+
     return ( 
-        <p>Footer Component</p>
-    );
+        <div>
+            <p>Footer Component</p>
+
+        </div>
+        );
+        <></>
 }
 
 export default Footer ;
