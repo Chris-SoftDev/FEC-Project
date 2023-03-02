@@ -11,8 +11,15 @@ function NavBar() {
                     <p>groundbnb</p>
                 </div>
             </a>
-            <div className='nav-bar-search'>
-
+            <div className='nav-bar-search-container'>
+                <div className="nav-bar-search-btn-container">
+                    <button id='nav-bar-search-btn-fake'>
+                        <div className='fake-search-label'>Start your search</div>
+                        <div className='fake-search-icon'>
+                            <i className="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </button>
+                </div>
             </div>
             <div className="nav-bar-links">
                 <a href="https://www.airbnb.com/host/homes">
