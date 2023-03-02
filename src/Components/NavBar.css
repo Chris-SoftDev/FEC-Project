@@ -1,3 +1,35 @@
+@media only screen and (max-width: 1110px) {
+    .nav-bar-logo p {
+        visibility: hidden;
+    }
+
+    .nav-bar-search-container {
+        position: relative;
+        left: -275px;
+        top: -7px;
+        min-width: 348px;
+        padding: 0 24px;
+        text-align: center;
+    }
+
+    #nav-bar-search-btn-fake {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 300px;
+        outline: none;
+        background-color: #fff;
+        border: 1px solid rgba(211, 211, 211, .7);
+        border-radius: 50px;
+        box-shadow: 0 1px 1px 1px rgba(211, 211, 211, .40);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    /* TODO:Mobile Nav Bar Menu */
+}
+
 .nav-bar-content-container {
     margin: 0 auto;
     display: flex;
@@ -6,7 +38,8 @@
     width: 100%;
     max-width: 1120px;
     position: relative;
-    top: 30% ;
+    top: 30%;
+    padding: 0 40px;
 }
 
 .nav-bar-content-container a {
@@ -109,6 +142,7 @@
 }
 
 .nav-links-buttons {
+    width: 180px;
     padding: 10px 15px;
     border-radius: 50px;
 }
