@@ -17,13 +17,54 @@
 
 .host {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.host-name {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.host-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border:1px solid black;
 }
 
 .hosted-by{
-    font-size: 22px;
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: .3em;
 }
 
+.month-year{
+    text-align: left;
+    font-size: 13.5px;
+    color: #717171;
+    margin-top: .8em;
+    margin-bottom: 1em;
+}
+
+.host-rating{
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews {
+    display: flex;
+}
+
+.verification {
+    
+}
+
+#star{
+    padding-top: .3em;
+    font-size: 15px;
+    text-align: left;
+    padding-right: 1em;
+}
 
 .contact-host {
     width: 50%;
@@ -47,16 +88,36 @@
 
 .contact-btn {
     background-color: white;
-    padding: 15px 32px;
     border-radius: 9px;
     border-width: 1px;
     font-size: 16px;
-    width: 159px;
+    width: 160px;
+    height: 50px;
+    letter-spacing: 1px;
+}
+
+.protection-logo{
+    height:24px;
+    width: 24px;
+}
+
+.protection-logo svg {
+    height:24px;
+    width: 24px;
+    fill: rgb(227, 28, 95);
+    stroke: rgb(34, 34, 34);
 }
 
 .payment-protect {
     display: flex;
     padding-top: 1em;
+}
+
+.protection-info {
+    font-size: 11.5px;
+    inline-size: 260px;
+    letter-spacing: .17px;
+    line-height:15px;
 }
 
 .thingstoknow {
