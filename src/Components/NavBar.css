@@ -1,6 +1,10 @@
-@media only screen and (max-width: 1110px) {
+@media only screen and (max-width: 1130px) {
     .nav-bar-logo p {
         visibility: hidden;
+    }
+
+    .nav-bar-content-container {
+        padding: 0 40px !important;
     }
 
     .nav-bar-search-container {
@@ -31,15 +35,14 @@
 }
 
 .nav-bar-content-container {
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 80px;
     width: 100%;
-    max-width: 1120px;
+    max-width: 1280px; 
     position: relative;
     top: 30%;
-    padding: 0 40px;
 }
 
 .nav-bar-content-container a {
