@@ -95,38 +95,38 @@
 }
 
 .social-items {
-    padding: 0 10px 0 10px
+    padding: 0 10px;
 }
 
 #facebook {
-    width: 3px;
-    height: 3px;
     padding: 0 20px 0 0
-
 }
 
 #facebook svg {
+    display: block;
+    width: 18px;
+    height: 18px;
     fill: black;
 }
 #twitter {
-    width: 5px;
-    height: 5px;
-    padding: 0 25px 0 25px
-
+    padding: 0 25px;
 }
 
 #twitter svg {
+    display: block;
+    width: 18px;
+    height: 18px;
     fill: black;
 }
 
 #insta{
-    width: 5px;
-    height: 5px;
     padding: 0 0px 0 20px
-
 }
 
 #insta svg {
+    display: block;
+    width: 18px;
+    height: 18px;
     fill: black;
 }
 
