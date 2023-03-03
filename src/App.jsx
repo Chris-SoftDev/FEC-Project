@@ -13,7 +13,6 @@ function App() {
         <NavBar />
       </div>
       <div className="main-content-container">
-        <div></div>
         <div className='rentals-content-container'>
           <div className="rentals-container">
             <Rentals />
@@ -28,11 +27,10 @@ function App() {
             <Host />
           </div>
         </div>
-        <div></div>
       </div>
-      <div className="footer-container">
+      <footer className="footer-container">
         <Footer />
-      </div>
+      </footer>
     </div>
   );
 }
