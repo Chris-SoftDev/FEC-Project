@@ -1,12 +1,31 @@
+@media only screen and (max-width: 1130px) {
+    .nav-bar-logo p {
+        visibility: hidden;
+    }
+
+    .nav-bar-content-container {
+        padding: 0 40px !important;
+    }
+
+    .nav-bar-search-container {
+        left: -275px; 
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    /* TODO:Mobile Nav Bar Menu */
+}
+
 .nav-bar-content-container {
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 80px;
     width: 100%;
-    max-width: 1120px;
+    max-width: 1280px; 
+    height: 80px;
     position: relative;
-    top: 30% ;
+    top: 24px;
 }
 
 .nav-bar-content-container a {
@@ -33,33 +52,146 @@
     padding-top: 3px;
 }
 
-.nav-bar-search {
+.nav-bar-search-container {
+    position: relative;
+    top: -8px;
     min-width: 348px;
     padding: 0 24px;
     text-align: center;
+}
+
+#nav-bar-search-btn-fake {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    margin-left: 150px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid rgba(211, 211, 211, .7);
+    border-radius: 50px;
+    box-shadow: 0 1px 1px 1px rgba(211, 211, 211, .40);
+    cursor: pointer;
+}
+
+#nav-bar-search-btn-fake:hover {
+    box-shadow: 0 1px 2px 1px rgba(211, 211, 211, .7);
+}
+
+.fake-search-label {
+    position: relative;
+    top: 13px;
+    left: 10px;
+    padding: 0 16px;
+    width: 219px;
+    height: 22px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.3px;
+}
+
+.fake-search-icon {
+    width: 32px;
+    height: 32px;
+    margin: 7px 7px 7px 0;
+    background-color: #ff385c;
+    border-radius: 50px;
+}
+
+.fake-search-icon i {
+    position: relative;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    color: #fff;
 }
 
 .nav-bar-links {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    position: relative;
+    top: -5px;
 }
 
 .nav-bar-links a, 
 .nav-bar-links a:visited, 
 .nav-bar-links a:hover, 
 .nav-bar-links a:active{
+    font-family: 'Manrope', sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.5px;
     color: rgb(34, 34, 34);
 }
 
 .nav-links-buttons {
+    width: 180px;
     padding: 10px 15px;
     border-radius: 50px;
 }
 
 .nav-links-buttons:hover {
     background-color: rgba(211, 211, 211, .25);
+}
+
+.nav-bar-lang-btn-container {
+    position: relative;
+    top: -1px;
+}
+
+#nav-bar-lang-btn {
+    display: inline;
+    padding: 14px 16px 10px 16px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#nav-bar-lang-btn:hover {
+    background-color: rgba(211, 211, 211, .25);
+}
+
+#nav-bar-lang-btn svg {
+    height: 16px;
+    width: 16px;
+    fill: #222222;
+}
+
+.nav-bar-profile-menu-container {
+    position: relative;
+}
+
+#nav-bar-profile-menu-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 5px 5px 12px;
+    border: 1px solid rgba(211, 211, 211, .7);
+    border-radius: 50px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+#nav-bar-profile-menu-btn:hover {
+    box-shadow: 0 1px 1px 1px rgba(211, 211, 211, .65);
+}
+
+.nav-bar-profile-menu-btn-hamburger i {
+    width: 16px;
+    height: 16px;
+    margin-top: 8px;
+}
+
+.nav-bar-profile-menu-btn-user {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    fill: #717171;
+    margin-left: 10px;
 }

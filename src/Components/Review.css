@@ -1,0 +1,156 @@
+.Review-Container{
+height: 1000px;
+}
+
+.Total-rating-reviews{
+  display: flex;
+  margin-top:  32px;
+  font-weight: 500 ;
+  font-size: 22px;
+  width: 1120px;
+  height: 25.99px;
+}
+
+
+.Catergories-rating-bar-container{
+  width: 1135px;
+  height: 107.98px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+}
+  /*. start of the first div in the ratings container*/
+
+.First-category-div{
+  display: flex;
+  flex-direction:  column;
+  width: 567px;
+}
+/* cleanliness div */
+.rating-cleanliness-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  width: 567px;
+  
+}
+ .cleanliness{
+  padding-right: 266px;
+ }
+.bar-rating-label{
+  max-width: 150px;
+  width: 100%;
+}
+
+/* comunitaction div */
+.rating-comunitaction-container{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+.comunication{
+  padding-right: 266px;
+}
+
+
+/* checkin div */
+.rating-checkin-container{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+.categories-label{
+  max-width: 295px;
+  width: 100%;
+  text-align: left;
+}
+
+/*. the start of the second div in the ratings containers  */
+
+.Second-category-div{
+  display: flex;
+  flex-direction:  column;
+  width: 567px;
+}
+/* Accuracy div */
+.rating-Accuracy-container{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+.Accuracy{
+  padding-right: 266px;
+}
+/* Location div */
+.rating-Location-container{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+.Location{
+  padding-right: 266px;
+}
+/* Value div */
+.rating-Value-container{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+.Value{
+  padding-right: 266px;
+}
+
+
+/* Reviews div from here on out  */
+
+.REVIEWS-container{
+  height: 587px;
+  max-width: 1035px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5rem;
+  padding-left: 100px;
+}
+
+.Review1{
+  width: 435px;
+  height: 215px;
+  background-color: rgb(241, 234, 234);
+}
+.Review2{
+  width: 435px;
+  height: 215px;
+  background-color: rgb(234, 223, 223);
+}
+.Review3{
+  width: 435px;
+  height: 215px;
+  background-color: rgb(221, 207, 207);
+}
+.Review4{
+  width: 435px;
+  height: 215px;
+  background-color: rgb(217, 206, 206);
+
+}
+.Review5{
+  width: 435px;
+  height: 215px;
+  background-color: rgb(171, 156, 156);
+
+}
+.Review6{
+  width: 435px;
+  height: 215px;
+  background-color: rgb(168, 152, 152);
+
+}
+
+/* button */
+
+.review-btn {
+  width: 30px;
+  height: 20px;
+  font-size: 10px
+}

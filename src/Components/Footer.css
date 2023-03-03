@@ -1,0 +1,138 @@
+.parent {
+    max-width: 1120px;
+    justify-content: left;
+    background-color: #f7f7f7;
+}
+
+.main-column {
+    min-width: 100%;
+    display: flex;
+    padding: 38px 0;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+
+.footer-column {
+    padding: 50px 50px 0px 0px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.content-column {
+    padding: 20px 0px 0px 0px;
+    flex-direction: column;
+}
+
+.footer-content {
+    font-weight: 300;
+    cursor: pointer;
+    margin: 0px 0px 20px 0px
+}
+
+.border-line {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: row;
+}
+
+.legal-column {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 50px 20px 0px;
+}
+
+.legal-info {
+    margin: 0px 20px 0px 0px;
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.legal-list {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 20px 0px 0px;
+
+}
+
+.legal-item {
+    margin: 0px 20px 0px 0px;
+    font-weight: 200;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.econ-column {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 50px 20px 150px;
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.econ-items {
+    margin: 0 20px 0 0;
+    cursor: pointer;
+}
+
+#lang svg {
+    fill: black;
+    width: 20px;
+    height: 20px;
+    margin: 0 0px 0 0;
+}
+
+#lang {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+}
+
+
+.social-column {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px 20px 0px;
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.social-items {
+    margin: 0 5px;
+}
+
+#facebook {
+    margin: 0 15px 0 0;
+    cursor: pointer;
+}
+
+#facebook svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: black;
+}
+#twitter {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+#twitter svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: black;
+}
+
+#insta{
+    margin: 0 0px 0 15px;
+    cursor: pointer;
+}
+
+#insta svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: black;
+}
+
+
