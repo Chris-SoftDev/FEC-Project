@@ -71,6 +71,7 @@ function Reviews() {
         <div className="Review5">box5</div>
         <div className="Review6">box6</div>
       </div>
+      <button className="show-all">Show all reviews</button>
     </div>
   );
 }

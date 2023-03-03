@@ -104,8 +104,7 @@ height: 1000px;
 /* Reviews div from here on out  */
 
 .REVIEWS-container{
-  height: 587px;
-  max-width: 1035px;
+  height: 100;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -149,8 +148,8 @@ height: 1000px;
 
 /* button */
 
-.review-btn {
-  width: 30px;
-  height: 20px;
-  font-size: 10px
+.show-all {
+  width: 130px;
+  height: 30px;
+  font-size: 15px
 }
