@@ -1,6 +1,10 @@
-import './NavBar.css'
+import { useContext } from 'react';
+import NavContext from '../Context/NavContext';
+import './NavBar.css';
 
 function NavBar() {
+    const {profileMenuBtnRef, profileMenuRef, loginMenuRef, toggleProfileMenu, openLoginMenu, isProfileMenuVisible, isLoginMenuVisible, setIsLoginMenuVisible} = useContext(NavContext);
+
     return (
         <div className="nav-bar-content-container">
             <a href="https://www.airbnb.com">
@@ -35,7 +39,7 @@ function NavBar() {
                     </button>
                 </div>
                 <div className="nav-bar-profile-menu-container">
-                    <button id='nav-bar-profile-menu-btn'>
+                    <button id='nav-bar-profile-menu-btn' onClick={toggleProfileMenu} ref={profileMenuBtnRef}>
                         <div className='nav-bar-profile-menu-btn-hamburger'>
                             <i className="fa fa-bars" aria-hidden="true"></i>
                         </div>
@@ -45,8 +49,28 @@ function NavBar() {
                             </svg>
                         </div>
                     </button>
+                    {isProfileMenuVisible && ( 
+                        <div className='profile-menu-container' ref={profileMenuRef}>
+                            <div className='profile-menu-top-links-container'>
+                                <div className='profile-menu-links bold' onClick={openLoginMenu}>Sign up</div>
+                                <div className='profile-menu-links' onClick={openLoginMenu}>Log in</div>
+                            </div>
+                            <div className="profile-menu-bottom-links-container">
+                                <div className='profile-menu-links'>Airbnb your home</div>
+                                <div className='profile-menu-links'>Host an experience</div>
+                                <div className='profile-menu-links'>Help</div>
+                            </div> 
+                        </div>
+                    )}
+                    {isLoginMenuVisible && (
+                        <div className='cover-screen'>
+                            <div className='login-menu-container' ref={loginMenuRef}>
+
+                            </div>
+                        </div>
+                    )}
                 </div>
-            </div>
+            </div>   
         </div> 
     );
 }
