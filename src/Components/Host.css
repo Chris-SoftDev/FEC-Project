@@ -12,24 +12,37 @@
 .host-cohost {
     height: auto;
     width: 50%;
-    padding-top: 3em;
+    margin-top: 3em;
+    margin-right:3em;
 }
 
 .host {
+    display: flex;
+    flex-direction: column;
+}
+
+.host-info{
     display: flex;
     flex-direction: row;
 }
 
 .host-name {
-    padding-left: 1em;
-    padding-bottom: 1em;
+    margin-left: 1em;
+    margin-bottom: 1em;
 }
 
-.host-img {
-    width: 70px;
-    height: 70px;
+
+.host-img-container{
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    border:1px solid black;
+    border: 1px solid black;
+}
+
+.host-img-container img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
 }
 
 .hosted-by{
@@ -48,22 +61,82 @@
 
 .host-rating{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .reviews {
     display: flex;
-}
-
-.verification {
-    
+    margin-right:2em;
 }
 
 #star{
-    padding-top: .3em;
+    margin-top: .3em;
     font-size: 15px;
     text-align: left;
-    padding-right: 1em;
+    margin-right: 1em;
+}
+
+.verification {
+    display: flex;
+}
+
+.shield-icon {
+    height: 20px;
+    width: 16px;
+}
+
+.shield-icon svg{
+    height: 16px;
+    width: 16px;
+    display: block;
+    fill:rgb(34, 34, 34)
+}
+
+.host-bio{
+    margin-top:2em;
+    text-align: start;
+    max-width: 480px;
+    line-height: 1.5em;
+    overflow: hidden;
+}
+
+.cohost{
+    display: flex;
+    align-items: start;
+    margin-top: 1.4em;
+    flex-direction: column;
+}
+
+.cohost-title {
+    font-weight: 500;
+}
+
+.cohost-img-container{
+    display:flex;
+    flex-direction: row;
+    margin-top: .5em;
+    margin-bottom: .8em;
+}
+
+.cohost-name{
+    margin-left: .9em;
+    margin-top:.7em;
+}
+
+.cohost-img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border:1px solid black;
+}
+
+.cohost-bio {
+    margin-top: .8em;
+    text-align: start;
+    max-width: 480px;
+    line-height: 1.5em;
+    overflow: hidden;
+    margin-bottom: 3em;
 }
 
 .contact-host {
@@ -74,16 +147,16 @@
 .contact {
     list-style-type: none;
     font-size: 15.7px;
-    padding-top: 7em;
+    margin-top: 9em;
    
 }
 
 .contact li {
-    padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .contact-btn-div {
-    padding-top: 1em;
+    margin-top: 2em;
 }
 
 .contact-btn {
@@ -91,14 +164,21 @@
     border-radius: 9px;
     border-width: 1px;
     font-size: 16px;
-    width: 160px;
-    height: 50px;
+    width: 150px;
+    height: 45px;
     letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: #f7f7f7;
 }
 
 .protection-logo{
     height:24px;
     width: 24px;
+    margin-right: 1.1em;
+    margin-top: .5em;
 }
 
 .protection-logo svg {
@@ -110,16 +190,67 @@
 
 .payment-protect {
     display: flex;
-    padding-top: 1em;
+    margin-top: 1.5em;
 }
 
 .protection-info {
     font-size: 11.5px;
-    inline-size: 260px;
+    max-width: 260px;
+    overflow: hidden;
     letter-spacing: .17px;
     line-height:15px;
 }
 
 .thingstoknow {
     display: flex;
+    flex-direction: column;
+}
+
+.thingstoknow-title{
+    text-align: left;
+    font-size: 21px;
+    margin-top: 2.2em;
+    font-weight: 500;
+    letter-spacing: .4px;
+}
+
+.thingstoknow-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.thingstoknow-parts{
+    margin-top: 1.6em;
+    width:33%;
+}
+
+.thingstoknow-subtitle {
+    font-weight: 500;
+    text-align: left;
+}
+
+.thingstoknow-content li {
+    margin-top: .2em;
+    list-style-type: none;
+    text-align: left;
+    line-height: 36px;
+    font-weight: 300;
+}
+
+.thingstoknow-content p {
+    text-align: left;
+    font-weight: 300;
+}
+
+.show-more-link {
+    margin-top: 1em;
+    text-align: left;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgb(34, 34, 34);
+    margin-bottom: 3em;
+}
+
+.show-more-link:hover {
+    cursor: pointer;
 }

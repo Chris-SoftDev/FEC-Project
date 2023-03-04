@@ -1,0 +1,113 @@
+.location_default {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    line-break: strict;
+    line-height: 20px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    display: flex;
+    
+    
+}
+
+.section_default {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    line-break: strict;
+    line-height: 20px;
+    text-align: left !important;
+    
+
+}
+
+.location_name {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    line-break: strict;
+    line-height: 24px;
+
+}
+
+.location_name_box {
+    box-sizing: border-box;
+    font-size: 22px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-bottom: 20px;
+    font-weight: 200;
+
+}
+
+.location_title {
+    box-sizing: border-box;
+    color: rgb(34, 34, 34);
+    font-size: 21px;
+    font-weight: 500;
+    line-break: strict;
+    line-height: 26px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    align-items: left;
+    justify-content: left;
+
+}
+.location_map {
+    flex: auto;
+    box-sizing: border-box;
+    font-size: 22px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    
+}
+
+.location_city {
+    flex: auto;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 500;
+}
+
+.location_description {
+    flex: auto;
+    box-sizing: border-box;
+    font-size: 15.5px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+}
+
+.show_more {
+    
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 500;
+    
+
+}
+.show_more:hover {
+    cursor: pointer;
+}
