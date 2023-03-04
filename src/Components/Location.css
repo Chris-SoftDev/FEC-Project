@@ -37,14 +37,16 @@
     font-weight: 600;
     line-break: strict;
     line-height: 26px;
+    padding-bottom: 20px;
+    font-weight: 200;
 
 }
 
 .location_title {
     box-sizing: border-box;
     color: rgb(34, 34, 34);
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 21px;
+    font-weight: 500;
     line-break: strict;
     line-height: 26px;
     margin-bottom: 0px;
@@ -67,4 +69,45 @@
     line-break: strict;
     line-height: 26px;
     
+}
+
+.location_city {
+    flex: auto;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 500;
+}
+
+.location_description {
+    flex: auto;
+    box-sizing: border-box;
+    font-size: 15.5px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+}
+
+.show_more {
+    
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 500;
+    
+
+}
+.show_more:hover {
+    cursor: pointer;
 }
