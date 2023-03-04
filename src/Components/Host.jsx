@@ -1,4 +1,5 @@
 import './Host.css'
+//import hostImage from './host.jpg'
 
 function Host() {
 	return ( 
@@ -8,7 +9,7 @@ function Host() {
 					<div className ="host">
 						<div className='host-info'>
 							<div className= "host-img-container">
-								<img className ="host-img">{/*DATA.img*/}</img>
+								{/*<img src={hostImage} alt="host"/>*/}
 							</div>
 							<div className ="host-name">
 								<div className ="hosted-by">Hosted by Tag & Sherilyn</div>
@@ -21,8 +22,8 @@ function Host() {
 								<p>210 Reviews</p>
 							</div>
 							<div className="verification">
-								<div className ="shield-icon">
-									<svg viewbox= '0 0 16 16'>
+                <div className ="shield-icon">
+									<svg viewBox= '0 0 32 32'>
 										<path d="M16 .798l.555.37C20.398 3.73 24.208 5 28 5h1v12.5C29 25.574 23.21 31 16 31S3 25.574 3 17.5V5h1c3.792 0 7.602-1.27 11.445-3.832L16 .798zm7 9.08l-9.5 9.501-4.5-4.5L6.879 17l6.621 6.621L25.121 12 23 9.879z"></path>
 									</svg>
 								</div>
@@ -75,7 +76,37 @@ function Host() {
 				</div>
 			</div>
 			<div className ='thingstoknow'>
-				<div>Things to know</div>
+				<div className='thingstoknow-title'>Things to know</div>
+				<div className='thingstoknow-content'>
+					<div className='thingstoknow-parts'>
+						<ul>
+							<div className ='thingstoknow-subtitle'>House rules</div>
+							<li>Check-in after 4:00 PM</li>
+							<li>Checkout before 11:00 AM</li>
+							<li>5 guests maximum</li>
+							<div className="show-more-link">Show more {'>'}</div>
+						</ul>
+					</div>
+					<div className='thingstoknow-parts'>
+						<ul>
+							<div className ='thingstoknow-subtitle'>Safety & property</div>
+							<li>Security camera/recording device</li>
+							<li>Pool/hot tub without a gate or lock</li>
+							<li>May encounter potentially dangerous animal</li>
+							<div className="show-more-link">Show more {'>'}</div>
+						</ul>
+					</div>
+					<div className='thingstoknow-parts'>
+						<ul>
+							<div className ='thingstoknow-subtitle'>Cancellation policy</div>
+							<li>Free cancellation before Mar 8.</li>
+							<p>
+							Review the Host’s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19.
+							</p>
+							<div className="show-more-link">Show more {'>'}</div>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</>
 	);
