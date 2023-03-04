@@ -31,6 +31,7 @@
     margin-bottom: 1em;
 }
 
+
 .host-img-container{
     width: 64px;
     height: 64px;
@@ -90,7 +91,6 @@
     display: block;
     fill:rgb(34, 34, 34)
 }
-
 
 .host-bio{
     margin-top:2em;
