@@ -5,12 +5,15 @@ import Reviews from './Components/Reviews';
 import Location from './Components/Location';
 import Host from './Components/Host';
 import Footer from './Components/Footer';
+import { NavProvider } from './Context/NavContext';
 
 function App() {
   return (
     <div className="app-container">
       <div className="nav-container">
-        <NavBar />
+        <NavProvider>
+          <NavBar />
+        </NavProvider>
       </div>
       <div className="main-content-container">
         <div className='rentals-content-container'>
