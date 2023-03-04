@@ -19,6 +19,10 @@ export const NavProvider = ({ children }) => {
     toggleProfileMenu();
   }
 
+  const closeLoginMenu = () => {
+    setIsLoginMenuVisible(false);
+  }
+
   // Profile Menu outside-click, close-menu use-effect
   useEffect(() => {
     const checkIfClickedOutside = e => {
@@ -65,6 +69,7 @@ export const NavProvider = ({ children }) => {
         loginMenuRef,
         toggleProfileMenu,
         openLoginMenu,
+        closeLoginMenu,
         isProfileMenuVisible,
         isLoginMenuVisible,
         setIsLoginMenuVisible
