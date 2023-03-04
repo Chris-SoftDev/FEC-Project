@@ -5,10 +5,10 @@ function Reviews() {
     <div className="Review-Container">
       <p className="Total-rating-reviews">
         <div className="">
-        <i className="fa-solid fa-star"></i>
-            </div>
-            4.93 210 reviews
-            </p>
+          <i className="fa-solid fa-star"></i>
+        </div>
+        4.93 210 reviews
+      </p>
       <div className="Catergories-rating-bar-container">
         <div className="First-category-div">
           <div className="rating-cleanliness-container">
@@ -50,7 +50,7 @@ function Reviews() {
             <div className="bar-rating-label">
               {" "}
               -----
-              <span> 5.0</span>              
+              <span> 5.0</span>
             </div>
           </div>
           <div className="rating-Value-container">
@@ -64,14 +64,135 @@ function Reviews() {
         </div>
       </div>
       <div className="REVIEWS-container">
-        <div className="Review1">box1</div>
-        <div className="Review2">box2</div>
-        <div className="Review3">box3</div>
-        <div className="Review4">box4</div>
-        <div className="Review5">box5</div>
-        <div className="Review6">box6</div>
+        <div className="review-box">
+          <div className="inner-container">
+            <div className="img-name-date-container">
+              <div className="img-container">
+                <img src="" alt="" />
+              </div>
+              <div className="name-date-container">
+                <div className="name-container">
+                  <h3>Moises</h3>
+                </div>
+                <div className="date-container">
+                  <li>Feburay 2023</li>
+                </div>
+              </div>
+            </div>
+            <span className="actual-review">
+              We had a great time, the place felt like home! Clean with
+              everything you would need.
+            </span>
+          </div>
+        </div>
+        <div className="review-box">
+          <div className="inner-container">
+            <div className="img-name-date-container">
+              <div className="img-container">
+                <img src="" alt="" />
+              </div>
+              <div className="name-date-container">
+                <div className="name-container">
+                  <h3>Christopher</h3>
+                </div>
+                <div className="date-container">
+                  <li>Feburay 2023</li>
+                </div>
+              </div>
+            </div>
+            <span className="actual-review">
+              Great location, easy to understand directions, and not far from
+              Idaho City which was a bonus!
+            </span>
+          </div>
+        </div>
+        <div className="review-box">
+          <div className="inner-container">
+            <div className="img-name-date-container">
+              <div className="img-container">
+                <img src="" alt="" />
+              </div>
+              <div className="name-date-container">
+                <div className="name-container">
+                  <h3>Caleb</h3>
+                </div>
+                <div className="date-container">
+                  <li>Feburay 2023</li>
+                </div>
+              </div>
+            </div>
+            <span className="actual-review">
+              We had a great time, the place felt like home! Clean with
+              everything you would need.
+            </span>
+          </div>
+        </div>
+        <div className="review-box">
+          <div className="inner-container">
+            <div className="img-name-date-container">
+              <div className="img-container">
+                <img src="" alt="" />
+              </div>
+              <div className="name-date-container">
+                <div className="name-container">
+                  <h3>Sounisa</h3>
+                </div>
+                <div className="date-container">
+                  <li>Feburay 2023</li>
+                </div>
+              </div>
+            </div>
+            <span className="actual-review">
+              We had a great time, the place felt like home! Clean with
+              everything you would need.
+            </span>
+          </div>
+        </div>
+        <div className="review-box">
+          <div className="inner-container">
+            <div className="img-name-date-container">
+              <div className="img-container">
+                <img src="" alt="" />
+              </div>
+              <div className="name-date-container">
+                <div className="name-container">
+                  <h3>Ben</h3>
+                </div>
+                <div className="date-container">
+                  <li>Feburay 2023</li>
+                </div>
+              </div>
+            </div>
+            <span className="actual-review">
+              Very nice place loved the views it offred and would 100% recomend.
+            </span>
+          </div>
+        </div>
+        <div className="review-box">
+          <div className="inner-container">
+            <div className="img-name-date-container">
+              <div className="img-container">
+                <img src="" alt="" />
+              </div>
+              <div className="name-date-container">
+                <div className="name-container">
+                  <h3>Garret</h3>
+                </div>
+                <div className="date-container">
+                  <li>December 1942</li>
+                </div>
+              </div>
+            </div>
+            <span className="actual-review">
+              We had a great time, the place felt like home! Clean with
+              everything you would need. And i drive a Tesla
+            </span>
+          </div>
+        </div>
       </div>
-      <button className="show-all">Show all reviews</button>
+      <div className="btn-container">
+        <button className="show-all">Show all 211 reviews</button>
+      </div>
     </div>
   );
 }

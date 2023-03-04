@@ -12,7 +12,8 @@
 .host-cohost {
     height: auto;
     width: 50%;
-    padding-top: 3em;
+    margin-top: 3em;
+    margin-right:3em;
 }
 
 .host {
@@ -20,10 +21,109 @@
     flex-direction: column;
 }
 
-.hosted-by{
-    font-size: 22px;
+.host-info{
+    display: flex;
+    flex-direction: row;
 }
 
+.host-name {
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.host-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border:1px solid black;
+}
+
+.hosted-by{
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: .3em;
+}
+
+.month-year{
+    text-align: left;
+    font-size: 13.5px;
+    color: #717171;
+    margin-top: .8em;
+    margin-bottom: 1em;
+}
+
+.host-rating{
+    display: flex;
+    flex-direction: row;
+}
+
+.reviews {
+    display: flex;
+    margin-right:2em;
+}
+
+#star{
+    margin-top: .3em;
+    font-size: 15px;
+    text-align: left;
+    margin-right: 1em;
+}
+
+.verification {
+    display: flex;
+}
+
+.shield-icon {
+    height: 16px;
+    width: 16px;
+}
+
+.host-bio{
+    margin-top:2em;
+    text-align: start;
+    max-width: 480px;
+    line-height: 1.5em;
+    overflow: hidden;
+}
+
+.cohost{
+    display: flex;
+    align-items: start;
+    margin-top: 1.4em;
+    flex-direction: column;
+}
+
+.cohost-title {
+    font-weight: 500;
+}
+
+.cohost-img-container{
+    display:flex;
+    flex-direction: row;
+    margin-top: .5em;
+    margin-bottom: .8em;
+}
+
+.cohost-name{
+    margin-left: 1em;
+    margin-top:.7em;
+}
+
+.cohost-img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border:1px solid black;
+}
+
+.cohost-bio {
+    margin-top: .8em;
+    text-align: start;
+    max-width: 480px;
+    line-height: 1.5em;
+    overflow: hidden;
+    margin-bottom: 3em;
+}
 
 .contact-host {
     width: 50%;
@@ -33,30 +133,54 @@
 .contact {
     list-style-type: none;
     font-size: 15.7px;
-    padding-top: 7em;
+    margin-top: 9em;
    
 }
 
 .contact li {
-    padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .contact-btn-div {
-    padding-top: 1em;
+    margin-top: 2em;
 }
 
 .contact-btn {
     background-color: white;
-    padding: 15px 32px;
     border-radius: 9px;
     border-width: 1px;
     font-size: 16px;
-    width: 159px;
+    width: 150px;
+    height: 50px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.protection-logo{
+    height:24px;
+    width: 24px;
+    margin-right: 1.2em;
+    margin-top: .5em;
+}
+
+.protection-logo svg {
+    height:24px;
+    width: 24px;
+    fill: rgb(227, 28, 95);
+    stroke: rgb(34, 34, 34);
 }
 
 .payment-protect {
     display: flex;
-    padding-top: 1em;
+    margin-top: 1.5em;
+}
+
+.protection-info {
+    font-size: 11.5px;
+    max-width: 260px;
+    overflow: hidden;
+    letter-spacing: .17px;
+    line-height:15px;
 }
 
 .thingstoknow {
