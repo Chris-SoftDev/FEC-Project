@@ -50,6 +50,13 @@ export const NavProvider = ({ children }) => {
     }
   }, [isLoginMenuVisible])
 
+  // Disables vertical scroll-bar when Login window is visible
+  useEffect(() => {
+    isLoginMenuVisible
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+  }, [isLoginMenuVisible]);
+
   return (
     <NavContext.Provider
       value={{
