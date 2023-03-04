@@ -37,7 +37,7 @@ function LoginMenu() {
                                 </div>
                             </div>
                             <div className="login-menu-form-footer">
-                                We'll call or text you to confirm your number. Standard message and data rates apply. <a href="">Privacy Policy</a>
+                                We'll call or text you to confirm your number. Standard message and data rates apply. <a href="#">Privacy Policy</a>
                             </div>
                             <div className="login-menu-form-submit-btn-container">
                                 <button type='submit'>Continue</button>

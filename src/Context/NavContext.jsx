@@ -10,6 +10,7 @@ export const NavProvider = ({ children }) => {
   const [isProfileMenuVisible, setIsProfileMenuVisible] = useState(false);
   const [isLoginMenuVisible, setIsLoginMenuVisible] = useState(false);
   const [isLangMenuVisible, setIsLangMenuVisible] = useState(false);
+  const [langMenuOption, setLangMenuOption] = useState('language')
 
   const toggleProfileMenu = () => {
     setIsProfileMenuVisible(!isProfileMenuVisible)
@@ -31,6 +32,7 @@ export const NavProvider = ({ children }) => {
 
   const closeLangMenu = () => {
     setIsLangMenuVisible(false);
+    setLangMenuOption('language');
   }
 
   // Profile Menu outside-click, close-menu use-effect
@@ -70,6 +72,7 @@ export const NavProvider = ({ children }) => {
       // If the menu is open and the clicked target is not within the menu, then close the menu and toggle the shadow off
       if (isLangMenuVisible && langMenuRef.current && !langMenuRef.current.contains(e.target)) {
         setIsLangMenuVisible(false)
+        setLangMenuOption('language');
       }
     }
     document.addEventListener("mousedown", checkIfClickedOutside)
@@ -100,7 +103,9 @@ export const NavProvider = ({ children }) => {
         closeLangMenu,
         isProfileMenuVisible,
         isLoginMenuVisible,
-        isLangMenuVisible
+        isLangMenuVisible,
+        langMenuOption,
+        setLangMenuOption
       }}
     >
       {children}

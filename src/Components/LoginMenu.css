@@ -19,8 +19,8 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -341px;
     margin-left: -284px;
+    margin-top: -341px;
 }
 
 .login-menu-header-container {
@@ -112,12 +112,12 @@
 }
 
 .login-menu-form-footer a {
-    font-size: 12px;
-    text-decoration: underline;
+    font-size: 13px !important;
+    text-decoration: underline !important;
 }
 
 .login-menu-form-footer a:hover {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .login-menu-form-submit-btn-container {
