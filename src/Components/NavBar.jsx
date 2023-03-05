@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { RegionProvider } from '../Context/RegionContext';
 import NavContext from '../Context/NavContext';
 import LoginMenu from './LoginMenu';
 import ProfileMenu from './ProfileMenu';
@@ -41,7 +42,9 @@ function NavBar() {
                         </svg>
                     </button>
                     {isLangMenuVisible && (
-                        <LangMenu />
+                        <RegionProvider>
+                            <LangMenu />
+                        </RegionProvider>
                     )}
                 </div>
                 <div className="nav-bar-profile-menu-container">
