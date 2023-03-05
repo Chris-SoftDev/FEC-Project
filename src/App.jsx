@@ -7,7 +7,7 @@ import Host from './Components/Host';
 import Footer from './Components/Footer';
 import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
-
+import { ReviewProvider} from './Context/ReviewContext';
 function App() {
   return (
     <div className="app-container">
@@ -22,7 +22,9 @@ function App() {
             <Rentals />
           </div>
           <div className="reviews-container">
+          <ReviewProvider>
             <Reviews />
+          </ReviewProvider>
           </div>
           <div className="location-container">
             <Location />
