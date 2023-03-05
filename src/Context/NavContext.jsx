@@ -54,7 +54,7 @@ export const NavProvider = ({ children }) => {
   // Login Menu outside-click, close-menu use-effect
   useEffect(() => {
     const checkIfClickedOutside = e => {
-      // If the menu is open and the clicked target is not within the menu, then close the menu and toggle the shadow off
+      // If the menu is open and the clicked target is not within the menu, then close the menu
       if (isLoginMenuVisible && loginMenuRef.current && !loginMenuRef.current.contains(e.target)) {
         setIsLoginMenuVisible(false)
       }
@@ -69,7 +69,7 @@ export const NavProvider = ({ children }) => {
   // Language Menu outside-click, close-menu use-effect
   useEffect(() => {
     const checkIfClickedOutside = e => {
-      // If the menu is open and the clicked target is not within the menu, then close the menu and toggle the shadow off
+      // If the menu is open and the clicked target is not within the menu, then close the menu
       if (isLangMenuVisible && langMenuRef.current && !langMenuRef.current.contains(e.target)) {
         setIsLangMenuVisible(false)
         setLangMenuOption('language');

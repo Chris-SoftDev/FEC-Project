@@ -33,7 +33,7 @@ function LoginMenu() {
                                     {/*TODO: Form input req'd*/}
                                 </div>
                                 <div className='login-menu-form-input-phone'>
-                                    {/*TODO: Form input req'd*/}
+                                    <input type="tel" name="login-signup-phone" id="login-signup-phone" required/>
                                 </div>
                             </div>
                             <div className="login-menu-form-footer">

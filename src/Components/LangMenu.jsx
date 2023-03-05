@@ -1,5 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
 import NavContext from '../Context/NavContext';
+import Region from './Region';
+import Currency from './Currency';
 import './LangMenu.css';
 
 function LangMenu() {
@@ -25,7 +27,7 @@ function LangMenu() {
             document.removeEventListener('click', handleDocumentClick);
         };
     }, [langMenuOption]);
-    
+
     return ( 
         <div className='cover-screen'>
             <div className='lang-menu-container' ref={langMenuRef}>
@@ -64,6 +66,14 @@ function LangMenu() {
                                     Currency
                                 </button>
                             </div>
+                        </div>
+                        <div className="selected-content-container">
+                            {(langMenuOption === 'language') && (
+                                <Region />
+                            )}
+                            {(langMenuOption === 'currency') && (
+                                <Currency />
+                            )}
                         </div>
                     </div>
                 </div>
