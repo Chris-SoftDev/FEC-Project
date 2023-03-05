@@ -47,7 +47,7 @@ function Host() {
 					<div className ="cohost">
 						<div className='cohost-title'>
 							Co-hosts
-						</div>
+						</div> 
 						<div className='cohost-img-container'>
 							<img className ="cohost-img">{/*DATA.img*/}</img>
 							<div className='cohost-name'>Sherilyn</div>
