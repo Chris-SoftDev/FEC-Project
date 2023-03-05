@@ -15,12 +15,21 @@ app.use(
 );
 
 app.use(express.json());
-app.use(express.static());
+app.use(express.static("../"));
 
-app.route("/users/signup").get(async (req, res) => {
+app.route("/languages").get(async (req, res) => {
   try {
-    const data = await db.query(`SELECT * FROM data`);
-    res.status(200).json({ validation: true, data: data.rows });
+    const data = await db.query(`SELECT * FROM languages`);
+    res.status(200).json(data.rows);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.route("/currencies").get(async (req, res) => {
+  try {
+    const data = await db.query(`SELECT * FROM currencies`);
+    res.status(200).json(data.rows);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
