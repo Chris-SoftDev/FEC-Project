@@ -12,8 +12,8 @@ function Currency() {
             </div>
             <ul className='currency-list'>
                 {currencyData.map(obj => (
-                    <li>
-                        <button key={obj.currency_id} id={obj.currency_id}>
+                    <li key={obj.currency_id}>
+                        <button id={obj.currency_id}>
                             <div className='currency-name'>{obj.currency}</div>
                             <div className='currency-symbol'>{obj.symbol}</div>
                         </button>
