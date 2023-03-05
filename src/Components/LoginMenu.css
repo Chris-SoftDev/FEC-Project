@@ -1,0 +1,230 @@
+.cover-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login-menu-container {
+    display: flex;
+    flex-direction: column;
+    width: 568px;
+    height: 682px;
+    border-radius: 12px;
+    background-color: #fff;
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -284px;
+    margin-top: -341px;
+}
+
+.login-menu-header-container {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    padding: 0 24px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+#login-menu-close-btn {
+    flex: 0 0 16px;
+    width: 16px;
+    text-align: left;
+    position: relative;
+    left: -8px;
+}
+
+#login-menu-close-btn svg {
+    height: 16px;
+    width: 16px;
+    stroke: rgb(34, 34, 34);
+    stroke-width: 3px;
+    overflow: visible;
+}
+
+#login-menu-close-btn button {
+    background-color: #fff;
+    padding: 8px 8px 6px 8px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#login-menu-close-btn button:hover {
+    background-color: rgba(235, 235, 235, 0.55);
+}
+
+.login-menu-header {
+    font-size: 8px;
+    letter-spacing: -0.25px;
+    text-align: center;
+}
+
+.login-menu-header-spacer {
+    width: 16px;
+}
+
+.login-menu-body-container {
+    width: 568px;
+    height: 618px;
+    padding: 24px;
+}
+
+.body-content-header {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 8px 0 24px 0;
+}
+
+.login-menu-form-container {
+    height: 216px;
+    margin-top: 16px;
+}
+
+.login-menu-form-inputs {
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+}
+
+.login-menu-form-input-country {
+    height: 56px;
+    border-bottom: 1px solid #b0b0b0;
+}
+
+.login-menu-form-input-phone {
+    height: 56px;
+}
+
+#login-signup-phone {
+    margin: 26px 12px 6px 12px;
+    outline: none;
+    border: none;
+}
+
+.login-menu-form-footer {
+    margin-top: 8px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+}
+
+.login-menu-form-footer a {
+    font-size: 13px !important;
+    text-decoration: underline !important;
+}
+
+.login-menu-form-footer a:hover {
+    font-size: 14px;
+}
+
+.login-menu-form-submit-btn-container {
+    height: 48px;
+    margin: 16px 0 24px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.login-menu-form-submit-btn-container button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(230,30,77,1) 0%, rgba(227,28,95,1) 35%, rgba(215,4,102,1) 100%);
+    cursor: pointer;
+}
+
+.login-menu-body-divider-container {
+    height: 16px;
+    margin: 16px 0;
+    width: 100%;
+}
+
+.login-menu-body-divider::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-right: 16px;
+    background-color: rgb(221, 221, 221);
+}
+
+.login-menu-body-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.login-menu-body-divider::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-left: 16px;
+    background-color: rgb(221, 221, 221);
+}
+
+.login-menu-body-footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 240px;
+}
+
+.login-menu-body-footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    height: 48px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-menu-body-footer-links:hover {
+    background-color: rgba(235, 235, 235, 0.55);
+    cursor: pointer;
+}
+
+.footer-link-icons {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+#footer-link-facebook-icon {
+    left: -145px;
+}
+
+#footer-link-google-icon {
+    left: -154px;
+}
+
+#footer-link-apple-icon {
+    left: -158px;
+}
+
+#footer-link-email-icon {
+    left: -157px;
+}
+
+.footer-link-icons svg {
+    width: 20px;
+    height: 20px;
+}

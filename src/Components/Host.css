@@ -31,11 +31,18 @@
     margin-bottom: 1em;
 }
 
-.host-img {
-    width: 72px;
-    height: 72px;
+
+.host-img-container{
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    border:1px solid black;
+    border: 1px solid black;
+}
+
+.host-img-container img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
 }
 
 .hosted-by{
@@ -55,6 +62,7 @@
 .host-rating{
     display: flex;
     flex-direction: row;
+    font-size: 15.7px;
 }
 
 .reviews {
@@ -62,11 +70,17 @@
     margin-right:2em;
 }
 
-#star{
-    margin-top: .3em;
-    font-size: 15px;
-    text-align: left;
-    margin-right: 1em;
+.star{
+    height:16px;
+    width: 16px;
+    margin-right: .8em ;
+}
+
+.star svg{
+    height: 16px;
+    width: 16px;
+    display: block;
+    fill:rgb(34, 34, 34);
 }
 
 .verification {
@@ -74,14 +88,24 @@
 }
 
 .shield-icon {
+    height: 20px;
+    width: 16px;
+    margin-left: -.9em;
+    margin-right: .85em;
+}
+
+.shield-icon svg{
     height: 16px;
     width: 16px;
+    display: block;
+    fill:rgb(34, 34, 34)
 }
 
 .host-bio{
-    margin-top:2em;
+    margin-top:1.5em;
     text-align: start;
-    max-width: 480px;
+    font-size: 15.5px;
+    max-width: 458px;
     line-height: 1.5em;
     overflow: hidden;
 }
@@ -95,6 +119,7 @@
 
 .cohost-title {
     font-weight: 500;
+    font-size: 15.5px;
 }
 
 .cohost-img-container{
@@ -105,8 +130,9 @@
 }
 
 .cohost-name{
-    margin-left: 1em;
+    margin-left: .9em;
     margin-top:.7em;
+    font-size: 15.5px;
 }
 
 .cohost-img{
@@ -119,14 +145,15 @@
 .cohost-bio {
     margin-top: .8em;
     text-align: start;
-    max-width: 480px;
+    max-width: 458px;
     line-height: 1.5em;
     overflow: hidden;
     margin-bottom: 3em;
+    font-size: 15.5px;
 }
 
 .contact-host {
-    width: 50%;
+    width: 53%;
     text-align: left;
 }
 
@@ -151,15 +178,19 @@
     border-width: 1px;
     font-size: 16px;
     width: 150px;
-    height: 50px;
+    height: 48px;
     letter-spacing: 1px;
     cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: #f7f7f7;
 }
 
 .protection-logo{
     height:24px;
     width: 24px;
-    margin-right: 1.2em;
+    margin-right: 1.1em;
     margin-top: .5em;
 }
 
@@ -185,4 +216,61 @@
 
 .thingstoknow {
     display: flex;
+    flex-direction: column;
+}
+
+.thingstoknow-title{
+    text-align: left;
+    font-size: 20.5px;
+    margin-top: 2.2em;
+    font-weight: 500;
+    letter-spacing: .4px;
+}
+
+.thingstoknow-content{
+    display: flex;
+    flex-direction: row;
+    font-size: 15.5px;
+}
+
+.thingstoknow-parts{
+    margin-top: 1.6em;
+    width:33%;
+}
+
+.thingstoknow-cancellation{
+    margin-top: 1.6em;
+    width:33%;
+    margin-left: 1em;
+}
+
+.thingstoknow-subtitle {
+    font-weight: 500;
+    text-align: left;
+}
+
+.thingstoknow-content li {
+    margin-top: .2em;
+    list-style-type: none;
+    text-align: left;
+    line-height: 36px;
+    font-weight: 300;
+}
+
+.thingstoknow-content p {
+    text-align: left;
+    font-weight: 300;
+}
+
+.show-more-link {
+    margin-top: 1em;
+    text-align: left;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgb(34, 34, 34);
+    margin-bottom: 3em;
+}
+
+.show-more-link:hover {
+    cursor: pointer;
 }
