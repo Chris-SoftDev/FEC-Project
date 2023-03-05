@@ -1,7 +1,13 @@
+import { useContext } from 'react';
+import { HostContext, HostProvider } from '../Context/HostContext'
 import './Host.css'
+import ShowCancel from './ShowCancel';
+import ShowRules from './ShowRules'
+import ShowSafety from './ShowSafety';
 //import hostImage from './host.jpg'
 
 function Host() {
+	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety} = useContext(HostContext)
 	return ( 
 		<>
 			<div className = "myhost-container">
@@ -18,11 +24,15 @@ function Host() {
 						</div>
 						<div className = "host-rating">
 							<div className ="reviews">
-								<i id= "star" className="fa-sharp fa-solid fa-star"></i>
+								<div className ="star">
+									<svg viewBox= '0 0 32 32'>
+										<path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path>
+									</svg>
+								</div>
 								<p>210 Reviews</p>
 							</div>
 							<div className="verification">
-                <div className ="shield-icon">
+                				<div className ="shield-icon">
 									<svg viewBox= '0 0 32 32'>
 										<path d="M16 .798l.555.37C20.398 3.73 24.208 5 28 5h1v12.5C29 25.574 23.21 31 16 31S3 25.574 3 17.5V5h1c3.792 0 7.602-1.27 11.445-3.832L16 .798zm7 9.08l-9.5 9.501-4.5-4.5L6.879 17l6.621 6.621L25.121 12 23 9.879z"></path>
 									</svg>
@@ -84,7 +94,7 @@ function Host() {
 							<li>Check-in after 4:00 PM</li>
 							<li>Checkout before 11:00 AM</li>
 							<li>5 guests maximum</li>
-							<div className="show-more-link">Show more {'>'}</div>
+							<div className="show-more-link" onClick={openHouseRules}>Show more {'>'}</div>
 						</ul>
 					</div>
 					<div className='thingstoknow-parts'>
@@ -93,21 +103,24 @@ function Host() {
 							<li>Security camera/recording device</li>
 							<li>Pool/hot tub without a gate or lock</li>
 							<li>May encounter potentially dangerous animal</li>
-							<div className="show-more-link">Show more {'>'}</div>
+							<div className="show-more-link" onClick ={openSafety}>Show more {'>'}</div>
 						</ul>
 					</div>
-					<div className='thingstoknow-parts'>
+					<div className='thingstoknow-cancellation'>
 						<ul>
 							<div className ='thingstoknow-subtitle'>Cancellation policy</div>
 							<li>Free cancellation before Mar 8.</li>
 							<p>
 							Review the Host’s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19.
 							</p>
-							<div className="show-more-link">Show more {'>'}</div>
+							<div className="show-more-link" onClick={openCancellation}>Show more {'>'}</div>
 						</ul>
 					</div>
 				</div>
 			</div>
+			{showHouseRules && (<ShowRules />)}
+			{showCancellation && (<ShowCancel />)}
+			{showMoreSafety && (<ShowSafety />)}
 		</>
 	);
 }

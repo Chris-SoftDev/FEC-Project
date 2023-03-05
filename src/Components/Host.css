@@ -62,6 +62,7 @@
 .host-rating{
     display: flex;
     flex-direction: row;
+    font-size: 15.7px;
 }
 
 .reviews {
@@ -69,11 +70,17 @@
     margin-right:2em;
 }
 
-#star{
-    margin-top: .3em;
-    font-size: 15px;
-    text-align: left;
-    margin-right: 1em;
+.star{
+    height:16px;
+    width: 16px;
+    margin-right: .8em ;
+}
+
+.star svg{
+    height: 16px;
+    width: 16px;
+    display: block;
+    fill:rgb(34, 34, 34);
 }
 
 .verification {
@@ -83,6 +90,8 @@
 .shield-icon {
     height: 20px;
     width: 16px;
+    margin-left: -.9em;
+    margin-right: .85em;
 }
 
 .shield-icon svg{
@@ -93,9 +102,10 @@
 }
 
 .host-bio{
-    margin-top:2em;
+    margin-top:1.5em;
     text-align: start;
-    max-width: 480px;
+    font-size: 15.5px;
+    max-width: 458px;
     line-height: 1.5em;
     overflow: hidden;
 }
@@ -109,6 +119,7 @@
 
 .cohost-title {
     font-weight: 500;
+    font-size: 15.5px;
 }
 
 .cohost-img-container{
@@ -121,6 +132,7 @@
 .cohost-name{
     margin-left: .9em;
     margin-top:.7em;
+    font-size: 15.5px;
 }
 
 .cohost-img{
@@ -133,14 +145,15 @@
 .cohost-bio {
     margin-top: .8em;
     text-align: start;
-    max-width: 480px;
+    max-width: 458px;
     line-height: 1.5em;
     overflow: hidden;
     margin-bottom: 3em;
+    font-size: 15.5px;
 }
 
 .contact-host {
-    width: 50%;
+    width: 53%;
     text-align: left;
 }
 
@@ -165,7 +178,7 @@
     border-width: 1px;
     font-size: 16px;
     width: 150px;
-    height: 45px;
+    height: 48px;
     letter-spacing: 1px;
     cursor: pointer;
 }
@@ -208,7 +221,7 @@
 
 .thingstoknow-title{
     text-align: left;
-    font-size: 21px;
+    font-size: 20.5px;
     margin-top: 2.2em;
     font-weight: 500;
     letter-spacing: .4px;
@@ -217,11 +230,18 @@
 .thingstoknow-content{
     display: flex;
     flex-direction: row;
+    font-size: 15.5px;
 }
 
 .thingstoknow-parts{
     margin-top: 1.6em;
     width:33%;
+}
+
+.thingstoknow-cancellation{
+    margin-top: 1.6em;
+    width:33%;
+    margin-left: 1em;
 }
 
 .thingstoknow-subtitle {

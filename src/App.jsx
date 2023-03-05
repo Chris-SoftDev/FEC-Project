@@ -6,6 +6,7 @@ import Location from './Components/Location';
 import Host from './Components/Host';
 import Footer from './Components/Footer';
 import { NavProvider } from './Context/NavContext';
+import { HostProvider } from './Context/HostContext'
 
 function App() {
   return (
@@ -27,7 +28,9 @@ function App() {
             <Location />
           </div>
           <div className="host-container">
-            <Host />
+            <HostProvider>
+              <Host />
+            </HostProvider>
           </div>
         </div>
       </div>
