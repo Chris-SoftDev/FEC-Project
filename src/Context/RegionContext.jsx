@@ -4,11 +4,11 @@ const RegionContext = createContext();
 
 export const RegionProvider = ({ children }) => {
     const [currencyData, setCurrencyData] = useState([]);
+    const [languageData, setLanguageData] = useState([]);
 
     useEffect(() => {
         const fetchCurrencies = async () => {
             const response = await fetch('http://localhost:3000/currencies');
-            // console.log(response)
             const data = await response.json();
             setCurrencyData(data);
         };
@@ -16,9 +16,20 @@ export const RegionProvider = ({ children }) => {
         fetchCurrencies();
     }, []) 
 
+    useEffect(() => {
+        const fetchLanguages = async () => {
+            const response = await fetch('http://localhost:3000/languages');
+            const data = await response.json();
+            setLanguageData(data);
+        };
+
+        fetchLanguages();
+    }, []) 
+
     return (
         <RegionContext.Provider value= {{
-            currencyData
+            currencyData,
+            languageData
         }}>
             {children}
         </RegionContext.Provider>
