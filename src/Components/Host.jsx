@@ -26,7 +26,7 @@ function Host() {
 							<div className ="reviews">
 								<div className ="star">
 									<svg viewBox= '0 0 32 32'>
-										<path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fill-rule="evenodd"></path>
+										<path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fillRule="evenodd"></path>
 									</svg>
 								</div>
 								<p>210 Reviews</p>
@@ -99,7 +99,7 @@ function Host() {
 					</div>
 					<div className='thingstoknow-parts'>
 						<ul>
-							<div className ='thingstoknow-subtitle'>Safety & property</div>
+							<div className='thingstoknow-subtitle'>Safety & property</div>
 							<li>Security camera/recording device</li>
 							<li>Pool/hot tub without a gate or lock</li>
 							<li>May encounter potentially dangerous animal</li>
@@ -108,17 +108,21 @@ function Host() {
 					</div>
 					<div className='thingstoknow-cancellation'>
 						<ul>
-							<div className ='thingstoknow-subtitle'>Cancellation policy</div>
+							<div className='thingstoknow-subtitle'>Cancellation policy</div>
 							<li>Free cancellation before Mar 8.</li>
-							<p>
+							<div className='cancel-info'>
 							Review the Host’s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19.
-							</p>
-							<div className="show-more-link" onClick={openCancellation}>Show more {'>'}</div>
+							</div>
+							<div className="cancel-show-more-link" onClick={openCancellation}>Show more {'>'}</div>
 						</ul>
 					</div>
 				</div>
 			</div>
-			{showHouseRules && (<ShowRules />)}
+			{showHouseRules ? (<div className="slide-in-panel">
+					<ShowRules />
+				</div>
+			) : null}
+			{/*showHouseRules && (<ShowRules />)*/}
 			{showCancellation && (<ShowCancel />)}
 			{showMoreSafety && (<ShowSafety />)}
 		</>

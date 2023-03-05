@@ -12,12 +12,13 @@ export default function ShowCancel() {
                 <div className="modal-overlay">
                     <div className='cancel-modal-container'>
                         <div className="cancel-modal">
-                        <button className="close-cancel-modal" onClick={closeCancellation}>
-                            X
-                        </button>
-                        <div>Cancellation</div>
-                        <p>It Worked!!</p>
-                    </div>
+                            <div className='cancel-x-container'>
+                                <button className="cancel-x" onClick={closeCancellation}>X</button>
+                            </div>
+                            <div className='cancel-content-container'>
+                                <div className='cancel-title'>Cancellation policy</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
