@@ -147,3 +147,8 @@
 /* #lang-currency-btn:active {
     transform: scale(0.96);
 } */
+
+.selected-content-container {
+    margin-top: 24px;
+    padding-bottom: 24px;
+}
