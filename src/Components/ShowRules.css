@@ -10,15 +10,66 @@
 
 .rules-modal-container{
     display: flex;
-    justify-content: center;
 }
 
 .rules-modal{
     background-color: white;
-    height:max-content;
+    border-radius: 2.5%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 780px;
-    height:816px;
-    border-radius: 2%;
-    
+    max-width: 100%;
+    height: 95%;
 }
 
+.rules-x-container{
+    height:78px;
+    display: flex;
+    align-items: left;
+}
+
+.rules-x{
+    background-color: white;
+    height: 35px;
+    width:35px;
+    border-radius: 50%;
+    border: none;
+    font-size: 17px;
+    color: rgb(34, 34, 34);
+    margin-left: 1.4em;
+    margin-top: 1.2em;
+    cursor: pointer;
+}
+
+.rules-x:hover {
+    background-color: #f7f7f7;
+}
+
+.rules-content-container{
+    overflow-x:hidden;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 2em;
+}
+
+.rules-title{
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 1em;
+}
+
+.rules-info{
+    margin-top: 1.5em;
+    font-size: 15.3px;
+    font-weight: 300;
+}
+
+.who-title{
+    margin-top: 3em;
+    font-size:17.5px;
+    font-weight: 500;
+}
