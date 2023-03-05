@@ -14,7 +14,7 @@
 
 .rules-modal{
     background-color: white;
-    border-radius: 2.2%;
+    border-radius: 2.5%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -48,7 +48,6 @@
 }
 
 .rules-content-container{
-    overflow:scroll;
     overflow-x:hidden;
     height: 85%;
     display: flex;
