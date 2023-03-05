@@ -1,5 +1,5 @@
 .Review-Container {
-  height: 1000px;
+  height: 100%;
 }
 
 .Total-rating-reviews {
@@ -12,8 +12,8 @@
 }
 
 .Catergories-rating-bar-container {
-  width: 1135px;
-  height: 107.98px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   padding-top: 30px;
@@ -23,46 +23,43 @@
 .First-category-div {
   display: flex;
   flex-direction: column;
-  width: 567px;
+  width: 50%;
 }
 /* cleanliness div */
-.rating-cleanliness-container {
+.rating-container {
   display: flex;
   flex-direction: row;
   padding-top: 10px;
-  width: 567px;
+  width: 500px;
 }
 .cleanliness {
   padding-right: 266px;
 }
 .bar-rating-label {
-  max-width: 150px;
-  width: 100%;
+  /* max-width: 150px; */
+  width: 290px;
   text-align: right;
+  padding-right: 20px;
 }
 
 /* comunitaction div */
-.rating-comunitaction-container {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-}
-.comunication {
-  padding-right: 266px;
-}
+
+
 
 /* checkin div */
-.rating-checkin-container {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
+
+.categories-label1 {
+  max-width: 295px;
+  width:35%;
+  text-align: left;
+  
 }
-.categories-label {
+
+.categories-label2 {
   max-width: 295px;
   width: 50%;
   text-align: left;
 }
-
 /*. the start of the second div in the ratings containers  */
 
 .Second-category-div {
@@ -70,38 +67,10 @@
   flex-direction: column;
   width: 50%;
 }
-/* Accuracy div */
-.rating-Accuracy-container {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-}
-.Accuracy {
-  padding-right: 266px;
-}
-/* Location div */
-.rating-Location-container {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-}
-.Location {
-  padding-right: 266px;
-}
-/* Value div */
-.rating-Value-container {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-}
-.Value {
-  padding-right: 266px;
-}
 
-/* Reviews div from here on out  */
+/* Reviews div from here on out //////////////////////////////////////////////////////////////////////////// */
 
 .REVIEWS-container {
-  height: 100;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -117,6 +86,7 @@
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
+
 }
 /* button */
 
@@ -138,14 +108,17 @@
 .img-name-date-container {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 .img-name-date-container li{
 color: #717171;
+
 }
+
 .actual-review {
   text-align: left;
   padding-top: 15px;
-  max-width: 500px;
+  width: 500px;
 }
 
 .name-date-container {
@@ -175,5 +148,31 @@ color: #717171;
   font-weight: 525;
   font-family: 'Manrope', sans-serif;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1128px) {
+  .REVIEWS-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .review-box {
+    width: 100%;
+  }
+  .inner-container {
+    width: 100%;
+  }
+  .individual-review {
+    width: 100%;
+    text-align: left;
+    }
+    .actual-review {
+      width: 100%;
+    }
+    .rating-container {
+      display: flex;
+      flex-direction: row;
+      padding-top: 10px;
+      width: 300px;
+    }
 
 }

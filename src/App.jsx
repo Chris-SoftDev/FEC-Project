@@ -9,6 +9,7 @@ import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
 import { RegionProvider } from './Context/RegionContext';
 
+import { ReviewProvider} from './Context/ReviewContext';
 function App() {
   return (
     <div className="app-container">
@@ -23,7 +24,9 @@ function App() {
             <Rentals />
           </div>
           <div className="reviews-container">
+          <ReviewProvider>
             <Reviews />
+          </ReviewProvider>
           </div>
           <div className="location-container">
             <Location />

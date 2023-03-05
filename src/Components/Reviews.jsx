@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { ReviewContext, ReviewProvider } from "../Context/ReviewContext";
 import "./Review.css";
+import ShowAllReviews from "./ShowAllReviews";
 
 function Reviews() {
+  const { openAllRev, showReview } = useContext(ReviewContext);
   return (
     <div className="Review-Container">
       <p className="Total-rating-reviews">
@@ -11,24 +15,24 @@ function Reviews() {
       </p>
       <div className="Catergories-rating-bar-container">
         <div className="First-category-div">
-          <div className="rating-cleanliness-container">
-            <div className="categories-label">Cleanliness</div>
+          <div className="rating-container">
+            <div className="categories-label1">Cleanliness</div>
             <div className="bar-rating-label">
               {" "}
               -----
               <span> 5.0</span>
             </div>
           </div>
-          <div className="rating-comunitaction-container">
-            <div className="categories-label">Comunication</div>
+          <div className="rating-container">
+            <div className="categories-label1">Comunication</div>
             <div className="bar-rating-label">
               {" "}
               -----
               <span> 5.0</span>
             </div>
           </div>
-          <div className="rating-checkin-container">
-            <div className="categories-label">Check-in</div>
+          <div className="rating-container">
+            <div className="categories-label1">Check-in</div>
             <div className="bar-rating-label">
               {" "}
               -----
@@ -37,24 +41,24 @@ function Reviews() {
           </div>
         </div>
         <div className="Second-category-div">
-          <div className="rating-Accuracy-container">
-            <div className="categories-label">Accuracy</div>
+          <div className="rating-container">
+            <div className="categories-label2">Accuracy</div>
             <div className="bar-rating-label">
               {" "}
               -----
               <span> 5.0</span>
             </div>
           </div>
-          <div className="rating-Location-container">
-            <div className="categories-label">Location</div>
+          <div className="rating-container">
+            <div className="categories-label2">Location</div>
             <div className="bar-rating-label">
               {" "}
               -----
               <span> 5.0</span>
             </div>
           </div>
-          <div className="rating-Value-container">
-            <div className="categories-label">Value</div>
+          <div className="rating-container">
+            <div className="categories-label2">Value</div>
             <div className="bar-rating-label">
               {" "}
               -----
@@ -79,10 +83,10 @@ function Reviews() {
                 </div>
               </div>
             </div>
-            <span className="actual-review">
-              We had a great time, the place felt like home! Clean with
-              everything you would need.
-            </span>
+              <span className="actual-review">
+                We had a great time, the place felt like home! Clean with
+                everything you would need.
+              </span>
           </div>
         </div>
         <div className="review-box">
@@ -191,10 +195,13 @@ function Reviews() {
         </div>
       </div>
       <div className="btn-container">
-        <button className="show-all">Show all 211 reviews</button>
+        <button className="show-all" onClick={openAllRev}>
+          Show all 211 reviews
+        </button>
       </div>
+      {showReview && <ShowAllReviews />}
     </div>
   );
 }
-
+// onClick={openAllRev}
 export default Reviews;
