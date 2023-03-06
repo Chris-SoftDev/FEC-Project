@@ -1,11 +1,11 @@
 .parent {
-    max-width: 1120px;
+    /* max-width: 1120px; */
     justify-content: left;
     background-color: #f7f7f7;
 }
 
 .main-column {
-    min-width: 100%;
+    min-width: 1120px;
     display: flex;
     padding: 38px 0;
     border-bottom: 1px solid rgba(221, 221, 221, .7);
@@ -108,7 +108,7 @@
 .econ-column {
     display: flex;
     flex-direction: row;
-    margin: 20px 40px 20px 210px;
+    margin: 20px 40px 20px 280px;
     font-weight: 600; 
     font-size: 12px;
 }

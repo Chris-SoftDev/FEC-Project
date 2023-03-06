@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const HostContext = createContext()
 
@@ -31,6 +31,13 @@ export const HostProvider = ({ children }) => {
     const closeCancellation = () => {
         setShowCancellation(false)
     }
+
+    // Disables vertical scroll-bar when Login/Language window is visible
+    useEffect(() => {
+        showHouseRules || showMoreSafety || showCancellation
+          ? (document.body.style.overflow = "hidden")
+          : (document.body.style.overflow = "auto");
+      }, [showHouseRules, showMoreSafety, showCancellation]);
 
     return (
         <HostContext.Provider 

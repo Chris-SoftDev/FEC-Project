@@ -139,7 +139,7 @@ color: #717171;
 .show-all {
   background-color: white;
   border-radius: 9px;
-  border-width: 1px;
+  border: 1px solid black;
   font-size: 15px;
   width: 199px;
   height: 47px;
