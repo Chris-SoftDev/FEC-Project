@@ -20,3 +20,16 @@
     border-radius: 5%;
     
 }
+.button-container {
+    height: 65px;
+    width: 65px;
+    display: flex;
+    align-items: left;
+}
+.close-modal {
+    width: 100%;
+    border-radius: 100%;
+    border: none;
+    background-color: white;
+    color: rgb(34, 34, 34);;
+}
