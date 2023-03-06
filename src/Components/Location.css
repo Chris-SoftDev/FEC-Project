@@ -111,3 +111,6 @@
 .show_more:hover {
     cursor: pointer;
 }
+.location_test {
+    background: black;
+}
