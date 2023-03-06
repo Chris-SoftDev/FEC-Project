@@ -59,7 +59,7 @@
     stroke: rgb(34, 34, 34);
 }
 
-#mobile-nav-login-btn {
+#mobile-nav-save-btn {
     background-color: #fff;
     padding: 7px 7px 4px 7px;
     border-radius: 50%;
@@ -68,11 +68,11 @@
     cursor: pointer;
 }
 
-#mobile-nav-login-btn:hover {
+#mobile-nav-save-btn:hover {
     background-color: rgba(235, 235, 235, 0.55);
 }
 
-#mobile-nav-login-btn svg{
+#mobile-nav-save-btn svg{
     width: 16px;
     height: 16px;
     fill: none;
