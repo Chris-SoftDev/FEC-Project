@@ -6,13 +6,14 @@
     height: 100%;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
 }
 
 .lang-menu-container {
     display: flex;
     flex-direction: column;
-    width: 1032px;
-    height: 847px;
+    max-width: 1032px;
+    max-height: 850px;
     border-radius: 12px;
     background-color: #fff;
     z-index: 3;
