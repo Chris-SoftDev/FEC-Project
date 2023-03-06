@@ -8,6 +8,8 @@ import Footer from './Components/Footer';
 import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
 import { ReviewProvider} from './Context/ReviewContext';
+import { RegionProvider } from './Context/RegionContext';
+
 function App() {
   return (
     <div className="app-container">
@@ -37,7 +39,9 @@ function App() {
         </div>
       </div>
       <footer className="footer-container">
-        <Footer />
+        <RegionProvider>
+          <Footer />
+        </RegionProvider>
       </footer>
     </div>
   );
