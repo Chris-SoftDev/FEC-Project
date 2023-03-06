@@ -54,6 +54,7 @@
     flex-direction: column;
     text-align: left;
     margin-left: 2em;
+    word-wrap: break-word;
 }
 
 .rules-title{
@@ -72,4 +73,282 @@
     margin-top: 3em;
     font-size:17.5px;
     font-weight: 500;
+}
+
+.max-guest{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3em;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.guest-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.guest-icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.guest-number{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-bottom: 1.8em;
+    margin-left: 1em;
+}
+
+.pets{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+}
+
+.pet-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.pet-icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.pet-policy{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-bottom: 1.8em;
+    margin-left: 1em;
+    margin-top:.2em;
+}
+
+.allowed-title{
+    margin-top: 1em;
+    font-size:17.5px;
+    font-weight: 500;
+}
+
+.clock-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.clock-icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.check-in-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2.5em;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.in-time{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-bottom: 1.8em;
+    margin-left: 1em;
+    margin-top:.2em;
+}
+
+.check-out-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.out-time{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-bottom: 1.8em;
+    margin-left: 1em;
+    margin-top:.2em;
+}
+
+.moon-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.moon-icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.quiet-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.quiet-title{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top:.2em;
+}
+
+.quiet-times{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    color: #717171;
+}
+
+.door-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.door-icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.self-check-in-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.self-check-in-info{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top:.2em;
+    margin-bottom: 2em;
+}
+
+.camera-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.camera-icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.photography-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.photography-info{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top:.2em;
+    margin-bottom: 2em;
+}
+
+.balloon-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.balloon-icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.parties-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.parties-info{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top:.2em;
+    margin-bottom: 2em;
+}
+
+.nosmoking-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.nosmoking-icon svg{
+    height: 24px;
+    width: 24px;
+}
+
+.smoking-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+}
+
+.smoking-info{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top:.2em;
+    margin-bottom: 2em;
+}
+
+.additional-rules-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-rules {
+    margin-top: 1em;
+    font-size:17.5px;
+    font-weight: 500;
+    margin-bottom: 2em;
+}
+
+.additional-rules-container p {
+    font-size:15.5px;
+    font-weight: 300;
+    line-height: 1.6em;
+    width:700px;
+}
+
+.language-container{
+    display: flex;
+    margin-top:2em;
+}
+
+.language-icon{
+    height: 16px;
+    width:16px;
+}
+
+.language-icon svg{
+    height: 16px;
+    width:16px;
+    fill:#717171
+}
+
+.language{
+    font-size: 13px;
+    font-weight: 300;
+    margin-left: .7em;
+    margin-bottom: 4em;
+    color:#717171
 }
