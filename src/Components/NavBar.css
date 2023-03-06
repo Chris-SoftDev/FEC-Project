@@ -1,19 +1,16 @@
 @media only screen and (max-width: 1130px) {
     .nav-bar-logo p {
-        visibility: hidden;
+        display: none;
     }
+
+    .nav-bar-search-container {
+        left: -165px; 
+        margin-left: 5px;
+    }   
 
     .nav-bar-content-container {
         padding: 0 40px !important;
     }
-
-    .nav-bar-search-container {
-        left: -275px; 
-    }
-}
-
-@media only screen and (max-width: 850px) {
-    /* TODO:Mobile Nav Bar Menu */
 }
 
 .nav-bar-content-container {

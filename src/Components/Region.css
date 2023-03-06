@@ -1,5 +1,84 @@
+.translation-container {
+    width: 100%;
+    margin-top: 24px;
+    padding-bottom: 24px;
+}
+
+.translation-outer-container {
+    width: 484px;
+    height: 105px;
+}
+
+.translation-inner-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    padding: 16px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 8px;
+}
+
+.translation-content {
+    display: flex;
+    flex-direction: column;
+    width: 451px;
+    width: 379px;
+}
+
+.translation-header {
+    display: flex;
+    flex-direction: row;
+    color: rgb(34, 34, 34);
+    font-family: 'Manrope', sans-serif;
+}
+
+.translation-icon {
+    margin-left: 8px;
+}
+
+.translation-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.translation-footer {
+    margin-top: 8px;
+    color: rgb(114, 114, 114);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+}
+
+.translation-btn-container {
+    margin: auto;
+    padding-left: 24px;
+}
+
+#translation-btn {
+    width: 48px;
+    height: 32px;
+    padding: 1px 4px;
+    background-color: rgb(190, 190, 190);
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+#translation-btn:hover {
+    background-color: #717171;
+    border: 1px solid #717171;
+}
+
+.translation-inner-btn {
+    position: relative;
+    left: -3px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #fff;
+}
+
 .language-region-header {
-    margin-left: 10px;
     margin-bottom: 24px;
     font-family: 'Manrope', sans-serif;
     font-size: 21px;
@@ -16,6 +95,7 @@
 }
 
 .language-region-list li {
+    min-width: 180px;
     width: 20%;
     padding: 8px;
     vertical-align: top;
