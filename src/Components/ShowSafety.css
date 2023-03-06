@@ -66,23 +66,212 @@
 
 .safety-info{
     margin-top: 1.5em;
-    font-size: 15.7px;
+    font-size: 15.5px;
     font-weight: 300;
 }
 
 .considerations-title{
+    margin-top: 2.8em;
+    font-size:17.5px;
+    font-weight: 500;
+}
+
+.pool-container{
+    margin-top: 2.5em;
+    display: flex;
+    width:97%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.pool-icon{
+    height:24px;
+    width: 24px;
+}
+
+.pool{
+    font-size: 15.5px;
+    font-weight: 300;
+    margin-left:1em;
+    margin-bottom: 2em;
+}
+
+.dangerous-animals-container{
+    margin-top: 1.5em;
+    display: flex;
+}
+
+.hazard-icon{
+    height:32px;
+    width: 32px;
+}
+
+.dangerous-animals{
+    display: flex;
+    flex-direction: column;
+}
+
+.dangerous-animals-title{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+}
+
+.dangerous-animals-info{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    width:92%;
+    color: #717171;
+}
+
+.devices-container{
+    margin-top:1em;
+    max-width:97%;
+}
+
+.devices-title{
+    font-size:17.5px;
+    font-weight: 500;
+}
+
+.security-container{
+    display: flex;
+    margin-top: 2.5em;
+    width:100%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.security-camera-icon{
+    height:36px;
+    width: 36px;
+}
+
+.security-title{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+}
+
+.security-info{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    width:100%;
+    color: #717171;
+}
+
+.carbon-monoxide-container{
+    display: flex;
+    margin-top: 1.8em;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.carbon-monoxide-icon{
+    height:24px;
+    width: 24px;
+}
+
+.carbon-monoxide-info{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 1.8em;
+    margin-top:.1em;
+}
+
+.smoke-alarm-container{
+    display: flex;
+    margin-top: 1.8em;
+}
+
+.smoke-alarm-info{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top: .2em;
+}
+
+.smoke-alarm-icon{
+    height:24px;
+    width: 24px;
+}
+
+.property-info-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.property-info-title{
     margin-top: 3em;
     font-size:17.5px;
     font-weight: 500;
 }
 
-.pool{
-    margin-top: 2em;
-    font-size: 15.7px;
-    font-weight: 300;
+.stairs-container{
+    margin-top: 2.5em;
+    display: flex;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
 }
 
-.devices-container{
-    margin-top:15em;
-    max-width:700px;
+.stairs{
+    display: flex;
+    flex-direction: column;
+}
+
+.stairs-icon{
+    height:26px;
+    width: 26px;
+}
+
+.stairs-title{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top: .2em;
+}
+
+.stairs-info{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    width:92%;
+    color: #717171;
+}
+
+.amenity-container{
+    margin-top: 1.5em;
+    display: flex;
+}
+
+.amenity{
+    display: flex;
+    flex-direction: column;
+}
+
+.amenity-icon{
+    height:28px;
+    width: 28px;
+}
+
+.amenity-title{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top: .2em;
+}
+
+.amenity-info{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 4em;
+    margin-top:.5em;
+    width:92%;
+    color: #717171;
 }
