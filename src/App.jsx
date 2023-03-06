@@ -9,6 +9,7 @@ import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
 import { ReviewProvider} from './Context/ReviewContext';
 import { RegionProvider } from './Context/RegionContext';
+import MobileNavbar from './Components/MobileNavBar';
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
       <div className="nav-container">
         <NavProvider>
           <NavBar />
+        </NavProvider>
+      </div>
+      <div className="nav-mobile-container">
+        <NavProvider>
+          <MobileNavbar />
         </NavProvider>
       </div>
       <div className="main-content-container">
