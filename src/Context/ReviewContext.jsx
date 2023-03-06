@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { useEffect,createContext, useState } from "react";
 
 export const ReviewContext = createContext()
 
@@ -13,6 +13,12 @@ export const ReviewProvider = ({ children }) => {
     const closeAllRev = () => {
       setshowReview(false)
     }
+    useEffect(() => {
+      showReview 
+        ? (document.body.style.overflow = "hidden")
+        : (document.body.style.overflow = "auto");
+    }, [showReview]);
+  
 
     return (
         <ReviewContext.Provider 
