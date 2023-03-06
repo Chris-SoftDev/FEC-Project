@@ -95,6 +95,7 @@
 }
 
 .language-region-list li {
+    min-width: 180px;
     width: 20%;
     padding: 8px;
     vertical-align: top;
