@@ -27,7 +27,9 @@ function App() {
       <div className="main-content-container">
         <div className='rentals-content-container'>
           <div className="rentals-container">
-            <Rentals />
+            <NavProvider>
+              <Rentals />
+            </NavProvider>
           </div>
           <div className="reviews-container">
           <ReviewProvider>
