@@ -49,14 +49,107 @@
 
 .cancel-content-container{
     overflow-x:hidden;
-    height: 85%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     text-align: left;
     margin-left: 2em;
+    word-wrap: break-word;
 }
 
 .cancel-title{
     font-size: 25px;
     font-weight: 500;
+}
+
+.cancel-info{
+    width:90%;
+    font-size:15.5px;
+    line-height: 1.3em;
+}
+
+.cancel-info span{
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgb(34, 34, 34);
+}
+
+.cancel-info span:hover{
+    cursor: pointer;
+}
+
+.cancel-by{
+    margin-top: 2.5em;
+    font-size:17.5px;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.first-date-container{
+    display: flex;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.first-time{
+    font-size: 10px;
+    font-weight: 320;
+    margin-bottom: 3em;
+}
+
+.first-refund{
+    width:90%;
+    font-size:15px;
+    font-weight: 300;
+    margin-left: .9em;
+}
+
+.second-date-container{
+    display: flex;
+    width:95%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.second-time{
+    font-size: 10px;
+    font-weight: 320;
+}
+
+.second-refund{
+    width:90%;
+    font-size:15px;
+    font-weight: 300;
+    margin-left: .9em;
+    margin-top: 1.6em;
+}
+
+.check-in{
+    font-size: 10px;
+    font-weight: 320;
+    margin-top:.5em;
+    margin-bottom: 3em;
+}
+
+.date-container{
+    width:25%;
+}
+
+.date{
+    font-size: 15.7px;
+    font-weight: 500;
+    margin-bottom: .5em;
+    margin-top: 1.5em;
+}
+
+.learn-more{
+    margin-top: 2em;
+    margin-bottom:3em;
+    font-size:14px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgb(34, 34, 34);
+}
+
+.learn-more:hover{
+    cursor: pointer;
 }
