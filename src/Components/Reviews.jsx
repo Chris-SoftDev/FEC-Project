@@ -2,198 +2,17 @@ import { useContext } from "react";
 import { ReviewContext, ReviewProvider } from "../Context/ReviewContext";
 import "./Review.css";
 import ShowAllReviews from "./ShowAllReviews";
+import ReviewCard from "./ReviewCard";
+import ReviewCategory from "./ReviewCategory";
 
 function Reviews() {
   const { openAllRev, showReview } = useContext(ReviewContext);
+  const { getReviews } = useContext(ReviewContext);
+
   return (
     <div className="Review-Container">
-      <p className="Total-rating-reviews">
-        <div className="">
-          <i className="fa-solid fa-star"></i>
-        </div>
-        4.93 210 reviews
-      </p>
-      <div className="Catergories-rating-bar-container">
-        <div className="First-category-div">
-          <div className="rating-container">
-            <div className="categories-label1">Cleanliness</div>
-            <div className="bar-rating-label">
-              {" "}
-              -----
-              <span> 5.0</span>
-            </div>
-          </div>
-          <div className="rating-container">
-            <div className="categories-label1">Comunication</div>
-            <div className="bar-rating-label">
-              {" "}
-              -----
-              <span> 5.0</span>
-            </div>
-          </div>
-          <div className="rating-container">
-            <div className="categories-label1">Check-in</div>
-            <div className="bar-rating-label">
-              {" "}
-              -----
-              <span> 5.0</span>
-            </div>
-          </div>
-        </div>
-        <div className="Second-category-div">
-          <div className="rating-container">
-            <div className="categories-label2">Accuracy</div>
-            <div className="bar-rating-label">
-              {" "}
-              -----
-              <span> 5.0</span>
-            </div>
-          </div>
-          <div className="rating-container">
-            <div className="categories-label2">Location</div>
-            <div className="bar-rating-label">
-              {" "}
-              -----
-              <span> 5.0</span>
-            </div>
-          </div>
-          <div className="rating-container">
-            <div className="categories-label2">Value</div>
-            <div className="bar-rating-label">
-              {" "}
-              -----
-              <span> 5.0</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="REVIEWS-container">
-        <div className="review-box">
-          <div className="inner-container">
-            <div className="img-name-date-container">
-              <div className="img-container">
-                <img src="" alt="" />
-              </div>
-              <div className="name-date-container">
-                <div className="name-container">
-                  <h3>Moises</h3>
-                </div>
-                <div className="date-container">
-                  <li>Feburay 2023</li>
-                </div>
-              </div>
-            </div>
-              <span className="actual-review">
-                We had a great time, the place felt like home! Clean with
-                everything you would need.
-              </span>
-          </div>
-        </div>
-        <div className="review-box">
-          <div className="inner-container">
-            <div className="img-name-date-container">
-              <div className="img-container">
-                <img src="" alt="" />
-              </div>
-              <div className="name-date-container">
-                <div className="name-container">
-                  <h3>Christopher</h3>
-                </div>
-                <div className="date-container">
-                  <li>Feburay 2023</li>
-                </div>
-              </div>
-            </div>
-            <span className="actual-review">
-              Great location, easy to understand directions, and not far from
-              Idaho City which was a bonus!
-            </span>
-          </div>
-        </div>
-        <div className="review-box">
-          <div className="inner-container">
-            <div className="img-name-date-container">
-              <div className="img-container">
-                <img src="" alt="" />
-              </div>
-              <div className="name-date-container">
-                <div className="name-container">
-                  <h3>Caleb</h3>
-                </div>
-                <div className="date-container">
-                  <li>Feburay 2023</li>
-                </div>
-              </div>
-            </div>
-            <span className="actual-review">
-              We had a great time, the place felt like home! Clean with
-              everything you would need.
-            </span>
-          </div>
-        </div>
-        <div className="review-box">
-          <div className="inner-container">
-            <div className="img-name-date-container">
-              <div className="img-container">
-                <img src="" alt="" />
-              </div>
-              <div className="name-date-container">
-                <div className="name-container">
-                  <h3>Sounisa</h3>
-                </div>
-                <div className="date-container">
-                  <li>Feburay 2023</li>
-                </div>
-              </div>
-            </div>
-            <span className="actual-review">
-              We had a great time, the place felt like home! Clean with
-              everything you would need.
-            </span>
-          </div>
-        </div>
-        <div className="review-box">
-          <div className="inner-container">
-            <div className="img-name-date-container">
-              <div className="img-container">
-                <img src="" alt="" />
-              </div>
-              <div className="name-date-container">
-                <div className="name-container">
-                  <h3>Ben</h3>
-                </div>
-                <div className="date-container">
-                  <li>Feburay 2023</li>
-                </div>
-              </div>
-            </div>
-            <span className="actual-review">
-              Very nice place loved the views it offred and would 100% recomend.
-            </span>
-          </div>
-        </div>
-        <div className="review-box">
-          <div className="inner-container">
-            <div className="img-name-date-container">
-              <div className="img-container">
-                <img src="" alt="" />
-              </div>
-              <div className="name-date-container">
-                <div className="name-container">
-                  <h3>Garret</h3>
-                </div>
-                <div className="date-container">
-                  <li>December 1942</li>
-                </div>
-              </div>
-            </div>
-            <span className="actual-review">
-              We had a great time, the place felt like home! Clean with
-              everything you would need. And i drive a Tesla
-            </span>
-          </div>
-        </div>
-      </div>
+      <ReviewCategory />
+      <ReviewCard />
       <div className="btn-container">
         <button className="show-all" onClick={openAllRev}>
           Show all 211 reviews
@@ -203,5 +22,5 @@ function Reviews() {
     </div>
   );
 }
-// onClick={openAllRev}
+
 export default Reviews;
