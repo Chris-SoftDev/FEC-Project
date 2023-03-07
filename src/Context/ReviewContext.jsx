@@ -5,7 +5,20 @@ export const ReviewContext = createContext()
 export const ReviewProvider = ({ children }) => {
 
     const [showReview, setshowReview] = useState(false)
+    const [getReviews, setgetReviews] = useState([])
+    const [rating, setRating] = useState([])
 
+
+    useEffect(() => {
+      const fetchReviews = async () => {
+          const response = await fetch('http://localhost:3000/reviews');
+          const data = await response.json();
+          setgetReviews(data);
+          setRating(data.rating)
+      };
+
+      fetchReviews();
+  }, []) 
     const openAllRev = () => {
       setshowReview(true)
     }
@@ -25,7 +38,9 @@ export const ReviewProvider = ({ children }) => {
             value ={{
               showReview,
               openAllRev,
-              closeAllRev
+              closeAllRev,
+              getReviews,
+              rating
             }}
         >
             {children}
