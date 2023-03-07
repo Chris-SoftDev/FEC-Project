@@ -17,6 +17,9 @@ import LocationShowMore from './Components/LocationShowMore';
 function App() {
   return (
     <Router>
+      <Routes>
+        <Route exact path='/' element={
+          <>
     <div className="app-container">
       <div className="nav-container">
         <NavProvider>
@@ -39,9 +42,9 @@ function App() {
           </ReviewProvider>
           </div>
           <div className="location-container">
-            
+            <LocationProvider>
               <Location />
-            
+            </LocationProvider>
           </div>
           <div className="host-container">
             <HostProvider>
@@ -56,9 +59,10 @@ function App() {
         </RegionProvider>
       </footer>
     </div>
-      <Routes>
+    </>
+      }/>
         
-          <Route path='location' component={<LocationShowMore />} />
+          <Route path='/location' element={<LocationShowMore />} />
         
       </Routes>
     </Router> 
