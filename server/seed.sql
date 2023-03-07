@@ -1,3 +1,14 @@
+
+INSERT INTO reviews (user_name, comment, date, rating) VALUES
+  ('Moises Martinez', 'Great location, would definitely stay again!', DATE_TRUNC('month', '2022-12-31'::date), 5),
+  ('christopher Ronca', 'Not very impressed, wouldn''t recommend.', DATE_TRUNC('month', '2022-12-30'::date), 2),
+  ('Sounisa Marte', 'Amazing location, can''t believe how beautiful it was!', DATE_TRUNC('month', '2022-12-29'::date), 4),
+  ('Caleb Ross', 'Awesome experience, will love to stay again.', DATE_TRUNC('month', '2022-12-28'::date), 1),
+  ('Ben Richardson', 'Amazing experience, I will definitely stay again.', DATE_TRUNC('month', '2022-12-28'::date), 1),
+  ('Garret Ross', 'Terrible experience, did not have a Tesla charger. Was not able to get any cell service while I stayed there.', DATE_TRUNC('month', '1943-12-28'::date), 1);
+
+
+
 INSERT INTO languages (language, country) VALUES 
 ('English', 'United States'),
 ('Azərbaycan dili', 'Azərbaycan'),
