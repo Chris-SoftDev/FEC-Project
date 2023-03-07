@@ -12,7 +12,7 @@ const linkStyle ={
     color: 'black',
     
 }
-const { openLocation, showLocation } = useContext(LocationContext);
+
 
 
 function Location() {
