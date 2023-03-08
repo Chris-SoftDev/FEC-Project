@@ -12,8 +12,13 @@ export default function ShowCancel() {
                 <div className="modal-overlay">
                     <div className='cancel-modal-container'>
                         <div className="cancel-modal">
-                            <div className='cancel-x-container'>
-                                <button className="cancel-x" onClick={closeCancellation}>X</button>
+                            <div className='cancel-close-btn'onClick={closeCancellation}>
+                                <button>
+                                    <svg viewBox='0 0 32 32'>  
+                                        <path d="m6 6 20 20"></path>
+                                        <path d="m26 6-20 20"></path>
+                                    </svg>
+                                </button>
                             </div>
                             <div className='cancel-content-container'>
                                 <div className='cancel-title'>Cancellation policy</div>
