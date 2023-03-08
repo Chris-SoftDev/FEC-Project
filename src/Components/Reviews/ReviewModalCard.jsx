@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ReviewContext } from "../Context/ReviewContext";
+import { ReviewContext } from "../../Context/ReviewContext";
 import "./ReviewModalCard.css"     
 export default function ReviewCard() {
   const { getReviews } = useContext(ReviewContext);

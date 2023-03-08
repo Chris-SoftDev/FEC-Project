@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { HostContext, HostProvider } from '../Context/HostContext'
+import { HostContext, HostProvider } from '../../Context/HostContext'
 import './Host.css'
 import ShowCancel from './ShowCancel';
 import ShowRules from './ShowRules'
