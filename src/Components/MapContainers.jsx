@@ -41,9 +41,19 @@ const MapContainer = () => {
             
           
         >
-             <Marker
+             {/* <Marker
             position={{ lat: 43.67851, lng: -116.01587 }}
-            icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"}
+            icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"} */}
+            <Marker key="marker_1"
+
+                    position={{
+
+                        lat: 43.67851,
+
+                        lng: -116.01587
+
+                    }}
+                    // icon={{url: ("http://maps.google.com/mapfiles/ms/icons/green-dot.png")}}
           />
         </GoogleMap>
      </LoadScript>

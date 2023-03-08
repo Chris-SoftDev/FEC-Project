@@ -1,10 +1,14 @@
 import './Location.css'
-import React, { useContext } from 'react'
+import React from 'react'
 import Map from './Map';
 import LocationDesc from './LocationDesc';
 import MapContainer from './MapContainers'
 import LocationShowMore from './LocationShowMore';
 import {Link, Route, BrowserRouter as Router, Routes} from 'react-router-dom'
+import { useContext, useState } from 'react';
+//import {LocationProvider, LocationContext} from '../Context/LocationContext';
+// import  from '../Context/LocationContext';
+
 
 const linkStyle ={
     margin: "0rem",
@@ -17,6 +21,8 @@ const linkStyle ={
 
 function Location() {
     
+   
+
     return ( 
         
         <div className='location_default'>
@@ -38,9 +44,9 @@ function Location() {
                 <LocationDesc />
                 
                 
-                <Link to='LocationShowMore' style={linkStyle}>Show More</Link> 
-                {/* {showLocation && <LocationShowMore />} */}
-                
+                <Link to='/location' style={linkStyle}>Show More</Link> 
+               
+                             
                 
 
 

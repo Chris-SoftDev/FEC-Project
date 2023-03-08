@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useRef } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const LocationContext = createContext();
 
@@ -23,7 +23,8 @@ export const LocationProvider = ({ children }) => {
         <LocationContext.Provider 
             value ={{
               showLocation,
-              openLocation
+              openLocation,
+              closeLocation
             }}
         >
             {children}
@@ -32,3 +33,5 @@ export const LocationProvider = ({ children }) => {
     )
 
 }
+
+export default LocationContext
