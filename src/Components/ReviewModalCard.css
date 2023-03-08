@@ -4,16 +4,17 @@
   flex-direction: column;
   padding-top: 4rem;
   word-wrap: break-word;
-  overflow-x:hidden ;
+  overflow-x: hidden;
   height: 100%;
 }
-
+.Modal-fill {
+  width: 98px;
+}
 .Modal-review-box {
   width: 100%;
   height: 215px;
- 
 }
-.Modal-img-name-date-container{
+.Modal-img-name-date-container {
   display: flex;
 }
 
@@ -33,7 +34,7 @@
 .Modal-img-container img {
   height: 100%;
   width: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .img-name-date-container {
@@ -41,23 +42,21 @@
   flex-direction: row;
   width: 100%;
 }
-.Modal-img-name-date-container li{
-color: #717171;
- width: 240px;
+.Modal-img-name-date-container li {
+  color: #717171;
+  width: 240px;
 }
 
 .Modal-actual-review {
   text-align: left;
-  padding-top: 15px;
+  padding-top: 13px;
   width: 500px;
+  color: #717171;
 }
-
 
 .Modal-name-date-container {
   text-align: left;
   margin-left: 10px;
-  
-
 }
 
 .Modal-date-container {
@@ -65,13 +64,24 @@ color: #717171;
   width: 300px;
 }
 
-  .Modal-user {
+.Modal-user {
   font-size: 16px;
   font-weight: 480;
- }
+}
 
+.Modal-input-container {
+  padding-bottom: 15px;
+}
+.input {
+  width: 85%;
+  text-align: left;
+  height: 40px;
+  background-color: #f7f7f7;
+  border-radius: 15px;
+  color: #717171;
+  padding-left: 20px;
+}
 
- 
 @media only screen and (max-width: 1128px) {
   .Modal-REVIEWS-container {
     display: flex;

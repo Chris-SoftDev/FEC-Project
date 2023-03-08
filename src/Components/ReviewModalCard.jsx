@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { ReviewContext } from "../Context/ReviewContext";
-import "./ReviewModalCard.css"     
+import "./ReviewModalCard.css";
 export default function ReviewCard() {
   const { getReviews } = useContext(ReviewContext);
   // const limitedReviews = getReviews.slice(0, 6); // Only display the first 6 reviews
-// /////////////this is the review card for the modal 
+  // /////////////this is the review card for the modal
   return (
     <div className="Modal-REVIEWS-container">
       {getReviews.map((review) => (
