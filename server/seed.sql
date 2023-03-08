@@ -1,12 +1,39 @@
-
-INSERT INTO reviews (user_name, comment, date, rating) VALUES
-  ('Moises Martinez', 'Great location, would definitely stay again!', DATE_TRUNC('month', '2022-12-31'::date), 5),
-  ('christopher Ronca', 'Not very impressed, wouldn''t recommend.', DATE_TRUNC('month', '2022-12-30'::date), 2),
-  ('Sounisa Marte', 'Amazing location, can''t believe how beautiful it was!', DATE_TRUNC('month', '2022-12-29'::date), 4),
-  ('Caleb Ross', 'Awesome experience, will love to stay again.', DATE_TRUNC('month', '2022-12-28'::date), 1),
-  ('Ben Richardson', 'Amazing experience, I will definitely stay again.', DATE_TRUNC('month', '2022-12-28'::date), 1),
-  ('Garret Ross', 'Terrible experience, did not have a Tesla charger. Was not able to get any cell service while I stayed there.', DATE_TRUNC('month', '1943-12-28'::date), 1);
-
+INSERT INTO reviews (user_name, comment, img_url, review_date)
+VALUES 
+  ('Kith', 'We had a great time, the place felt like home! Clean with everything you would need.', 'https://a0.muscache.com/im/pictures/user/71b67618-0162-4dc0-a885-d534d4070c51.jpg?im_w=240', '2021-01-10'),
+  ('Sarah', 'Great location, easy to understand directions, and not far from Idaho City which was a bonus!', 'https://a0.muscache.com/im/pictures/user/f0ebbcf4-e840-4751-a189-b4706b3f2a59.jpg?im_w=240', '2022-02-15'),
+  ('Caleb', 'Thoroughly enjoyed our weekend stay! Everything was as described and we had everything we needed to relax and clock out for a few days. The views were serene; it was wonderful to sit on the porch and watch the clouds and weather roll over the mountains.', 'https://a0.muscache.com/im/pictures/user/35d08415-fa3a-4738-b0b3-eb94d0ef540a.jpg?im_w=240', '2021-06-20'),
+  ('Christine', 'The host was very friendly and helpful.', 'https://a0.muscache.com/im/pictures/user/2108581a-c9f0-4b13-98f4-4fe2b79dae87.jpg?im_w=240', '2022-01-05'),
+  ('Alex', 'Very nice place', 'https://a0.muscache.com/im/pictures/user/5fb9152c-cece-4aea-83e7-8dd7485e06d9.jpg?im_w=240', '2021-08-08'),
+  ('Garret', 'The room was a bit small, they did not have a tesla charger, did not have a closet big enough for my hawaiian shirts', 'https://avatars.githubusercontent.com/u/13923018?v=4', '2022-03-01'),
+  ('Belen', 'Best place to get away from the city. Beautiful views all around the place. Saw bunch of wild animal. Host was friendly and informative. Would highly recommend everything was perfect.', 'https://a0.muscache.com/im/pictures/user/b9a30aff-80c5-47a1-97e7-f061d15ca803.jpg?im_w=240', '2011-02-10'),
+  ('Megan', 'We look forward to staying every year - clean, cozy and relaxing. Our pup loves it too. Thanks for having us!', 'https://a0.muscache.com/im/pictures/user/6823f0eb-a5f6-47fd-9ddc-57777b7aff94.jpg?im_w=240', '2021-04-6'),
+  ('Chester', 'Beautiful place with awesome views!', 'https://a0.muscache.com/im/pictures/user/e90b283f-d7eb-46d4-913c-33c6b7dcead1.jpg?im_w=240', '2021-12-20'),
+  ('Jeffrey', 'Fantastic place to get away , relax and re-charge the batteries- We will definitely try and rent this amazing place again, we could here elk calling at night which was a once in a life time thing in my opinion! thanks again Tag & Sherilyn- P.S neighbors are friendly and knowledgeable about where to hike and site see!','https://a0.muscache.com/im/pictures/user/e458fafe-8db6-4ad6-8cba-b999950cedd8.jpg?im_w=240', '2020-01-14'),
+  ('James', 'Beautiful location with gorgeous views all around. The house was very well kept and we had a great weekend getaway. Will definitely be booking another getaway in the future here.', 'https://a0.muscache.com/im/pictures/user/7fc561f5-71da-4d66-8a32-4f576cb537f4.jpg?im_w=240', '2021-06-11');
+  
+INSERT INTO ratings (cleanliness, accuracy, communication, location, check_in, value) VALUES 
+(4, 5, 5, 5, 5, 5),
+(4, 4, 5, 5, 5, 5),
+(5, 4, 4, 5, 5, 5),
+(5, 5, 4, 4, 5, 5),
+(5, 5, 5, 4, 4, 4),
+(5, 5, 5, 5, 4, 4),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 4),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 4),
+(5, 5, 5, 5, 5, 4),
+(5, 5, 5, 5, 5, 4);
 
 
 INSERT INTO languages (language, country) VALUES 
