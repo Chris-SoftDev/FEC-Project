@@ -4,7 +4,7 @@ import "./ShowSafety.css"
 
 export default function ShowSafety() {
 
-    const { showMoreSafety, closeSafety } = useContext(HostContext)
+    const { showMoreSafety, closeSafety, safetyData } = useContext(HostContext)
 
 
     return (
@@ -31,7 +31,7 @@ export default function ShowSafety() {
                                                 <path d="M24 26c.988 0 1.945.351 2.671 1.009.306.276.71.445 1.142.483L28 27.5v2l-.228-.006a3.96 3.96 0 0 1-2.443-1.003A1.978 1.978 0 0 0 24 28c-.502 0-.978.175-1.328.491a3.977 3.977 0 0 1-2.67 1.009 3.977 3.977 0 0 1-2.672-1.009A1.978 1.978 0 0 0 16 28c-.503 0-.98.175-1.329.491a3.978 3.978 0 0 1-2.67 1.009 3.978 3.978 0 0 1-2.672-1.008A1.978 1.978 0 0 0 8 28c-.503 0-.98.175-1.33.491a3.96 3.96 0 0 1-2.442 1.003L4 29.5v-2l.187-.008a1.953 1.953 0 0 0 1.142-.483A3.975 3.975 0 0 1 8 26c.988 0 1.945.352 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.492A3.974 3.974 0 0 1 16 26c.988 0 1.945.351 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.491A3.975 3.975 0 0 1 23.999 26zm0-5c.988 0 1.945.351 2.671 1.009.306.276.71.445 1.142.483L28 22.5v2l-.228-.006a3.96 3.96 0 0 1-2.443-1.003A1.978 1.978 0 0 0 24 23c-.502 0-.978.175-1.328.491a3.977 3.977 0 0 1-2.67 1.009 3.977 3.977 0 0 1-2.672-1.009A1.978 1.978 0 0 0 16 23c-.503 0-.98.175-1.329.491a3.978 3.978 0 0 1-2.67 1.009 3.978 3.978 0 0 1-2.672-1.008A1.978 1.978 0 0 0 8 23c-.503 0-.98.175-1.33.491a3.96 3.96 0 0 1-2.442 1.003L4 24.5v-2l.187-.008a1.953 1.953 0 0 0 1.142-.483A3.975 3.975 0 0 1 8 21c.988 0 1.945.352 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.492A3.974 3.974 0 0 1 16 21c.988 0 1.945.351 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.491A3.975 3.975 0 0 1 23.999 21zM20 3a4 4 0 0 1 3.995 3.8L24 7v2h4v2h-4v5c.912 0 1.798.3 2.5.862l.171.147c.306.276.71.445 1.142.483L28 17.5v2l-.228-.006a3.96 3.96 0 0 1-2.443-1.003A1.978 1.978 0 0 0 24 18c-.502 0-.978.175-1.328.491a3.977 3.977 0 0 1-2.67 1.009 3.977 3.977 0 0 1-2.672-1.009A1.978 1.978 0 0 0 16 18c-.503 0-.98.175-1.329.491a3.978 3.978 0 0 1-2.67 1.009 3.978 3.978 0 0 1-2.672-1.008A1.978 1.978 0 0 0 8 18c-.503 0-.98.175-1.33.491a3.96 3.96 0 0 1-2.442 1.003L4 19.5v-2l.187-.008a1.953 1.953 0 0 0 1.142-.483A3.975 3.975 0 0 1 8 16c.988 0 1.945.352 2.671 1.009.35.316.826.49 1.33.491.502 0 .979-.175 1.328-.492a3.956 3.956 0 0 1 2.444-1.002L16 16v-5H4V9h12V7a2 2 0 0 0-3.995-.15L12 7h-2a4 4 0 0 1 7-2.645A3.985 3.985 0 0 1 20 3zm-2 13.523c.16.091.313.194.459.307l.212.179c.35.316.826.49 1.33.491.439 0 .86-.134 1.191-.38l.137-.111c.206-.187.431-.35.67-.486V11h-4zM20 5a2 2 0 0 0-1.995 1.85L18 7v2h4V7a2 2 0 0 0-2-2z"></path>
                                             </svg>
                                         </div>
-                                        <div className='pool'>Pool/hot tub without a gate or lock</div>
+                                        <div className='pool'>{safetyData.pool}</div>
                                     </div>
                                     <div className='dangerous-animals-container'>
                                         <div className='hazard-icon'>
@@ -40,8 +40,8 @@ export default function ShowSafety() {
                                             </svg>
                                         </div>
                                         <div className='dangerous-animals'>
-                                            <div className='dangerous-animals-title'>May encounter potentially dangerous animal</div>
-                                            <div className='dangerous-animals-info'>“This is a mountaintop getaway, so there is a possibility of encountering mountain wildlife including (but not limited to) bear, mountain lion, elk, deer, etc.”</div>
+                                            <div className='dangerous-animals-title'>{safetyData.animals}</div>
+                                            <div className='dangerous-animals-info'>{safetyData.animal_warning}</div>
                                         </div>
                                     </div>
                                     <div className='devices-container'>
@@ -53,26 +53,26 @@ export default function ShowSafety() {
                                                 </svg>
                                             </div>
                                             <div className='security'>
-                                                <div className='security-title'>Security camera/recording device</div>
-                                                <div className='security-info'>“We have a webcam pointed at the parking area to help us know when guests have arrived/departed. The camera DOES NOT point at the house or deck at all.”</div>
+                                                <div className='security-title'>{safetyData.camera}</div>
+                                                <div className='security-info'>{safetyData.camera_info}</div>
                                             </div>
                                         </div>
-                                        <div className='carbon-monoxide-container'>
+                                        {safetyData.carbon ? (<div className='carbon-monoxide-container'>
                                             <div className='carbon-monoxide-icon'>
                                                 <svg viewBox='0 0 32 32'>
                                                     <path d="M25 2a5 5 0 0 1 4.995 4.783L30 7v18a5 5 0 0 1-4.783 4.995L25 30H7a5 5 0 0 1-4.995-4.783L2 25V7a5 5 0 0 1 4.783-4.995L7 2zm0 2H7a3 3 0 0 0-2.995 2.824L4 7v18a3 3 0 0 0 2.824 2.995L7 28h18a3 3 0 0 0 2.995-2.824L28 25V7a3 3 0 0 0-2.824-2.995zM11.1 17a5.006 5.006 0 0 0 3.9 3.9v2.03A7.005 7.005 0 0 1 9.071 17zm9.8 0l2.029.001a7.005 7.005 0 0 1-5.928 5.928v-2.03A5.006 5.006 0 0 0 20.9 17zM16 13a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm1.001-5.929A7.005 7.005 0 0 1 22.929 15H20.9A5.006 5.006 0 0 0 17 11.1zm-2.001 0v2.03A5.006 5.006 0 0 0 11.1 15H9.07A7.005 7.005 0 0 1 15 9.07zM23 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
                                                 </svg>
                                             </div>
                                             <div className='carbon-monoxide-info'>Carbon monoxide alarm installed</div>  
-                                        </div>
-                                        <div className='smoke-alarm-container'>
+                                        </div>) : null}
+                                        {safetyData.smoke_alarm ? (<div className='smoke-alarm-container'>
                                             <div className='smoke-alarm-icon'>
                                                 <svg viewBox='0 0 32 32'>
                                                     <path d="M16 1c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C1 7.716 7.716 1 16 1zm0 2C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13S23.18 3 16 3zm-4.9 14a5.006 5.006 0 0 0 3.9 3.9v2.03A7.005 7.005 0 0 1 9.071 17zm9.8 0l2.029.001a7.005 7.005 0 0 1-5.928 5.928v-2.03A5.006 5.006 0 0 0 20.9 17zM16 13a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm1.001-5.929A7.005 7.005 0 0 1 22.929 15H20.9A5.006 5.006 0 0 0 17 11.1zm-2.001 0v2.03A5.006 5.006 0 0 0 11.1 15H9.07A7.005 7.005 0 0 1 15 9.07zM23 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
                                                 </svg>
                                             </div>
                                             <div className='smoke-alarm-info'>Smoke alarm installed</div>  
-                                        </div>
+                                        </div>) : null}
                                     </div>
                                     <div className='property-info-container'>
                                         <div className='property-info-title'>Property info</div>
@@ -83,8 +83,8 @@ export default function ShowSafety() {
                                                 </svg>
                                             </div>
                                             <div className='stairs'>
-                                                <div className='stairs-title'>Must climb stairs</div>
-                                                <div className='stairs-info'>“There are several steps as you approach the door. The second floor loft and master bedroom are up a flight of stairs.”</div>
+                                                <div className='stairs-title'>{safetyData.stairs}</div>
+                                                <div className='stairs-info'>{safetyData.stairs_info}</div>
                                             </div>
                                         </div>
                                         <div className='amenity-container'>
@@ -94,8 +94,8 @@ export default function ShowSafety() {
                                                 </svg>
                                             </div>
                                             <div className='amenity'>
-                                                <div className='amenity-title'>Amenity limitations</div>
-                                                <div className='amenity-info'>“Guests will not have access to the shop, the basement storage, the kitchen pantry, and the small storage closet in the master bedroom.”</div>
+                                                <div className='amenity-title'>{safetyData.amenity}</div>
+                                                <div className='amenity-info'>{safetyData.amenity_info}</div>
                                             </div>
                                         </div>
                                     </div>

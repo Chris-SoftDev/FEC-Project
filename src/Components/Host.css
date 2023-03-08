@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 .myhost-container {
     font-weight: 300;
     display: flex;
@@ -11,7 +8,7 @@
 
 .host-cohost {
     height: auto;
-    width: 50%;
+    width:50%;
     margin-top: 3em;
     margin-right:3em;
 }
@@ -36,7 +33,7 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    border: 1px solid black;
+
 }
 
 .host-img-container img{
@@ -104,10 +101,10 @@
 .host-bio{
     margin-top:1.5em;
     text-align: start;
-    font-size: 15.5px;
-    max-width: 458px;
+    font-size: 15.4px;
+    max-width: 87.5%;
     line-height: 1.5em;
-    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .cohost{
@@ -118,6 +115,11 @@
 }
 
 .cohost-title {
+    font-weight: 500;
+    font-size: 15.5px;
+}
+
+.cohost-bio-title {
     font-weight: 500;
     font-size: 15.5px;
 }
@@ -136,25 +138,25 @@
 }
 
 .cohost-img{
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    border:1px solid black;
 }
 
 .cohost-bio {
     margin-top: .8em;
     text-align: start;
-    max-width: 458px;
+    max-width: 88%;
     line-height: 1.5em;
-    overflow: hidden;
     margin-bottom: 3em;
     font-size: 15.5px;
+    word-wrap: break-word;
 }
 
 .contact-host {
-    width: 53%;
+    margin-right:2em;
     text-align: left;
+    width:50%;
 }
 
 .contact {
@@ -233,9 +235,14 @@
     font-size: 15.5px;
 }
 
-.thingstoknow-parts{
+.thingstoknow-safety{
     margin-top: 1.6em;
-    width:33%;
+    width:34%;
+}
+
+.thingstoknow-rules{
+    margin-top: 1.6em;
+    width:34%;
 }
 
 .thingstoknow-cancellation{
@@ -287,5 +294,180 @@
 
   
   
+@media only screen and (max-width: 1127px) {
+    .cohost-title {
+        display: none;
+    }
+    
+    .cohost-img-container{
+        display: none;
+    }
+    
+    .cohost-name{
+        display: none;
+    }
+
+    .cohost-img-container img{
+        display: none;
+    }
+
+    .cohost-bio-title{
+        margin-top: -1em;
+    }
+}
+
+@media only screen and (max-width: 956px) {
+    .thingstoknow-parts ul {
+        width:85%;
+    }
+
+    .thingstoknow-content li {
+        line-height: 20px;
+        margin-bottom: 1.2em;
+    }
+
+    .thingstoknow-subtitle{
+        padding-bottom:1em;
+    }
+}
   
-  
+@media only screen and (max-width: 743px) {
+
+    .hosted-by{
+        position: absolute;
+        left:40px;
+        bottom:-2110px;
+        font-size: 21px;
+    }
+
+    .month-year{
+        margin-top: 2em;
+    }
+
+    .host-img-container{
+        position:absolute;
+        right:37px;
+        bottom: -2130px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+    
+    .host-img-container img{
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+    }
+
+    .host-rating{
+        flex-direction: column;
+    }
+
+    .verification{
+        margin-left: .9em;
+        margin-top:1em;
+    }
+
+    .myhost-container{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+    }
+
+    .host-cohost{
+        width:100%;
+    }
+
+    .host-bio{
+        font-size: 15.1px;
+        max-width: 100%;
+    }
+
+    .cohost-bio{
+        font-size: 15.1px;
+        max-width: 100%;
+    }
+
+    .contact-host{
+        margin-top: -10em;
+        width: 100%;
+    }
+
+    .contact li{
+        font-size: 15.1px;
+        line-height: 14px;
+    }
+
+    .contact-btn{
+        width:100%;
+    }
+
+    .payment-protect{
+        display: flex;
+        flex-direction: row;
+        width:100%;
+        margin-top: 2em;
+    }
+
+    .protection-info {
+        max-width: 100%;
+    }
+
+    .protection-info p{
+        width: 100%;
+        font-size: 10.7px;
+        margin-right: 3em;
+    }
+
+    .protection-logo{
+        order:2;
+        margin-left:5em;
+        margin-bottom: 1em;
+        margin-top: -.1em;
+    }
+
+    .thingstoknow-title{
+        display: none;
+    }
+
+    .thingstoknow-content{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .thingstoknow-subtitle{
+        font-size: 21px;
+    }
+
+   .thingstoknow-rules{ /*house rules*/
+        order:2;
+        width: 100%;
+        border-bottom: 1px solid rgba(221, 221, 221, .7);
+   }
+
+   .thingstoknow-cancellation{
+        order:1;
+        margin-left: -.5em;
+        width: 100%;
+        border-bottom: 1px solid rgba(221, 221, 221, .7);
+   }
+
+   .thingstoknow-safety{
+        order:3;
+        width: 100%;
+        border-bottom: 1px solid rgba(221, 221, 221, .7);
+   }
+
+   .thingstoknow-content li{
+        font-size: 13px;
+        margin-top: -.5em;
+        color: #717171;
+   }
+
+   #cancel-info{
+        font-size: 13px;
+        width:100%;
+        color: #717171;
+   }
+}

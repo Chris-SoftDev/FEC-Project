@@ -7,6 +7,28 @@ export const HostProvider = ({ children }) => {
     const [showHouseRules, setShowHouseRules] = useState(false)
     const [showMoreSafety, setShowMoreSafety] = useState(false)
     const [showCancellation, setShowCancellation] = useState(false)
+    const [hostData, setHostData] = useState([])
+    const [cohostData, setCohostData] = useState([])
+    const [safetyData, setSafetyData] = useState([])
+    const [rulesData, setRulesData] = useState([])
+    const [cancelData, setCancelData] = useState([])
+    const [additionalRules, setAdditionalRules] = useState([])
+
+
+    useEffect(() => {
+        const fetchHostData = async () => {
+            const response = await fetch('http://localhost:3000/property');
+            const host = await response.json();
+            setHostData(host[0].host_info);
+            setCohostData(host[0].cohost_info)
+            setSafetyData(host[0].safety)
+            setRulesData(host[0].house_rules)
+            setCancelData(host[0].cancellation_policy)
+            setAdditionalRules(host[0].house_rules.additional_rules)
+        };
+
+        fetchHostData();
+    },[]) 
 
     const openHouseRules = () => {
         setShowHouseRules(true)
@@ -50,7 +72,13 @@ export const HostProvider = ({ children }) => {
                 closeSafety,
                 showCancellation,
                 openCancellation,
-                closeCancellation
+                closeCancellation,
+                hostData,
+                cohostData,
+                safetyData,
+                rulesData,
+                cancelData,
+                additionalRules
             }}
         >
             {children}
