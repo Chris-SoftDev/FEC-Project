@@ -16,6 +16,8 @@ CREATE TABLE reviews (
   review_id SERIAL PRIMARY KEY,
   user_name VARCHAR(255) NOT NULL,
   comment TEXT NOT NULL,
+  date TIMESTAMP NOT NULL,
+  rating INTEGER NOT NULL CHECK (rating >= 1 AND rating <= 5),
   img_url TEXT,
   review_date DATE NOT NULL
 );
