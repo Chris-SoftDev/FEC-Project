@@ -54,7 +54,9 @@ function App() {
       </div>
       <footer className="footer-container">
         <RegionProvider>
+        <NavProvider>
           <Footer />
+        </NavProvider>
         </RegionProvider>
       </footer>
     </div>
