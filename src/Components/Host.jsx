@@ -7,7 +7,7 @@ import ShowSafety from './ShowSafety';
 //import hostImage from './host.jpg'
 
 function Host() {
-	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety} = useContext(HostContext)
+	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety, hostData, cohostData, rulesData, safetyData, cancelData} = useContext(HostContext)
 	return ( 
 		<>
 			<div className = "myhost-container">
@@ -15,11 +15,11 @@ function Host() {
 					<div className ="host">
 						<div className='host-info'>
 							<div className= "host-img-container">
-								{/*<img src={hostImage} alt="host"/>*/}
+								<img src= {hostData.url}></img>
 							</div>
 							<div className ="host-name">
-								<div className ="hosted-by">Hosted by Tag & Sherilyn</div>
-								<div className= "month-year">Joined in November 2017</div>
+								<div className ="hosted-by">Hosted by {hostData.name} & {cohostData.name}</div>
+								<div className= "month-year">Joined in {hostData.joined}</div>
 							</div>
 						</div>
 						<div className = "host-rating">
@@ -31,38 +31,38 @@ function Host() {
 								</div>
 								<p>210 Reviews</p>
 							</div>
-							<div className="verification">
+							{hostData.identity_verified ? (<div className="verification">
                 				<div className ="shield-icon">
 									<svg viewBox= '0 0 32 32'>
 										<path d="M16 .798l.555.37C20.398 3.73 24.208 5 28 5h1v12.5C29 25.574 23.21 31 16 31S3 25.574 3 17.5V5h1c3.792 0 7.602-1.27 11.445-3.832L16 .798zm7 9.08l-9.5 9.501-4.5-4.5L6.879 17l6.621 6.621L25.121 12 23 9.879z"></path>
 									</svg>
 								</div>
 								<p>Identity verified</p>
-							</div>
+							</div>) : null}
 						</div>
 						<div className='host-bio'>
-							<p>We are proud parents of 6, and grandparents of 2, who love the outdoors! We enjoy the beach (when we can), and are avid cyclists, hikers, and down-time enthusiasts. Happy dog owners (2).</p>
+							<p>{hostData.bio}</p>
 						</div>
 					</div>
 					<div className ="cohost">
 						<div className='cohost-title'>
-							Co-hosts
+							Co-hosts:
 						</div> 
 						<div className='cohost-img-container'>
-							<img className ="cohost-img">{/*DATA.img*/}</img>
-							<div className='cohost-name'>Sherilyn</div>
+							<img className ="cohost-img" src={cohostData.url}></img>
+							<div className='cohost-name'>{cohostData.name}</div>
 						</div>
-						<div className='cohost-title'>During your stay</div>
+						<div className='cohost-bio-title'>During your stay</div>
 						<div className='cohost-bio'>
-							<p>We are local in Boise and can be on-site pretty quickly if there is an issue. We're available at anytime via phone/text/AIRBNB message app. The cabin features wifi, Verizon wireless, and a landline.</p>
+							<p>{cohostData.bio}</p>
 						</div>
 					</div>
 				</div>
 				<div className = "contact-host">
 					<ul className ="contact">
-						<li>Language: English</li>
-						<li>Response rate: 100%</li>
-						<li>Response time: within a few hours</li>
+						<li>Language: {hostData.language}</li>
+						<li>Response rate: {hostData.response_rate}</li>
+						<li>Response time: {hostData.response_time}</li>
 					</ul>
 					<div className= "contact-btn-div">
 						<button className= "contact-btn">Contact Host</button>
@@ -88,29 +88,29 @@ function Host() {
 			<div className ='thingstoknow'>
 				<div className='thingstoknow-title'>Things to know</div>
 				<div className='thingstoknow-content'>
-					<div className='thingstoknow-parts'>
+					<div className='thingstoknow-rules'>
 						<ul>
-							<div className ='thingstoknow-subtitle'>House rules</div>
-							<li>Check-in after 4:00 PM</li>
-							<li>Checkout before 11:00 AM</li>
-							<li>5 guests maximum</li>
+							<div id="rules" className ='thingstoknow-subtitle'>House rules</div>
+							<li>Check-in after {rulesData.in}</li>
+							<li>Checkout before {rulesData.out}</li>
+							<li>{rulesData.max_guest} guests maximum</li>
 							<div className="show-more-link" onClick={openHouseRules}>Show more {'>'}</div>
 						</ul>
 					</div>
-					<div className='thingstoknow-parts'>
+					<div id="safety" className='thingstoknow-safety'>
 						<ul>
 							<div className='thingstoknow-subtitle'>Safety & property</div>
-							<li>Security camera/recording device</li>
-							<li>Pool/hot tub without a gate or lock</li>
-							<li>May encounter potentially dangerous animal</li>
+							<li>{safetyData.camera}</li>
+							<li>{safetyData.pool}</li>
+							<li>{safetyData.animals}</li>
 							<div className="show-more-link" onClick ={openSafety}>Show more {'>'}</div>
 						</ul>
 					</div>
-					<div className='thingstoknow-cancellation'>
+					<div id= "cancel" className='thingstoknow-cancellation'>
 						<ul>
 							<div className='thingstoknow-subtitle'>Cancellation policy</div>
 							<li>Free cancellation before Mar 8.</li>
-							<div className='cancel-info'>
+							<div id="cancel-info" className='cancel-info'>
 							Review the Host’s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19.
 							</div>
 							<div className="cancel-show-more-link" onClick={openCancellation}>Show more {'>'}</div>
@@ -118,11 +118,7 @@ function Host() {
 					</div>
 				</div>
 			</div>
-			{showHouseRules ? (<div className="slide-in-panel">
-					<ShowRules />
-				</div>
-			) : null}
-			{/*showHouseRules && (<ShowRules />)*/}
+			{showHouseRules && (<ShowRules />)}
 			{showCancellation && (<ShowCancel />)}
 			{showMoreSafety && (<ShowSafety />)}
 		</>

@@ -37,7 +37,6 @@ app.route("/currencies").get(async (req, res) => {
 
 app.route("/reviews").get(async (req, res) => {
   try {
-    
     const data = await db.query(`SELECT * FROM reviews`);
     res.status(200).json(data.rows);
   } catch (error) {
@@ -45,6 +44,40 @@ app.route("/reviews").get(async (req, res) => {
   }
 });
 
+app.route("/ratings").get(async (req, res) => {
+  try {
+    const data = await db.query(`SELECT AVG(cleanliness) as avg_cleanliness,
+    AVG(accuracy) as avg_accuracy,
+    AVG(communication) as avg_communication,
+    AVG(location) as avg_location,
+    AVG(check_in) as avg_check_in,
+    AVG(value) as avg_value
+  FROM ratings;`);
+
+    res.status(200).json(data.rows);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.route("/ratings/avg").get(async (req, res) => {
+  try {
+    const data = await db.query(`SELECT AVG((cleanliness + accuracy + communication + location + check_in + value) / 6) AS overall_avg FROM ratings;
+    `);
+    res.status(200).json(data.rows);
+      } catch (error) {
+        res.status(500).json({ message: error.message });
+      }
+    });
+
+app.route("/property").get(async (req, res) => {
+  try {
+    const data = await db.query(`SELECT * FROM property`);
+    res.status(200).json(data.rows);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server listening on port: ${port}`);

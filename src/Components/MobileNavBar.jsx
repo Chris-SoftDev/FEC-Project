@@ -11,7 +11,7 @@ function MobileNavbar() {
             <a href="https://www.airbnb.com/s/homes">
                 <div className='home-link-container'>
                     <div className='link-icon'>
-                        <i class="fa fa-chevron-left"></i>
+                        <i className="fa fa-chevron-left"></i>
                     </div>
                     <div className='link-name'>
                         Homes

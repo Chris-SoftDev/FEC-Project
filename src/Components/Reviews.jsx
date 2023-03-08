@@ -8,6 +8,13 @@ import ReviewCategory from "./ReviewCategory";
 function Reviews() {
   const { openAllRev, showReview } = useContext(ReviewContext);
   const { getReviews } = useContext(ReviewContext);
+  const totalReviews = amountOfReviews(getReviews)
+  function amountOfReviews (rev) {
+    for (let i = 0; i < rev.length; i++) {
+      const element = rev.length;
+      return element
+    }
+  }
 
   return (
     <div className="Review-Container">
@@ -15,7 +22,7 @@ function Reviews() {
       <ReviewCard />
       <div className="btn-container">
         <button className="show-all" onClick={openAllRev}>
-          Show all 211 reviews
+          Show all {totalReviews} reviews
         </button>
       </div>
       {showReview && <ShowAllReviews />}
