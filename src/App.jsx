@@ -9,10 +9,17 @@ import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
 import { ReviewProvider} from './Context/ReviewContext';
 import { RegionProvider } from './Context/RegionContext';
+import { LocationProvider } from './Context/LocationContext';
 import MobileNavbar from './Components/MobileNavBar';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import LocationShowMore from './Components/LocationShowMore';
 
 function App() {
   return (
+    <Router>
+      <Routes>
+        <Route exact path='/' element={
+          <>
     <div className="app-container">
       <div className="nav-container">
         <NavProvider>
@@ -27,7 +34,9 @@ function App() {
       <div className="main-content-container">
         <div className='rentals-content-container'>
           <div className="rentals-container">
-            <Rentals />
+            <NavProvider>
+              <Rentals />
+            </NavProvider>
           </div>
           <div className="reviews-container">
           <ReviewProvider>
@@ -35,7 +44,9 @@ function App() {
           </ReviewProvider>
           </div>
           <div className="location-container">
-            <Location />
+            <LocationProvider>
+              <Location />
+            </LocationProvider>
           </div>
           <div className="host-container">
             <HostProvider>
@@ -50,6 +61,13 @@ function App() {
         </RegionProvider>
       </footer>
     </div>
+    </>
+      }/>
+        
+          <Route path='/location' element={<LocationShowMore />} />
+        
+      </Routes>
+    </Router> 
   );
 }
 

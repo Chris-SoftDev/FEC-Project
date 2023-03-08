@@ -1,3 +1,44 @@
+@media only screen and (max-width: 800px) {
+    .login-menu-container {
+        width: 100% !important;
+        height: 99% !important;
+        top: 3vw !important;
+        margin-top: 0 !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    .login-menu-body-container {
+        width: 100% !important;
+        height: 675px;
+        overflow: auto !important;
+    }
+
+    .login-menu-header-container {
+        height: 49px !important;
+    }
+
+    #footer-link-facebook-icon {
+        position: relative !important;
+        left: -50px !important;
+    }
+
+    #footer-link-google-icon {
+        position: relative !important;
+        left: -60px !important;
+    }
+
+    #footer-link-apple-icon {
+        position: relative !important;
+        left: -65px !important;
+    }
+    
+    #footer-link-email-icon {
+        position: relative !important;
+        left: -65px !important;
+    }
+}
+
 .cover-screen {
     position: fixed;
     top: 0;

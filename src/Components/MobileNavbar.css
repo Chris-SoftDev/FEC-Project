@@ -1,5 +1,81 @@
+.nav-mobile-container a, 
+.nav-mobile-container a:visited, 
+.nav-mobile-container a:hover, 
+.nav-mobile-container a:active{
+    text-decoration: none;
+    color: rgb(34, 34, 34);
+}
+
+.nav-mobile-container a:hover {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
+
+
 .home-link-container {
     display: flex;
     flex-direction: row;
     margin-right: auto;
+}
+
+.link-icon {
+    padding-right: 11px;
+}
+
+.link-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.05px;
+}
+
+.side-links-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 6px 0 3px 8px;
+}
+
+.share-home-btn-container {
+    margin-right: 6px;
+}
+
+#share-home-btn {
+    background-color: #fff;
+    padding: 7px 7px 4px 7px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#share-home-btn:hover {
+    background-color: rgba(235, 235, 235, 0.55);
+}
+
+#share-home-btn svg{
+    width: 16px;
+    height: 16px;
+    stroke-width: 2px;
+    stroke: rgb(34, 34, 34);
+}
+
+#mobile-nav-save-btn {
+    background-color: #fff;
+    padding: 7px 7px 4px 7px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#mobile-nav-save-btn:hover {
+    background-color: rgba(235, 235, 235, 0.55);
+}
+
+#mobile-nav-save-btn svg{
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke-width: 2px;
+    stroke: rgb(34, 34, 34);
 }

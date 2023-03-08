@@ -3,11 +3,28 @@ import React from 'react'
 import Map from './Map';
 import LocationDesc from './LocationDesc';
 import MapContainer from './MapContainers'
+import LocationShowMore from './LocationShowMore';
+import {Link, Route, BrowserRouter as Router, Routes} from 'react-router-dom'
+import { useContext, useState } from 'react';
+//import {LocationProvider, LocationContext} from '../Context/LocationContext';
+// import  from '../Context/LocationContext';
+
+
+const linkStyle ={
+    margin: "0rem",
+    textDecoration: "none",
+    color: 'black',
+    
+}
 
 
 
 function Location() {
+    
+   
+
     return ( 
+        
         <div className='location_default'>
             <section className='section_default'>
                 <div className='location_name'>
@@ -22,19 +39,23 @@ function Location() {
                 
                 </div>
                 <div className='location_city'>
-                Boise, Idaho, United States
+                    Boise, Idaho, United States
                 </div>
-                <div className="location_description">
-                Wilderness Ranch is a residential subdivision that offers rural living in a mountainous setting that ranges from high desert to subalpine forest. Our community enjoys four distinct seasons, our own system of trails, wildlife galore, and close proximity to state and National Forest land. Wilderness Ranch is about twelve miles northeast of Boise as the eagles fly and about 24 miles along Highway 21 toward Idaho City. There are about 275 lots at Wilderness...
-                </div>
-                <a className="show_more">
-                    Show more
-                </a>
+                <LocationDesc />
+                
+                
+                <Link to='/location' style={linkStyle}>Show More</Link> 
+               
+                             
                 
 
 
             </section>     
         </div>
+
+        
+            
+        
     );
 }
 
