@@ -118,25 +118,134 @@
 .content-sidebar {
     display: flex;
     flex-direction: row;
+    
+    
+
 
     
   
-  }
+}
   .content-sidebar-text {
-    flex: 1 1 29%;
+    flex: 1 1 31%;
     background-color: rgb(255, 255, 255);
     padding-right: 10px;
-    width: 40%;
+    padding-top: 20px;
+    padding-left: 40px;
+    width: 20%;
+    font-size: 16px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 500;
   
   }
   
   .content-sidebar-map {
-    flex: 1 1 71%;
+    flex: 1 1 69%;
     background-color: rgb(255, 255, 255);
+    padding-right: 40px;
   
   }
   
   .movement {
     padding: 35px;
     
+  }
+
+  .box1 {
+    font-size:32px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 600;
+    padding-bottom: 30px;
+
+  }
+
+  .box2 {
+    font-size: 16px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 440;
+    
+
+  }
+
+  .box3 {
+    font-size: 15px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 300;
+
+  }
+
+  .box4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-break: strict;
+    line-height: 26px;
+    padding-top: 20px;
+    font-weight: 400;
+    padding-top: 0px;
+
+
+  }
+
+  .btn-read-more {
+
+  }
+  .btn-read-more:hover {
+    cursor: pointer;
+  }
+  .btn-read-more2 {
+    padding-top: 80px;
+
+  }
+  .btn-read-more2:hover {
+    cursor: pointer;
+  }
+
+  .btn-close {
+
+    margin: "0rem",
+    
+    
+  }
+  .btn-close:hover {
+    cursor: pointer;
+
+  }
+  .btn-read-second:hover {
+    cursor: pointer;
+  }
+
+  .link-guide {
+    text-decoration: none;
+    color: black;
+
+  }
+  .link-back-button {
+    flex: 0 0 16px;
+    width: 16px;
+    text-align: left;
+    position: relative;
+    left: -8px;
+
+  }
+  .link-back-button button {
+    background-color: #fff;
+    padding: 8px 12px 6px 12px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+  }
+  .link-back-button button:hover {
+    background-color: rgba(235, 235, 235, 0.55);
   }
