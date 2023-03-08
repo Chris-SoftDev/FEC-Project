@@ -53,11 +53,37 @@ function Rentals() {
                 </div>
             </div>
 
+            <div className="rentals-image-outer-container">
+                <div className="rentals-image-inner-container">
+                    <div className="large-image-container">
+                        <img src="https://a0.muscache.com/im/pictures/563de9e7-dd5c-4389-a1ae-758f5c90f551.jpg?im_w=960" alt="" />
+                    </div>
+                    <div className="quad-image-container">
+                        <div className="top-row-image-container">
+                            <div className="top-left-image-container">
+                                <img src="https://a0.muscache.com/im/pictures/00e24393-69c0-4077-883c-d71eacf28d3e.jpg?im_w=720" alt="" />
+                            </div>
+                            <div className="top-right-image-container">
+                                <img src="https://a0.muscache.com/im/pictures/cf7e5cb9-9e15-44fd-a4f1-625c92d3e5db.jpg?im_w=720" alt="" />
+                            </div>
+                        </div>
+                        <div className="bottom-row-image-container">
+                            <div className="bottom-left-image-container">
+                                <img src="https://a0.muscache.com/im/pictures/ce7c192d-faa9-4c38-9c1e-db4d1cdd696d.jpg?im_w=720" alt="" />
+                            </div>
+                            <div className="bottom-right-image-container">
+                                <img src="https://a0.muscache.com/im/pictures/6fb0f548-2453-42cd-91d6-01b4b2a26c8d.jpg?im_w=720" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {isLoginMenuVisible && (
                 <LoginMenu />
             )}
         </>
-     );
+    );
 }
 
 export default Rentals;
