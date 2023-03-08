@@ -27,7 +27,7 @@ const MapContainer2 = () => {
           //mapContainerStyle={mapStyles}
             zoom={14}
             center={defaultCenter}
-            mapContainerStyle={{height: "690px", width: "980px"}}
+            mapContainerStyle={{height: "690px", width: "1120px"}}
             options= {{ 
                 zoomControl: true,
                 zoomControlOptions: { position: 7}, 
