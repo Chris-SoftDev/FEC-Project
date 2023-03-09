@@ -19,7 +19,6 @@ function RentalHeader() {
       observer.observe(miniNav.current)
   }, [])
     
-  const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
   const { totalAvg, getReviews } = useContext(ReviewContext);
 
   const totalDec = roundToTenth(totalAvg);
