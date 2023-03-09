@@ -24,7 +24,7 @@ function Rentals() {
                         <RentalCalendar />
                     </div>
                 </div>
-                <div className="rental-bottom-right-pane-content-containerr">
+                <div className="rental-bottom-right-pane-content-container">
                     <RentalModal />
                 </div>       
             </div>
