@@ -5,7 +5,22 @@ import ReviewModalCard from "./ReviewModalCard";
 import ReviewModalCategories from "./ReviewModalCategories";
 
 export default function ShowAllReviews() {
-  const { showReview, closeAllRev } = useContext(ReviewContext);
+  const { showReview, closeAllRev, totalAvg, getReviews } =
+    useContext(ReviewContext);
+
+  const totalDec = roundToTenth(totalAvg);
+
+  const totalReviews = amountOfReviews(getReviews);
+
+  function amountOfReviews(rev) {
+    for (let i = 0; i < rev.length; i++) {
+      const element = rev.length;
+      return element;
+    }
+  }
+  function roundToTenth(num) {
+    return Math.round(num * 10) / 10;
+  }
 
   return (
     <>
@@ -20,16 +35,26 @@ export default function ShowAllReviews() {
                   </button>
                 </div>
               </div>
+              <div className="Modal-review-input-container">
+                <div className="Star-review">
+                  <div className="modal-dynamic-reviews">
+                  <i className="fa-solid fa-star"></i>
+                    {totalDec}  {totalReviews} reviews
+                  </div>
+                  <div className="Modal-input-container">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Search here"
+                    />
+                </div>
+                  </div>
+              </div>
               <div className="categories-and-reviews-container">
                 <div className="modal-categories">
-                  
                   <ReviewModalCategories />
                 </div>
-                <div className="reviews-modal">
-                  
-                  <div className="Modal-input-container">
-                    <input className="input" type="text" placeholder="Search here" />
-                  </div>
+                <div className="Modal-reviews-modal">
                   <ReviewModalCard />
                 </div>
               </div>

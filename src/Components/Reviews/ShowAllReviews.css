@@ -22,6 +22,7 @@
   width: 1032px;
   max-width: 90%;
   height: 95%;
+  
 }
 
 .container-holding-btn {
@@ -53,9 +54,10 @@
 }
 .modal-categories {
   width: 40%;
-  height: 900px;
+  height: 100%;
+  margin-right: 90px;
 }
-.reviews-modal {
+.Modal-reviews-modal {
   width: 60%;
   height: 1040px;
 }
@@ -67,7 +69,7 @@
 }
 
 
-.Catergories-rating-bar-container{
+.categories-and-reviews-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
