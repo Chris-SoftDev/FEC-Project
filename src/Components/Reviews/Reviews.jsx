@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ReviewContext, ReviewProvider } from "../Context/ReviewContext";
-import "./Review.css";
+import { ReviewContext } from "../../Context/ReviewContext";
+import "./Reviews.css";
 import ShowAllReviews from "./ShowAllReviews";
 import ReviewCard from "./ReviewCard";
 import ReviewCategory from "./ReviewCategory";
