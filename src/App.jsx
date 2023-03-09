@@ -11,6 +11,7 @@ import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
 import { ReviewProvider} from './Context/ReviewContext';
 import { LocationProvider } from './Context/LocationContext';
+import { MiniNavProvider } from './Context/MiniNavContext';
 
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -31,7 +32,9 @@ function App() {
                   <div className="main-content-container">
                     <div className='rentals-content-container'>
                       <div className="rentals-container">
+                        <MiniNavProvider>
                           <Rentals />
+                        </MiniNavProvider>
                       </div>
                       <div className="reviews-container">
                         <Reviews />

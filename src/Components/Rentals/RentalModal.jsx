@@ -1,6 +1,11 @@
+import { useContext } from 'react';
+import MiniNavContext from '../../Context/MiniNavContext';
 import './RentalModal.css';
 
 function RentalModal() {
+    const { isMiniNavVisible } = useContext(MiniNavContext)
+    console.log(isMiniNavVisible)
+
     return ( 
         <>
             <div className="rental-modal-container">
