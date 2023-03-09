@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import NavContext from '../../Context/NavContext';
-import LoginMenu from '../NavBar/LoginMenu';
+import NavContext from '../Context/NavContext';
+import LoginMenu from './LoginMenu';
 import './Rentals.css'
 
 function Rentals() {

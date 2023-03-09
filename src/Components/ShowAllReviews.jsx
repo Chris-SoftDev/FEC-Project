@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ReviewContext } from "../../Context/ReviewContext";
+import { ReviewContext } from "../Context/ReviewContext";
 import "./ShowAllReviews.css";
 import ReviewModalCard from "./ReviewModalCard";
 import ReviewModalCategories from "./ReviewModalCategories";
