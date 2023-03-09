@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ReviewContext } from "../../Context/ReviewContext";
+import { ReviewContext } from "../Context/ReviewContext";
 import "./ReviewModalCategories.css";
 
 export default function ReviewCategory() {
@@ -122,3 +122,5 @@ export default function ReviewCategory() {
     </div>
   );
 }
+
+     

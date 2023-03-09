@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { RegionProvider } from '../../Context/RegionContext';
-import NavContext from '../../Context/NavContext';
+import { RegionProvider } from '../Context/RegionContext';
+import NavContext from '../Context/NavContext';
 import LoginMenu from './LoginMenu';
 import ProfileMenu from './ProfileMenu';
 import LangMenu from './LangMenu';
