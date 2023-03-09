@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import RegionContext from '../Context/RegionContext';
+import RegionContext from '../../Context/RegionContext';
 import './Currency.css'
 
 function Currency() {
