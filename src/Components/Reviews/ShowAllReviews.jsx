@@ -22,11 +22,14 @@ export default function ShowAllReviews() {
               </div>
               <div className="categories-and-reviews-container">
                 <div className="modal-categories">
-                  left
+                  
                   <ReviewModalCategories />
                 </div>
                 <div className="reviews-modal">
-                  right
+                  
+                  <div className="Modal-input-container">
+                    <input className="input" type="text" placeholder="Search here" />
+                  </div>
                   <ReviewModalCard />
                 </div>
               </div>

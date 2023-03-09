@@ -4,7 +4,6 @@ import "./ReviewModalCategories.css";
 
 export default function ReviewCategory() {
   const {
-    showReview,
     getReviews,
     cleanliness,
     communication,
@@ -45,7 +44,7 @@ export default function ReviewCategory() {
       return element;
     }
   }
-////////////////////this is the categortes modal //////////////////////////////
+  ////////////////////this is the categortes modal //////////////////////////////
   return (
     <div className="Modal-Review-Container">
       <div className="Modal-Total-rating-reviews">
@@ -54,14 +53,16 @@ export default function ReviewCategory() {
         </div>
         {totalDec} - {totalReviews} reviews
       </div>
-      <div
-      >
+      <div  className="Modal-Catergories-rating-bar-container">
         <div className="Modal-First-category-div">
           <div className="Modal-rating-container">
             <div className="Modal-categories-label1">Cleanliness</div>
             <div className="Modal-bar-rating-label">
               <div className="Modal-progress-bar ">
-                <div className="Modal-fill" style={{ width: `${clean}%` }}></div>
+                <div
+                  className="Modal-fill"
+                  style={{ width: `${clean}%` }}
+                ></div>
               </div>
               <span className="Modal-avg-score">{cleanDec}</span>
             </div>
@@ -79,7 +80,10 @@ export default function ReviewCategory() {
             <div className="Modal-categories-label1">Check-in</div>
             <div className="Modal-bar-rating-label">
               <div className="Modal-progress-bar ">
-                <div className="Modal-fill" style={{ width: `${check}%` }}></div>
+                <div
+                  className="Modal-fill"
+                  style={{ width: `${check}%` }}
+                ></div>
               </div>
               <span className="Modal-avg-score"> {checkDec}</span>
             </div>

@@ -4,7 +4,6 @@ import "./ReviewCategory.css";
 
 export default function ReviewCategory() {
   const {
-    showReview,
     getReviews,
     cleanliness,
     communication,
@@ -54,9 +53,7 @@ export default function ReviewCategory() {
         </div>
         {totalDec} - {totalReviews} reviews
       </div>
-      <div
-        className="Catergories-rating-bar-container"
-      >
+      <div className="Catergories-rating-bar-container">
         <div className="First-category-div">
           <div className="rating-container">
             <div className="categories-label1">Cleanliness</div>

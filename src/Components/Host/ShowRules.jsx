@@ -11,8 +11,13 @@ export default function ShowRules() {
                 <div className="modal-overlay">
                     <div className='rule-modal-container'>
                         <div className='rules-modal'>
-                            <div className='rules-x-container'>
-                                <button className="rules-x" onClick={closeHouseRules}>X</button>
+                            <div className='rules-close-btn'onClick={closeHouseRules}>
+                                <button>
+                                    <svg viewBox='0 0 32 32'>  
+                                        <path d="m6 6 20 20"></path>
+                                        <path d="m26 6-20 20"></path>
+                                    </svg>
+                                </button>
                             </div>
                             <div className='rules-content-container'>
                                 <div className='rules-title'>
@@ -106,8 +111,8 @@ export default function ShowRules() {
                                 </div>
                                 <div className='additional-rules-container'>
                                     <div className='additional-rules'>Additional rules</div>
-                                    {additionalRules.map(rule => (
-                                        <p>{rule}</p>
+                                    {additionalRules.map((rule,index) => (
+                                        <p key={index}>{rule}</p>
                                     ))}
                                 </div>
                                 <div className='language-container'>

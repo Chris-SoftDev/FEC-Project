@@ -56,7 +56,7 @@ const LocationShowMore = () => {
                 <div className="box3">Wilderness Ranch is a residential subdivision that offers rual living in a mountainous setting that ranges from high deser to subalpine forest. system of trails, wildlife galore, and close proximity to state and National Forest land. Wilderness Ranch is about twelve miles northeast of Boise as the eagles fly and about 24 miles along Highway 21 toward Idaho City. There are about 275 lots at Wilderness Ranch totaling almost 1,200 acres. An additional 800 acres of common area is owned and maintained by the Wilderness Ranch HOA.</div>
                 <div className="box2">Getting around</div>
                 <div className="box3">The roads in Wildernes Ranch are well plowed/maintained year round However, they are legit dirt mountain roads and are quite steep in...</div>
-                <a className="btn-read-more" onClick={() => openThird()}>Read More </a>
+                <a className="btn-read-more" onClick={() => openThird()}>Read More {'>'}</a>
                 <div>
                     <a className="link-guide" href="https://www.airbnb.com/s/guidebooks?refinement_paths[]=/guidebooks/705162" target="_blank">
                     Show Host guidebook 
@@ -168,15 +168,15 @@ const LocationShowMore = () => {
                 <div className="box1">Where you'll be</div>
                 <div className="box2">Boise, Idaho, United States</div>
                 <div className="box3">Wilderness Ranch is a residential subdivision that offers rual living in a mountainous setting that ranges from high deser to subalpine forest. Our...</div>
-                <a className="btn-read-more" onClick={() => openMore()}>Read More </a>
+                <a className="btn-read-more" onClick={() => openMore()}>Read More {'>'}</a>
                 <div className="box2">Getting around</div>
                 <div className="box3">The roads in Wildernes Ranch are well plowed/maintained year round However, they are legit dirt mountain roads and are quite steep in...</div>
-                <a className="btn-read-second" onClick={() => openSecond()}>Read More </a>
+                <a className="btn-read-second" onClick={() => openSecond()}>Read More {'>'} </a>
                 <br/>
                 <br/>
                 <div>
                     <a className="link-guide" href="https://www.airbnb.com/s/guidebooks?refinement_paths[]=/guidebooks/705162" target="_blank">
-                    Show Host guidebook 
+                    Show Host guidebook {'>'}
                     </a>
                 </div>
             </div>
@@ -196,4 +196,3 @@ const LocationShowMore = () => {
 }
 
 export default LocationShowMore
-

@@ -172,12 +172,15 @@
 
 .contact-btn-div {
     margin-top: 2em;
+
 }
 
 .contact-btn {
     background-color: white;
+    outline: none;
+    border: 1px solid black;
     border-radius: 9px;
-    border-width: 1px;
+    border-width: 1.5px;
     font-size: 16px;
     width: 150px;
     height: 48px;
@@ -264,13 +267,14 @@
     font-weight: 300;
 }
 
-.cancel-info {
+#cancel-info {
     text-align: left;
     font-weight: 300;
-    margin-top:.8em;
+    margin-top: .5em;
 }
 
 .show-more-link {
+    display: flex;
     margin-top: 1em;
     text-align: left;
     font-weight: 500;
@@ -279,7 +283,15 @@
     margin-bottom: 3.5em;
 }
 
+.arrow{
+    width: 10px;
+    height: 10px;
+    margin-left:.5em;
+}
+
+
 .cancel-show-more-link {
+    display: flex;
     margin-top: 1.9em;
     text-align: left;
     font-weight: 500;
@@ -333,25 +345,26 @@
   
 @media only screen and (max-width: 743px) {
 
-    .hosted-by{
-        position: absolute;
-        left:40px;
-        bottom:-2110px;
-        font-size: 21px;
+    .myhost-container{
+        margin-top: -1em;
     }
 
+    .host-info{
+        justify-content: space-between;
+    }
+
+    .hosted-by{
+        order:1;
+        margin-left:-1em;
+    } 
+
     .month-year{
-        margin-top: 2em;
+        margin-left: -1.5em;
     }
 
     .host-img-container{
-        position:absolute;
-        right:37px;
-        bottom: -2130px;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-    }
+        order:2;
+    } 
     
     .host-img-container img{
         width: 48px;
