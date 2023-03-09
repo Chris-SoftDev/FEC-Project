@@ -1,0 +1,15 @@
+.Rental-List {
+    
+        list-style-type: none;
+      
+}
+
+.Rental-Box {
+    display: flex;
+    flex-wrap: row;
+    flex: row;
+}
+
+.Rental-Section {
+    flex: 1 
+}
