@@ -20,7 +20,6 @@ export default function ShowAllReviews() {
                   </button>
                 </div>
               </div>
-              {/* kkk//////////////////////////////////////////////////////// */}
               <div className="categories-and-reviews-container">
                 <div className="modal-categories">
                   
