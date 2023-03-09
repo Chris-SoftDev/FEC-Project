@@ -1,19 +1,32 @@
-.Modal-Total-rating-reviews {
-  display: flex;
+
+.Star-review{
+padding-left: 15px;
+font-size: x-large ;
+display: flex;
+
+}
+.modal-dynamic-reviews{
+  width: 45%;
+  text-align: left;
+  font-size: xx-large;
+  font-weight: 700;
   
-  font-weight: 500;
-  font-size: 22px;
-  width: 90%;
-  height: 25.99px;
-  padding-left: 30px;
 }
 
-.Modal-Catergories-rating-bar-container {
+.Modal-input-container {
+  padding-bottom: 15px;
+  display: flex;
+  width: 50%;
+  
+ 
+}
+
+.Modal-Categories-rating-bar-container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  padding-top: 18px;
   padding-right: 10px;
 }
 
@@ -77,6 +90,7 @@
   width: 50%;
   text-align: left;
   padding-left: 30px;
+  font-size: 12px;
 }
 
 .Modal-categories-label2 {
@@ -92,20 +106,55 @@
   width: 50%;
 }
 
+
 @media only screen and (max-width: 1128px) {
   .Modal-progress-bar {
-    width: 80px;
+    width: 75%;
+
   }
   .Modal-rating-container {
     display: flex;
     flex-direction: row;
     padding-top: 10px;
-    width: 300px;
+    width: 100%;
   }
   .Modal-bar-rating-label {
-    padding-right: 25px;
+    width: 50%;
+    justify-content: right;
+    
   }
   .Modal-categories-label2 {
-    padding-left: 25px;
+    font-size: 12px;
+    width: 50%;
+    justify-content: right;
+  }
+  .categories-and-reviews-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+  }
+  .Star-review{
+    flex-direction: column;
+    width: 100%;
+  }
+  .Modal-REVIEWS-container{
+    width: 100%;
+  }
+  .Modal-Categories-rating-bar-container{
+    flex-direction: row;
+    width: 100%;
+  }
+  .Modal-input-container {
+    width: 100%;
+    padding-top: 1rem;
+  }
+  .modal-categories{
+    width: 100%;
+  }
+
+  .Modal-reviews-modal {
+    padding-top: 2REM;
+    width: 100%;
   }
 }

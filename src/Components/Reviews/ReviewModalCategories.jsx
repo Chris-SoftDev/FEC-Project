@@ -44,16 +44,12 @@ export default function ReviewCategory() {
       return element;
     }
   }
-  ////////////////////this is the categortes modal //////////////////////////////
+  ////////////////////this is the categories modal //////////////////////////////
   return (
     <div className="Modal-Review-Container">
       <div className="Modal-Total-rating-reviews">
-        <div className="">
-          <i className="fa-solid fa-star"></i>
-        </div>
-        {totalDec} - {totalReviews} reviews
       </div>
-      <div  className="Modal-Catergories-rating-bar-container">
+      <div className="Modal-Categories-rating-bar-container">
         <div className="Modal-First-category-div">
           <div className="Modal-rating-container">
             <div className="Modal-categories-label1">Cleanliness</div>
@@ -122,5 +118,3 @@ export default function ReviewCategory() {
     </div>
   );
 }
-
-     
