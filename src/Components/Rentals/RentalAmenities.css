@@ -1,0 +1,63 @@
+.main-container {
+}
+
+.content-container {
+    max-width: 2000px;
+}
+
+.accom-container {
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+#accommodations {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bed-container {
+    border: 1px solid black;
+    border-radius: 12px !important;
+    flex-wrap: wrap;
+    text-align: left;
+    margin: 10px 20px;
+    min-width: 210px;
+    min-height: 165px;
+    justify-content: left;
+}
+
+.bedroom {
+
+}
+
+.content-container-amen {
+    text-align: left;
+}
+
+.amen-column-cont {
+    display: flex;
+    flex-direction: row;
+}
+
+.amen-content {
+    display: flex;
+    margin: 10px 120px 0 0;
+    /* padding: 0 100px 0 0; */
+    max-width: 200px;
+    text-align: left;
+}
+
+#amen-button-cont {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 30px 0 0 0;
+    max-width: 200px;
+}
+
+#amen-button {
+    font-size: 20;
+    font-weight: 500;
+}
