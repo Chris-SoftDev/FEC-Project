@@ -63,9 +63,11 @@ function Host() {
 						<li>Response rate: {hostData.response_rate}</li>
 						<li>Response time: {hostData.response_time}</li>
 					</ul>
-					<div className= "contact-btn-div">
-						<button className= "contact-btn">Contact host</button>
-					</div>
+					<a href="https://www.airbnb.com/contact_host/22043136/send_message?adults=1&children=0&infants=0&check_in=2023-03-13&check_out=2023-03-18&pets=0">
+						<div className= "contact-btn-div">
+							<button className= "contact-btn">Contact host</button>
+						</div>
+					</a>
 					<div className ="payment-protect">
 						<div className="protection-logo">
 							<svg viewBox='0 0 48 48'>

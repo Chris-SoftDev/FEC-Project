@@ -23,7 +23,7 @@ export default function ShowCancel() {
                             <div className='cancel-content-container'>
                                 <div className='cancel-title'>Cancellation policy</div>
                                 <div className='cancel-info'>
-                                    <p>Before you book, make sure you're comfortable with this Host's cancellation policy. Keep in mind that Airbnb's <span>Extenuating Circumstances policy</span> doesn't cover cancellations due to illness or travel disruptions caused by COVID-19.</p>
+                                    <p>Before you book, make sure you're comfortable with this Host's cancellation policy. Keep in mind that Airbnb's <span><a href="https://www.airbnb.com/help/article/1320">Extenuating Circumstances policy</a></span> doesn't cover cancellations due to illness or travel disruptions caused by COVID-19.</p>
                                 </div>
                                 <div className='cancel-by'>Cancel by</div>
                                 <div className='first-date-container'>
@@ -41,7 +41,9 @@ export default function ShowCancel() {
                                     </div>
                                     <div className='second-refund'>Partial refund: Get back 50% of every night but the first one. No refund of the first night or the service fee.</div>
                                 </div>
-                                <div className='learn-more'>Learn more about cancellation policies</div>
+                                <a className="more-cancel-policies" href="https://www.airbnb.com/help/article/149">
+                                    <div className='learn-more'>Learn more about cancellation policies</div>
+                                </a>
                             </div>
                         </div>
                     </div>

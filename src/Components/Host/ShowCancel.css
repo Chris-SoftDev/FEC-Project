@@ -153,12 +153,21 @@
 .learn-more{
     margin-top: 2em;
     margin-bottom:3em;
-    font-size:14px;
+    font-size:13.8px;
     font-weight: 500;
     text-decoration: underline;
     text-decoration-color: rgb(34, 34, 34);
 }
 
+.more-cancenl-polices{
+    color:black;
+}
+
 .learn-more:hover{
     cursor: pointer;
+    color:black;
+}
+
+a[href]{
+    color: rgb(34, 34, 34);
 }

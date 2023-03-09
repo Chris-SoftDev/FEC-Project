@@ -300,6 +300,10 @@
     margin-bottom: 3.5em;
 }
 
+.cancel-show-more-link:hover {
+    cursor: pointer;
+}
+
 .show-more-link:hover {
     cursor: pointer;
 }
