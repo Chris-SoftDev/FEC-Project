@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { HostContext } from '../../Context/HostContext';
+import { HostContext } from '../Context/HostContext';
 import "./ShowCancel.css"
 
 export default function ShowCancel() {

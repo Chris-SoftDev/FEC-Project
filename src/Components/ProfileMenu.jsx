@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import NavContext from '../../Context/NavContext';
+import NavContext from '../Context/NavContext';
 import './ProfileMenu.css'
 
 function ProfileMenu() {
