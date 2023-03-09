@@ -1,12 +1,39 @@
-
-INSERT INTO reviews (user_name, comment, date, rating) VALUES
-  ('Moises Martinez', 'Great location, would definitely stay again!', DATE_TRUNC('month', '2022-12-31'::date), 5),
-  ('christopher Ronca', 'Not very impressed, wouldn''t recommend.', DATE_TRUNC('month', '2022-12-30'::date), 2),
-  ('Sounisa Marte', 'Amazing location, can''t believe how beautiful it was!', DATE_TRUNC('month', '2022-12-29'::date), 4),
-  ('Caleb Ross', 'Awesome experience, will love to stay again.', DATE_TRUNC('month', '2022-12-28'::date), 1),
-  ('Ben Richardson', 'Amazing experience, I will definitely stay again.', DATE_TRUNC('month', '2022-12-28'::date), 1),
-  ('Garret Ross', 'Terrible experience, did not have a Tesla charger. Was not able to get any cell service while I stayed there.', DATE_TRUNC('month', '1943-12-28'::date), 1);
-
+INSERT INTO reviews (user_name, comment, img_url, review_date)
+VALUES 
+  ('Kith', 'We had a great time, the place felt like home! Clean with everything you would need.', 'https://a0.muscache.com/im/pictures/user/71b67618-0162-4dc0-a885-d534d4070c51.jpg?im_w=240', '2021-01-10'),
+  ('Sarah', 'Great location, easy to understand directions, and not far from Idaho City which was a bonus!', 'https://a0.muscache.com/im/pictures/user/f0ebbcf4-e840-4751-a189-b4706b3f2a59.jpg?im_w=240', '2022-02-15'),
+  ('Caleb', 'Thoroughly enjoyed our weekend stay! Everything was as described and we had everything we needed to relax and clock out for a few days. The views were serene; it was wonderful to sit on the porch and watch the clouds and weather roll over the mountains.', 'https://a0.muscache.com/im/pictures/user/35d08415-fa3a-4738-b0b3-eb94d0ef540a.jpg?im_w=240', '2021-06-20'),
+  ('Christine', 'The host was very friendly and helpful.', 'https://a0.muscache.com/im/pictures/user/2108581a-c9f0-4b13-98f4-4fe2b79dae87.jpg?im_w=240', '2022-01-05'),
+  ('Alex', 'Very nice place', 'https://a0.muscache.com/im/pictures/user/5fb9152c-cece-4aea-83e7-8dd7485e06d9.jpg?im_w=240', '2021-08-08'),
+  ('Garret', 'The room was a bit small, they did not have a tesla charger, did not have a closet big enough for my hawaiian shirts', 'https://avatars.githubusercontent.com/u/13923018?v=4', '2022-03-01'),
+  ('Belen', 'Best place to get away from the city. Beautiful views all around the place. Saw bunch of wild animal. Host was friendly and informative. Would highly recommend everything was perfect.', 'https://a0.muscache.com/im/pictures/user/b9a30aff-80c5-47a1-97e7-f061d15ca803.jpg?im_w=240', '2011-02-10'),
+  ('Megan', 'We look forward to staying every year - clean, cozy and relaxing. Our pup loves it too. Thanks for having us!', 'https://a0.muscache.com/im/pictures/user/6823f0eb-a5f6-47fd-9ddc-57777b7aff94.jpg?im_w=240', '2021-04-6'),
+  ('Chester', 'Beautiful place with awesome views!', 'https://a0.muscache.com/im/pictures/user/e90b283f-d7eb-46d4-913c-33c6b7dcead1.jpg?im_w=240', '2021-12-20'),
+  ('Jeffrey', 'Fantastic place to get away , relax and re-charge the batteries- We will definitely try and rent this amazing place again, we could here elk calling at night which was a once in a life time thing in my opinion! thanks again Tag & Sherilyn- P.S neighbors are friendly and knowledgeable about where to hike and site see!','https://a0.muscache.com/im/pictures/user/e458fafe-8db6-4ad6-8cba-b999950cedd8.jpg?im_w=240', '2020-01-14'),
+  ('James', 'Beautiful location with gorgeous views all around. The house was very well kept and we had a great weekend getaway. Will definitely be booking another getaway in the future here.', 'https://a0.muscache.com/im/pictures/user/7fc561f5-71da-4d66-8a32-4f576cb537f4.jpg?im_w=240', '2021-06-11');
+  
+INSERT INTO ratings (cleanliness, accuracy, communication, location, check_in, value) VALUES 
+(4, 5, 5, 5, 5, 5),
+(4, 4, 5, 5, 5, 5),
+(5, 4, 4, 5, 5, 5),
+(5, 5, 4, 4, 5, 5),
+(5, 5, 5, 4, 4, 4),
+(5, 5, 5, 5, 4, 4),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 4),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 5),
+(5, 5, 5, 5, 5, 4),
+(5, 5, 5, 5, 5, 4),
+(5, 5, 5, 5, 5, 4);
 
 
 INSERT INTO languages (language, country) VALUES 
@@ -126,3 +153,61 @@ INSERT INTO currencies (currency, symbol) VALUES
 ('Thai baht', 'THB - ฿'),
 ('Turkish lira', 'TRY - ₺'),
 ('Uruguayan peso', 'UYU - $U');
+
+
+INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules) VALUES (
+    '{
+            "name": "Tag",
+            "joined": "November 2017",
+            "identity_verified": true,
+            "bio": "We are proud parents of 6, and grandparents of 2, who love the outdoors! We enjoy the beach (when we can), and are avid cyclists, hikers, and down-time enthusiasts. Happy dog owners (2).",
+            "url": "https://a0.muscache.com/im/pictures/user/dbc4290c-328a-426e-bbde-a8175f48ad72.jpg?aki_policy=profile_large",
+            "language": "English",
+            "response_rate": "100%",
+            "response_time": "within a few hours"
+        }',
+    '{
+            "name": "Sherilyn",
+            "bio": "We are local in Boise and can be on-site pretty quickly if there is an issue. We''re available at anytime via phone/text/AIRBNB message app. The cabin features wifi, Verizon wireless, and a landline.",
+            "url": "https://a0.muscache.com/im/pictures/user/cfdfa743-4062-439c-8355-c29f63b85b3d.jpg?aki_policy=profile_large"
+        }',
+    '{
+            "pool": "Pool/hot tub without a gate or lock",
+            "animals": "May encounter potentially dangerous animal",
+            "animal_warning": "This is a mountaintop getaway, so there is a possibility of encountering mountain wildlife including (but not limited to) bear, mountain lion, elk, deer, etc.",
+            "camera": "Security camera/recording device",
+            "camera_info": "We have a webcam pointed at the parking area to help us know when guests have arrived/departed. The camera DOES NOT point at the house or deck at all.",
+            "carbon": true,
+            "smoke_alarm": true,
+            "stairs": "Must climb stairs",
+            "stairs_info": "There are several steps as you approach the door. The second floor loft and master bedroom are up a flight of stairs.",
+            "amenity": "Amenity limitations",
+            "amenity_info": "Guests will not have access to the shop, the basement storage, the kitchen pantry, and the small storage closet in the master bedroom."
+        }',
+    '{"cancel_by":"5"}',
+    '{
+            "max_guest": "5",
+            "pets": true,
+            "in": "4:00 PM",
+            "out": "11:00 AM",
+            "quiet": "10:00 PM - 7:00 AM",
+            "self_check": "Self check-in with smart lock",
+            "photography": true,
+            "parties": false,
+            "smoking":false,
+            "additional_rules": 
+                [
+                    "-Winter road conditions REQUIRE chains/cables for your vehicle in the winter months. If do not own chains, we''re happy to make a recommendation for you to purchase. If you are not willing to acquire chains, please plan your stay for springtime when the roads are dry.",
+                    "-If you do run in to traction issues (winter) and get stuck, PLEASE DO NOT IMPOSE on our neighbors in Wilderness Ranch to assist you. There is no cell signal on the roads in Wilderness Ranch. To call for assistance, make your way on foot down the mountain to the mailroom (wifi & landline) or up the mountain to our cabin (wifi, verizon cell & landline).",
+                    "-Parties are not permitted.",
+                    "-The cabin is in a mountain neighborhood that values its quiet and tranquility. Quiet hours are 10pm to 8am. Voices carry more than we realize it is unacceptable to disturb the neighbors with loud conversations from the hilltop, hot tub, or the deck. Please take it inside by 10pm. We appreciate your cooperation.",
+                    "-Smoking is not permitted anywhere on the property.",
+                    "-If you are planning on bringing pets, ensure that you send us an AIRBNB message with an accurate count. Pet fee is $25/pet/night.",
+                    "-Guests will please clean up after their pets.",
+                    "-Children under the age of 8 are NOT permitted in the hot tub at any time.  Absolutely NO DIAPERS of any kind (including swim diapers) permitted in the hot tub, ever.",
+                    "-Please leave the wildlife alone.",
+                    "-This property has a private septic system. Kindly place feminine and other sanitary products in the garbage. DO NOT flush them as they can cause catastrophic sewer failure. (We''re certain that a sewer failure will not ''enhance'' the quality of your stay!)",
+                    "-Exterior lights must be turned off during the quiet hours of 10pm to 8am. This is to limit light pollution in the neighborhood."
+                ]
+        }'::jsonb
+);

@@ -1,0 +1,283 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.safety-modal-container{
+    display: flex;
+}
+
+.safety-modal{
+    background-color: white;
+    border-radius: 2.5%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 780px;
+    max-width: 100%;
+    height: 85%;
+}
+
+.safety-close-btn{
+    display: flex;
+    border-radius: 50%;
+    margin-left: 1em;
+    margin-top: 1.5em;
+    height: 60px;
+}
+
+.safety-close-btn button {
+    height: 32px;
+    width: 32px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.safety-close-btn svg {
+    height: 16px;
+    width: 16px;
+    stroke: rgb(34, 34, 34);
+    stroke-width: 3px;
+    overflow: visible;
+    border-radius: 50%;
+}
+
+.safety-close-btn button:hover {
+    background-color: rgba(235, 235, 235, 0.55);
+}
+
+.safety-content-container{
+    overflow-x:hidden;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 1.5em;
+    word-wrap: break-word;
+}
+
+.safety-title{
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 1em;
+}
+
+.safety-info{
+    margin-top: 1.5em;
+    font-size: 15.5px;
+    font-weight: 300;
+}
+
+.considerations-title{
+    margin-top: 2.8em;
+    font-size:17.5px;
+    font-weight: 500;
+}
+
+.pool-container{
+    margin-top: 2.5em;
+    display: flex;
+    width:97%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.pool-icon{
+    height:24px;
+    width: 24px;
+}
+
+.pool{
+    font-size: 15.5px;
+    font-weight: 300;
+    margin-left:1em;
+    margin-bottom: 2em;
+}
+
+.dangerous-animals-container{
+    margin-top: 1.5em;
+    display: flex;
+}
+
+.hazard-icon{
+    height:34px;
+    width: 34px;
+}
+
+.dangerous-animals{
+    display: flex;
+    flex-direction: column;
+}
+
+.dangerous-animals-title{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+}
+
+.dangerous-animals-info{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    width:92%;
+    color: #717171;
+}
+
+.devices-container{
+    margin-top:1em;
+    max-width:97%;
+}
+
+.devices-title{
+    font-size:17.5px;
+    font-weight: 500;
+}
+
+.security-container{
+    display: flex;
+    margin-top: 2.5em;
+    width:100%;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.security-camera-icon{
+    height:36px;
+    width: 36px;
+}
+
+.security-title{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+}
+
+.security-info{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    width:100%;
+    color: #717171;
+}
+
+.carbon-monoxide-container{
+    display: flex;
+    margin-top: 1.8em;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.carbon-monoxide-icon{
+    height:24px;
+    width: 24px;
+}
+
+.carbon-monoxide-info{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 1.8em;
+    margin-top:.1em;
+}
+
+.smoke-alarm-container{
+    display: flex;
+    margin-top: 1.8em;
+}
+
+.smoke-alarm-info{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top: .2em;
+}
+
+.smoke-alarm-icon{
+    height:24px;
+    width: 24px;
+}
+
+.property-info-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.property-info-title{
+    margin-top: 3em;
+    font-size:17.5px;
+    font-weight: 500;
+}
+
+.stairs-container{
+    margin-top: 2.5em;
+    display: flex;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+}
+
+.stairs{
+    display: flex;
+    flex-direction: column;
+}
+
+.stairs-icon{
+    height:26px;
+    width: 26px;
+}
+
+.stairs-title{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top: .2em;
+}
+
+.stairs-info{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    width:92%;
+    color: #717171;
+}
+
+.amenity-container{
+    margin-top: 1.5em;
+    display: flex;
+}
+
+.amenity{
+    display: flex;
+    flex-direction: column;
+}
+
+.amenity-icon{
+    height:28px;
+    width: 28px;
+}
+
+.amenity-title{
+    font-size:15.7px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-top: .2em;
+}
+
+.amenity-info{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 1em;
+    margin-bottom: 4em;
+    margin-top:.5em;
+    width:92%;
+    color: #717171;
+}

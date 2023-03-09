@@ -1,0 +1,80 @@
+.modal-layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.exit-modal-container {
+  display: flex;
+}
+
+.exit-modal {
+  background-color: white;
+  border-radius: 2.5%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1032px;
+  max-width: 90%;
+  height: 95%;
+}
+
+.container-holding-btn {
+  width: 100%;
+  height: 100px;
+}
+
+.button-container {
+  height: 65px;
+  width: 65px;
+  display: flex;
+  align-items: left;
+}
+.close-modal {
+  width: 100%;
+  border-radius: 100%;
+  border: none;
+  background-color: white;
+  color: rgb(34, 34, 34);
+}
+.close-modal:hover {
+  background-color: #f7f7f7;
+}
+
+.categories-and-reviews-container {
+  display: flex;
+  flex-direction: row;
+  
+}
+.modal-categories {
+  width: 40%;
+  height: 900px;
+}
+.reviews-modal {
+  width: 60%;
+  height: 1040px;
+}
+/* /////////////////////////////////////////////////////*/
+
+.modal-review-category{
+  background-color: rgba(169, 61, 61, 0.802);
+  height: 333px;
+}
+
+
+.Catergories-rating-bar-container{
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1128px) { 
+  .categories-and-reviews-container {
+  
+  }
+
+}

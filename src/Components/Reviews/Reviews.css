@@ -1,0 +1,34 @@
+.Review-Container {
+  height: 100%;
+}
+
+
+.show-all {
+  width: 130px;
+  height: 30px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.btn-container {
+  width: 100%;
+  height: 47px;
+  margin-bottom: 58px;
+  
+}
+
+.show-all {
+  background-color: white;
+  border-radius: 9px;
+  border: 1px solid black;
+  font-size: 15px;
+  width: 199px;
+  height: 47px;
+  padding-top: 12px;
+  letter-spacing: 0.25px;
+  font-weight: 525;
+  font-family: 'Manrope', sans-serif;
+  cursor: pointer;
+}
