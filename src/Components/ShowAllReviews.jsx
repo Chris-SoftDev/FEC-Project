@@ -29,7 +29,7 @@ export default function ShowAllReviews() {
                 <div className="reviews-modal">
                   
                   <div className="Modal-input-container">
-                    <input className="input" type="text" value="Search here" />
+                    <input className="input" type="text" placeholder="Search here" />
                   </div>
                   <ReviewModalCard />
                 </div>

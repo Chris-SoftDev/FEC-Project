@@ -4,7 +4,6 @@ import "./ReviewModalCategories.css";
 
 export default function ReviewCategory() {
   const {
-    showReview,
     getReviews,
     cleanliness,
     communication,

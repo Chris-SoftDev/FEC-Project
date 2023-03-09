@@ -1,10 +1,12 @@
 import './App.css'
-import NavBar from './Components/NavBar';
-import Rentals from './Components/Rentals';
-import Reviews from './Components/Reviews';
-import Location from './Components/Location';
-import Host from './Components/Host';
-import Footer from './Components/Footer';
+import MobileNavbar from './Components/NavBar/MobileNavBar';
+import NavBar from './Components/NavBar/Navbar';
+import Rentals from './Components/Rentals/Rentals';
+import Reviews from './Components/Reviews/Reviews';
+import Host from './Components/Host/Host';
+import Location from './Components/Location/Location';
+import LocationShowMore from './Components/Location/LocationShowMore';
+import Footer from './Components/Footer/Footer';
 import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
 import { ReviewProvider} from './Context/ReviewContext';
