@@ -1,10 +1,24 @@
-import { useContext } from "react";
-import NavContext from "../../Context/NavContext";
+
+import { useRef, useEffect, useContext } from 'react';
+import MiniNavContext from '../../Context/MiniNavContext';
+import NavContext from '../../Context/NavContext';
 import { ReviewContext } from "../../Context/ReviewContext";
-import LoginMenu from "../NavBar/LoginMenu";
-import "./RentalHeader.css";
+import LoginMenu from '../NavBar/LoginMenu';
+import './RentalHeader.css';
 
 function RentalHeader() {
+  const miniNav = useRef();
+  const { setIsMiniNavVisible } = useContext(MiniNavContext)
+  const { isLoginMenuVisible, openLoginMenu} = useContext(NavContext);
+    
+  useEffect(() => {
+      const observer = new IntersectionObserver(entries => {
+          const entry = entries[0];
+          setIsMiniNavVisible(entry.isIntersecting)
+      })
+      observer.observe(miniNav.current)
+  }, [])
+    
   const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
   const { totalAvg, getReviews } = useContext(ReviewContext);
 
@@ -110,7 +124,7 @@ function RentalHeader() {
           </div>
         </div>
       </div>
-
+      <div ref={miniNav}></div>
       {isLoginMenuVisible && <LoginMenu />}
     </>
   );

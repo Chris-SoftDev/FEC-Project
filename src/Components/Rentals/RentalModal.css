@@ -9,6 +9,10 @@
     }
 }
 
+@media only screen and (max-width: 744px) {
+    /* Modal pins to bottom of screen with nightly rate, reviews rating and button */
+}
+
 .rental-modal-container {
     position: sticky;
     top: 0;
