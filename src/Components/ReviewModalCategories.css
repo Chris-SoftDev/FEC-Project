@@ -1,9 +1,9 @@
 .Modal-Total-rating-reviews {
   display: flex;
-  margin-top: 32px;
+  
   font-weight: 500;
   font-size: 22px;
-  width: 1120px;
+  width: 90%;
   height: 25.99px;
   padding-left: 30px;
 }

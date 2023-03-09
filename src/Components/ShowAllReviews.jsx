@@ -20,13 +20,17 @@ export default function ShowAllReviews() {
                   </button>
                 </div>
               </div>
+              {/* kkk//////////////////////////////////////////////////////// */}
               <div className="categories-and-reviews-container">
                 <div className="modal-categories">
-                  left
+                  
                   <ReviewModalCategories />
                 </div>
                 <div className="reviews-modal">
-                  right
+                  
+                  <div className="Modal-input-container">
+                    <input className="input" type="text" value="Search here" />
+                  </div>
                   <ReviewModalCard />
                 </div>
               </div>
