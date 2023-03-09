@@ -19,7 +19,7 @@ export default function ReviewCard() {
                   <h3 className="Modal-user">{review.user_name}</h3>
                 </div>
                 <div className="Modal-date-container">
-                  <li className="">Feburay 2023</li>
+                  <li className="">February 2023</li>
                 </div>
               </div>
             </div>
