@@ -343,25 +343,26 @@
   
 @media only screen and (max-width: 743px) {
 
-    .hosted-by{
-        position: absolute;
-        left:40px;
-        bottom:-2110px;
-        font-size: 21px;
+    .myhost-container{
+        margin-top: -1em;
     }
 
+    .host-info{
+        justify-content: space-between;
+    }
+
+    .hosted-by{
+        order:1;
+        margin-left:-1em;
+    } 
+
     .month-year{
-        margin-top: 2em;
+        margin-left: -1.5em;
     }
 
     .host-img-container{
-        position:absolute;
-        right:37px;
-        bottom: -2130px;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-    }
+        order:2;
+    } 
     
     .host-img-container img{
         width: 48px;
