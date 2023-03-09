@@ -5,8 +5,7 @@ import ReviewModalCard from "./ReviewModalCard";
 import ReviewModalCategories from "./ReviewModalCategories";
 
 export default function ShowAllReviews() {
-  const { showReview, closeAllRev, totalAvg, getReviews } =
-    useContext(ReviewContext);
+  const { showReview, closeAllRev, totalAvg, getReviews } = useContext(ReviewContext);
 
   const totalDec = roundToTenth(totalAvg);
 
