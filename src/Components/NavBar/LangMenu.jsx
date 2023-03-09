@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef } from 'react';
-import NavContext from '../Context/NavContext';
+import NavContext from '../../Context/NavContext';
 import Region from './Region';
 import Currency from './Currency';
 import './LangMenu.css';
