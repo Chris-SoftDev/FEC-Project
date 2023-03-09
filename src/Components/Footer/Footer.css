@@ -233,3 +233,16 @@
 
 }
 
+@media screen and (max-width: 800px) {
+    .content-group {
+        flex-direction: column;
+    }
+
+    .main-column {
+        justify-content: left;
+        margin: 0;
+    }
+
+    
+}
+

@@ -12,23 +12,27 @@ function Footer () {
             <div className="main-column">
                 <div className="footer-column">Support
                     <div className="content-column">
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/help/?audience=guest">Help Center</a>
+                        <div className="content-group">
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/help/?audience=guest">Help Center</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/aircover">GroundCover</a> 
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/accessibility">Supporting people with disabilities</a>
+                            </div>
                         </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/aircover">GroundCover</a> 
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/accessibility">Supporting people with disabilities</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/help/article/2701">Cancellation options</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/d/covidsafety">Our COVID-19 Response</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/help/article/3290">Report a neighborhood concern</a>
+                        <div className="content-group">
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/help/article/2701">Cancellation options</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/d/covidsafety">Our COVID-19 Response</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/help/article/3290">Report a neighborhood concern</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -40,50 +44,57 @@ function Footer () {
                         <div className="footer-content">
                             <a href="https://www.airbnb.com/against-discrimination">Combating discrimination</a>
                         </div>
-
                     </div>
                 </div>
                 <div className="footer-column">Hosting
                     <div className="content-column">
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/host/homes?from_footer=1">Groundbnb your home</a>
+                        <div className="content-group">
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/host/homes?from_footer=1">Groundbnb your home</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/aircover-for-hosts">GroundCover for Hosts</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/resources/hosting-homes">Explore hosting resources</a>
+                            </div>
                         </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/aircover-for-hosts">GroundCover for Hosts</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/resources/hosting-homes">Explore hosting resources</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://community.withairbnb.com/t5/Community-Center/ct-p/community-center">Visit our community forum</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/help/article/1376">How to host responsibly</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/airbnb-friendly">Groundbnb-friendly apartments</a>
+                        <div className="content-group">
+                            <div className="footer-content">
+                                <a href="https://community.withairbnb.com/t5/Community-Center/ct-p/community-center">Visit our community forum</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/help/article/1376">How to host responsibly</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/airbnb-friendly">Groundbnb-friendly apartments</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="footer-column">Groundbnb
                     <div className="content-column">
-                        <div className="footer-content">
-                            <a href="https://news.airbnb.com/">Newsroom</a>
+                        <div className="content-group">
+                            <div className="footer-content">
+                                <a href="https://news.airbnb.com/">Newsroom</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/2022-winter">Learn about new features</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://news.airbnb.com/what-makes-airbnb-airbnb/">Letter from our founders</a>
+                            </div>
                         </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/2022-winter">Learn about new features</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://news.airbnb.com/what-makes-airbnb-airbnb/">Letter from our founders</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://careers.airbnb.com/">Careers</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://investors.airbnb.com/home/default.aspx">Investors</a>
-                        </div>
-                        <div className="footer-content">
-                            <a href="https://www.airbnb.com/giftcards">Gift cards</a>
+                        <div className="content-group">
+                            <div className="footer-content">
+                                <a href="https://careers.airbnb.com/">Careers</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://investors.airbnb.com/home/default.aspx">Investors</a>
+                            </div>
+                            <div className="footer-content">
+                                <a href="https://www.airbnb.com/giftcards">Gift cards</a>
+                            </div>
                         </div>
                     </div>
                 </div>
