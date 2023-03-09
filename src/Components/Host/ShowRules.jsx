@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { HostContext } from '../Context/HostContext';
+import { HostContext } from '../../Context/HostContext';
 import "./ShowRules.css"
 
 export default function ShowRules() {

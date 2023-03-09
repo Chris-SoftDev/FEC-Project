@@ -1,10 +1,9 @@
 import { useContext } from 'react';
-import { HostContext, HostProvider } from '../Context/HostContext'
+import { HostContext } from '../../Context/HostContext'
 import './Host.css'
 import ShowCancel from './ShowCancel';
 import ShowRules from './ShowRules'
 import ShowSafety from './ShowSafety';
-//import hostImage from './host.jpg'
 
 function Host() {
 	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety, hostData, cohostData, rulesData, safetyData, cancelData} = useContext(HostContext)
