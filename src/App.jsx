@@ -1,5 +1,4 @@
 import './App.css'
-
 import MobileNavbar from './Components/NavBar/MobileNavBar';
 import NavBar from './Components/NavBar/Navbar';
 import Rentals from './Components/Rentals/Rentals';
@@ -8,7 +7,6 @@ import Host from './Components/Host/Host';
 import Location from './Components/Location/Location';
 import LocationShowMore from './Components/Location/LocationShowMore';
 import Footer from './Components/Footer/Footer';
-
 import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
 import { ReviewProvider} from './Context/ReviewContext';
