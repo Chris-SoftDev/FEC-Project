@@ -172,12 +172,13 @@
 
 .contact-btn-div {
     margin-top: 2em;
+
 }
 
 .contact-btn {
     background-color: white;
     border-radius: 9px;
-    border-width: 1px;
+    border-width: 1.5px;
     font-size: 16px;
     width: 150px;
     height: 48px;
@@ -264,13 +265,14 @@
     font-weight: 300;
 }
 
-.cancel-info {
+#cancel-info {
     text-align: left;
     font-weight: 300;
-    margin-top:.8em;
+    margin-top: .5em;
 }
 
 .show-more-link {
+    display: flex;
     margin-top: 1em;
     text-align: left;
     font-weight: 500;
@@ -279,7 +281,15 @@
     margin-bottom: 3.5em;
 }
 
+.arrow{
+    width: 10px;
+    height: 10px;
+    margin-left:.5em;
+}
+
+
 .cancel-show-more-link {
+    display: flex;
     margin-top: 1.9em;
     text-align: left;
     font-weight: 500;

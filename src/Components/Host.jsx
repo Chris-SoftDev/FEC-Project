@@ -65,7 +65,7 @@ function Host() {
 						<li>Response time: {hostData.response_time}</li>
 					</ul>
 					<div className= "contact-btn-div">
-						<button className= "contact-btn">Contact Host</button>
+						<button className= "contact-btn">Contact host</button>
 					</div>
 					<div className ="payment-protect">
 						<div className="protection-logo">
@@ -94,7 +94,14 @@ function Host() {
 							<li>Check-in after {rulesData.in}</li>
 							<li>Checkout before {rulesData.out}</li>
 							<li>{rulesData.max_guest} guests maximum</li>
-							<div className="show-more-link" onClick={openHouseRules}>Show more {'>'}</div>
+							<div className="show-more-link" onClick={openHouseRules}>
+								<div>Show more</div>
+								<div className='arrow'>
+									<svg viewBox='0 0 18 18'>
+										<path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fillRule="evenodd"></path>
+									</svg>
+								</div>
+							</div>
 						</ul>
 					</div>
 					<div id="safety" className='thingstoknow-safety'>
@@ -103,7 +110,14 @@ function Host() {
 							<li>{safetyData.camera}</li>
 							<li>{safetyData.pool}</li>
 							<li>{safetyData.animals}</li>
-							<div className="show-more-link" onClick ={openSafety}>Show more {'>'}</div>
+							<div className="show-more-link" onClick ={openSafety}>
+								<div>Show more </div>
+								<div className='arrow'>
+									<svg viewBox='0 0 18 18'>
+										<path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fillRule="evenodd"></path>
+									</svg>
+								</div>
+							</div>
 						</ul>
 					</div>
 					<div id= "cancel" className='thingstoknow-cancellation'>
@@ -113,7 +127,14 @@ function Host() {
 							<div id="cancel-info" className='cancel-info'>
 							Review the Host’s full cancellation policy which applies even if you cancel for illness or disruptions caused by COVID-19.
 							</div>
-							<div className="cancel-show-more-link" onClick={openCancellation}>Show more {'>'}</div>
+							<div className="cancel-show-more-link" onClick={openCancellation}>
+								<div>Show more</div>
+								<div className='arrow'>
+									<svg viewBox='0 0 18 18'>
+										<path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fillRule="evenodd"></path>
+									</svg>
+								</div>
+							</div>
 						</ul>
 					</div>
 				</div>
