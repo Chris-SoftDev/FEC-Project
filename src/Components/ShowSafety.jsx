@@ -13,8 +13,13 @@ export default function ShowSafety() {
                 <div className="modal-overlay">
                     <div className='safety-modal-container'>
                         <div className="safety-modal">
-                            <div className="safety-x-container">
-                                <button className="safety-x" onClick={closeSafety}>X</button>
+                            <div className='rules-close-btn'onClick={closeSafety}>
+                                <button>
+                                    <svg viewBox='0 0 32 32'>  
+                                        <path d="m6 6 20 20"></path>
+                                        <path d="m26 6-20 20"></path>
+                                    </svg>
+                                </button>
                             </div>
                             <div className='safety-content-container'>
                                 <div className='safety-title'>
