@@ -21,10 +21,15 @@ function RentalModal() {
                         </div>
                     </div>
                     <div className="rental-modal-content-body">
-
+                        <div className='rental-modal-dates'>
+                            <button></button>
+                        </div>
+                        <div className='rental-modal-guests'>
+                            <button></button>
+                        </div>
                     </div>
                     <div className="rental-modal-content-footer">
-
+                        <button type='submit'>Check availability</button>
                     </div>
                 </div>
             </div>
