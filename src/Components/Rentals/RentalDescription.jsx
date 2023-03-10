@@ -8,33 +8,29 @@ function RentalDescription() {
         <>
         <div className='Rental-Box'>
             <section className='Rental-Section'>
-                <h2>Entire cabin hosted by Tag & Sherilyn</h2>
+                <h2 className='Rental-Section-Header'>Entire cabin hosted by Tag & Sherilyn</h2>
                 <ol className='Rental-List'>
-                    <li >
+                    <li className='Rental-List-Child' >
                         <span>5 guests</span>
                     </li>
-                    <li>
-                        <span aria-hidden="true"> · </span>    
+                    <li className='Rental-List-Child'>
+                        <span aria-hidden="true" > · </span>    
                         <span>3 bedrooms</span>
                     </li> 
-                    <li>
+                    <li className='Rental-List-Child'>
                         <span aria-hidden="true"> · </span>
                         <span>4 beds</span>
                         
                     </li>
-                    <li>
+                    <li className='Rental-List-Child'>
                         <span aria-hidden="true"> · </span>    
                         <span>2 baths</span>
                     </li>
                 </ol>
-                <div className= "rental-img-container">
+                {/* <div className= "rental-img-container">
                     <img src= {hostData.url}></img>
 								
-				</div>
-            
-            
-            
-            
+				</div> */}
             
             </section>
         </div>

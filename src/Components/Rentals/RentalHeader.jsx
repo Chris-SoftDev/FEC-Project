@@ -1,25 +1,26 @@
-
-import { useRef, useEffect, useContext } from 'react';
-import MiniNavContext from '../../Context/MiniNavContext';
-import NavContext from '../../Context/NavContext';
+import { useRef, useEffect, useContext } from "react";
+import MiniNavContext from "../../Context/MiniNavContext";
+import NavContext from "../../Context/NavContext";
 import { ReviewContext } from "../../Context/ReviewContext";
-import LoginMenu from '../NavBar/LoginMenu';
-import './RentalHeader.css';
+import LoginMenu from "../NavBar/LoginMenu";
+import ShowAllReviews from "../Reviews/ShowAllReviews";
+import "./RentalHeader.css";
 
 function RentalHeader() {
   const miniNav = useRef();
-  const { setIsMiniNavVisible } = useContext(MiniNavContext)
-  const { isLoginMenuVisible, openLoginMenu} = useContext(NavContext);
-    
+  const { setIsMiniNavVisible } = useContext(MiniNavContext);
+  const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
+
   useEffect(() => {
-      const observer = new IntersectionObserver(entries => {
-          const entry = entries[0];
-          setIsMiniNavVisible(entry.isIntersecting)
-      })
-      observer.observe(miniNav.current)
-  }, [])
-    
-  const { totalAvg, getReviews } = useContext(ReviewContext);
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setIsMiniNavVisible(entry.isIntersecting);
+    });
+    observer.observe(miniNav.current);
+  }, []);
+
+  const { totalAvg, getReviews, showReview, openAllRev } =
+    useContext(ReviewContext);
 
   const totalDec = roundToTenth(totalAvg);
 
@@ -52,7 +53,9 @@ function RentalHeader() {
               </svg>
             </div>
             <div className="rating-number">{totalDec} ·</div>
-            <button className="rating-reviews">{totalReviews} reviews</button>
+            <button className="rating-reviews" onClick={openAllRev}>
+              {totalReviews} reviews
+            </button>
             <div className="rating-spacer">·</div>
             <button className="rating-location">
               Boise, Idaho, United States
@@ -114,6 +117,16 @@ function RentalHeader() {
                 />
               </div>
               <div className="bottom-right-image-container">
+                <button className="overlay-button">
+                    <div className="dot-icon">
+                        <svg viewBox="0 0 16 16"> 
+                            <path d="m3 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fillRule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                    Show all photos
+                    </div>
+                </button>
                 <img
                   src="https://a0.muscache.com/im/pictures/6fb0f548-2453-42cd-91d6-01b4b2a26c8d.jpg?im_w=720"
                   alt=""
@@ -125,6 +138,7 @@ function RentalHeader() {
       </div>
       <div ref={miniNav}></div>
       {isLoginMenuVisible && <LoginMenu />}
+      {showReview && <ShowAllReviews />}
     </>
   );
 }
