@@ -32,8 +32,7 @@ function App() {
                     </div>
                     <div className="main-content-container">
                       <div className='rentals-content-container'>
-                        <div className="rentals-container">                    
-                            <Rentals />
+                        <div className="rentals-container">                   
                           <MiniNavProvider>
                             <Rentals />
                           </MiniNavProvider>
@@ -47,9 +46,7 @@ function App() {
                           </LocationProvider>
                         </div>
                         <div className="host-container">
-                          <HostProvider>
                             <Host />
-                          </HostProvider>
                         </div>
                       </div>
                     </div>
