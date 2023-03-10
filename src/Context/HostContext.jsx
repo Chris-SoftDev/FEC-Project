@@ -97,7 +97,7 @@ export const HostProvider = ({ children }) => {
                 additionalRules,
                 openAmenities,
                 closeAmenities,
-                showAllAmenities
+                showAllAmenities,
                 setDateRange,
                 dateRange,
                 emptyCalendar
