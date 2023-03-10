@@ -13,6 +13,8 @@ export const HostProvider = ({ children }) => {
     const [rulesData, setRulesData] = useState([])
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
+    const [range, setRange] = useState([])
+    const [numberOfNights, setNumberOfNights] = useState('')
 
 
     useEffect(() => {
@@ -78,7 +80,11 @@ export const HostProvider = ({ children }) => {
                 safetyData,
                 rulesData,
                 cancelData,
-                additionalRules
+                additionalRules,
+                setRange,
+                range,
+                setNumberOfNights,
+                numberOfNights
             }}
         >
             {children}
