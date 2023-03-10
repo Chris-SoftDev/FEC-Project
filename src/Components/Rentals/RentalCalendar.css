@@ -54,19 +54,15 @@
     font-weight: 300;
 }
 
-
  .rdp-tbody{ /*numbers*/
     color:currentColor;
-
 } 
 
 .rdp-button_reset{ /*also works for numbers*/
     color:currentColor;
     font-size: 14px;
 }
-.rdp-button_reset{ /*also works for numbers*/
-    
-}
+
 
 
 .rdp-day[aria-selected="true"] { /*selected dates highlight*/
@@ -80,15 +76,12 @@
 
 .rdp-day_range_end[aria-selected="true"] { /*to date selected*/
     background-color: currentColor;
-    
 }
 
 .rdp-day:hover:not([aria-disabled="true"]) {
     background-color: white;
     border: 1px solid black;
   }
-
-
 
 .calendar-footer{
     display: flex;
