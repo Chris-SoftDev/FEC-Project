@@ -72,6 +72,17 @@
     flex-direction: row;
 }
 
+.amen-item svg {
+    width: 24px;
+    height: 24px;
+    margin: 5px 10px 0 0;
+}
+
+.amen-item {
+    display: flex;
+    flex-direction: row;
+}
+
 .amen-content {
     display: flex;
     margin: 10px 120px 0 0;
