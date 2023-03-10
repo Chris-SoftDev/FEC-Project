@@ -4,6 +4,7 @@ import "./ShowAllReviews.css";
 import ReviewModalCard from "./ReviewModalCard";
 import ReviewModalCategories from "./ReviewModalCategories";
 
+
 export default function ShowAllReviews() {
   const { showReview, closeAllRev, totalAvg, getReviews } = useContext(ReviewContext);
 
