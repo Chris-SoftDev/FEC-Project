@@ -13,15 +13,19 @@
     /* Modal pins to bottom of screen with nightly rate, reviews rating and button */
 }
 
-.rental-modal-container {
+.rental-modal-outer-container {
     position: sticky;
-    top: 90px;
+    top: 0;
+    padding-bottom: 48px;
+    z-index: 1;
+}
+
+.rental-modal-container {
     width: 100%;
     padding: 24px;
     border: 1px solid #ddd;
     border-radius: 12px;
-    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
-    z-index: 1;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12); 
 }
 
 .rental-modal-content-container {

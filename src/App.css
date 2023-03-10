@@ -17,7 +17,6 @@
   }
 }
 
-
 html {
   margin-right: calc(-1 * (100vw - 100%)); /* Prevents page from adjusting when scrollbar is present or not */
   overflow-x: hidden;
