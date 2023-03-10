@@ -14,6 +14,7 @@ export const HostProvider = ({ children }) => {
     const [rulesData, setRulesData] = useState([])
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
+    const [showAllAmenities, setShowAllAmenities] = useState(false)
     const [dateRange, setDateRange] = useState([]) //dates in Mar 14, 2023 format
 
 
@@ -56,6 +57,14 @@ export const HostProvider = ({ children }) => {
         setShowCancellation(false)
     }
 
+    const openAmenities = () => {
+        setShowAllAmenities(true)
+    }
+
+    const closeAmenities = () => {
+        setShowAllAmenities(false)
+    }
+
     const emptyCalendar = () => {
         setDateRange([])
     }
@@ -63,10 +72,10 @@ export const HostProvider = ({ children }) => {
 
     // Disables vertical scroll-bar when Login/Language window is visible
     useEffect(() => {
-        showHouseRules || showMoreSafety || showCancellation
+        showHouseRules || showMoreSafety || showCancellation || showAllAmenities
           ? (document.body.parentElement.style.overflowY = "hidden")
           : (document.body.parentElement.style.overflowY = "auto");
-      }, [showHouseRules, showMoreSafety, showCancellation]);
+      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities]);
 
     return (
         <HostContext.Provider 
@@ -86,6 +95,9 @@ export const HostProvider = ({ children }) => {
                 rulesData,
                 cancelData,
                 additionalRules,
+                openAmenities,
+                closeAmenities,
+                showAllAmenities
                 setDateRange,
                 dateRange,
                 emptyCalendar

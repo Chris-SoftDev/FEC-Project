@@ -1,6 +1,12 @@
+import { useState, useContext } from 'react'
+import { HostContext } from '../../Context/HostContext'
+import RentalAmentitiesModal from './RentalAmenitiesModal'
 import './RentalAmenities.css';
 
 function RentalAmenities() {
+
+    const {openAmenities, showAllAmenities} = useContext(HostContext)
+
     return ( 
         <div className='main-container'>
             <div className='content-container'>
@@ -127,9 +133,10 @@ function RentalAmenities() {
                     </div>
                 </div>
                     <div id="amen-button-cont">
-                        <div id='amen-button'>Show all 49 amenities</div>
+                        <div id='amen-button' onClick={ openAmenities }>Show all 49 amenities</div>
                     </div>
             </div>
+            {showAllAmenities && (<RentalAmentitiesModal/>)}
         </div>
     );
 }
