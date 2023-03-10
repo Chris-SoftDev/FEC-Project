@@ -8,7 +8,6 @@
     width: 58.33%;
     display: flex;
     flex-direction: column;
-    margin-right: 8.33%;
 }
 
 .rental-description-container {
@@ -26,9 +25,10 @@
 }
 
 .rental-bottom-right-pane-content-container {
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: 33.33%;
     min-height: calc(100vh - 90px);
-    display: flex;
-    flex-direction: column;
+    margin-left: 8.33%;
 }

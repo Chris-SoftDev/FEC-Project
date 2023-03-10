@@ -7,33 +7,28 @@ import './RentalCalendar.css';
 
 
 function RentalCalendar() {
-    const { range, setRange, numberOfNights, setNumberOfNights } = useContext(HostContext)
-    const handleResetClick = () => setRange([]);
+    const { dateRange, setDateRange, emptyCalendar } = useContext(HostContext)
     const defaultMonth =new Date(2023,2) //start of calendar
 
-    const formattedFromDate = range.from ? format(range.from, 'MMM d, yyyy') : '';
-    const numDays = range.from && range.to ? differenceInDays(range.to, range.from) + 1 : 0;
-    setNumberOfNights(numDays)
-
-    console.log(range.from)
-    console.log(range.to)
+    const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
+    const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
+    const numberFormat = formattedFromDate
 
     const modifiers = {
-        from: range.from,
-        to: range.to,
+        from: dateRange.from,
+        to: dateRange.to,
       };
-
 
     return (
 
         <div className='calendar-main-container'>
             <div className='calendar-title'>
                 <div className='number-of-nights'>
-                    {numberOfNights ? `${numberOfNights} nights in Boise` : 'Select check-in date'}
+                    {dateRange.from && dateRange.to ? `${numDays} nights in Boise` : 'Select check-in date'}
                 </div>
                 <div className='date-range'>
-                    {range.from && range.to ?
-                    `${formattedFromDate} - ${format(range.to, 'MMM d, yyyy')}` :
+                    {dateRange.from && dateRange.to ?
+                    `${formattedFromDate} - ${format(dateRange.to, 'MMM d, yyyy')}` :
                     'Add your travel dates for exact pricing'}
                 </div>
             </div>
@@ -43,13 +38,13 @@ function RentalCalendar() {
                 <p>Selected range: {formattedFromDate} - {range.to ? format(range.to, 'MMMM d, yyyy') : ''}</p> */}
                 
                 <DayPicker
-                    numberOfMonths={2}
-                    defaultMonth={defaultMonth}
-                    fromMonth={defaultMonth}
-                    toDate={new Date(2023, 9)} //after 10(october) which is november
+                    numberOfMonths={2} //two calendars mode
+                    defaultMonth={defaultMonth} //start month of Calendar
+                    fromMonth={defaultMonth} //start month of Calendar
+                    toDate={new Date(2023, 9)} //last month of Calendars
                     mode="range" //select mulitple days
-                    selected={range}
-                    onSelect={setRange}
+                    selected={dateRange}
+                    onSelect={setDateRange}
                     modifiers={modifiers} 
                 />
             </div>
@@ -60,7 +55,7 @@ function RentalCalendar() {
                     </svg>
                 </div>
                 <div className='clear-dates'>
-                    <button onClick={handleResetClick}>Clear dates</button>
+                    <button onClick={emptyCalendar}>Clear dates</button>
                 </div>
             </div>
         </div>

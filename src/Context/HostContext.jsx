@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { format } from 'date-fns' //to format the dates
 
 export const HostContext = createContext()
 
@@ -13,8 +14,8 @@ export const HostProvider = ({ children }) => {
     const [rulesData, setRulesData] = useState([])
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
-    const [range, setRange] = useState([])
-    const [numberOfNights, setNumberOfNights] = useState('')
+    const [showAllAmenities, setShowAllAmenities] = useState(false)
+    const [dateRange, setDateRange] = useState([]) //dates in Mar 14, 2023 format
 
 
     useEffect(() => {
@@ -56,12 +57,25 @@ export const HostProvider = ({ children }) => {
         setShowCancellation(false)
     }
 
+    const openAmenities = () => {
+        setShowAllAmenities(true)
+    }
+
+    const closeAmenities = () => {
+        setShowAllAmenities(false)
+    }
+
+    const emptyCalendar = () => {
+        setDateRange([])
+    }
+
+
     // Disables vertical scroll-bar when Login/Language window is visible
     useEffect(() => {
-        showHouseRules || showMoreSafety || showCancellation
-          ? (document.body.style.overflow = "hidden")
-          : (document.body.style.overflow = "auto");
-      }, [showHouseRules, showMoreSafety, showCancellation]);
+        showHouseRules || showMoreSafety || showCancellation || showAllAmenities
+          ? (document.body.parentElement.style.overflowY = "hidden")
+          : (document.body.parentElement.style.overflowY = "auto");
+      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities]);
 
     return (
         <HostContext.Provider 
@@ -81,10 +95,12 @@ export const HostProvider = ({ children }) => {
                 rulesData,
                 cancelData,
                 additionalRules,
-                setRange,
-                range,
-                setNumberOfNights,
-                numberOfNights
+                openAmenities,
+                closeAmenities,
+                showAllAmenities,
+                setDateRange,
+                dateRange,
+                emptyCalendar
             }}
         >
             {children}
