@@ -64,17 +64,21 @@
 }
 
 .content-container-amen {
-    min-width: 2000px;
-    margin: 45px 0 25px 0;
+    width: 100%;
+    margin: 45px 0 0 0;
     text-align: left;
 }
 
 .amen-column-cont {
+    margin-top: 12px;
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .amen-column {
+    /* margin: 16px 0; */
+    width: 50%;
 }
 
 .amen-item svg {
@@ -84,6 +88,7 @@
 }
 
 .amen-item {
+    margin-top: 14px;
     display: flex;
     flex-direction: row;
     
@@ -91,7 +96,7 @@
 
 .amen-content {
     display: flex;
-    margin: 10px 120px 0 0;
+    margin: 10px 0px 0 0;
     max-width: 200px;
     text-align: left;
 }
@@ -110,3 +115,4 @@
     font-weight: 500;
     text-align: center;
 }
+

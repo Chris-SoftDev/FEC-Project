@@ -13,7 +13,7 @@ export const HostProvider = ({ children }) => {
     const [rulesData, setRulesData] = useState([])
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
-
+    const [showAllAmenities, setShowAllAmenities] = useState(false)
 
     useEffect(() => {
         const fetchHostData = async () => {
@@ -54,6 +54,14 @@ export const HostProvider = ({ children }) => {
         setShowCancellation(false)
     }
 
+    const openAmenities = () => {
+        setShowAllAmenities(true)
+    }
+
+    const closeAmenities = () => {
+        setShowAllAmenities(false)
+    }
+
     // Disables vertical scroll-bar when Login/Language window is visible
     useEffect(() => {
         showHouseRules || showMoreSafety || showCancellation
@@ -78,7 +86,10 @@ export const HostProvider = ({ children }) => {
                 safetyData,
                 rulesData,
                 cancelData,
-                additionalRules
+                additionalRules,
+                openAmenities,
+                closeAmenities,
+                showAllAmenities
             }}
         >
             {children}
