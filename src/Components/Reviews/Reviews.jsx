@@ -9,6 +9,7 @@ function Reviews() {
   const { openAllRev, showReview } = useContext(ReviewContext);
   const { getReviews } = useContext(ReviewContext);
   const totalReviews = amountOfReviews(getReviews)
+  
   function amountOfReviews (rev) {
     for (let i = 0; i < rev.length; i++) {
       const element = rev.length;
