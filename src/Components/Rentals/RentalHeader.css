@@ -220,12 +220,45 @@
 .bottom-right-image-container {
     width: 50%;
     padding-top: 8px;
+    position: relative;
 }
 
 .bottom-right-image-container img {
     max-width: 100%;
+ 
 }
 
 .bottom-right-image-container img:hover {
     cursor: pointer;
+
+}
+.overlay-button::after{
+    content: "";
+}
+
+.overlay-button{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  z-index: 3;
+  background-color: #ffffff;
+  height: 36px;
+  width: 155px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  cursor: pointer;
+}
+.dot-icon {
+    height: 16px;
+    width: 16px;
+    padding-right: 25px;
+
+}
+.dot-icon svg {
+    height: 16px;
+    width: 16px;
+    
+    
 }
