@@ -8,8 +8,35 @@
     display: flex;
     flex-wrap: row;
     flex: row;
+    flex-direction: left !important;
+    text-align: left !important;
+    
+    font-size: 18px;
+    font-weight: 200;
 }
 
 .Rental-Section {
-    flex: 1 
+    font-size: 14px;
+    font-weight: 200;
+    flex: 1;
+    flex-direction: left !important;
+    
+}
+.Rental-Section-Header {
+font-weight: 500;
+}
+
+.Rental-List-Child {
+
+    padding-top: 18px;
+    float: left;
+    margin-left: 5px;
+    font-size: 16px;
+    
+}
+.rental-img-container{
+    background: rgb(255, 255, 255);
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
