@@ -1,6 +1,7 @@
 .bottom-rental-content-container {
     display: flex;
     flex-direction: row;
+    margin-top: 48px;
 }
 
 .rental-bottom-left-pane-content-container {
@@ -25,7 +26,9 @@
 }
 
 .rental-bottom-right-pane-content-container {
+    position: relative;
     width: 33.33%;
+    min-height: calc(100vh - 90px);
     display: flex;
     flex-direction: column;
 }
