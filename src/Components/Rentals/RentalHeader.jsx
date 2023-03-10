@@ -4,12 +4,15 @@ import NavContext from "../../Context/NavContext";
 import { ReviewContext } from "../../Context/ReviewContext";
 import LoginMenu from "../NavBar/LoginMenu";
 import ShowAllReviews from "../Reviews/ShowAllReviews";
+import ShareMenu from "./ShareMenu"
 import "./RentalHeader.css";
 
 function RentalHeader() {
   const miniNav = useRef();
   const { setIsMiniNavVisible } = useContext(MiniNavContext);
   const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
+  const { openShareMenu, isShareMenuVisible } = useContext(ReviewContext);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -63,7 +66,7 @@ function RentalHeader() {
           </div>
           <div className="rental-header-property-links">
             <div className="rental-header-share-btn-container">
-              <button id="header-share-btn">
+              <button id="header-share-btn" onClick={openShareMenu}>
                 <svg viewBox="0 0 32 32">
                   <g fill="none">
                     <path d="M27 18v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9"></path>
@@ -71,7 +74,7 @@ function RentalHeader() {
                     <path d="M6 13l9.293-9.293a1 1 0 0 1 1.414 0L26 13"></path>
                   </g>
                 </svg>
-                <div className="header-share-btn-text">Share</div>
+                <div className="header-share-btn-text" >Share</div> 
               </button>
             </div>
             <div className="rental-header-save-btn-container">
@@ -139,6 +142,7 @@ function RentalHeader() {
       <div ref={miniNav}></div>
       {isLoginMenuVisible && <LoginMenu />}
       {showReview && <ShowAllReviews />}
+      {isShareMenuVisible && <ShareMenu />}
     </>
   );
 }
