@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import MiniNavContext from '../../Context/MiniNavContext';
+import MiniNavBar from './MiniNavBar';
 import './RentalModal.css';
 
 function RentalModal() {
     const { isMiniNavVisible } = useContext(MiniNavContext)
-    console.log(isMiniNavVisible)
 
     return ( 
         <>
@@ -50,6 +50,7 @@ function RentalModal() {
                     </button>
                 </div>
             </div>
+            {(!isMiniNavVisible) && <MiniNavBar />}
         </>
     );
 }
