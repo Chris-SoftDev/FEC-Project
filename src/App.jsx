@@ -31,7 +31,9 @@ function App() {
                   <div className="main-content-container">
                     <div className='rentals-content-container'>
                       <div className="rentals-container">
+                      <HostProvider>
                           <Rentals />
+                      </HostProvider>
                       </div>
                       <div className="reviews-container">
                         <Reviews />

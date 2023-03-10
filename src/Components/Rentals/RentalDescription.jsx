@@ -1,6 +1,9 @@
 import './RentalDescription.css';
+import { useContext } from 'react';
+import { HostContext } from '../../Context/HostContext'
 
 function RentalDescription() {
+    const { hostData } = useContext(HostContext)
     return (
         <>
         <div className='Rental-Box'>
@@ -24,6 +27,10 @@ function RentalDescription() {
                         <span>2 baths</span>
                     </li>
                 </ol>
+                <div className= "rental-img-container">
+                    <img src= {hostData.url}></img>
+								
+				</div>
             
             
             
@@ -36,3 +43,5 @@ function RentalDescription() {
 }
 
 export default RentalDescription;
+
+//<img src= {hostData.url}></img>
