@@ -1,8 +1,9 @@
-/* .main-container {
-} */
+.main-container {
+    max-width: 3000px;
+}
 
 .content-container {
-    max-width: 2000px;
+    max-width: 3000px;
 }
 
 .accom-container {
@@ -21,7 +22,7 @@
 }
 
 .bed-container {
-    border: 1px solid black;
+    border: 1px solid rgba(221, 221, 221);
     border-radius: 12px !important;
     flex-wrap: wrap;
     text-align: left;
@@ -63,13 +64,17 @@
 }
 
 .content-container-amen {
-    margin: 50px 0;
+    min-width: 2000px;
+    margin: 45px 0 25px 0;
     text-align: left;
 }
 
 .amen-column-cont {
     display: flex;
     flex-direction: row;
+}
+
+.amen-column {
 }
 
 .amen-item svg {
@@ -81,6 +86,7 @@
 .amen-item {
     display: flex;
     flex-direction: row;
+    
 }
 
 .amen-content {
