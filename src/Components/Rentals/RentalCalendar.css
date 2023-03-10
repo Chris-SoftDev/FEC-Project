@@ -1,6 +1,12 @@
 .calendar-main-container{
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.calendar-container{
+    margin-left: -2em;
+    width: 100%;
 }
 
 .calendar-title{
@@ -48,22 +54,34 @@
     font-weight: 300;
 }
 
-/* .rdp-tbody{ numbers
-    color:blue;
-} */
+ .rdp-tbody{ /*numbers*/
+    color:currentColor;
+} 
 
 .rdp-button_reset{ /*also works for numbers*/
     color:currentColor;
-    font-size: 14px;;
+    font-size: 14px;
 }
-.rdp-button_reset hover{ /*also works for numbers*/
-    color: white;
-}
+
 
 
 .rdp-day[aria-selected="true"] { /*selected dates highlight*/
     background-color: rgba(221, 221, 221, .7);
 }
+
+.rdp-day_range_start[aria-selected="true"] { /*from date selected*/
+    background-color: currentColor;
+    
+}
+
+.rdp-day_range_end[aria-selected="true"] { /*to date selected*/
+    background-color: currentColor;
+}
+
+.rdp-day:hover:not([aria-disabled="true"]) {
+    background-color: white;
+    border: 1px solid black;
+  }
 
 .calendar-footer{
     display: flex;
