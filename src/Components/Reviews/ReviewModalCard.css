@@ -57,6 +57,7 @@
 .Modal-name-date-container {
   text-align: left;
   margin-left: 10px;
+  width: 150px;
 }
 
 .Modal-date-container {
@@ -69,35 +70,25 @@
   font-weight: 480;
 }
 
-.Modal-input-container {
-  padding-bottom: 15px;
-}
+
 .input {
-  width: 85%;
+  width: 100%;
   text-align: left;
   height: 40px;
   background-color: #f7f7f7;
   border-radius: 15px;
   color: #717171;
-  padding-left: 20px;
+  padding-left: 20px; 
+  border: none solid black
+
+  
 }
 
 @media only screen and (max-width: 1128px) {
   .Modal-REVIEWS-container {
-    display: flex;
-    flex-direction: column;
+      padding-left: 2rem;
   }
-  .Modal-review-box {
-    width: 100%;
-  }
-  .Modal-inner-container {
-    width: 100%;
-  }
-  .Modal-individual-review {
-    width: 100%;
-    text-align: left;
-  }
-  .Modal-actual-review {
-    width: 100%;
-  }
+  
+ 
+  
 }

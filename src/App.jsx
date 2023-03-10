@@ -11,6 +11,7 @@ import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
 import { ReviewProvider} from './Context/ReviewContext';
 import { LocationProvider } from './Context/LocationContext';
+import { MiniNavProvider } from './Context/MiniNavContext';
 
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -21,39 +22,42 @@ function App() {
         <Route exact path='/' element={
             <NavProvider>
               <ReviewProvider>
-                <div className="app-container">
-                  <div className="nav-container">
-                      <NavBar />
-                  </div>
-                  <div className="nav-mobile-container">
-                      <MobileNavbar />
-                  </div>
-                  <div className="main-content-container">
-                    <div className='rentals-content-container'>
-                      <div className="rentals-container">
-                      <HostProvider>
-                          <Rentals />
-                      </HostProvider>
-                      </div>
-                      <div className="reviews-container">
-                        <Reviews />
-                      </div>
-                      <div className="location-container">
-                        <LocationProvider>
-                          <Location />
-                        </LocationProvider>
-                      </div>
-                      <div className="host-container">
-                        <HostProvider>
-                          <Host />
-                        </HostProvider>
+                <HostProvider>
+                  <div className="app-container">
+                    <div className="nav-container">
+                        <NavBar />
+                    </div>
+                    <div className="nav-mobile-container">
+                        <MobileNavbar />
+                    </div>
+                    <div className="main-content-container">
+                      <div className='rentals-content-container'>
+                        <div className="rentals-container">                    
+                            <Rentals />
+                          <MiniNavProvider>
+                            <Rentals />
+                          </MiniNavProvider>
+                        </div>
+                        <div className="reviews-container">
+                          <Reviews />
+                        </div>
+                        <div className="location-container">
+                          <LocationProvider>
+                            <Location />
+                          </LocationProvider>
+                        </div>
+                        <div className="host-container">
+                          <HostProvider>
+                            <Host />
+                          </HostProvider>
+                        </div>
                       </div>
                     </div>
+                    <footer className="footer-container">
+                        <Footer />
+                    </footer>
                   </div>
-                  <footer className="footer-container">
-                      <Footer />
-                  </footer>
-                </div>
+                </HostProvider>
               </ReviewProvider>
             </NavProvider>
         }/>        

@@ -5,6 +5,9 @@
 
 .rental-bottom-left-pane-content-container {
     width: 58.33%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 8.33%;
 }
 
 .rental-description-container {
@@ -23,5 +26,6 @@
 
 .rental-bottom-right-pane-content-container {
     width: 33.33%;
-    margin-left: 8.33%;
+    display: flex;
+    flex-direction: column;
 }
