@@ -1,0 +1,135 @@
+.calendar-main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.calendar-container{
+    margin-left: -2em;
+    width: 100%;
+}
+
+.calendar-title{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.number-of-nights{
+    font-size: 20.5px;
+    font-weight: 500;
+    margin-bottom: .5em;
+}
+
+.date-range{
+    font-size: 13.5px;
+    color:#717171;
+    font-weight: light;
+}
+
+
+.rdp-caption_label{ /*month and year*/
+    font-size: 15.5px;
+    font-weight: 500;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.rdp-day_today:not(.rdp-day_outside) { /*today's date THIS IS MAKING THE CURRENT DATE NOT BOLDER THAN THE REST OF THE NUMBERS*/
+    font-weight:400;
+  }
+
+
+.rdp-nav button{/*carrots*/
+    color: currentColor;
+    width: 24px;
+    height: 24px;
+
+    
+}
+
+.rdp-head_cell{ /*days of week*/
+    color: #717171;
+    font-size: 11px;
+    font-weight: 300;
+}
+
+ .rdp-tbody{ /*numbers*/
+    color:currentColor;
+} 
+
+.rdp-button_reset{ /*also works for numbers*/
+    color:currentColor;
+    font-size: 14px;
+}
+
+
+
+.rdp-day[aria-selected="true"] { /*selected dates highlight*/
+    background-color: rgba(221, 221, 221, .7);
+}
+
+.rdp-day_range_start[aria-selected="true"] { /*from date selected*/
+    background-color: currentColor;
+    
+}
+
+.rdp-day_range_end[aria-selected="true"] { /*to date selected*/
+    background-color: currentColor;
+}
+
+.rdp-day:hover:not([aria-disabled="true"]) {
+    background-color: white;
+    border: 1px solid black;
+  }
+
+.calendar-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.keyboard-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.clear-dates button:hover{
+    background-color: rgba(235, 235, 235, 0.55);
+    cursor: pointer;
+}
+
+.clear-dates button{
+    padding: .5em .5em .5em .5em;
+    border: none;
+    border-radius: 10%;
+    background-color: white;
+    font-size:14px;
+    margin-right: 2em;
+    text-decoration-line: underline;
+}
+
+
+  @media screen and (max-width: 768px) {
+    /* Media query for screen size smaller than 768px */
+    .rdp-months div:nth-of-type(2) {
+      display: none;
+    }
+
+    .rdp{
+        width: 100%;
+    }
+
+    .rdp-months{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .rdp-months div:nth-of-type(1) {
+        max-width:100%
+      }
+
+    .rdp-caption{ /*month and year*/
+        font-size: 20px;
+    }
+  }
