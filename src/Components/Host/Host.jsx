@@ -11,6 +11,7 @@ function Host() {
 	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety, hostData, cohostData, rulesData, safetyData, cancelData} = useContext(HostContext)
 	const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
 
+
 	return ( 
 		<>
 			<div className = "myhost-container">
