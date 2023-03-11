@@ -3,6 +3,7 @@ import { useEffect, createContext, useState, useRef } from "react";
 const ReviewContext = createContext();
 
 export const ReviewProvider = ({ children }) => {
+  
   const [showReview, setshowReview] = useState(false);
   const [getReviews, setgetReviews] = useState([]);
   const [image, setimage] = useState([]);
@@ -62,6 +63,7 @@ export const ReviewProvider = ({ children }) => {
   const closeAllRev = () => {
     setshowReview(false);
   };
+
   useEffect(() => {
     showReview
       ? (document.body.parentElement.style.overflowY = "hidden")
