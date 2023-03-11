@@ -16,8 +16,8 @@ export const LocationProvider = ({ children }) => {
       }
     useEffect(() => {
         showLocation 
-          ? (document.body.style.overflow = "clip")
-          : (document.body.style.overflow = "auto");
+          ? (document.body.parentElement.style.overflowY = "clip")
+          : (document.body.parentElement.style.overflowY = "auto");
       }, [showLocation]);
 
     //   useEffect(() => {
