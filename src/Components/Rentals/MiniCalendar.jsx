@@ -1,10 +1,11 @@
-import { useContext } from 'react'; 
+import { useContext, useEffect, useRef } from 'react'; 
 import HostContext from '../../Context/HostContext';
 import { DayPicker } from 'react-day-picker'
 import { format, differenceInDays } from 'date-fns'
 import './MiniCalendar.css'
 
 function MiniCalendar() {
+    const miniCalenderHeaderRef = useRef()
     const { miniCalenderRef, closeMiniCalendar } = useContext(HostContext)
     const { dateRange, setDateRange, emptyCalendar } = useContext(HostContext)
 
@@ -16,10 +17,19 @@ function MiniCalendar() {
         to: dateRange.to,
     };
 
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          const entry = entries[0];
+          if (!entry.isIntersecting) {
+            closeMiniCalendar()
+          }
+        });
+        observer.observe(miniCalenderHeaderRef.current);
+      }, []);
 
     return ( 
         <div className="mini-calendar-modal-container" ref={miniCalenderRef}>
-            <div className="mini-calendar-modal-header">
+            <div className="mini-calendar-modal-header" ref={miniCalenderHeaderRef}>
                 <div className="mini-calendar-modal-header-select-dates-container">
                     <div className='number-of-nights'>
                         {dateRange.from && dateRange.to ? `${numDays} nights in Boise` : 'Select dates'}
