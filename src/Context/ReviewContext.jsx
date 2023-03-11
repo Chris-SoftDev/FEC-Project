@@ -64,12 +64,6 @@ export const ReviewProvider = ({ children }) => {
     setshowReview(false);
   };
 
-  useEffect(() => {
-    showReview
-      ? (document.body.parentElement.style.overflowY = "hidden")
-      : (document.body.parentElement.style.overflowY = "auto");
-  }, [showReview]);
-
   const openShareMenu = () => {
     setIsShareMenuVisible(true);
   };
@@ -79,10 +73,10 @@ export const ReviewProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    isShareMenuVisible
-      ? (document.body.parentElement.style.overflowY = "hidden")
+    isShareMenuVisible || showReview
+      ? (document.body.parentElement.style.overflowY = "clip")
       : (document.body.parentElement.style.overflowY = "auto");
-  }, [isShareMenuVisible]);
+  }, [isShareMenuVisible, showReview]);
 
 
 

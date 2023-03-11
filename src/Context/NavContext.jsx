@@ -89,7 +89,7 @@ export const NavProvider = ({ children }) => {
   // Disables vertical scroll-bar when Login/Language window is visible
   useEffect(() => {
     isLoginMenuVisible || isLangMenuVisible
-      ? (document.body.parentElement.style.overflowY = "hidden")
+      ? (document.body.parentElement.style.overflowY = "clip")
       : (document.body.parentElement.style.overflowY = "auto");
   }, [isLoginMenuVisible, isLangMenuVisible]);
 

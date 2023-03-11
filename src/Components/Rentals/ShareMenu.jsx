@@ -56,7 +56,8 @@ export default function ShareLink() {
                       <svg viewBox="0 0 32 32">
                         <defs>
                           <linearGradient x1="50.794%" y1="93.362%" x2="50.794%" y2="12.41%" id="imessagegradient">
-                            <stop stop-color="#0CBD2A" offset="0%"></stop><stop stop-color="#5BF675" offset="100%"></stop>
+                            <stop stopColor="#0CBD2A" offset="0%"></stop>
+                            <stop stopColor="#5BF675" offset="100%"></stop>
                           </linearGradient>
                         </defs>
                         <g>
