@@ -15,7 +15,7 @@
 
 .rental-modal-outer-container {
     position: sticky !important;
-    top: 80px !important;
+    top: 130px !important;
     padding-bottom: 48px;
     z-index: 1;
 }
