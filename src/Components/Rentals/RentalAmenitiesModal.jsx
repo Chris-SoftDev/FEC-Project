@@ -1,5 +1,5 @@
-import { HostContext } from '../../Context/HostContext';
 import { useContext } from 'react'
+import HostContext from '../../Context/HostContext';
 import './RentalAmenitiesModal.css'
 
 export default function RentalAmenitiesModal() {

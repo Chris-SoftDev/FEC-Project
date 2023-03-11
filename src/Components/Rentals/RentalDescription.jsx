@@ -1,6 +1,6 @@
 import './RentalDescription.css';
 import { useContext } from 'react';
-import { HostContext } from '../../Context/HostContext'
+import HostContext from '../../Context/HostContext'
 
 function RentalDescription() {
     const { hostData } = useContext(HostContext)
