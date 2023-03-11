@@ -7,7 +7,7 @@ import MiniCalendar from './MiniCalendar';
 import './RentalModal.css';
 
 function RentalModal() {
-    const { isMiniNavVisible } = useContext(MiniNavContext)
+    const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
     const { isMiniCalendarVisible, openMiniCalendar, nightlyRate } = useContext(HostContext)
     const { getReviews, openAllRev } = useContext(ReviewContext)
     
@@ -57,7 +57,7 @@ function RentalModal() {
                                 <button></button>
                             </div>
                         </div>
-                        <div className="rental-modal-content-footer">
+                        <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
                             <button type='submit' onClick={openMiniCalendar}>Check availability</button>
                         </div>
                     </div>

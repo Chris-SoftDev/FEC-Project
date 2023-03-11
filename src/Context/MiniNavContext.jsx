@@ -8,7 +8,9 @@ export const MiniNavProvider = ({ children }) => {
   const amenitiesRef = useRef();
   const reviewsRef = useRef();
   const locationRef = useRef();
+  const rentalModalFooterRef = useRef();
   const [isMiniNavVisible, setIsMiniNavVisible] = useState()
+  const [isMiniNavReserveVisible, setIsMiniNavReserveVisible] = useState()
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -16,6 +18,14 @@ export const MiniNavProvider = ({ children }) => {
       setIsMiniNavVisible(!entry.isIntersecting);
     });
     observer.observe(miniNavRef.current);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      (entry.isIntersecting) ? setIsMiniNavReserveVisible(true) :setIsMiniNavReserveVisible(false);
+    });
+    observer.observe(rentalModalFooterRef.current);
   }, []);
 
   const scrollToPhotos = () => {
@@ -55,6 +65,7 @@ export const MiniNavProvider = ({ children }) => {
     <MiniNavContext.Provider
       value={{
         isMiniNavVisible,
+        isMiniNavReserveVisible,
         setIsMiniNavVisible,
         scrollToPhotos,
         scrollToAmenities,
@@ -64,7 +75,8 @@ export const MiniNavProvider = ({ children }) => {
         photosRef,
         amenitiesRef,
         reviewsRef,
-        locationRef
+        locationRef,
+        rentalModalFooterRef
       }}
     >
       {children}
