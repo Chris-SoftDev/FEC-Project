@@ -1,6 +1,6 @@
 INSERT INTO reviews (user_name, comment, img_url, review_date)
 VALUES 
-  ('Kith', 'We had a great time, the place felt like home! Clean with everything you would need.', 'https://a0.muscache.com/im/pictures/user/71b67618-0162-4dc0-a885-d534d4070c51.jpg?im_w=240', '2021-01-10'),
+  ('Keith', 'We had a great time, the place felt like home! Clean with everything you would need.', 'https://a0.muscache.com/im/pictures/user/71b67618-0162-4dc0-a885-d534d4070c51.jpg?im_w=240', '2021-01-10'),
   ('Sarah', 'Great location, easy to understand directions, and not far from Idaho City which was a bonus!', 'https://a0.muscache.com/im/pictures/user/f0ebbcf4-e840-4751-a189-b4706b3f2a59.jpg?im_w=240', '2022-02-15'),
   ('Caleb', 'Thoroughly enjoyed our weekend stay! Everything was as described and we had everything we needed to relax and clock out for a few days. The views were serene; it was wonderful to sit on the porch and watch the clouds and weather roll over the mountains.', 'https://a0.muscache.com/im/pictures/user/35d08415-fa3a-4738-b0b3-eb94d0ef540a.jpg?im_w=240', '2021-06-20'),
   ('Christine', 'The host was very friendly and helpful.', 'https://a0.muscache.com/im/pictures/user/2108581a-c9f0-4b13-98f4-4fe2b79dae87.jpg?im_w=240', '2022-01-05'),
