@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { HostContext } from '../../Context/HostContext'
 import { DayPicker } from 'react-day-picker'
 import { format, differenceInDays } from 'date-fns'
@@ -6,19 +6,37 @@ import 'react-day-picker/dist/style.css';
 import './RentalCalendar.css';
 
 
+
 function RentalCalendar() {
     const { dateRange, setDateRange, emptyCalendar } = useContext(HostContext)
+    const [dateSelection, setDateSelection] = useState([])
     const defaultMonth =new Date(2023,2) //start of calendar
+
 
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
     const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
     const numberFormat = formattedFromDate
+
+    const [inputDate, setInputDate] = useState(''); //state used to get input dates
+
 
     const modifiers = {
         from: dateRange.from,
         to: dateRange.to,
       };
 
+    const handleInputChange = (event) => {
+        const inputValue = event.target.value;
+        // Parse the input value into a Date object
+        const inputDate = parse(inputValue, 'MM/dd/yyyy', new Date());
+        // Check if the inputDate is valid and not before today
+        if (!isValid(inputDate) || isBefore(inputDate, new Date())) {
+          return;
+        }
+        // Set the inputDate as the start date of the selected range
+        setDateRange({ from: inputDate, to: null });
+      };
+    
     return (
 
         <div className='calendar-main-container'>
@@ -36,14 +54,13 @@ function RentalCalendar() {
                 {/* <p>Selected range: {range.from ? format(range.from, 'P') : ''} - {range.to ? format(range.to, 'P') : ''}</p>
                 <p>Number of days: {numDays}</p>
                 <p>Selected range: {formattedFromDate} - {range.to ? format(range.to, 'MMMM d, yyyy') : ''}</p> */}
-                
                 <DayPicker
                     numberOfMonths={2} //two calendars mode
                     defaultMonth={defaultMonth} //start month of Calendar
                     fromMonth={defaultMonth} //start month of Calendar
                     toDate={new Date(2023, 9)} //last month of Calendars
                     mode="range" //select mulitple days
-                    selected={dateRange}
+                    selected={dateRange} //this state is located in hostcontext
                     onSelect={setDateRange}
                     modifiers={modifiers} 
                 />

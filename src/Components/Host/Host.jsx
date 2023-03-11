@@ -6,7 +6,7 @@ import ShowRules from './ShowRules'
 import ShowSafety from './ShowSafety';
 
 function Host() {
-	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety, hostData, cohostData, rulesData, safetyData, cancelData} = useContext(HostContext)
+	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety, hostData, cohostData, rulesData, safetyData} = useContext(HostContext)
 	return ( 
 		<>
 			<div className = "myhost-container">

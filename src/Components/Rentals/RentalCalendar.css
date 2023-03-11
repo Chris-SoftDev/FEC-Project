@@ -44,8 +44,6 @@
     color: currentColor;
     width: 24px;
     height: 24px;
-
-    
 }
 
 .rdp-head_cell{ /*days of week*/
@@ -53,6 +51,11 @@
     font-size: 11px;
     font-weight: 300;
 }
+
+.rdp-cell{
+    border-radius: 50%;
+}
+
 
  .rdp-tbody{ /*numbers*/
     color:currentColor;
@@ -71,8 +74,23 @@
 
 .rdp-day_range_start[aria-selected="true"] { /*from date selected*/
     background-color: currentColor;
+    border:white;
+    border-radius: 50% !important;
+    color:currentColor !important;
     
 }
+
+.rdp-day_range_end[aria-selected="true"] { /*from date selected*/
+    background-color: currentColor;
+    border:white;
+    border-radius: 50% !important;
+    color:currentColor !important;
+    
+}
+
+.react-datepicker__day--highlighted span {
+    color: green;
+  }
 
 .rdp-day_range_end[aria-selected="true"] { /*to date selected*/
     background-color: currentColor;
