@@ -4,12 +4,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100%;
+    z-index: 2;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .amenities-modal-container {
     display: flex;
+    height: 100%;
+    width: 100%;
+    /* overflow: scroll; */
 }
 
 .amenities-modal {
@@ -22,6 +25,7 @@
     width: 780px;
     max-width: 100%;
     height: 95%;
+    overflow: scroll;
 }
 
 .amenities-close-btn {
@@ -52,4 +56,31 @@
 
 .amenities-close-btn button:hover {
     background-color: rgba(235, 235, 235, 0.55);
+}
+
+.modal-header {
+    display: flex;
+    padding-left: 30px;
+}
+
+.amen-categories {
+    display: flex;
+    padding-left: 30px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.amen-modal-content {
+    padding-left: 30px;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+    display: flex;
+    width: 100%;
+    text-align: left;
+}
+
+.amen-modal-content-sub {
+    padding-left: 30px;
+    display: flex;
+    width: 100%;
+    text-align: left;
 }
