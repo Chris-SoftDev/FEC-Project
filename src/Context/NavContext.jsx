@@ -17,9 +17,13 @@ export const NavProvider = ({ children }) => {
     document.getElementById('nav-bar-profile-menu-btn').classList.toggle('profile-menu-btn-shadow')
   }
 
-  const openLoginMenu = () => {
+  const profileOpenLoginMenu = () => {
     setIsLoginMenuVisible(true);
     toggleProfileMenu();
+  }
+
+  const openLoginMenu = () => {
+    setIsLoginMenuVisible(true);
   }
 
   const closeLoginMenu = () => {
@@ -85,7 +89,7 @@ export const NavProvider = ({ children }) => {
   // Disables vertical scroll-bar when Login/Language window is visible
   useEffect(() => {
     isLoginMenuVisible || isLangMenuVisible
-      ? (document.body.parentElement.style.overflowY = "hidden")
+      ? (document.body.parentElement.style.overflowY = "clip")
       : (document.body.parentElement.style.overflowY = "auto");
   }, [isLoginMenuVisible, isLangMenuVisible]);
 
@@ -97,6 +101,7 @@ export const NavProvider = ({ children }) => {
         loginMenuRef,
         langMenuRef,
         toggleProfileMenu,
+        profileOpenLoginMenu,
         openLoginMenu,
         closeLoginMenu,
         openLangMenu,

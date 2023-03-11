@@ -1,26 +1,16 @@
-import { useRef, useEffect, useContext } from "react";
+import { useContext } from "react";
 import MiniNavContext from "../../Context/MiniNavContext";
 import NavContext from "../../Context/NavContext";
-import { ReviewContext } from "../../Context/ReviewContext";
+import ReviewContext from "../../Context/ReviewContext";
 import LoginMenu from "../NavBar/LoginMenu";
 import ShowAllReviews from "../Reviews/ShowAllReviews";
 import ShareMenu from "./ShareMenu"
 import "./RentalHeader.css";
 
 function RentalHeader() {
-  const miniNav = useRef();
-  const { setIsMiniNavVisible } = useContext(MiniNavContext);
+  const { miniNavRef, photosRef } = useContext(MiniNavContext);
   const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
   const { openShareMenu, isShareMenuVisible } = useContext(ReviewContext);
-
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setIsMiniNavVisible(entry.isIntersecting);
-    });
-    observer.observe(miniNav.current);
-  }, []);
 
   const { totalAvg, getReviews, showReview, openAllRev } =
     useContext(ReviewContext);
@@ -41,7 +31,7 @@ function RentalHeader() {
 
   return (
     <>
-      <div className="rental-header-container">
+      <div className="rental-header-container" ref={photosRef}>
         <div className="rental-header-property-title">
           Mountaintop Getaway w/Stunning Views and Hot Tub
         </div>
@@ -139,7 +129,7 @@ function RentalHeader() {
           </div>
         </div>
       </div>
-      <div ref={miniNav}></div>
+      <div ref={miniNavRef}></div>
       {isLoginMenuVisible && <LoginMenu />}
       {showReview && <ShowAllReviews />}
       {isShareMenuVisible && <ShareMenu />}

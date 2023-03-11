@@ -5,6 +5,17 @@
   font-size: 22px;
   width: 1120px;
   height: 25.99px;
+  letter-spacing: -0.3px;
+}
+
+.rating-reviews-icon-container {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.rating-reviews-icon-container svg {
+  fill: #000;
 }
 
 .Catergories-rating-bar-container {

@@ -1,10 +1,24 @@
 import { useContext } from 'react';
+import HostContext from '../../Context/HostContext';
+import ReviewContext from '../../Context/ReviewContext'
 import MiniNavContext from '../../Context/MiniNavContext';
 import MiniNavBar from './MiniNavBar';
+import MiniCalendar from './MiniCalendar';
 import './RentalModal.css';
 
 function RentalModal() {
-    const { isMiniNavVisible } = useContext(MiniNavContext)
+    const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
+    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate } = useContext(HostContext)
+    const { getReviews, openAllRev } = useContext(ReviewContext)
+    
+    function amountOfReviews(rev) {
+        for (let i = 0; i < rev.length; i++) {
+        const element = rev.length;
+        return element;
+        }
+    }
+    
+    const totalReviews = amountOfReviews(getReviews);
 
     return ( 
         <>
@@ -13,7 +27,7 @@ function RentalModal() {
                     <div className="rental-modal-content-container">
                         <div className="rental-modal-content-header">
                             <div className="rental-modal-content-header-pricing">
-                                <span id='header-modal-pricing-value'>$160</span>
+                                <span id='header-modal-pricing-value'>${nightlyRate}</span>
                                 <span id='header-modal-pricing-label'>night</span>
                             </div>
                             <div className="rental-modal-content-header-reviews">
@@ -23,19 +37,28 @@ function RentalModal() {
                                     </svg>
                                 </div>
                                 <div className="rental-modal-rating-number">4.93 ·</div>
-                                <button className='rental-modal-rating-reviews'>211 reviews</button>
+                                <button className='rental-modal-rating-reviews' onClick={openAllRev}>{totalReviews} reviews</button>
                             </div>
                         </div>
                         <div className="rental-modal-content-body">
                             <div className='rental-modal-dates'>
-                                <button></button>
+                                <button id="rental-modal-dates-btn" onClick={openMiniCalendar}>
+                                    <div className="rental-modal-dates-checkin">
+                                        <div className='rental-modal-dates-checkin-title'>CHECK-IN</div> 
+                                        <div className='rental-modal-dates-add-date'>Add date</div>
+                                    </div>
+                                    <div className="rental-modal-dates-checkout">
+                                        <div className='rental-modal-dates-checkout-title'>CHECKOUT</div> 
+                                        <div className='rental-modal-dates-add-date'>Add date</div>
+                                    </div>
+                                </button>
                             </div>
                             <div className='rental-modal-guests'>
                                 <button></button>
                             </div>
                         </div>
-                        <div className="rental-modal-content-footer">
-                            <button type='submit'>Check availability</button>
+                        <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
+                            <button type='submit' onClick={openMiniCalendar}>Check availability</button>
                         </div>
                     </div>
                 </div>
@@ -51,8 +74,9 @@ function RentalModal() {
                         </button>
                     </div>
                 </div>
+                {isMiniCalendarVisible && <MiniCalendar />}
             </div>
-            {(!isMiniNavVisible) && <MiniNavBar />}
+            {(isMiniNavVisible) && <MiniNavBar />}
         </>
     );
 }

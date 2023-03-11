@@ -23,37 +23,37 @@ function App() {
             <NavProvider>
               <ReviewProvider>
                 <HostProvider>
-                  <div className="app-container">
-                    <div className="nav-container">
-                        <NavBar />
-                    </div>
-                    <div className="nav-mobile-container">
-                        <MobileNavbar />
-                    </div>
-                    <div className="main-content-container">
-                      <div className='rentals-content-container'>
-                        <div className="rentals-container">                   
-                          <MiniNavProvider>
-                            <Rentals />
-                          </MiniNavProvider>
-                        </div>
-                        <div className="reviews-container">
-                          <Reviews />
-                        </div>
-                        <div className="location-container">
-                          <LocationProvider>
-                            <Location />
-                          </LocationProvider>
-                        </div>
-                        <div className="host-container">
-                            <Host />
+                  <MiniNavProvider>
+                    <div className="app-container">
+                      <div className="nav-container">
+                          <NavBar />
+                      </div>
+                      <div className="nav-mobile-container">
+                          <MobileNavbar />
+                      </div>
+                      <div className="main-content-container">
+                        <div className='rentals-content-container'>
+                          <div className="rentals-container">                   
+                              <Rentals />
+                          </div>
+                          <div className="reviews-container">
+                            <Reviews />
+                          </div>
+                          <div className="location-container">
+                            <LocationProvider>
+                              <Location />
+                            </LocationProvider>
+                          </div>
+                          <div className="host-container">
+                              <Host />
+                          </div>
                         </div>
                       </div>
+                      <footer className="footer-container">
+                          <Footer />
+                      </footer>
                     </div>
-                    <footer className="footer-container">
-                        <Footer />
-                    </footer>
-                  </div>
+                  </MiniNavProvider>
                 </HostProvider>
               </ReviewProvider>
             </NavProvider>

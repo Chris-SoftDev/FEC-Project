@@ -6,6 +6,7 @@ import MapContainer from './MapContainers'
 import LocationShowMore from './LocationShowMore';
 import {Link, Route, BrowserRouter as Router, Routes} from 'react-router-dom'
 import { useContext, useState } from 'react';
+import MiniNavContext from '../../Context/MiniNavContext';
 //import {LocationProvider, LocationContext} from '../Context/LocationContext';
 // import  from '../Context/LocationContext';
 
@@ -20,12 +21,12 @@ const linkStyle ={
 
 
 function Location() {
-    
+    const { locationRef } = useContext(MiniNavContext)
    
 
     return ( 
         
-        <div className='location_default'>
+        <div className='location_default' ref={locationRef}>
             <section className='section_default'>
                 <div className='location_name'>
                     <div className='location_name_box'>

@@ -35,6 +35,7 @@ CREATE TABLE property (
     cohost_info JSONB,
     safety JSONB,
     cancellation_policy JSONB,
-    house_rules JSONB
+    house_rules JSONB,
+    nightly_rate INTEGER
 );
 
