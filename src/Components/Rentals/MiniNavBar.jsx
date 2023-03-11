@@ -15,7 +15,6 @@ function MiniNavBar() {
                         <button onClick={scrollToReviews}>Reviews</button>
                         <button onClick={scrollToLocation}>Location</button>
                     </div>
-                    {/* <div className="mini-navbar-links-spacer"></div> */}
                 </div>
             </div>
         </div>
