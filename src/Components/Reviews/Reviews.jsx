@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { ReviewContext } from "../../Context/ReviewContext";
+import ReviewContext from "../../Context/ReviewContext";
+import MiniNavContext from "../../Context/MiniNavContext";
 import "./Reviews.css";
 import ShowAllReviews from "./ShowAllReviews";
 import ReviewCard from "./ReviewCard";
 import ReviewCategory from "./ReviewCategory";
 
 function Reviews() {
+  const { reviewsRef } = useContext(MiniNavContext)
   const { openAllRev, showReview } = useContext(ReviewContext);
   const { getReviews } = useContext(ReviewContext);
   const totalReviews = amountOfReviews(getReviews)
@@ -18,7 +20,7 @@ function Reviews() {
   }
 
   return (
-    <div className="Review-Container">
+    <div className="Review-Container" ref={reviewsRef}>
       <ReviewCategory />
       <ReviewCard />
       <div className="btn-container">

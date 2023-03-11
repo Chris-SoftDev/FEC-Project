@@ -1,4 +1,4 @@
-.cover-screen {
+.share-menu-cover-screen {
   position: fixed;
   top: 0;
   left: 0;
@@ -33,8 +33,6 @@
   height: 100%;
 }
 
-
-
 #share-menu-close-btn {
   flex: 0 0 16px;
   width: 16px;
@@ -61,4 +59,113 @@
 
 #share-menu-close-btn button:hover {
   background-color: rgba(235, 235, 235, 0.55);
+}
+
+.header-container{
+  text-align: left;
+  font-size: 26px;
+  font-weight: 480;
+}
+.img-title-container{
+  display: flex;
+  padding-top: 20px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.share-title{
+  color: rgb(34, 34, 34);
+  font-weight: 300;
+}
+
+
+.single-img-container img{
+  width: 69px;
+  height: 64px;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+.title-container {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  padding-top: 24px;
+}
+
+.outer-buttons-container{
+  display: flex;
+  flex-direction: row;
+
+}
+.btn-column{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  
+}
+
+.btn-column2{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  
+}
+
+.share-btn{
+  width: 250px;
+  height: 74px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.btn{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  cursor: pointer;
+  border: none  #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.share-svg-container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.whatsapp{
+  padding-top: 8px;
+  padding-left: 20px;
+}
+
+.whatsApp-svg{
+  width: 34px;
+  height: 34px;
+}
+
+.facebook-svg{
+  width: 34px;
+  height: 34px;
+}
+
+.email-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.email-svg svg {
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.messenger-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.messages-svg {
+  width: 32px;
+  height: 32px;  
 }

@@ -14,8 +14,8 @@
 }
 
 .rental-modal-outer-container {
-    position: sticky;
-    top: 0;
+    position: sticky !important;
+    top: 130px !important;
     padding-bottom: 48px;
     z-index: 1;
 }
@@ -26,6 +26,61 @@
     border: 1px solid #ddd;
     border-radius: 12px;
     box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12); 
+}
+
+.rental-modal-dates {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+#rental-modal-dates-btn {
+    display: flex;
+    flex-direction: row;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.rental-modal-dates-add-date {
+    color: #717171;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+}
+
+.rental-modal-dates-checkin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #b0b0b0;
+    padding-left: 15px;
+}
+
+.rental-modal-dates-checkin-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.rental-modal-dates-checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    padding-left: 15px;
+}
+
+.rental-modal-dates-checkout-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
 }
 
 .rental-modal-content-container {
@@ -86,6 +141,7 @@
     font-weight: 500;
     letter-spacing: -0.4px;
     text-decoration: underline;
+    text-underline-offset: 1px;
     cursor: pointer;
     margin-left: 3px;
 }
@@ -112,7 +168,7 @@
     text-align: center;
 }
 
-    .rental-modal-content-footer button {
+.rental-modal-content-footer button {
     width: 100%;
     height: 100%;
     border: none;

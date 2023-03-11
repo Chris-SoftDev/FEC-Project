@@ -6,7 +6,7 @@ function LoginMenu() {
     const {loginMenuRef, closeLoginMenu} = useContext(NavContext);
 
     return (
-        <div className='cover-screen'>
+        <div className='login-menu-cover-screen'>
             <div className='login-menu-container' ref={loginMenuRef}>
                 <div className="login-menu-header-container">
                     <div id="login-menu-close-btn" onClick={closeLoginMenu}>

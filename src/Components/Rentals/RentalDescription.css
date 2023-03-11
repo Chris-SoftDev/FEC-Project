@@ -40,3 +40,51 @@ font-weight: 500;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.Rental-Selection-Holder {
+    display: flex;
+
+}
+.Rental-Text-Cont {
+    display: flex;
+    flex-direction: column;
+
+}
+.Rental-Picture-Cont {
+    padding-left: 80px;
+
+}
+/* .Rental-Text-Top {
+
+}
+
+.Rental-Text-Bottom {
+
+} */
+
+.Rental-List {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.Rental-List-Child {
+    flex: 1;
+    text-align: center;
+    padding: 10;
+    margin: 0;
+}
+
+.rental-img-container{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    padding-left: 60px;
+
+}
+
+.rental-img-container img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}

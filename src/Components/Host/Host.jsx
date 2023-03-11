@@ -1,12 +1,16 @@
 import { useContext } from 'react';
-import { HostContext } from '../../Context/HostContext'
-import './Host.css'
+import HostContext from '../../Context/HostContext'
+import NavContext from "../../Context/NavContext";
+import LoginMenu from "../NavBar/LoginMenu";
 import ShowCancel from './ShowCancel';
 import ShowRules from './ShowRules'
 import ShowSafety from './ShowSafety';
+import './Host.css'
 
 function Host() {
 	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety, hostData, cohostData, rulesData, safetyData, cancelData} = useContext(HostContext)
+	const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
+
 	return ( 
 		<>
 			<div className = "myhost-container">
@@ -63,11 +67,9 @@ function Host() {
 						<li>Response rate: {hostData.response_rate}</li>
 						<li>Response time: {hostData.response_time}</li>
 					</ul>
-					<a href="https://www.airbnb.com/contact_host/22043136/send_message?adults=1&children=0&infants=0&check_in=2023-03-13&check_out=2023-03-18&pets=0">
-						<div className= "contact-btn-div">
-							<button className= "contact-btn">Contact host</button>
-						</div>
-					</a>
+					<div className= "contact-btn-div">
+						<button className= "contact-btn" onClick={openLoginMenu}>Contact host</button>
+					</div>
 					<div className ="payment-protect">
 						<div className="protection-logo">
 							<svg viewBox='0 0 48 48'>
@@ -143,6 +145,7 @@ function Host() {
 			{showHouseRules && (<ShowRules />)}
 			{showCancellation && (<ShowCancel />)}
 			{showMoreSafety && (<ShowSafety />)}
+			{isLoginMenuVisible && <LoginMenu />}
 		</>
 	);
 }
