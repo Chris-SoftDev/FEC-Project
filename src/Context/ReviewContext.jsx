@@ -1,6 +1,6 @@
 import { useEffect, createContext, useState, useRef } from "react";
 
-export const ReviewContext = createContext();
+const ReviewContext = createContext();
 
 export const ReviewProvider = ({ children }) => {
   const [showReview, setshowReview] = useState(false);
@@ -125,3 +125,5 @@ export const ReviewProvider = ({ children }) => {
     </ReviewContext.Provider>
   );
 };
+
+export default ReviewContext;

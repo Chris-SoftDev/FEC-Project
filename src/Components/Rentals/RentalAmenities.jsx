@@ -1,10 +1,11 @@
-import { useState, useContext } from 'react'
-import { HostContext } from '../../Context/HostContext'
+import { useContext } from 'react'
+import MiniNavContext from '../../Context/MiniNavContext';
+import HostContext from '../../Context/HostContext'
 import RentalAmentitiesModal from './RentalAmenitiesModal'
 import './RentalAmenities.css';
 
 function RentalAmenities() {
-
+    const { amenitiesRef } = useContext(MiniNavContext);
     const {openAmenities, showAllAmenities} = useContext(HostContext)
 
     return ( 
@@ -54,7 +55,7 @@ function RentalAmenities() {
                     </div>
                 </div>
             </div>
-            <div className="content-container-amen">
+            <div className="content-container-amen" ref={amenitiesRef}>
                 <h2>What this place offers</h2>
                 <div className="amen-column-cont">
                     <div className="amen-column">

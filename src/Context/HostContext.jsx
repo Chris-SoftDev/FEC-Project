@@ -1,10 +1,10 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 import { format } from 'date-fns' //to format the dates
 
-export const HostContext = createContext()
+const HostContext = createContext()
 
 export const HostProvider = ({ children }) => {
-
+    const miniCalenderRef = useRef()
     const [showHouseRules, setShowHouseRules] = useState(false)
     const [showMoreSafety, setShowMoreSafety] = useState(false)
     const [showCancellation, setShowCancellation] = useState(false)
@@ -16,7 +16,9 @@ export const HostProvider = ({ children }) => {
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
     const [dateRange, setDateRange] = useState([]) //dates in Mar 14, 2023 format
-
+    const [nightlyRate, setNightlyRate] = useState()
+    const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
+    
 
     useEffect(() => {
         const fetchHostData = async () => {
@@ -28,8 +30,9 @@ export const HostProvider = ({ children }) => {
             setRulesData(host[0].house_rules)
             setCancelData(host[0].cancellation_policy)
             setAdditionalRules(host[0].house_rules.additional_rules)
+            setNightlyRate(host[0].nightly_rate)
         };
-
+        
         fetchHostData();
     },[]) 
 
@@ -69,6 +72,30 @@ export const HostProvider = ({ children }) => {
         setDateRange([])
     }
 
+    // Rental Modal, Mini Calendar
+    const openMiniCalendar = () => {
+        setIsMiniCalendarVisible(true)
+    }
+
+    const closeMiniCalendar = () => {
+        setIsMiniCalendarVisible(false)
+    }
+
+    // Login Menu outside-click, close-menu use-effect
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+        // If the menu is open and the clicked target is not within the menu, then close the menu
+        if (isMiniCalendarVisible && miniCalenderRef.current && !miniCalenderRef.current.contains(e.target)) {
+            setIsMiniCalendarVisible(false)
+        }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+        // Cleanup the event listener
+        document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [isMiniCalendarVisible])
+
 
     // Disables vertical scroll-bar when Login/Language window is visible
     useEffect(() => {
@@ -95,16 +122,22 @@ export const HostProvider = ({ children }) => {
                 rulesData,
                 cancelData,
                 additionalRules,
+                nightlyRate,
                 openAmenities,
                 closeAmenities,
                 showAllAmenities,
                 setDateRange,
                 dateRange,
-                emptyCalendar
+                emptyCalendar,
+                isMiniCalendarVisible,
+                openMiniCalendar,
+                closeMiniCalendar,
+                miniCalenderRef
             }}
         >
             {children}
         </HostContext.Provider>
-
     )
 }
+
+export default HostContext;

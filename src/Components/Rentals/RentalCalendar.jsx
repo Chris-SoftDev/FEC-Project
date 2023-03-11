@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { HostContext } from '../../Context/HostContext'
+import HostContext from '../../Context/HostContext'
 import { DayPicker } from 'react-day-picker'
 import { format, differenceInDays } from 'date-fns'
 import 'react-day-picker/dist/style.css';

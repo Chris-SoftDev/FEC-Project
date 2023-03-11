@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { ReviewContext } from "../../Context/ReviewContext";
+import ReviewContext from "../../Context/ReviewContext";
 import "./ShareMenu.css";
 
 export default function ShareLink() {
   const { closeShareMenu, shareMenuRef } = useContext(ReviewContext);
 
   return (
-    <div className="cover-screen">
+    <div className="share-menu-cover-screen">
       <div className="share-container" ref={shareMenuRef}>
         <div className="share-header">
           <div id="share-menu-close-btn" onClick={closeShareMenu}>

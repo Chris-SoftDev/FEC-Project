@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ReviewContext } from "../../Context/ReviewContext";
+import ReviewContext from "../../Context/ReviewContext";
 import "./ReviewCategory.css";
 
 export default function ReviewCategory() {

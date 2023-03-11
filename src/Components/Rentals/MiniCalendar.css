@@ -1,0 +1,126 @@
+.mini-calendar-modal-container {
+    display: flex;
+    flex-direction: column;
+    width: 661px;
+    min-height: 460px;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2); 
+    z-index: 3;
+    position: absolute;
+    top: 55px;
+    right: -7px;
+    padding: 24px 32px 16px 32px;
+}
+
+.mini-calendar-modal-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 73px;
+    padding-bottom: 16px;
+}
+
+.mini-calendar-modal-header-select-dates-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 46%;
+}
+
+.mini-calendar-modal-dates {
+    display: flex;
+    flex-direction: row;
+    width: 54%;
+    height: 100%;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+}
+
+.mini-calendar-modal-dates-add-date {
+    color: #717171;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+}
+
+.mini-calendar-modal-dates-checkin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    padding-left: 15px;
+}
+
+.mini-calendar-modal-dates-checkin-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.mini-calendar-modal-dates-checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    padding-left: 15px;
+}
+
+.mini-calendar-modal-dates-checkout-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.mini-calendar-container {
+    width: 100%;
+    margin-left: -13px;
+}
+
+.mini-calendar-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mini-calendar-footer-keyboard-icon{
+    height: 24px;
+    width: 24px;
+}
+
+.mini-calendar-footer-clear-dates {
+    display: flex;
+    flex-direction: row;
+}
+
+.mini-calendar-footer-clear-dates button{
+    padding: .5em .5em .5em .5em;
+    border: none;
+    border-radius: 10%;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    font-size:14px;
+    font-weight: 500;
+    margin-right: 10px;
+    text-decoration-line: underline;
+    text-underline-offset: 1px;
+}
+
+.mini-calendar-footer-clear-dates button:hover{
+    background-color: rgba(235, 235, 235, 0.55);
+    cursor: pointer;
+}
+
+#mini-calender-close-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #000;
+    font-size: 15px;
+    cursor: pointer;
+}
