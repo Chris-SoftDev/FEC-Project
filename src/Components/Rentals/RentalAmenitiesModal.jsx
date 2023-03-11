@@ -57,9 +57,7 @@ export default function RentalAmenitiesModal() {
                                     Free dryer - In unit
                                 </div>
                                 <div className="amen-modal-content">
-                                    <div className="amen-modal-content">
-                                        Essentials
-                                    </div>
+                                    Essentials
                                     <div className="amen-modal-content-sub">
                                         Towels, bed sheets, soap, and toilet paper
                                     </div>
