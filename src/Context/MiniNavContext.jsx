@@ -13,7 +13,7 @@ export const MiniNavProvider = ({ children }) => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      setIsMiniNavVisible(entry.isIntersecting);
+      setIsMiniNavVisible(!entry.isIntersecting);
     });
     observer.observe(miniNavRef.current);
   }, []);

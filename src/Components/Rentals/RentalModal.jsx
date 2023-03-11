@@ -74,9 +74,9 @@ function RentalModal() {
                         </button>
                     </div>
                 </div>
+                {isMiniCalendarVisible && <MiniCalendar />}
             </div>
-            {(!isMiniNavVisible) && <MiniNavBar />}
-            {isMiniCalendarVisible && <MiniCalendar />}
+            {(isMiniNavVisible) && <MiniNavBar />}
         </>
     );
 }
