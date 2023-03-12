@@ -9,16 +9,12 @@ import './RentalCalendar.css';
 
 function RentalCalendar() {
     const { dateRange, setDateRange, emptyCalendar } = useContext(HostContext)
-    const [dateSelection, setDateSelection] = useState([])
     const defaultMonth =new Date(2023,2) //start of calendar
 
 
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
     const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
     const numberFormat = formattedFromDate
-
-    const [inputDate, setInputDate] = useState(''); //state used to get input dates
-
 
     const modifiers = {
         from: dateRange.from,

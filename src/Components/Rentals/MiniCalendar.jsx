@@ -1,13 +1,16 @@
-import { useContext, useEffect, useRef } from 'react'; 
-import HostContext from '../../Context/HostContext';
+import { useState, useContext, useEffect, useRef } from 'react'; 
 import { DayPicker } from 'react-day-picker'
-import { format, differenceInDays } from 'date-fns'
+import { format, differenceInDays, parse } from 'date-fns'
+import HostContext from '../../Context/HostContext';
 import './MiniCalendar.css'
 
 function MiniCalendar() {
     const miniCalenderHeaderRef = useRef()
     const { miniCalenderRef, closeMiniCalendar } = useContext(HostContext)
     const { dateRange, setDateRange, emptyCalendar } = useContext(HostContext)
+
+    const [checkInDate, setCheckInDate] = useState('')
+    const [checkOutDate, setCheckOutDate] = useState('')
 
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
     const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
@@ -16,6 +19,39 @@ function MiniCalendar() {
         from: dateRange.from,
         to: dateRange.to,
     };
+
+    const updateCheckInDate = (event) => {
+        setCheckInDate(event.target.value)
+    }
+
+    const handleCheckInDate = (event) => {
+        const regex = /^\d{2}\/\d{2}\/\d{4}$/;
+        if (!regex.test(event.target.value)) {
+            console.log('not valid date')
+            return;
+        }
+        const fromDate = parse(event.target.value, 'P', new Date());
+        setDateRange({ from: fromDate, to: dateRange.to });
+    }
+
+    const updateCheckOutDate = (event) => {
+        setCheckOutDate(event.target.value)
+    }
+
+    const handleCheckOutDate = (event) => {
+        const regex = /^\d{2}\/\d{2}\/\d{4}$/;
+        if (!regex.test(event.target.value)) {
+            console.log('not valid date')
+            return;
+        }
+        const toDate = parse(event.target.value, 'P', new Date());
+        setDateRange({ from: dateRange.from, to: toDate });
+    }
+
+    const clearDates = () => {
+        setCheckInDate('')
+        setCheckOutDate('')
+    }
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -43,11 +79,27 @@ function MiniCalendar() {
                 <div className='mini-calendar-modal-dates'>   
                     <div className="mini-calendar-modal-dates-checkin">
                         <div className='mini-calendar-modal-dates-checkin-title'>CHECK-IN</div> 
-                        <div className='mini-calendar-modal-dates-add-date'>Add date</div>
+                        <div className='mini-calendar-modal-dates-from-date-container'>
+                            <input type="text" name="from-date" id="mini-calendar-from-date" placeholder='Add date' value={checkInDate} onChange={updateCheckInDate} 
+                            onFocus={(event) => {event.target.placeholder = 'MM/DD/YYYY'}}
+                            onBlur={(event) => {
+                                event.target.placeholder = 'Add date';
+                                handleCheckInDate(event)
+                            }}                            
+                        />
+                        </div>
                     </div>
                     <div className="mini-calendar-modal-dates-checkout">
                         <div className='mini-calendar-modal-dates-checkout-title'>CHECKOUT</div> 
-                        <div className='mini-calendar-modal-dates-add-date'>Add date</div>
+                        <div className='mini-calendar-modal-dates-to-date-container'>
+                            <input type="text" name="to-date" id="mini-calendar-to-date" placeholder='Add date' value={checkOutDate} onChange={updateCheckOutDate}
+                                onFocus={(event) => {event.target.placeholder = 'MM/DD/YYYY'}}
+                                onBlur={(event) => {
+                                    event.target.placeholder = 'Add date';
+                                    handleCheckOutDate(event)
+                                }} 
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,7 +123,10 @@ function MiniCalendar() {
                         </svg>
                     </div>
                     <div className='mini-calendar-footer-clear-dates'>
-                        <button onClick={emptyCalendar}>Clear dates</button>
+                        <button onClick={() => {
+                            emptyCalendar() 
+                            clearDates()
+                        }}>Clear dates</button>
                         <div id="mini-calender-close-btn" onClick={closeMiniCalendar}>Close</div>
                     </div>
                 </div>

@@ -15,11 +15,10 @@ export const HostProvider = ({ children }) => {
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
-    const [dateRange, setDateRange] = useState([]) //dates in Mar 14, 2023 format
+    const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
     const [nightlyRate, setNightlyRate] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     
-
     useEffect(() => {
         const fetchHostData = async () => {
             const response = await fetch('http://localhost:3000/property');
@@ -69,7 +68,7 @@ export const HostProvider = ({ children }) => {
     }
 
     const emptyCalendar = () => {
-        setDateRange([])
+        setDateRange({from: "", to: ""})
     }
 
     // Rental Modal, Mini Calendar
