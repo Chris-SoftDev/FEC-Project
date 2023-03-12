@@ -23,7 +23,7 @@ export default function ShowRentalLearn() {
                             </div>
                             <div className='rules-content-container'>
                                 <h2 className='airCover-title'>
-                                    <img class="airCover-image" src="https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg" alt="AirCover"></img>
+                                    <img className="airCover-image" src="https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg" alt="AirCover"></img>
                                 </h2>
                                 <div className='learn-modal-title'>
                                     AirCover is comprehensive protection included for free with every booking. 

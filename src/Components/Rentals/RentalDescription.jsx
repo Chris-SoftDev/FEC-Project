@@ -73,7 +73,7 @@ function RentalDescription() {
         </div>
         <div className='rental-aircover'>
             <h2 className='airCover-title'>
-            <img class="airCover-image" src="https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg" alt="AirCover"></img>
+            <img className="airCover-image" src="https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg" alt="AirCover"></img>
             </h2>
             <div className='rental-aircover-desc'>Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.</div>
             
