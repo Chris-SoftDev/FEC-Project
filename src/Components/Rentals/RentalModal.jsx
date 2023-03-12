@@ -9,8 +9,29 @@ import './RentalModal.css';
 
 function RentalModal() {
     const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
-    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef } = useContext(HostContext)
+    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef, guestQtyObj } = useContext(HostContext)
     const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
+
+    const guestQtyStr = (obj) => {
+        let resultStr = '';
+        if((obj.adults + obj.children) > 1) {
+            resultStr = `${obj.adults + obj.children} guests`
+        } else {resultStr = '1 guest'}
+
+        if(obj.infants === 1) {
+            resultStr += `, ${obj.infants} infant`
+        } else if (obj.infants > 1) {
+            resultStr += `, ${obj.infants} infants`
+        }
+
+        if(obj.pets === 1) {
+            resultStr += `, ${obj.pets} pet`
+        } else if (obj.pets > 1) {
+            resultStr += `, ${obj.pets} pets`
+        }
+    
+        return resultStr
+    }
     
     function amountOfReviews(rev) {
         for (let i = 0; i < rev.length; i++) {
@@ -59,7 +80,7 @@ function RentalModal() {
                                 <button onClick={toggleGuestQty}>
                                     <div className="rental-modal-guests-title">
                                         <div>GUESTS</div>
-                                        <div className='rental-modal-guests-quantity'>1 guest</div>
+                                        <div className='rental-modal-guests-quantity'>{guestQtyStr(guestQtyObj)}</div>
                                     </div>
                                     <div className="rental-modal-guests-icon">
                                         {isGuestQtyVisible ? <i className="fa fa-chevron-up"></i> : <i className="fa fa-chevron-down"></i>}
