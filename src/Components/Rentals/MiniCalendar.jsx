@@ -7,7 +7,7 @@ import './MiniCalendar.css'
 function MiniCalendar() {
     const miniCalenderHeaderRef = useRef()
     const { miniCalenderRef, closeMiniCalendar } = useContext(HostContext)
-    const { dateRange, setDateRange, emptyCalendar } = useContext(HostContext)
+    const { dateRange, setDateRange, emptyCalendar, convertDateObjToStr } = useContext(HostContext)
 
     const [checkInDate, setCheckInDate] = useState('')
     const [checkOutDate, setCheckOutDate] = useState('')
@@ -52,6 +52,17 @@ function MiniCalendar() {
         setCheckInDate('')
         setCheckOutDate('')
     }
+
+    useEffect(() => {
+        if(dateRange.from != '') {
+            setCheckInDate(convertDateObjToStr(dateRange.from))
+        }
+              
+        if(dateRange.to != '' && dateRange.to != undefined) {
+            setCheckOutDate(convertDateObjToStr(dateRange.to))
+        }
+
+      }, [dateRange]);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
