@@ -17,6 +17,7 @@ export const HostProvider = ({ children }) => {
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
+    const [amenities, setAmenities] = useState([])
     const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
     const [nightlyRate, setNightlyRate] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
@@ -41,6 +42,7 @@ export const HostProvider = ({ children }) => {
             setCancelData(host[0].cancellation_policy)
             setAdditionalRules(host[0].house_rules.additional_rules)
             setNightlyRate(host[0].nightly_rate)
+            setAmenities(host[0].amenities)
         };
         
         fetchHostData();
@@ -284,7 +286,8 @@ export const HostProvider = ({ children }) => {
                 serviceDogRef,
                 openServiceDog,
                 closeServiceDog,
-                isServiceDogVisible
+                isServiceDogVisible,
+                amenities
             }}>
             {children}
         </HostContext.Provider>

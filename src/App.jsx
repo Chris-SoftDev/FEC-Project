@@ -14,6 +14,7 @@ import { LocationProvider } from './Context/LocationContext';
 import { MiniNavProvider } from './Context/MiniNavContext';
 
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { RentalProvider } from './Context/RentalContext';
 
 function App() {
   return (
@@ -34,7 +35,9 @@ function App() {
                       <div className="main-content-container">
                         <div className='rentals-content-container'>
                           <div className="rentals-container">                   
+                            <RentalProvider>  
                               <Rentals />
+                            </RentalProvider>
                           </div>
                           <div className="reviews-container">
                             <Reviews />
