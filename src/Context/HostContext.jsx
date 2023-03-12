@@ -5,6 +5,8 @@ const HostContext = createContext()
 
 export const HostProvider = ({ children }) => {
     const miniCalenderRef = useRef()
+    const guestQtyModalRef = useRef()
+    const guestQtyBtnRef = useRef()
     const [showHouseRules, setShowHouseRules] = useState(false)
     const [showMoreSafety, setShowMoreSafety] = useState(false)
     const [showCancellation, setShowCancellation] = useState(false)
@@ -19,6 +21,7 @@ export const HostProvider = ({ children }) => {
     const [nightlyRate, setNightlyRate] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
+    const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
     
     useEffect(() => {
         const fetchHostData = async () => {
@@ -68,6 +71,10 @@ export const HostProvider = ({ children }) => {
         setShowAllAmenities(false)
     }
 
+    const toggleGuestQty = () => {
+        setIsGuestQtyVisible(!isGuestQtyVisible)
+    }
+
     const emptyCalendar = () => {
         setDateRange({from: "", to: ""})
     }
@@ -96,7 +103,7 @@ export const HostProvider = ({ children }) => {
         setKeyboardModal(false)
     }
 
-    // Login Menu outside-click, close-menu use-effect
+    // Mini Calendar Menu outside-click, close-menu use-effect
     useEffect(() => {
         const checkIfClickedOutside = e => {
         // If the menu is open and the clicked target is not within the menu, then close the menu
@@ -110,6 +117,21 @@ export const HostProvider = ({ children }) => {
         document.removeEventListener("mousedown", checkIfClickedOutside)
         }
     }, [isMiniCalendarVisible])
+
+    // Guest Qty Menu outside-click, close-menu use-effect
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+        // If the menu is open and the clicked target is not within the menu, then close the menu
+        if (isGuestQtyVisible && guestQtyModalRef.current && guestQtyBtnRef.current && !guestQtyModalRef.current.contains(e.target) && !guestQtyBtnRef.current.contains(e.target)) {
+            setIsGuestQtyVisible(false)
+        }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+        // Cleanup the event listener
+        document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [isGuestQtyVisible])
 
 
     // Disables vertical scroll-bar when Login/Language window is visible
@@ -148,6 +170,10 @@ export const HostProvider = ({ children }) => {
                 openMiniCalendar,
                 closeMiniCalendar,
                 miniCalenderRef,
+                guestQtyBtnRef,
+                guestQtyModalRef,
+                isGuestQtyVisible,
+                toggleGuestQty,
                 convertDateObjToStr,
                 openKeyboardModal,
                 closeKeyboardModal,

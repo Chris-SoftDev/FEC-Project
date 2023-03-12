@@ -77,8 +77,8 @@ export default function ShareLink() {
                     <div className="messenger-svg"> 
                         <svg viewBox="0 0 32 32">
                           <radialGradient id="a" cx="19.25%" cy="99.446619%" r="108.96%">
-                            <stop offset="0" stop-color="#09f"></stop><stop offset=".6098" stop-color="#a033ff"></stop>
-                            <stop offset=".9348" stop-color="#ff5280"></stop><stop offset="1" stop-color="#ff7061"></stop>
+                            <stop offset="0" stopColor="#09f"></stop><stop offset=".6098" stopColor="#a033ff"></stop>
+                            <stop offset=".9348" stopColor="#ff5280"></stop><stop offset="1" stopColor="#ff7061"></stop>
                           </radialGradient>
                           <g fill="none" transform="translate(4 4)">
                             <path d="m12 0c-6.759 0-12 4.95256076-12 11.6389677 0 3.4976898 1.434 6.5214217 3.768 8.6092365.195.1739846.315.4199627.321.6839393l.066 2.1358106c.021.6809396.723 1.1249002 1.347.8489247l2.382-1.0499069c.201-.089992.429-.1049907.642-.0479957 1.095.2999734 2.259.461959 3.474.461959 6.759 0 12-4.9525607 12-11.6389677 0-6.68640701-5.241-11.6419675-12-11.6419675z" fill="url(#a)"></path>
