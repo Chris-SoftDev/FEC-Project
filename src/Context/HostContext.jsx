@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect, useRef } from "react";
-import { format } from 'date-fns' //to format the dates
 
 const HostContext = createContext()
 
@@ -22,6 +21,12 @@ export const HostProvider = ({ children }) => {
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
     const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
+    const [guestQtyObj, setGuestQtyObj] = useState({
+        adults: 1,
+        children: 0,
+        infants: 0,
+        pets: 0
+    })
     
     useEffect(() => {
         const fetchHostData = async () => {
@@ -75,6 +80,68 @@ export const HostProvider = ({ children }) => {
         setIsGuestQtyVisible(!isGuestQtyVisible)
     }
 
+    const closeGuestQty = () => {
+        setIsGuestQtyVisible(false)
+    }
+
+    //Guest Qty Functions
+    const increaseAdultGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            adults: guestQtyObj.adults + 1
+        })
+    }
+    
+    const decreaseAdultGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            adults: guestQtyObj.adults - 1
+        })
+    }
+
+    const increaseChildrenGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            children: guestQtyObj.children + 1
+        })
+    }
+    
+    const decreaseChildrenGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            children: guestQtyObj.children - 1
+        })
+    }
+
+    const increaseInfantGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            infants: guestQtyObj.infants + 1
+        })
+    }
+    
+    const decreaseInfantGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            infants: guestQtyObj.infants - 1
+        })
+    }
+
+    const increasePetGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            pets: guestQtyObj.pets + 1
+        })
+    }
+    
+    const decreasePetGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            pets: guestQtyObj.pets - 1
+        })
+    }
+
+    // Calendar Functions
     const emptyCalendar = () => {
         setDateRange({from: "", to: ""})
     }
@@ -174,6 +241,16 @@ export const HostProvider = ({ children }) => {
                 guestQtyModalRef,
                 isGuestQtyVisible,
                 toggleGuestQty,
+                closeGuestQty,
+                increaseAdultGuests,
+                decreaseAdultGuests,
+                increaseChildrenGuests,
+                decreaseChildrenGuests,
+                increaseInfantGuests,
+                decreaseInfantGuests,
+                increasePetGuests,
+                decreasePetGuests,
+                guestQtyObj,
                 convertDateObjToStr,
                 openKeyboardModal,
                 closeKeyboardModal,
