@@ -5,9 +5,9 @@ import ReviewContext from '../../Context/ReviewContext';
 import './MiniNavBar.css'
 
 function MiniNavBar() {
-    const { scrollToPhotos, scrollToAmenities, scrollToReviews, scrollToLocation, isMiniNavReserveVisible } = useContext(MiniNavContext)
+    const { scrollToPhotos, scrollToAmenities, scrollToReviews, scrollToLocation, scrollToCalendar, isMiniNavReserveVisible } = useContext(MiniNavContext)
     const { nightlyRate } = useContext(HostContext)
-    const { getReviews, openAllRev } = useContext(ReviewContext)
+    const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
     
     function amountOfReviews(rev) {
         for (let i = 0; i < rev.length; i++) {
@@ -17,6 +17,7 @@ function MiniNavBar() {
     }
     
     const totalReviews = amountOfReviews(getReviews);
+    const ratingAvg = Math.round(totalAvg * 100) / 100
 
     return ( 
         <div className="mini-navbar-container" id='mini-navbar-anchor'>
@@ -45,13 +46,13 @@ function MiniNavBar() {
                                     <path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fillRule="evenodd"></path>
                                 </svg>
                             </div>
-                            <div className="mini-navbar-reserve-rate-rating-number">4.93 ·</div>
+                            <div className="mini-navbar-reserve-rate-rating-number">{ratingAvg} ·</div>
                             <button className='mini-navbar-reserve-rate-rating-reviews' onClick={openAllRev}>{totalReviews} reviews</button>
                         </div>
                         </div>
                     <div className="mini-navbar-reserve-btn-container">
                         <div className="mini-navbar-reserve-btn">
-                            <button type='submit'>Check availability</button>
+                            <button type='submit' onClick={scrollToCalendar}>Check availability</button>
                         </div>
                     </div>
                 </div>

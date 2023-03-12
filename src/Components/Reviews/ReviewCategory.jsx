@@ -27,7 +27,7 @@ export default function ReviewCategory() {
   const locationDec = roundToTenth(location);
   const valueDec = roundToTenth(value);
 
-  const totalDec = roundToTenth(totalAvg);
+  const totalDec = roundToHundreth(totalAvg);
 
   const totalReviews = amountOfReviews(getReviews);
 
@@ -38,6 +38,11 @@ export default function ReviewCategory() {
   function roundToTenth(num) {
     return Math.round(num * 10) / 10;
   }
+
+  function roundToHundreth(num) {
+    return Math.round(num * 100) / 100;
+  }
+
   function amountOfReviews(rev) {
     for (let i = 0; i < rev.length; i++) {
       const element = rev.length;

@@ -15,12 +15,11 @@ export const HostProvider = ({ children }) => {
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
-    const [dateRange, setDateRange] = useState([]) //dates in Mar 14, 2023 format
+    const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
     const [nightlyRate, setNightlyRate] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
     
-
     useEffect(() => {
         const fetchHostData = async () => {
             const response = await fetch('http://localhost:3000/property');
@@ -70,7 +69,14 @@ export const HostProvider = ({ children }) => {
     }
 
     const emptyCalendar = () => {
-        setDateRange([])
+        setDateRange({from: "", to: ""})
+    }
+
+    const convertDateObjToStr = (date) => {
+        const dateMonth = (date.getMonth() + 1).toString().padStart(2, '0'); // Add 1 to the month value as it is 0-indexed
+        const dateDay = date.getDate().toString().padStart(2, '0');
+        const dateYear = date.getFullYear().toString();
+        return `${dateMonth}/${dateDay}/${dateYear}`;
     }
 
     // Rental Modal, Mini Calendar
@@ -142,11 +148,11 @@ export const HostProvider = ({ children }) => {
                 openMiniCalendar,
                 closeMiniCalendar,
                 miniCalenderRef,
+                convertDateObjToStr,
                 openKeyboardModal,
                 closeKeyboardModal,
                 keyboardModal
-            }}
-        >
+            }}>
             {children}
         </HostContext.Provider>
     )
