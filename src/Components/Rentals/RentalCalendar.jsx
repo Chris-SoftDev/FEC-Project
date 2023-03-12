@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import HostContext from '../../Context/HostContext'
 import MiniNavContext from '../../Context/MiniNavContext';
 import KeyboardModal from './KeyboardModal'
