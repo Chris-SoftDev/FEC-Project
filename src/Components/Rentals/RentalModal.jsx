@@ -4,11 +4,12 @@ import ReviewContext from '../../Context/ReviewContext'
 import MiniNavContext from '../../Context/MiniNavContext';
 import MiniNavBar from './MiniNavBar';
 import MiniCalendar from './MiniCalendar';
+import GuestQty from './GuestQty';
 import './RentalModal.css';
 
 function RentalModal() {
     const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
-    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate, dateRange, convertDateObjToStr } = useContext(HostContext)
+    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef } = useContext(HostContext)
     const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
     
     function amountOfReviews(rev) {
@@ -54,8 +55,17 @@ function RentalModal() {
                                     </div>
                                 </button>
                             </div>
-                            <div className='rental-modal-guests'>
-                                <button></button>
+                            <div className='rental-modal-guests' ref={guestQtyBtnRef}>
+                                <button onClick={toggleGuestQty}>
+                                    <div className="rental-modal-guests-title">
+                                        <div>GUESTS</div>
+                                        <div className='rental-modal-guests-quantity'>1 guest</div>
+                                    </div>
+                                    <div className="rental-modal-guests-icon">
+                                        {isGuestQtyVisible ? <i className="fa fa-chevron-up"></i> : <i className="fa fa-chevron-down"></i>}
+                                    </div>
+                                </button>
+                                {isGuestQtyVisible && <GuestQty />}
                             </div>
                         </div>
                         <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
@@ -63,6 +73,7 @@ function RentalModal() {
                         </div>
                     </div>
                 </div>
+                
                 <div className="rental-modal-reporting-container">
                     <div className="rental-modal-reporting">
                         <button>

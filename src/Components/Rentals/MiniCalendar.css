@@ -53,12 +53,17 @@
 
 .mini-calendar-modal-dates-checkin {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: row;
     width: 50%;
     height: 100%;
     padding-left: 15px;
+}
+
+.mini-calendar-modal-dates-checkin-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .mini-calendar-modal-dates-checkin-title {
@@ -67,14 +72,48 @@
     font-weight: 800;
 }
 
+.mini-calendar-modal-dates-checkin-remove-date-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    min-width: 36px;
+    height: 100%;
+    padding-right: 12px;
+}
+
+.mini-calendar-modal-dates-checkin-remove-date-btn button {
+    background-color: #fff;
+    padding: 8px 8px 6px 8px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mini-calendar-modal-dates-checkin-remove-date-btn button:hover {
+    background-color: rgba(235, 235, 235, 0.55);
+}
+
+.mini-calendar-modal-dates-checkin-remove-date-btn button svg {
+    height: 12px;
+    width: 12px;
+    stroke: rgb(34, 34, 34);
+    stroke-width: 3px;
+}
+
 .mini-calendar-modal-dates-checkout {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    padding-left: 15px;
+}
+
+.mini-calendar-modal-dates-checkout-details{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 50%;
-    height: 100%;
-    padding-left: 15px;
 }
 
 .mini-calendar-modal-dates-checkout-title {
@@ -82,6 +121,36 @@
     font-size: 10px;
     font-weight: 800;
 }
+
+.mini-calendar-modal-dates-checkout-remove-date-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    min-width: 36px;
+    height: 100%;
+    padding-right: 12px;
+}
+
+.mini-calendar-modal-dates-checkout-remove-date-btn button {
+    background-color: #fff;
+    padding: 8px 8px 6px 8px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mini-calendar-modal-dates-checkout-remove-date-btn button:hover {
+    background-color: rgba(235, 235, 235, 0.55);
+}
+
+.mini-calendar-modal-dates-checkout-remove-date-btn button svg {
+    height: 12px;
+    width: 12px;
+    stroke: rgb(34, 34, 34);
+    stroke-width: 3px;
+}
+
 
 .mini-calendar-modal-dates-to-date-container {
     min-height: 18px;
