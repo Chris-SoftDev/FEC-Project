@@ -6,6 +6,7 @@ export const HostProvider = ({ children }) => {
     const miniCalenderRef = useRef()
     const guestQtyModalRef = useRef()
     const guestQtyBtnRef = useRef()
+    const serviceDogRef = useRef()
     const [showHouseRules, setShowHouseRules] = useState(false)
     const [showMoreSafety, setShowMoreSafety] = useState(false)
     const [showCancellation, setShowCancellation] = useState(false)
@@ -16,18 +17,19 @@ export const HostProvider = ({ children }) => {
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
+    const [amenities, setAmenities] = useState([])
     const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
     const [nightlyRate, setNightlyRate] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
     const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
+    const [isServiceDogVisible, setIsServiceDogVisible] =  useState(false);
     const [guestQtyObj, setGuestQtyObj] = useState({
         adults: 1,
         children: 0,
         infants: 0,
         pets: 0
     })
-    const [amenities, setAmenities] = useState([])
     
     useEffect(() => {
         const fetchHostData = async () => {
@@ -84,6 +86,15 @@ export const HostProvider = ({ children }) => {
 
     const closeGuestQty = () => {
         setIsGuestQtyVisible(false)
+    }
+
+    // Service Dog Modal Functions
+    const openServiceDog = () => {
+        setIsServiceDogVisible(true)
+    }
+
+    const closeServiceDog = () => {
+        setIsServiceDogVisible(false)
     }
 
     //Guest Qty Functions
@@ -202,13 +213,28 @@ export const HostProvider = ({ children }) => {
         }
     }, [isGuestQtyVisible])
 
+     // Service Dog Menu outside-click, close-menu use-effect
+     useEffect(() => {
+        const checkIfClickedOutside = e => {
+        // If the menu is open and the clicked target is not within the menu, then close the menu
+        if (isServiceDogVisible && serviceDogRef.current && !serviceDogRef.current.contains(e.target)) {
+            setIsServiceDogVisible(false)
+        }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+        // Cleanup the event listener
+        document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [isServiceDogVisible])
 
-    // Disables vertical scroll-bar when Login/Language window is visible
+
+    // Disables vertical scroll-bar when windows are visible
     useEffect(() => {
-        showHouseRules || showMoreSafety || showCancellation || showAllAmenities
+        showHouseRules || showMoreSafety || showCancellation || showAllAmenities || isServiceDogVisible
           ? (document.body.parentElement.style.overflowY = "clip")
           : (document.body.parentElement.style.overflowY = "auto");
-      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities]);
+      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities, isServiceDogVisible]);
 
     return (
         <HostContext.Provider 
@@ -257,6 +283,10 @@ export const HostProvider = ({ children }) => {
                 openKeyboardModal,
                 closeKeyboardModal,
                 keyboardModal,
+                serviceDogRef,
+                openServiceDog,
+                closeServiceDog,
+                isServiceDogVisible,
                 amenities
             }}>
             {children}
