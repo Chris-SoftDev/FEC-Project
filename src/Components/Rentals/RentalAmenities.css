@@ -9,6 +9,7 @@
 .accom-container {
     display: block;
     text-align: left;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
     padding: 25px 0;
 }
 
@@ -122,6 +123,16 @@
         display:flex;
         overflow-x: scroll;
         width: 60%;
+    }
+
+    .amen-column-cont {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #amen-column-2 {
+        /* visibility: hidden; */
+        display: none;
     }
 
     /* .bed-container {
