@@ -9,6 +9,7 @@ export const MiniNavProvider = ({ children }) => {
   const reviewsRef = useRef();
   const locationRef = useRef();
   const rentalModalFooterRef = useRef();
+  const calendarRef = useRef();
   const [isMiniNavVisible, setIsMiniNavVisible] = useState()
   const [isMiniNavReserveVisible, setIsMiniNavReserveVisible] = useState()
 
@@ -61,6 +62,15 @@ export const MiniNavProvider = ({ children }) => {
     });
   }
 
+  const scrollToCalendar = () => {
+    const fixedElementHeight = document.querySelector('#mini-navbar-anchor').offsetHeight;
+    const reviewsOffset = calendarRef.current.offsetTop - fixedElementHeight;
+    window.scrollTo({
+      top: reviewsOffset -45,
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <MiniNavContext.Provider
       value={{
@@ -71,12 +81,14 @@ export const MiniNavProvider = ({ children }) => {
         scrollToAmenities,
         scrollToReviews,
         scrollToLocation,
+        scrollToCalendar,
         miniNavRef,
         photosRef,
         amenitiesRef,
         reviewsRef,
         locationRef,
-        rentalModalFooterRef
+        rentalModalFooterRef,
+        calendarRef
       }}
     >
       {children}

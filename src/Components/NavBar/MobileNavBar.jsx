@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import NavContext from '../../Context/NavContext';
+import ReviewContext from '../../Context/ReviewContext';
 import LoginMenu from './LoginMenu';
 import './MobileNavBar.css'
 
 function MobileNavbar() {
     const { isLoginMenuVisible, openLoginMenu} = useContext(NavContext);
+    const { openShareMenu } = useContext(ReviewContext)
 
     return ( 
         <>
@@ -20,7 +22,7 @@ function MobileNavbar() {
             </a>
             <div className="side-links-container">
                 <div className='share-home-btn-container'>
-                    <button id='share-home-btn'>
+                    <button id='share-home-btn' onClick={openShareMenu}>
                         <svg viewBox='0 0 32 32'>
                             <g fill='none'>
                                 <path d="M27 18v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9"></path>

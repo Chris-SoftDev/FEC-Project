@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import HostContext from '../../Context/HostContext'
+import MiniNavContext from '../../Context/MiniNavContext';
 import { DayPicker } from 'react-day-picker'
 import { format, differenceInDays } from 'date-fns'
 import 'react-day-picker/dist/style.css';
@@ -9,6 +10,7 @@ import './RentalCalendar.css';
 
 function RentalCalendar() {
     const { dateRange, setDateRange, emptyCalendar } = useContext(HostContext)
+    const { calendarRef } = useContext(MiniNavContext)
     const defaultMonth =new Date(2023,2) //start of calendar
 
 
@@ -35,7 +37,7 @@ function RentalCalendar() {
     
     return (
 
-        <div className='calendar-main-container'>
+        <div className='calendar-main-container' ref={calendarRef}>
             <div className='calendar-title'>
                 <div className='number-of-nights'>
                     {dateRange.from && dateRange.to ? `${numDays} nights in Boise` : 'Select check-in date'}
