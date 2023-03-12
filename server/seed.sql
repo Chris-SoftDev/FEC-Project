@@ -155,7 +155,7 @@ INSERT INTO currencies (currency, symbol) VALUES
 ('Uruguayan peso', 'UYU - $U');
 
 
-INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules, nightly_rate) VALUES (
+INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules, nightly_rate, amenities) VALUES (
     '{
             "name": "Tag",
             "joined": "November 2017",
@@ -179,6 +179,8 @@ INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house
             "camera_info": "We have a webcam pointed at the parking area to help us know when guests have arrived/departed. The camera DOES NOT point at the house or deck at all.",
             "carbon": true,
             "smoke_alarm": true,
+            "fire_extinguisher": true,
+            "first_aid_kit": true,
             "stairs": "Must climb stairs",
             "stairs_info": "There are several steps as you approach the door. The second floor loft and master bedroom are up a flight of stairs.",
             "amenity": "Amenity limitations",
@@ -188,6 +190,7 @@ INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house
     '{
             "max_guest": "5",
             "pets": true,
+            "pets_info": "Assistance animals are always allowed",
             "in": "4:00 PM",
             "out": "11:00 AM",
             "quiet": "10:00 PM - 7:00 AM",
@@ -210,5 +213,59 @@ INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house
                     "-Exterior lights must be turned off during the quiet hours of 10pm to 8am. This is to limit light pollution in the neighborhood."
                 ]
         }'::jsonb,
-        160
+        160,
+        '{
+            "scenic_views": true,
+            "valley_view": true,
+            "mountain_view": true,
+            "bathtub": true,
+            "hair_dryer": true,
+            "shampoo": true,
+            "hot_water": true,
+            "free_washer": true,
+            "free_dryer": true,
+            "essentials": true,
+            "essentials_items": "Towels, bed sheets, soap, and toilet paper",
+            "hangers": true,
+            "bed_linens": true,
+            "extra_pillows_and_blankets": true,
+            "iron": true,
+            "tv": true,
+            "tv_apps": "HDTV with Hulu, Amazon Prime Video, Apple TV, HBO Max, Netflix, Roku",
+            "game_console": true,
+            "ac_unit": true,
+            "ac_unit": true,
+            "indoor_fireplace": true,
+            "heating": true,
+            "wifi": true,
+            "dedicated_workspace": true,
+            "kitchen": true,
+            "kitchen_info": "Space where guests can cook their own meals",
+            "refrigerator": true,
+            "microwave": true,
+            "cooking_basics": true,
+            "cooking_basics_info": "Pots and pans, oil, salt and pepper",
+            "dishes_and_silverware": true,
+            "dishes_and_silverware_info": "Bowls, chopsticks, plates, cups, etc.",
+            "dishwasher": true,
+            "stove": true,
+            "oven": true,
+            "coffee_maker": true,
+            "baking_sheet": true,
+            "barbeque_utensils": true,
+            "barbeque_utensils_info": "Grill, charcoal, bamboo skewers/iron skewers, etc.",
+            "bread_maker": true,
+            "private_entrance": true,
+            "private_entrance_info": "Separate street or building entrance",
+            "patio_or_balcony": true,
+            "backyard": true,
+            "backyard_info": "An open space on the property usually covered in grass",
+            "outdoor_furniture": true,
+            "bbq_grill": true,
+            "parking": true,
+            "hot_tub_or_pool": true,
+            "long_term_stay": true,
+            "long_term_stay_info": "Allow stay for 28 days or more",
+            "smart_lock": true
+        }'
 );
