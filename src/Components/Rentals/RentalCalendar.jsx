@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import HostContext from '../../Context/HostContext'
 import { DayPicker } from 'react-day-picker'
 import { format, differenceInDays } from 'date-fns'

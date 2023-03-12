@@ -9,7 +9,6 @@
 .accom-container {
     display: block;
     text-align: left;
-    border-bottom: 1px solid rgba(221, 221, 221, .7);
     padding: 25px 0;
 }
 
@@ -114,5 +113,19 @@
     font-size: 20;
     font-weight: 500;
     text-align: center;
+}
+
+@media screen and (max-width: 1127px) {
+    #accommodations {
+        /* overflow-x: auto; */
+        position: relative;
+        display:flex;
+        overflow-x: scroll;
+        width: 60%;
+    }
+
+    /* .bed-container {
+        width: 100%;
+    } */
 }
 
