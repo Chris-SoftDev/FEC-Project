@@ -27,6 +27,7 @@ export const HostProvider = ({ children }) => {
         infants: 0,
         pets: 0
     })
+    const [amenities, setAmenities] = useState([])
     
     useEffect(() => {
         const fetchHostData = async () => {
@@ -39,6 +40,7 @@ export const HostProvider = ({ children }) => {
             setCancelData(host[0].cancellation_policy)
             setAdditionalRules(host[0].house_rules.additional_rules)
             setNightlyRate(host[0].nightly_rate)
+            setAmenities(host[0].amenities)
         };
         
         fetchHostData();
@@ -254,7 +256,8 @@ export const HostProvider = ({ children }) => {
                 convertDateObjToStr,
                 openKeyboardModal,
                 closeKeyboardModal,
-                keyboardModal
+                keyboardModal,
+                amenities
             }}>
             {children}
         </HostContext.Provider>
