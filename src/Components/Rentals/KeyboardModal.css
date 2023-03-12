@@ -1,0 +1,242 @@
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.keyboard-modal{
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 376px;
+    max-height:80%;
+    background-color: #fff;
+    border-radius: 12px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    word-wrap: break-word;
+}
+
+.keyboard-modal-title{
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 2.5em;
+    margin-left: 2em;
+}
+
+.focus-leftarrow-container{
+    display: flex;
+    margin-left: 2.3em;
+    margin-top: 3em;
+}
+
+.left-arrow-container{
+    text-align: left;
+    font-size: 9.5px;
+    font-weight: bolder;
+}
+
+.left-arrow{
+    background-color: #f7f7f7;
+    color:black;
+    text-align: center;
+    padding: .7em 1.7em .5em .7em;
+    border-radius: 5px;
+    width: 20px;
+}
+
+.focus{
+    color: #717171;
+    font-weight: 300;
+    font-size:15px;
+    margin-left: 4em;
+}
+
+.left-right-container{
+    display: flex;
+    margin-left: 2.3em;
+    margin-top: 1.5em;
+}
+
+.left-right-arrows-container{
+    text-align: left;
+    font-size: 9.5px;
+    font-weight: bolder;
+}
+
+.left-right-arrows{
+    background-color: #f7f7f7;
+    color:black;
+    text-align: center;
+    border-radius: 5px;
+    width: 36px;
+    padding-top: .6em;
+    padding-bottom: .6em;
+}
+
+.left-right-text{
+    text-align: left;
+    color: #717171;
+    font-weight: 300;
+    font-size:15px;
+    margin-left: 3em;
+    max-width:60%;
+    line-height: 1.5em;
+}
+
+.up-down-container{
+    display: flex;
+    margin-left: 2.3em;
+    margin-top: 1.5em;
+}
+
+.up-down-arrows-container{
+    text-align: left;
+    font-size: 8px;
+    font-weight: bolder;
+}
+
+.up-down-arrows{
+    background-color: #f7f7f7;
+    color:black;
+    text-align: center;
+    border-radius: 5px;
+    width: 36px;
+    height:22px;
+    padding-top: .6em;
+    padding-bottom: .6em;
+}
+
+.up-down-text{
+    text-align: left;
+    color: #717171;
+    font-weight: 300;
+    font-size:15px;
+    margin-left: 3em;
+    max-width:60%;
+    line-height: 1.5em;
+}
+
+.page-up-down-main-container{
+    display: flex;
+    margin-left: 2.1em;
+    margin-top: 1.5em;
+}
+
+.page-up-down-container{
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.page-up-down{
+    background-color: #f7f7f7;
+    color:black;
+    text-align: center;
+    border-radius: 5px;
+    width: 74px;
+    height:24px;
+    padding-top: .6em;
+    padding-bottom: .8em;
+}
+
+.switch-months-text{
+    text-align: left;
+    color: #717171;
+    font-weight: 300;
+    font-size:15px;
+    margin-left: .7em;
+    max-width:55%;
+    line-height: 1.5em;
+}
+
+.home-end-main-container{
+    display: flex;
+    margin-left: 2.1em;
+    margin-top: 1.5em;
+}
+
+.home-end-container{
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.home-end{
+    background-color: #f7f7f7;
+    color:black;
+    text-align: center;
+    border-radius: 5px;
+    width: 74px;
+    height:24px;
+    padding-top: .6em;
+    padding-bottom: .8em;
+}
+
+.go-to-first-last-day{
+    text-align: left;
+    color: #717171;
+    font-weight: 300;
+    font-size:15px;
+    margin-left: .7em;
+    max-width:60%;
+    line-height: 1.5em;
+}
+
+.open-panel-container{
+    display: flex;
+    margin-left: 2.1em;
+    margin-top: 1.5em;
+}
+
+.question-mark-container{
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.question-mark{
+    background-color: #f7f7f7;
+    color:black;
+    text-align: center;
+    border-radius: 5px;
+    width: 24px;
+    height:24px;
+    padding-top: .6em;
+    padding-bottom: .8em;
+}
+
+.open-panel-text{
+    text-align: left;
+    color: #717171;
+    font-weight: 300;
+    font-size:15px;
+    margin-left: 4em;
+    max-width:55%;
+    line-height: 1.5em;
+}
+
+.back-to-calendar-btn button:hover{
+    background-color: rgba(235, 235, 235, 0.55);
+    cursor: pointer;
+}
+
+.back-to-calendar-btn button{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 12em;
+    padding: .5em .5em .5em .5em;
+    border: none;
+    border-radius: 10%;
+    background-color: white;
+    font-size:16px;
+    margin-right: 2em;
+    text-decoration-line: underline;
+}

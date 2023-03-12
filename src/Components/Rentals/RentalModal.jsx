@@ -4,12 +4,34 @@ import ReviewContext from '../../Context/ReviewContext'
 import MiniNavContext from '../../Context/MiniNavContext';
 import MiniNavBar from './MiniNavBar';
 import MiniCalendar from './MiniCalendar';
+import GuestQty from './GuestQty';
 import './RentalModal.css';
 
 function RentalModal() {
-    const { isMiniNavVisible } = useContext(MiniNavContext)
-    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate } = useContext(HostContext)
-    const { getReviews, openAllRev } = useContext(ReviewContext)
+    const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
+    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef, guestQtyObj } = useContext(HostContext)
+    const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
+
+    const guestQtyStr = (obj) => {
+        let resultStr = '';
+        if((obj.adults + obj.children) > 1) {
+            resultStr = `${obj.adults + obj.children} guests`
+        } else {resultStr = '1 guest'}
+
+        if(obj.infants === 1) {
+            resultStr += `, ${obj.infants} infant`
+        } else if (obj.infants > 1) {
+            resultStr += `, ${obj.infants} infants`
+        }
+
+        if(obj.pets === 1) {
+            resultStr += `, ${obj.pets} pet`
+        } else if (obj.pets > 1) {
+            resultStr += `, ${obj.pets} pets`
+        }
+    
+        return resultStr
+    }
     
     function amountOfReviews(rev) {
         for (let i = 0; i < rev.length; i++) {
@@ -19,6 +41,7 @@ function RentalModal() {
     }
     
     const totalReviews = amountOfReviews(getReviews);
+    const ratingAvg = Math.round(totalAvg * 100) / 100
 
     return ( 
         <>
@@ -36,7 +59,7 @@ function RentalModal() {
                                         <path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fillRule="evenodd"></path>
                                     </svg>
                                 </div>
-                                <div className="rental-modal-rating-number">4.93 ·</div>
+                                <div className="rental-modal-rating-number">{ratingAvg} ·</div>
                                 <button className='rental-modal-rating-reviews' onClick={openAllRev}>{totalReviews} reviews</button>
                             </div>
                         </div>
@@ -45,23 +68,33 @@ function RentalModal() {
                                 <button id="rental-modal-dates-btn" onClick={openMiniCalendar}>
                                     <div className="rental-modal-dates-checkin">
                                         <div className='rental-modal-dates-checkin-title'>CHECK-IN</div> 
-                                        <div className='rental-modal-dates-add-date'>Add date</div>
+                                        <div className='rental-modal-dates-add-date'>{(dateRange.from != "") ? convertDateObjToStr(dateRange.from) : 'Add date'}</div>
                                     </div>
                                     <div className="rental-modal-dates-checkout">
                                         <div className='rental-modal-dates-checkout-title'>CHECKOUT</div> 
-                                        <div className='rental-modal-dates-add-date'>Add date</div>
+                                        <div className='rental-modal-dates-add-date'>{(dateRange.to != "" && dateRange.to != undefined) ? convertDateObjToStr(dateRange.to) : 'Add date'}</div>
                                     </div>
                                 </button>
                             </div>
-                            <div className='rental-modal-guests'>
-                                <button></button>
+                            <div className='rental-modal-guests' ref={guestQtyBtnRef}>
+                                <button onClick={toggleGuestQty}>
+                                    <div className="rental-modal-guests-title">
+                                        <div>GUESTS</div>
+                                        <div className='rental-modal-guests-quantity'>{guestQtyStr(guestQtyObj)}</div>
+                                    </div>
+                                    <div className="rental-modal-guests-icon">
+                                        {isGuestQtyVisible ? <i className="fa fa-chevron-up"></i> : <i className="fa fa-chevron-down"></i>}
+                                    </div>
+                                </button>
+                                {isGuestQtyVisible && <GuestQty />}
                             </div>
                         </div>
-                        <div className="rental-modal-content-footer">
+                        <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
                             <button type='submit' onClick={openMiniCalendar}>Check availability</button>
                         </div>
                     </div>
                 </div>
+                
                 <div className="rental-modal-reporting-container">
                     <div className="rental-modal-reporting">
                         <button>
@@ -74,9 +107,9 @@ function RentalModal() {
                         </button>
                     </div>
                 </div>
+                {isMiniCalendarVisible && <MiniCalendar />}
             </div>
-            {(!isMiniNavVisible) && <MiniNavBar />}
-            {isMiniCalendarVisible && <MiniCalendar />}
+            {(isMiniNavVisible) && <MiniNavBar />}
         </>
     );
 }
