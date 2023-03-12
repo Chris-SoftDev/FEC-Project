@@ -125,8 +125,13 @@
     text-decoration-line: underline;
 }
 
+/* @media screen and (max-width: 975px) {
+    .rdp-months div:nth-of-type(2) {
+        display: none;
+    }
+} */
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 975px) {
     /* Media query for screen size smaller than 768px */
     .rdp-months div:nth-of-type(2) {
       display: none;

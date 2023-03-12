@@ -5,6 +5,7 @@ const HostContext = createContext()
 
 export const HostProvider = ({ children }) => {
     const miniCalenderRef = useRef()
+    const keyboardModalRef = useRef()
     const [showHouseRules, setShowHouseRules] = useState(false)
     const [showMoreSafety, setShowMoreSafety] = useState(false)
     const [showCancellation, setShowCancellation] = useState(false)
@@ -112,12 +113,27 @@ export const HostProvider = ({ children }) => {
     }, [isMiniCalendarVisible])
 
 
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+          // If the menu is open and the clicked target is not within the menu, then close the menu
+          if (keyboardModal && keyboardModalRef.current && !keyboardModalRef.current.contains(e.target)) {
+            setKeyboardModal(false)
+          }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+          // Cleanup the event listener
+          document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+      }, [keyboardModal])
+
+
     // Disables vertical scroll-bar when Login/Language window is visible
     useEffect(() => {
-        showHouseRules || showMoreSafety || showCancellation || showAllAmenities
+        showHouseRules || showMoreSafety || showCancellation || showAllAmenities || keyboardModal
           ? (document.body.parentElement.style.overflowY = "clip")
           : (document.body.parentElement.style.overflowY = "auto");
-      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities]);
+      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities, keyboardModal]);
 
     return (
         <HostContext.Provider 
@@ -151,7 +167,8 @@ export const HostProvider = ({ children }) => {
                 convertDateObjToStr,
                 openKeyboardModal,
                 closeKeyboardModal,
-                keyboardModal
+                keyboardModal,
+                keyboardModalRef
             }}>
             {children}
         </HostContext.Provider>
