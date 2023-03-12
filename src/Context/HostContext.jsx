@@ -18,6 +18,7 @@ export const HostProvider = ({ children }) => {
     const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
     const [nightlyRate, setNightlyRate] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
+    const [keyboardModal, setKeyboardModal] = useState(false)
     
     useEffect(() => {
         const fetchHostData = async () => {
@@ -87,6 +88,14 @@ export const HostProvider = ({ children }) => {
         setIsMiniCalendarVisible(false)
     }
 
+    const openKeyboardModal = () => {
+        setKeyboardModal(true)
+    }
+
+    const closeKeyboardModal = () => {
+        setKeyboardModal(false)
+    }
+
     // Login Menu outside-click, close-menu use-effect
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -139,9 +148,11 @@ export const HostProvider = ({ children }) => {
                 openMiniCalendar,
                 closeMiniCalendar,
                 miniCalenderRef,
-                convertDateObjToStr
-            }}
-        >
+                convertDateObjToStr,
+                openKeyboardModal,
+                closeKeyboardModal,
+                keyboardModal
+            }}>
             {children}
         </HostContext.Provider>
     )
