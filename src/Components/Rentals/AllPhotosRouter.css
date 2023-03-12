@@ -1,4 +1,9 @@
 .router-header{
   height: 60px;
   width: 1000px;
+
+}
+
+.router-large-img img {
+  width: 800px;
 }
