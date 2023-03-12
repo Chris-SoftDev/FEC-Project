@@ -4,7 +4,7 @@ import HostContext from '../../Context/HostContext'
 
 function RentalDescription() {
     const { hostData } = useContext(HostContext)
-    console.log(hostData)
+
     return (
         <>
         <div className='Rental-Selection-Holder'>

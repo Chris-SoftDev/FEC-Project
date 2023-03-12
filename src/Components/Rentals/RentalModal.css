@@ -160,11 +160,55 @@
 
 .rental-modal-guests {
     height: 56px;
+    width: 100%;
+    position: relative;
+}
+
+.rental-modal-guests button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.rental-modal-guests button:focus {
+    border: 2px solid black;
+}
+
+.rental-modal-guests-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 13px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.rental-modal-guests-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.rental-modal-guests-quantity {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .rental-modal-content-footer {
     height: 48px;
     width: 100%;
+    padding: 0 1px;
     text-align: center;
 }
 

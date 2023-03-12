@@ -1,12 +1,10 @@
 .calendar-main-container{
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .calendar-container{
     margin-left: -2em;
-    width: 100%;
 }
 
 .calendar-title{
@@ -23,10 +21,9 @@
 
 .date-range{
     font-size: 13.5px;
-    color:#717171;
-    font-weight: light;
+    color:#737373;
+    font-weight: 300 !important;
 }
-
 
 .rdp-caption_label{ /*month and year*/
     font-size: 15.5px;
@@ -39,7 +36,6 @@
     font-weight:400;
   }
 
-
 .rdp-nav button{/*carrots*/
     color: currentColor;
     width: 24px;
@@ -49,56 +45,44 @@
 .rdp-head_cell{ /*days of week*/
     color: #717171;
     font-size: 11px;
-    font-weight: 300;
+    font-weight: 500 !important;
 }
 
-.rdp-cell{
-    border-radius: 50%;
-}
-
-
- .rdp-tbody{ /*numbers*/
-    color:currentColor;
-} 
-
-.rdp-button_reset{ /*also works for numbers*/
-    color:currentColor;
+.rdp-button_reset{ /*actual days*/
     font-size: 14px;
 }
 
+.rdp-button_reset[aria-selected='true']{ /*numbers in between selected*/
+    color:#222222;
+    font-size: 14px;
+    background-color: #f7f7f7 !important;
+}
 
-
-.rdp-day[aria-selected="true"] { /*selected dates highlight*/
-    background-color: rgba(221, 221, 221, .7);
+/*disables the hover effect on the start and end dates of the dates selected, and applies only to days in between*/
+.rdp-button_reset[aria-selected='true']:not(.rdp-day_range_start[aria-selected="true"]):not(.rdp-day_range_end[aria-selected="true"]):hover,
+.rdp-button_reset[aria-selected='true'].rdp-day:not(.rdp-day_range_start):not(.rdp-day_range_end):hover {
+    background-color: white !important;
+    border: 1px solid #222222;
+    border-radius: 50%;
 }
 
 .rdp-day_range_start[aria-selected="true"] { /*from date selected*/
-    background-color: currentColor;
-    border:white;
-    border-radius: 50% !important;
-    color:currentColor !important;
-    
+    font-size: 14px;
+    color:white !important;
+    background-color: #222222 !important;
 }
-
-.rdp-day_range_end[aria-selected="true"] { /*from date selected*/
-    background-color: currentColor;
-    border:white;
-    border-radius: 50% !important;
-    color:currentColor !important;
-    
-}
-
-.react-datepicker__day--highlighted span {
-    color: green;
-  }
 
 .rdp-day_range_end[aria-selected="true"] { /*to date selected*/
+    font-size: 14px;
     background-color: currentColor;
+    border:white;
+    color:white !important;
+    background-color: #222222!important; 
 }
-
-.rdp-day:hover:not([aria-disabled="true"]) {
-    background-color: white;
-    border: 1px solid black;
+  
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) { /*hover for the days not selected*/
+    background-color: white !important;
+    border: 1px solid #222222;
   }
 
 .calendar-footer{
@@ -108,8 +92,22 @@
 }
 
 .keyboard-icon{
+    margin-left: -1em;
+    margin-top:-.5em;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.keyboard-icon svg{
+    margin-top: .8em;
     height: 24px;
     width: 24px;
+}
+
+.keyboard-icon:hover{
+    background-color: rgba(235, 235, 235, 0.55);
+    cursor: pointer;
 }
 
 .clear-dates button:hover{
