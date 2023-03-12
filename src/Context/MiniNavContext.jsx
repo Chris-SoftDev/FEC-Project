@@ -32,7 +32,7 @@ export const MiniNavProvider = ({ children }) => {
     const fixedElementHeight = document.querySelector('#mini-navbar-anchor').offsetHeight;
     const reviewsOffset = photosRef.current.offsetTop - fixedElementHeight;
     window.scrollTo({
-      top: reviewsOffset + 60, // adjust the padding here as needed
+      top: reviewsOffset + 60,
       behavior: 'smooth'
     });
   }
@@ -40,7 +40,7 @@ export const MiniNavProvider = ({ children }) => {
     const fixedElementHeight = document.querySelector('#mini-navbar-anchor').offsetHeight;
     const reviewsOffset = amenitiesRef.current.offsetTop - fixedElementHeight;
     window.scrollTo({
-      top: reviewsOffset - 45, // adjust the padding here as needed
+      top: reviewsOffset - 45,
       behavior: 'smooth'
     });
   }
@@ -56,7 +56,7 @@ export const MiniNavProvider = ({ children }) => {
     const fixedElementHeight = document.querySelector('#mini-navbar-anchor').offsetHeight;
     const reviewsOffset = locationRef.current.offsetTop - fixedElementHeight;
     window.scrollTo({
-      top: reviewsOffset, // adjust the padding here as needed
+      top: reviewsOffset,
       behavior: 'smooth'
     });
   }
