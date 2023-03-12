@@ -71,6 +71,13 @@ export const HostProvider = ({ children }) => {
         setDateRange({from: "", to: ""})
     }
 
+    const convertDateObjToStr = (date) => {
+        const dateMonth = (date.getMonth() + 1).toString().padStart(2, '0'); // Add 1 to the month value as it is 0-indexed
+        const dateDay = date.getDate().toString().padStart(2, '0');
+        const dateYear = date.getFullYear().toString();
+        return `${dateMonth}/${dateDay}/${dateYear}`;
+    }
+
     // Rental Modal, Mini Calendar
     const openMiniCalendar = () => {
         setIsMiniCalendarVisible(true)
@@ -131,7 +138,8 @@ export const HostProvider = ({ children }) => {
                 isMiniCalendarVisible,
                 openMiniCalendar,
                 closeMiniCalendar,
-                miniCalenderRef
+                miniCalenderRef,
+                convertDateObjToStr
             }}
         >
             {children}

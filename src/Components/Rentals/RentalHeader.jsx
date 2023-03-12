@@ -15,7 +15,7 @@ function RentalHeader() {
   const { totalAvg, getReviews, showReview, openAllRev } =
     useContext(ReviewContext);
 
-  const totalDec = roundToTenth(totalAvg);
+  const totalDec = roundToHundreth(totalAvg);
 
   const totalReviews = amountOfReviews(getReviews);
 
@@ -25,8 +25,8 @@ function RentalHeader() {
       return element;
     }
   }
-  function roundToTenth(num) {
-    return Math.round(num * 10) / 10;
+  function roundToHundreth(num) {
+    return Math.round(num * 100) / 100;
   }
 
   return (
