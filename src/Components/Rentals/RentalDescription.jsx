@@ -1,13 +1,13 @@
 import './RentalDescription.css';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import RentalContext from '../../Context/RentalContext'
-import ShowRentalLearn from './ShowRentalLearn';
 import HostContext from '../../Context/HostContext'
+import ShowRentalLearn from './ShowRentalLearn';
 import ShowRentalShow from './ShowRentalShow';
 
 function RentalDescription() {
-    const { showRentalState, openRental } = useContext(RentalContext)
-    const {hostData, rulesData} =useContext(HostContext)
+    const { showRentalState, openRental, miniLearnMoreRef, showRentalMore, openShowMore } = useContext(RentalContext)
+    const {hostData, rulesData} = useContext(HostContext)
 
     return (
         <>
@@ -90,7 +90,7 @@ function RentalDescription() {
             <span className='rental-about-span'>
             Come enjoy our mountaintop getaway just 45-minutes from Boise with stunning views for days! Sip cocoa on the private hilltop, soak in the hillside hot tub, or enjoy the peaceful full-sized deck after a day of hiking/biking/snowshoeing. Did we mention the views? The 1500 sq ft cabin includes a luxurious loft-style master suite (view!), work loft with desk (view!), and two additional bedrooms (yep, views!). Even the fully equipped kitchen has views!  Get away without going away - book today.
             </span>
-            <div className="rental-about-showmore-link" onClick={openRental}>
+            <div className="rental-about-showmore-link" onClick={openShowMore}>
                 <div>Show More</div>
                 <div className='arrow'>
                     <svg viewBox='0 0 18 18'>
@@ -100,8 +100,8 @@ function RentalDescription() {
             </div>
             
         </div>
-        {showRentalState && (<ShowRentalLearn />)}
-        {showRentalState && (<ShowRentalShow />)}
+        {showRentalState && (<ShowRentalLearn  />)}
+        {showRentalMore && (<ShowRentalShow />)}
         </>
      );
 }

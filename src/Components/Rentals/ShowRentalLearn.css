@@ -69,3 +69,41 @@
     margin-left: 1.5em;
     word-wrap: break-word;
 }
+
+.airCover-image {
+    height: 42px;
+    justify-content: left !important;
+    padding-bottom: 10px;
+}
+.learn-modal-title{
+    padding-bottom: 32px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 200px;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
+
+}
+.learn-modal-grid {
+    display: grid;
+    padding-bottom: 40px;
+
+}
+
+.learn-modal-grid-titles {
+    font-size: 16px;
+    font-weight: 400;
+
+}
+.learn-modal-grid-desc {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 200;
+
+}
+.learn-modal-details-link{
+    
+    text-decoration: none;
+    color: black;
+     
+}

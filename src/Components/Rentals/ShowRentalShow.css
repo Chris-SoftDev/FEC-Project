@@ -68,4 +68,8 @@
     text-align: left;
     margin-left: 1.5em;
     word-wrap: break-word;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    word-break: break-word !important;
+    margin-bottom: 24px !important;
 }
