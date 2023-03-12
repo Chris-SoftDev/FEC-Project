@@ -4,8 +4,19 @@ import NavContext from "../../Context/NavContext";
 import ReviewContext from "../../Context/ReviewContext";
 import LoginMenu from "../NavBar/LoginMenu";
 import ShowAllReviews from "../Reviews/ShowAllReviews";
-import ShareMenu from "./ShareMenu"
+import ShareMenu from "./ShareMenu";
+import AllPhotosRouter from "./AllPhotosRouter";
+
 import "./RentalHeader.css";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
+const linkStyle ={
+  margin: "0rem",
+  textDecoration: "none",
+  color: 'black',
+  
+}
+
 
 function RentalHeader() {
   const { miniNavRef, photosRef } = useContext(MiniNavContext);
@@ -64,7 +75,7 @@ function RentalHeader() {
                     <path d="M6 13l9.293-9.293a1 1 0 0 1 1.414 0L26 13"></path>
                   </g>
                 </svg>
-                <div className="header-share-btn-text" >Share</div> 
+                <div className="header-share-btn-text">Share</div>
               </button>
             </div>
             <div className="rental-header-save-btn-container">
@@ -111,14 +122,17 @@ function RentalHeader() {
               </div>
               <div className="bottom-right-image-container">
                 <button className="overlay-button">
-                    <div className="dot-icon">
-                        <svg viewBox="0 0 16 16"> 
-                            <path d="m3 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fillRule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <div>
-                    Show all photos
-                    </div>
+                  <div className="dot-icon">
+                    <svg viewBox="0 0 16 16">
+                      <path
+                        d="m3 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"
+                        fillRule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <Link to="/allPhotos" style={linkStyle}> Show all photos</Link> 
+                  </div>
                 </button>
                 <img
                   src="https://a0.muscache.com/im/pictures/6fb0f548-2453-42cd-91d6-01b4b2a26c8d.jpg?im_w=720"

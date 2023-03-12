@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS languages, currencies, reviews, ratings, property;
+DROP TABLE IF EXISTS languages, currencies, reviews, ratings, property, images;
 
 CREATE TABLE languages (
     language_id SERIAL PRIMARY KEY,
@@ -28,6 +28,12 @@ CREATE TABLE ratings (
     check_in INTEGER NOT NULL CHECK (check_in >= 1 AND check_in <= 5),
     value INTEGER NOT NULL CHECK (value >= 1 AND value <= 5)
 );
+
+CREATE TABLE images (
+  id SERIAL PRIMARY KEY,
+  url VARCHAR(500)
+);
+
 
 CREATE TABLE property (
     property_id SERIAL,

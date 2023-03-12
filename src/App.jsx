@@ -6,6 +6,7 @@ import Reviews from './Components/Reviews/Reviews';
 import Host from './Components/Host/Host';
 import Location from './Components/Location/Location';
 import LocationShowMore from './Components/Location/LocationShowMore';
+import AllPhotosRouter from './Components/Rentals/AllPhotosRouter';
 import Footer from './Components/Footer/Footer';
 import { NavProvider } from './Context/NavContext';
 import { HostProvider } from './Context/HostContext'
@@ -62,6 +63,7 @@ function App() {
             </NavProvider>
         }/>        
         <Route path='/location' element={<LocationShowMore />} />
+        <Route path='/allPhotos' element={<AllPhotosRouter />} />
       </Routes>
     </Router> 
   );
