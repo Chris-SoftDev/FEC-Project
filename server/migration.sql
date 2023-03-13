@@ -37,7 +37,6 @@ CREATE TABLE property (
     cancellation_policy JSONB,
     house_rules JSONB,
     nightly_rate INTEGER,
-    location JSONB,
-    booked_days JSONB
+    location JSONB
 );
 
