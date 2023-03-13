@@ -9,6 +9,7 @@
 
 .Rental-Text-Bottom {
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .Rental-Box {
@@ -29,14 +30,16 @@
 }
 
 .Rental-Section-Header {
-font-weight: 500;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 .Rental-List-Child {
-    padding-top: 18px;
+    padding-top: 8px;
     float: left;
+    text-align: left !important;
     margin-left: 5px;
-    font-size: 16px;
+    font-size: 15px;
     
 }
 .rental-img-container{
@@ -55,10 +58,8 @@ font-weight: 500;
 .Rental-Text-Cont {
     display: flex;
     flex-direction: column;
-}
-
-.Rental-Picture-Cont {
-    padding-left: 80px;
+    text-align: left;
+    width: 75%;
 }
 
 .Rental-List {
@@ -74,11 +75,20 @@ font-weight: 500;
     margin: 0;
 }
 
+.Rental-Picture-Cont {
+    
+    display: flex;
+    text-align: right;
+    margin-left: 40px;
+}
+
 .rental-img-container{
+    display: flex;
     width: 64px;
     height: 64px;
     border-radius: 50%;
     padding-left: 60px;
+    text-align: right;
 }
 
 .rental-img-container img{
@@ -104,7 +114,7 @@ font-weight: 500;
     display: flex;
     text-align: left;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .rental-airCover-image {

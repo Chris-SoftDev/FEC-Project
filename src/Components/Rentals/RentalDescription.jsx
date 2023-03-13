@@ -23,7 +23,7 @@ function RentalDescription() {
                         </li>
                         <li className='Rental-List-Child'>
                             <span aria-hidden="true" > · </span>    
-                            <span>3 bedrooms</span>
+                            <span aria-hidden="true">3 bedrooms</span>
                         </li> 
                         <li className='Rental-List-Child'>
                             <span aria-hidden="true"> · </span>
@@ -55,7 +55,7 @@ function RentalDescription() {
                         </div>
 
                         <div className='self-checkin-sub-desc'>
-                            <div className='self-check-in-door-info'>{rulesData.self_check} </div>
+                            <div className='self-check-in-door-info'>Self Check in </div>
                             <div className='self-check-in-door-description'>Check yourself in with the smartlock.</div>
                         </div>
                             
@@ -82,7 +82,7 @@ function RentalDescription() {
                         </div>
                         <div className='self-checkin-sub-desc'>
                             <div className='self-check-in-heart-info'>Highly rated Host</div>
-                            <div className='self-check-in-heart-description'>Tag&Sherilyn has received 5-star ratings from 95% of recent guests</div>
+                            <div className='self-check-in-heart-description'>Tag & Sherilyn has received 5-star ratings from 95% of recent guests.</div>
                         </div>
                     </div>
                 </div> 
