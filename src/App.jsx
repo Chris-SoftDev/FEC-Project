@@ -20,13 +20,13 @@ import { RentalProvider } from "./Context/RentalContext";
 function App() {
   return (
     <ReviewProvider>
-          <NavProvider>
-      <Router>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
+      <NavProvider>
+        <Router>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
                 <HostProvider>
                   <MiniNavProvider>
                     <div className="app-container">
@@ -62,13 +62,13 @@ function App() {
                     </div>
                   </MiniNavProvider>
                 </HostProvider>
-            }
+              }
             />
-          <Route path="/location" element={<LocationShowMore />} />
-          <Route path="/allPhotos" element={<AllPhotosRouter />} />
-        </Routes>
-      </Router>
-            </NavProvider>
+            <Route path="/location" element={<LocationShowMore />} />
+            <Route path="/allPhotos" element={<AllPhotosRouter />} />
+          </Routes>
+        </Router>
+      </NavProvider>
     </ReviewProvider>
   );
 }
