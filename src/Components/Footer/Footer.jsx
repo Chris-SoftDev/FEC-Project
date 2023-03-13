@@ -2,7 +2,8 @@ import "./Footer.css";
 import { useContext } from 'react'
 import NavContext from '../../Context/NavContext'
 import { RegionProvider } from '../../Context/RegionContext'
-import LangMenu from '../NavBar/LangMenu';
+import LangModal from './LangModal';
+import CurrencyModal from './CurrencyModal'
 
 function Footer () {
     const { openLangMenu, isLangMenuVisible, setIsLangMenuVisible } = useContext(NavContext)
@@ -161,7 +162,7 @@ function Footer () {
                             </svg>
                         </div>
                         <div className="econ-items" id="lang-text" onClick={openLangMenu}>English(US)</div>
-                        <div className="econ-items">$ USD</div>
+                        <div className="econ-items" onClick={openLangMenu}>$ USD</div>
                     </div>
                     <div className="social-column">
                         <a href="https://www.facebook.com/airbnb">
@@ -192,7 +193,13 @@ function Footer () {
                 {openCurr && (<FooterCurrency/>)} */}
                 {isLangMenuVisible && (
                     <RegionProvider>
-                        <LangMenu />
+                        <LangModal />
+                    </RegionProvider>
+                )}
+
+                {isLangMenuVisible && (
+                    <RegionProvider>
+                        <CurrencyModal />
                     </RegionProvider>
                 )}
         </div>
