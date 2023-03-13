@@ -6,7 +6,7 @@ import './MiniCalendar.css'
 
 function MiniCalendar() {
     const miniCalenderHeaderRef = useRef()
-    const { dateRange, setDateRange, emptyCalendar, convertDateObjToStr, openKeyboardModal, miniCalenderRef, closeMiniCalendar } = useContext(HostContext)
+    const { dateRange, setDateRange, emptyCalendar, convertDateObjToStr, openKeyboardModal, miniCalenderRef, closeMiniCalendar, setIsReserveReady } = useContext(HostContext)
 
     const [checkInDate, setCheckInDate] = useState('')
     const [checkOutDate, setCheckOutDate] = useState('')
@@ -66,7 +66,7 @@ function MiniCalendar() {
             setCheckOutDate(convertDateObjToStr(dateRange.to))
         }
 
-      }, [dateRange]);
+    }, [dateRange]);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -76,7 +76,7 @@ function MiniCalendar() {
           }
         });
         observer.observe(miniCalenderHeaderRef.current);
-      }, []);
+    }, []);
 
     return ( 
         <div className="mini-calendar-modal-container" ref={miniCalenderRef}>
@@ -150,9 +150,9 @@ function MiniCalendar() {
                     <DayPicker
                         numberOfMonths={2} 
                         defaultMonth={new Date()} 
-                        fromMonth={new Date()} // TODO: Needs to mirror on both calendars, Context state?
-                        toDate={new Date(2023, 9)} // TODO: Needs to mirror on both calendars, Context state?
-                        mode="range" //select multiple days
+                        fromMonth={new Date()} 
+                        toDate={new Date(2023, 9)} 
+                        mode="range" 
                         selected={dateRange}
                         onSelect={setDateRange}
                         modifiers={modifiers} 

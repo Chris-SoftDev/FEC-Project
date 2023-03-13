@@ -179,7 +179,6 @@ export const HostProvider = ({ children }) => {
     // Calendar Functions
     const emptyCalendar = () => {
         setDateRange({from: "", to: ""})
-        setIsReserveReady(false)
     }
 
     const convertDateObjToStr = (date) => {
@@ -205,6 +204,15 @@ export const HostProvider = ({ children }) => {
     const closeKeyboardModal = () => {
         setKeyboardModal(false)
     }
+
+    // Reserve Menu Trigger when checkout date has a value
+    useEffect(() => {
+        if(dateRange.to) {
+            setIsReserveReady(true)
+        } else {
+            setIsReserveReady(false)
+        }
+    }, [dateRange]);
 
     // Mini Calendar Menu outside-click, close-menu use-effect
     useEffect(() => {
@@ -373,7 +381,8 @@ export const HostProvider = ({ children }) => {
                 closeServiceDog,
                 isServiceDogVisible,
                 amenities,
-                daysBooked
+                daysBooked,
+                setIsReserveReady
             }}>
             {children}
         </HostContext.Provider>
