@@ -24,6 +24,11 @@ export const HostProvider = ({ children }) => {
     const [serviceFee, setServiceFee] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
+    const [propertyLocation, setPropertyLocation] = useState([])
+    const keyboardModalRef = useRef()
+    const houseRulesModalRef = useRef()
+    const cancellationModalRef = useRef()
+    const safetyModalRef = useRef()
     const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
     const [isServiceDogVisible, setIsServiceDogVisible] =  useState(false);
     const [isReserveReady, setIsReserveReady] = useState(false)
@@ -45,6 +50,7 @@ export const HostProvider = ({ children }) => {
             setCancelData(host[0].cancellation_policy)
             setAdditionalRules(host[0].house_rules.additional_rules)
             setNightlyRate(host[0].nightly_rate)
+            setPropertyLocation(host[0].location)
             setCleaningFee(host[0].cleaning_fee)
             setServiceFee(host[0].service_fee)
             setAmenities(host[0].amenities)
@@ -203,6 +209,58 @@ export const HostProvider = ({ children }) => {
         }
     }, [isMiniCalendarVisible])
 
+    //to close keyboard modal when clicking outside of it
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+          if (keyboardModal && keyboardModalRef.current && !keyboardModalRef.current.contains(e.target)) {
+            setKeyboardModal(false)
+          }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+          document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+      }, [keyboardModal])
+
+    //to close show rules modal when clicking outside of it
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+          if (showHouseRules && houseRulesModalRef.current && !houseRulesModalRef.current.contains(e.target)) {
+            setShowHouseRules(false)
+          }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+          document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [showHouseRules])
+
+    //to close show safety info modal when clicking outside of it
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+          if (showMoreSafety && safetyModalRef.current && !safetyModalRef.current.contains(e.target)) {
+            setShowMoreSafety(false)
+          }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+          document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [showMoreSafety])
+
+    //to close show cancellation info modal when clicking outside of it
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+          if (showCancellation && cancellationModalRef.current && !cancellationModalRef.current.contains(e.target)) {
+            setShowCancellation(false)
+          }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+          document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [showCancellation])
+
     // Guest Qty Menu outside-click, close-menu use-effect
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -236,10 +294,11 @@ export const HostProvider = ({ children }) => {
 
     // Disables vertical scroll-bar when windows are visible
     useEffect(() => {
-        showHouseRules || showMoreSafety || showCancellation || showAllAmenities || isServiceDogVisible
+        showHouseRules || showMoreSafety || showCancellation || showAllAmenities || isServiceDogVisible || keyboardModal
           ? (document.body.parentElement.style.overflowY = "clip")
           : (document.body.parentElement.style.overflowY = "auto");
-      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities, isServiceDogVisible]);
+      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities, isServiceDogVisible, keyboardModal]);
+
 
     return (
         <HostContext.Provider 
@@ -292,6 +351,11 @@ export const HostProvider = ({ children }) => {
                 openKeyboardModal,
                 closeKeyboardModal,
                 keyboardModal,
+                keyboardModalRef,
+                cancellationModalRef,
+                houseRulesModalRef,
+                safetyModalRef,
+                propertyLocation
                 serviceDogRef,
                 openServiceDog,
                 closeServiceDog,

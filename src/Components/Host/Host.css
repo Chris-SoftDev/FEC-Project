@@ -278,8 +278,6 @@
     margin-top: 1em;
     text-align: left;
     font-weight: 500;
-    text-decoration: underline;
-    text-decoration-color: rgb(34, 34, 34);
     margin-bottom: 3.5em;
 }
 
@@ -295,8 +293,6 @@
     margin-top: 1.9em;
     text-align: left;
     font-weight: 500;
-    text-decoration: underline;
-    text-decoration-color: rgb(34, 34, 34);
     margin-bottom: 3.5em;
 }
 
@@ -327,8 +323,8 @@
         display: none;
     }
 
-    .cohost-bio-title{
-        margin-top: -1em;
+    .contact li { /*Language, Response rate, Response time*/
+        margin-bottom: .5em;
     }
 }
 
