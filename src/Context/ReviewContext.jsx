@@ -18,9 +18,11 @@ export const ReviewProvider = ({ children }) => {
   const [isShareMenuVisible, setIsShareMenuVisible] = useState(false);
   const [getAllImage,setgetAllImage] = useState([])
 
+  const fetchUrl = 'http://localhost:3000';
+
   useEffect(() => {
     const fetchAllImages = async () => {
-      const response = await fetch("http://localhost:3000/images");
+      const response = await fetch(`${fetchUrl}/images`);
       const data = await response.json();
       setgetAllImage(data);
     };
@@ -30,7 +32,7 @@ export const ReviewProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const response = await fetch("http://localhost:3000/reviews");
+      const response = await fetch(`${fetchUrl}/reviews`);
       const data = await response.json();
       setgetReviews(data);
       setimage(data.img_url);
@@ -41,7 +43,7 @@ export const ReviewProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchRatings = async () => {
-      const response = await fetch("http://localhost:3000/ratings");
+      const response = await fetch(`${fetchUrl}/ratings`);
       const data = await response.json();
       setratings(data);
       setcleanliness(data[0].avg_cleanliness);
@@ -57,7 +59,7 @@ export const ReviewProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchAvgRatings = async () => {
-      const response = await fetch("http://localhost:3000/ratings/avg");
+      const response = await fetch(`${fetchUrl}/ratings/avg`);
       const data = await response.json();
       settotalAvg(data[0].overall_avg);
     };
