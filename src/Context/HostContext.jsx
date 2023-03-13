@@ -355,7 +355,7 @@ export const HostProvider = ({ children }) => {
                 cancellationModalRef,
                 houseRulesModalRef,
                 safetyModalRef,
-                propertyLocation
+                propertyLocation,
                 serviceDogRef,
                 openServiceDog,
                 closeServiceDog,
