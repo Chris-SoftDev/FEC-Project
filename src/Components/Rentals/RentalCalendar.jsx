@@ -19,9 +19,12 @@ function RentalCalendar() {
     const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0; 
 
     
-    const disableDays = [
-        {from: new Date(2023, 4, 11), to: new Date(2023, 4, 15) }
-    ]
+     const disableDays = [
+        {from: new Date(2023, 4, 11), to: new Date(2023, 4, 15)},
+        {from: new Date(2023, 3, 3), to: new Date(2023, 3, 11)},
+        {from: new Date(2023, 2, 11), to: new Date(2023, 2, 15)},
+        {from: new Date(2023, 3, 18), to: new Date(2023, 3, 22)}
+     ]
     return (
 
         <div className='calendar-main-container' ref={calendarRef}>
@@ -45,6 +48,7 @@ function RentalCalendar() {
                     selected={dateRange} //this state is located in hostcontext
                     onSelect={setDateRange}
                     disabled={disableDays}
+                    min={2}
                 />
             </div>
             <div className='calendar-footer'>

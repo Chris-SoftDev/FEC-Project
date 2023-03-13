@@ -85,6 +85,10 @@
     border: 1px solid #222222;
 }
 
+.rdp-day_disabled:not(.rdp-day_selected) { /*line across dates that are booked*/
+    text-decoration: line-through;
+}
+
 .calendar-footer{
     display: flex;
     flex-direction: row;

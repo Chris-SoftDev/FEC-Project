@@ -45,9 +45,13 @@ CREATE TABLE property (
     cancellation_policy JSONB,
     house_rules JSONB,
     nightly_rate INTEGER,
-    location JSONB
+    location JSONB,
     cleaning_fee INTEGER, 
     service_fee INTEGER, 
     amenities JSONB
 );
 
+CREATE TABLE booked_days (
+    booked_days_id SERIAL,
+    booked_from 
+)
