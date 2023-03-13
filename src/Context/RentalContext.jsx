@@ -7,6 +7,7 @@ export const RentalProvider = ({ children }) => {
     const [showRentalState, setshowRentalState] = useState(false)
     const [showRentalMore, setShowRentalMore] = useState(false)
     const miniLearnMoreRef = useRef()
+    const miniShowMoreRef =useRef()
     
 
     const openRental = () => {
@@ -30,11 +31,8 @@ export const RentalProvider = ({ children }) => {
       useEffect(() => {
         const checkIfClickedOutside = e => {
         // If the menu is open and the clicked target is not within the menu, then close the menu (miniLearnMoreRef.current && !
-        if (showRentalState || showRentalMore && miniLearnMoreRef.current && !miniLearnMoreRef.current.contains(e.target)) {
+        if (showRentalState && miniLearnMoreRef.current && !miniLearnMoreRef.current.contains(e.target)) {
             setshowRentalState(false)
-            setShowRentalMore(false)
-            
-            
         }
         }
         document.addEventListener("mousedown", checkIfClickedOutside)
@@ -43,6 +41,20 @@ export const RentalProvider = ({ children }) => {
         document.removeEventListener("mousedown", checkIfClickedOutside)
         }
     }, [miniLearnMoreRef])  
+
+    useEffect(() => {
+        const checkIfClickedOutside2 = e => {
+        // If the menu is open and the clicked target is not within the menu, then close the menu (miniLearnMoreRef.current && !
+        if (showRentalMore && miniShowMoreRef.current &&!miniShowMoreRef.current.contains(e.target)) {
+            setShowRentalMore(false)
+        }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside2)
+        return () => {
+        // Cleanup the event listener
+        document.removeEventListener("mousedown", checkIfClickedOutside2)
+        }
+    }, [miniShowMoreRef]) 
 
     useEffect(() => {
         showRentalState 
@@ -60,7 +72,8 @@ export const RentalProvider = ({ children }) => {
             miniLearnMoreRef,
             openShowMore,
             closeShowMore,
-            showRentalMore
+            showRentalMore,
+            miniShowMoreRef
             
               
             }}
