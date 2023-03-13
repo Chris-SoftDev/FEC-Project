@@ -331,6 +331,16 @@ export const HostProvider = ({ children }) => {
       }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities, isServiceDogVisible, keyboardModal]);
 
 
+        //maps over dates from data and places it in disabled dates on date picker component
+    const disableDays = daysBooked.map((booking) => {
+        const fromDate = new Date(booking.from_date);
+        const toDate = new Date(booking.to_date);
+        return {
+            from: new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate()),
+            to: new Date(toDate.getFullYear(), toDate.getMonth(), toDate.getDate())
+        };
+    });
+
     return (
         <HostContext.Provider 
             value ={{
@@ -392,7 +402,8 @@ export const HostProvider = ({ children }) => {
                 closeServiceDog,
                 isServiceDogVisible,
                 amenities,
-                daysBooked
+                daysBooked,
+                disableDays
             }}>
             {children}
         </HostContext.Provider>
