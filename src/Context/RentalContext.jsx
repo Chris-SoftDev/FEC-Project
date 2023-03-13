@@ -20,14 +20,12 @@ export const RentalProvider = ({ children }) => {
 
       const openShowMore = () => {
         setShowRentalMore(true)
-
       }
 
       const closeShowMore = () => {
         setShowRentalMore(false)
-
       }
-
+   
       useEffect(() => {
         const checkIfClickedOutside = e => {
         // If the menu is open and the clicked target is not within the menu, then close the menu (miniLearnMoreRef.current && !
@@ -40,7 +38,7 @@ export const RentalProvider = ({ children }) => {
         // Cleanup the event listener
         document.removeEventListener("mousedown", checkIfClickedOutside)
         }
-    }, [miniLearnMoreRef])  
+    }, [showRentalState])  
 
     useEffect(() => {
         const checkIfClickedOutside2 = e => {
@@ -54,7 +52,7 @@ export const RentalProvider = ({ children }) => {
         // Cleanup the event listener
         document.removeEventListener("mousedown", checkIfClickedOutside2)
         }
-    }, [miniShowMoreRef]) 
+    }, [showRentalMore]) 
 
     useEffect(() => {
         showRentalState 

@@ -11,8 +11,8 @@ export default function ShowRentalShow() {
         <>
             {showRentalMore && (
                 <div className="modal-overlay" >
-                    <div className='show-modal-container'>
-                        <div className='show-modal' ref={miniShowMoreRef}>
+                    <div className='show-modal-container' ref={miniShowMoreRef}>
+                        <div className='show-modal' >
                             <div className='show-close-btn'onClick={closeShowMore}>
                                 <button>
                                     <svg viewBox='0 0 32 32'>  

@@ -252,6 +252,7 @@ font-weight: 500;
     font-weight: 300;
     margin-left: 3em;
     text-align: left !important;
+    font-weight: 400;
 }
 
 .self-check-in-door-description{
@@ -277,6 +278,7 @@ font-weight: 500;
     margin-left: 3em;
     margin-top:.2em;
     text-align: left !important;
+    font-weight: 400;
 }
 
 .self-check-in-key-description{
@@ -302,6 +304,7 @@ font-weight: 500;
     margin-left: 3em;
     margin-top:.2em;
     text-align: left !important;
+    font-weight: 400;
 }
 
 .self-check-in-heart-description{

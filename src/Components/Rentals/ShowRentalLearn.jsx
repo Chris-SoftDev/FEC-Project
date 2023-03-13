@@ -11,8 +11,8 @@ export default function ShowRentalLearn() {
         <>
             {showRentalState && (
                 <div className="modal-overlay"  >
-                    <div className='learn-modal-container'>
-                        <div className='learn-modal'ref={miniLearnMoreRef}>
+                    <div className='learn-modal-container' ref={miniLearnMoreRef}>
+                        <div className='learn-modal'>
                             <div className='learn-close-btn'onClick={closeRental}>
                                 <button>
                                     <svg viewBox='0 0 32 32'>  
