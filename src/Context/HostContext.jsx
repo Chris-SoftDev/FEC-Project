@@ -1,10 +1,12 @@
 import { createContext, useState, useEffect, useRef } from "react";
-import { format } from 'date-fns' //to format the dates
 
 const HostContext = createContext()
 
 export const HostProvider = ({ children }) => {
     const miniCalenderRef = useRef()
+    const guestQtyModalRef = useRef()
+    const guestQtyBtnRef = useRef()
+    const serviceDogRef = useRef()
     const [showHouseRules, setShowHouseRules] = useState(false)
     const [showMoreSafety, setShowMoreSafety] = useState(false)
     const [showCancellation, setShowCancellation] = useState(false)
@@ -15,8 +17,11 @@ export const HostProvider = ({ children }) => {
     const [cancelData, setCancelData] = useState([])
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
+    const [amenities, setAmenities] = useState([])
     const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
     const [nightlyRate, setNightlyRate] = useState()
+    const [cleaningFee, setCleaningFee] = useState()
+    const [serviceFee, setServiceFee] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
     const [propertyLocation, setPropertyLocation] = useState([])
@@ -24,6 +29,15 @@ export const HostProvider = ({ children }) => {
     const houseRulesModalRef = useRef()
     const cancellationModalRef = useRef()
     const safetyModalRef = useRef()
+    const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
+    const [isServiceDogVisible, setIsServiceDogVisible] =  useState(false);
+    const [isReserveReady, setIsReserveReady] = useState(false)
+    const [guestQtyObj, setGuestQtyObj] = useState({
+        adults: 1,
+        children: 0,
+        infants: 0,
+        pets: 0
+    })
     
     useEffect(() => {
         const fetchHostData = async () => {
@@ -37,6 +51,9 @@ export const HostProvider = ({ children }) => {
             setAdditionalRules(host[0].house_rules.additional_rules)
             setNightlyRate(host[0].nightly_rate)
             setPropertyLocation(host[0].location)
+            setCleaningFee(host[0].cleaning_fee)
+            setServiceFee(host[0].service_fee)
+            setAmenities(host[0].amenities)
         };
         
         fetchHostData();
@@ -74,6 +91,81 @@ export const HostProvider = ({ children }) => {
         setShowAllAmenities(false)
     }
 
+    const toggleGuestQty = () => {
+        setIsGuestQtyVisible(!isGuestQtyVisible)
+    }
+
+    const closeGuestQty = () => {
+        setIsGuestQtyVisible(false)
+    }
+
+    // Service Dog Modal Functions
+    const openServiceDog = () => {
+        setIsServiceDogVisible(true)
+    }
+
+    const closeServiceDog = () => {
+        setIsServiceDogVisible(false)
+    }
+
+    //Guest Qty Functions
+    const increaseAdultGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            adults: guestQtyObj.adults + 1
+        })
+    }
+    
+    const decreaseAdultGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            adults: guestQtyObj.adults - 1
+        })
+    }
+
+    const increaseChildrenGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            children: guestQtyObj.children + 1
+        })
+    }
+    
+    const decreaseChildrenGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            children: guestQtyObj.children - 1
+        })
+    }
+
+    const increaseInfantGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            infants: guestQtyObj.infants + 1
+        })
+    }
+    
+    const decreaseInfantGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            infants: guestQtyObj.infants - 1
+        })
+    }
+
+    const increasePetGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            pets: guestQtyObj.pets + 1
+        })
+    }
+    
+    const decreasePetGuests = () => {
+        setGuestQtyObj({
+            ...guestQtyObj,
+            pets: guestQtyObj.pets - 1
+        })
+    }
+
+    // Calendar Functions
     const emptyCalendar = () => {
         setDateRange({from: "", to: ""})
     }
@@ -102,7 +194,7 @@ export const HostProvider = ({ children }) => {
         setKeyboardModal(false)
     }
 
-    // Login Menu outside-click, close-menu use-effect
+    // Mini Calendar Menu outside-click, close-menu use-effect
     useEffect(() => {
         const checkIfClickedOutside = e => {
         // If the menu is open and the clicked target is not within the menu, then close the menu
@@ -169,12 +261,44 @@ export const HostProvider = ({ children }) => {
         }
     }, [showCancellation])
 
-    // Disables vertical scroll-bar when Login/Language window is visible
+    // Guest Qty Menu outside-click, close-menu use-effect
     useEffect(() => {
-        showHouseRules || showMoreSafety || showCancellation || showAllAmenities || keyboardModal
+        const checkIfClickedOutside = e => {
+        // If the menu is open and the clicked target is not within the menu, then close the menu
+        if (isGuestQtyVisible && guestQtyModalRef.current && guestQtyBtnRef.current && !guestQtyModalRef.current.contains(e.target) && !guestQtyBtnRef.current.contains(e.target)) {
+            setIsGuestQtyVisible(false)
+        }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+        // Cleanup the event listener
+        document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [isGuestQtyVisible])
+
+     // Service Dog Menu outside-click, close-menu use-effect
+     useEffect(() => {
+        const checkIfClickedOutside = e => {
+        // If the menu is open and the clicked target is not within the menu, then close the menu
+        if (isServiceDogVisible && serviceDogRef.current && !serviceDogRef.current.contains(e.target)) {
+            setIsServiceDogVisible(false)
+        }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+        return () => {
+        // Cleanup the event listener
+        document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [isServiceDogVisible])
+
+
+    // Disables vertical scroll-bar when windows are visible
+    useEffect(() => {
+        showHouseRules || showMoreSafety || showCancellation || showAllAmenities || isServiceDogVisible || keyboardModal
           ? (document.body.parentElement.style.overflowY = "clip")
           : (document.body.parentElement.style.overflowY = "auto");
-      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities, keyboardModal]);
+      }, [showHouseRules, showMoreSafety, showCancellation, showAllAmenities, isServiceDogVisible, keyboardModal]);
+
 
     return (
         <HostContext.Provider 
@@ -195,6 +319,8 @@ export const HostProvider = ({ children }) => {
                 cancelData,
                 additionalRules,
                 nightlyRate,
+                cleaningFee,
+                serviceFee,
                 openAmenities,
                 closeAmenities,
                 showAllAmenities,
@@ -202,9 +328,25 @@ export const HostProvider = ({ children }) => {
                 dateRange,
                 emptyCalendar,
                 isMiniCalendarVisible,
+                isReserveReady,
+                setIsReserveReady,
                 openMiniCalendar,
                 closeMiniCalendar,
                 miniCalenderRef,
+                guestQtyBtnRef,
+                guestQtyModalRef,
+                isGuestQtyVisible,
+                toggleGuestQty,
+                closeGuestQty,
+                increaseAdultGuests,
+                decreaseAdultGuests,
+                increaseChildrenGuests,
+                decreaseChildrenGuests,
+                increaseInfantGuests,
+                decreaseInfantGuests,
+                increasePetGuests,
+                decreasePetGuests,
+                guestQtyObj,
                 convertDateObjToStr,
                 openKeyboardModal,
                 closeKeyboardModal,
@@ -214,6 +356,11 @@ export const HostProvider = ({ children }) => {
                 houseRulesModalRef,
                 safetyModalRef,
                 propertyLocation
+                serviceDogRef,
+                openServiceDog,
+                closeServiceDog,
+                isServiceDogVisible,
+                amenities
             }}>
             {children}
         </HostContext.Provider>

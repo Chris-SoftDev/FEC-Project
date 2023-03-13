@@ -4,7 +4,8 @@ import './RentalAmenitiesModal.css'
 
 export default function RentalAmenitiesModal() {
 
-    const { showAllAmenities, closeAmenities } = useContext(HostContext)
+    const { showAllAmenities, closeAmenities, amenities, rulesData, safetyData } = useContext(HostContext)
+    console.log(amenities)
 
     return (
         <>
@@ -27,7 +28,7 @@ export default function RentalAmenitiesModal() {
                                 <div className="amen-categories">
                                     Scenic views
                                 </div>
-                                    <div className="amen-modal-content">
+                                    {amenities.valley_view ? (<div className="amen-modal-content">
                                     <div className="amen-modal-group">
                                             <svg viewBox="0 0 32 32">
                                                 <path d="M28 2a2 2 0 0 1 1.995 1.85L30 4v24a2 2 0 0 1-1.85 1.995L28 30H4a2 2 0 0 1-1.995-1.85L2 28V4a2 2 0 0 1 1.85-1.995L4 2zm-5.92 19.995L22 22H10l-.08-.005L4 27.916V28h24v-.085zM28 4H4v21.084l12-11.998 12 12zM16 15.915L11.915 20h8.17zM22 7a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z">
@@ -38,7 +39,7 @@ export default function RentalAmenitiesModal() {
                                             </div>
                                     </div>
                                         <div className='border-bottom'></div>
-                                    </div>
+                                    </div>) : null}
                                     <div className="amen-modal-content">
                                         <div className="amen-modal-group">
                                             <svg viewBox="0 0 32 32">
@@ -117,7 +118,7 @@ export default function RentalAmenitiesModal() {
                                             <div className="amen-modal-name">
                                                 Essentials
                                                 <div className="amen-modal-name-sub">
-                                                    Towels, bed sheets, soap, and toilet paper
+                                                    {amenities.essentials_items}
                                                 </div>
                                             </div>
                                         </div>
@@ -166,7 +167,7 @@ export default function RentalAmenitiesModal() {
                                         <div className="amen-modal-group">
                                         <svg viewBox="0 0 32 32"><path d="M9 29v-2h2v-2H6a5 5 0 0 1-4.995-4.783L1 20V8a5 5 0 0 1 4.783-4.995L6 3h20a5 5 0 0 1 4.995 4.783L31 8v12a5 5 0 0 1-4.783 4.995L26 25h-5v2h2v2zm10-4h-6v2h6zm7-20H6a3 3 0 0 0-2.995 2.824L3 8v12a3 3 0 0 0 2.824 2.995L6 23h20a3 3 0 0 0 2.995-2.824L29 20V8a3 3 0 0 0-2.824-2.995z"></path></svg>
                                             <div className="amen-modal-name">
-                                                HDTV with Hulu, Amazon Prime VclassNameeo, Apple TV, HBO Max, Netflix, Roku
+                                                HDTV with Hulu, Amazon Prime Video, Apple TV, HBO Max, Netflix, Roku
                                             </div>
                                         </div>
                                         <div className='border-bottom'></div>

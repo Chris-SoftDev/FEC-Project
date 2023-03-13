@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS languages, currencies, reviews, ratings, property;
+DROP TABLE IF EXISTS languages, currencies, reviews, ratings, property, images;
 
 CREATE TABLE languages (
     language_id SERIAL PRIMARY KEY,
@@ -29,6 +29,14 @@ CREATE TABLE ratings (
     value INTEGER NOT NULL CHECK (value >= 1 AND value <= 5)
 );
 
+CREATE TABLE images (
+  id SERIAL PRIMARY KEY,
+  large_img VARCHAR(500),
+  left_img VARCHAR(500),
+  right_img VARCHAR(500)
+);
+
+
 CREATE TABLE property (
     property_id SERIAL,
     host_info JSONB,
@@ -38,5 +46,8 @@ CREATE TABLE property (
     house_rules JSONB,
     nightly_rate INTEGER,
     location JSONB
+    cleaning_fee INTEGER, 
+    service_fee INTEGER, 
+    amenities JSONB
 );
 

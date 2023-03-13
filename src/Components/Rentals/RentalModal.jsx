@@ -1,15 +1,38 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { differenceInDays } from 'date-fns';
 import HostContext from '../../Context/HostContext';
 import ReviewContext from '../../Context/ReviewContext'
 import MiniNavContext from '../../Context/MiniNavContext';
 import MiniNavBar from './MiniNavBar';
 import MiniCalendar from './MiniCalendar';
+import GuestQty from './GuestQty';
 import './RentalModal.css';
 
 function RentalModal() {
     const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
-    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate, dateRange, convertDateObjToStr } = useContext(HostContext)
+    const { isMiniCalendarVisible, isReserveReady, openMiniCalendar, nightlyRate, cleaningFee, serviceFee, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef, guestQtyObj, setIsReserveReady } = useContext(HostContext)
     const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
+
+    const guestQtyStr = (obj) => {
+        let resultStr = '';
+        if((obj.adults + obj.children) > 1) {
+            resultStr = `${obj.adults + obj.children} guests`
+        } else {resultStr = '1 guest'}
+
+        if(obj.infants === 1) {
+            resultStr += `, ${obj.infants} infant`
+        } else if (obj.infants > 1) {
+            resultStr += `, ${obj.infants} infants`
+        }
+
+        if(obj.pets === 1) {
+            resultStr += `, ${obj.pets} pet`
+        } else if (obj.pets > 1) {
+            resultStr += `, ${obj.pets} pets`
+        }
+    
+        return resultStr
+    }
     
     function amountOfReviews(rev) {
         for (let i = 0; i < rev.length; i++) {
@@ -20,6 +43,7 @@ function RentalModal() {
     
     const totalReviews = amountOfReviews(getReviews);
     const ratingAvg = Math.round(totalAvg * 100) / 100
+    const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0;
 
     return ( 
         <>
@@ -54,15 +78,52 @@ function RentalModal() {
                                     </div>
                                 </button>
                             </div>
-                            <div className='rental-modal-guests'>
-                                <button></button>
+                            <div className='rental-modal-guests' ref={guestQtyBtnRef}>
+                                <button onClick={toggleGuestQty}>
+                                    <div className="rental-modal-guests-title">
+                                        <div>GUESTS</div>
+                                        <div className='rental-modal-guests-quantity'>{guestQtyStr(guestQtyObj)}</div>
+                                    </div>
+                                    <div className="rental-modal-guests-icon">
+                                        {isGuestQtyVisible ? <i className="fa fa-chevron-up"></i> : <i className="fa fa-chevron-down"></i>}
+                                    </div>
+                                </button>
+                                {isGuestQtyVisible && <GuestQty />}
                             </div>
                         </div>
-                        <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
-                            <button type='submit' onClick={openMiniCalendar}>Check availability</button>
-                        </div>
+                        {(isReserveReady) ? (
+                            <>
+                                <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
+                                    <button type='submit'>Reserve</button>
+                                </div>
+                                <div className="rental-modal-reserve-fees-container">
+                                    <div className='rental-modal-reserve-fees-header'>You won't be charged yet</div>
+                                    <div className="rental-modal-reserve-fees-charges-container">
+                                        <div className="rental-modal-reserve-fees-charges-category">${nightlyRate} x {numNights} nights</div>
+                                        <div className='rental-modal-reserve-fees-charges'>${nightlyRate * numNights}</div>
+                                    </div>
+                                    <div className="rental-modal-reserve-fees-charges-container">
+                                        <div className="rental-modal-reserve-fees-charges-category">Cleaning Fee</div>
+                                        <div className='rental-modal-reserve-fees-charges'>${cleaningFee}</div>
+                                    </div>
+                                    <div className="rental-modal-reserve-fees-charges-container">
+                                        <div className="rental-modal-reserve-fees-charges-category">Groundbnb service fee</div>
+                                        <div className='rental-modal-reserve-fees-charges'>${serviceFee}</div>
+                                    </div>
+                                </div>
+                                <div className="rental-modal-reserve-total-container">
+                                    <div>Total before taxes</div>
+                                    <div>${(nightlyRate * numNights) + cleaningFee + serviceFee}</div>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
+                                <button onClick={openMiniCalendar}>Check availability</button>
+                            </div>
+                        )}
                     </div>
                 </div>
+                
                 <div className="rental-modal-reporting-container">
                     <div className="rental-modal-reporting">
                         <button>

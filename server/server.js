@@ -79,6 +79,16 @@ app.route("/property").get(async (req, res) => {
   }
 });
 
+
+app.route("/images").get(async (req, res) => {
+  try {
+    const data = await db.query(`SELECT * FROM images`);
+    res.status(200).json(data.rows);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port: ${port}`);
 });

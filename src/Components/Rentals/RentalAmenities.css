@@ -116,3 +116,27 @@
     text-align: center;
 }
 
+@media screen and (max-width: 1127px) {
+    #accommodations {
+        /* overflow-x: auto; */
+        position: relative;
+        display:flex;
+        overflow-x: scroll;
+        width: 60%;
+    }
+
+    .amen-column-cont {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #amen-column-2 {
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    /* .bed-container {
+        width: 100%;
+    } */
+}
+

@@ -16,7 +16,8 @@ function RentalCalendar() {
 
     const defaultMonth =new Date(2023,2) //start of calendar
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
-    const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0; 
+    const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0; 
+
     
     const disableDays = [
         {from: new Date(2023, 4, 11), to: new Date(2023, 4, 15) }
@@ -26,7 +27,7 @@ function RentalCalendar() {
         <div className='calendar-main-container' ref={calendarRef}>
             <div className='calendar-title'>
                 <div className='number-of-nights'>
-                    {dateRange.from && dateRange.to ? `${numDays} nights in ${propertyLocation.city}` : 'Select check-in date'}
+                    {dateRange.from && dateRange.to ? `${numNights} nights in ${propertyLocation.city}` : 'Select check-in date'}
                 </div>
                 <div className='date-range'>
                     {dateRange.from && dateRange.to ?

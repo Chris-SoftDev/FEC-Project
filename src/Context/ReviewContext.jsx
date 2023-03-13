@@ -17,6 +17,19 @@ export const ReviewProvider = ({ children }) => {
   const [totalAvg, settotalAvg] = useState([]);
   const [isShareMenuVisible, setIsShareMenuVisible] = useState(false);
   const shareMenuRef = useRef()
+  const [getAllImage,setgetAllImage] = useState([])
+
+  useEffect(() => {
+    const fetchAllImages = async () => {
+      const response = await fetch("http://localhost:3000/images");
+      const data = await response.json();
+      setgetAllImage(data);
+    };
+
+    fetchAllImages();
+  }, []);
+
+
 
 
   useEffect(() => {
@@ -98,6 +111,7 @@ export const ReviewProvider = ({ children }) => {
   return (
     <ReviewContext.Provider
       value={{
+        getAllImage,
         shareMenuRef,
         isShareMenuVisible,
         openShareMenu,
@@ -114,7 +128,7 @@ export const ReviewProvider = ({ children }) => {
         accuracy,
         location,
         value,
-        totalAvg,
+        totalAvg
       }}
     >
       {children}

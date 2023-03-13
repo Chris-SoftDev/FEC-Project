@@ -13,7 +13,7 @@ function MiniCalendar() {
     const [checkOutDate, setCheckOutDate] = useState('')
 
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
-    const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
+    const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0; 
 
     const modifiers = {
         from: dateRange.from,
@@ -53,6 +53,11 @@ function MiniCalendar() {
         setCheckOutDate('')
     }
 
+    const clearCheckOutDate = () => {
+        setCheckOutDate('')
+        setDateRange({from: dateRange.from, to: ''})
+    }
+
     useEffect(() => {
         if(dateRange.from != '') {
             setCheckInDate(convertDateObjToStr(dateRange.from))
@@ -79,7 +84,7 @@ function MiniCalendar() {
             <div className="mini-calendar-modal-header" ref={miniCalenderHeaderRef}>
                 <div className="mini-calendar-modal-header-select-dates-container">
                     <div className='number-of-nights'>
-                        {dateRange.from && dateRange.to ? `${numDays} nights in Boise` : 'Select dates'}
+                        {dateRange.from && dateRange.to ? `${numNights} nights in Boise` : 'Select dates'}
                     </div>
                     <div className='date-range'>
                         {dateRange.from && dateRange.to ?
@@ -89,27 +94,54 @@ function MiniCalendar() {
                 </div>
                 <div className='mini-calendar-modal-dates'>   
                     <div className="mini-calendar-modal-dates-checkin">
-                        <div className='mini-calendar-modal-dates-checkin-title'>CHECK-IN</div> 
-                        <div className='mini-calendar-modal-dates-from-date-container'>
-                            <input type="text" name="from-date" id="mini-calendar-from-date" placeholder='Add date' value={checkInDate} onChange={updateCheckInDate} 
-                            onFocus={(event) => {event.target.placeholder = 'MM/DD/YYYY'}}
-                            onBlur={(event) => {
-                                event.target.placeholder = 'Add date';
-                                handleCheckInDate(event)
-                            }}                            
-                        />
-                        </div>
-                    </div>
-                    <div className="mini-calendar-modal-dates-checkout">
-                        <div className='mini-calendar-modal-dates-checkout-title'>CHECKOUT</div> 
-                        <div className='mini-calendar-modal-dates-to-date-container'>
-                            <input type="text" name="to-date" id="mini-calendar-to-date" placeholder='Add date' value={checkOutDate} onChange={updateCheckOutDate}
+                        <div className="mini-calendar-modal-dates-checkin-details">
+                            <div className='mini-calendar-modal-dates-checkin-title'>CHECK-IN</div> 
+                            <div className='mini-calendar-modal-dates-from-date-container'>
+                                <input type="text" name="from-date" id="mini-calendar-from-date" placeholder='Add date' value={checkInDate} onChange={updateCheckInDate} 
                                 onFocus={(event) => {event.target.placeholder = 'MM/DD/YYYY'}}
                                 onBlur={(event) => {
                                     event.target.placeholder = 'Add date';
-                                    handleCheckOutDate(event)
-                                }} 
+                                    handleCheckInDate(event)
+                                }}                            
                             />
+                            </div>
+                        </div>
+                        <div className="mini-calendar-modal-dates-checkin-remove-date-btn">
+                            <button onClick={() => {
+                                clearDates()
+                                emptyCalendar()
+                            }}
+                                style={(dateRange.from != "") ? {visibility: 'visible'} : {visibility: 'hidden'}}
+                            >
+                                <svg viewBox='0 0 32 32'>
+                                    <path d="m6 6 20 20"></path>
+                                    <path d="m26 6-20 20"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div className="mini-calendar-modal-dates-checkout" style={(dateRange.from != "") ? {backgroundColor: '#fff', borderRadius: '8px'} : {backgroundColor: '#f7f7f7', borderRadius: '8px'}}>
+                        <div className="mini-calendar-modal-dates-checkout-details">
+                            <div className='mini-calendar-modal-dates-checkout-title' style={(dateRange.from != "") ? {color: '#000'} : {color: '#dddfe5'}}>CHECKOUT</div> 
+                            <div className='mini-calendar-modal-dates-to-date-container'>
+                                <input type="text" name="to-date" id="mini-calendar-to-date" placeholder='Add date' value={checkOutDate} onChange={updateCheckOutDate}
+                                    onFocus={(event) => {event.target.placeholder = 'MM/DD/YYYY'}}
+                                    onBlur={(event) => {
+                                        event.target.placeholder = 'Add date';
+                                        handleCheckOutDate(event)
+                                    }}
+                                    disabled={(dateRange.from != "") ? false : true} 
+                                    style={(dateRange.from != "") ? {color: '#000', backgroundColor: '#fff'} : {color: '#dddfe5', backgroundColor: '#f7f7f7'}}
+                                />
+                            </div>
+                        </div>
+                        <div className="mini-calendar-modal-dates-checkout-remove-date-btn">
+                            <button onClick={clearCheckOutDate} style={(dateRange.to != "" && dateRange.to != undefined) ? {visibility: 'visible'} : {visibility: 'hidden'}}>
+                                <svg viewBox='0 0 32 32'>
+                                    <path d="m6 6 20 20"></path>
+                                    <path d="m26 6-20 20"></path>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -135,8 +167,8 @@ function MiniCalendar() {
                     </div>
                     <div className='mini-calendar-footer-clear-dates'>
                         <button onClick={() => {
-                            emptyCalendar() 
                             clearDates()
+                            emptyCalendar() 
                         }}>Clear dates</button>
                         <div id="mini-calender-close-btn" onClick={closeMiniCalendar}>Close</div>
                     </div>
