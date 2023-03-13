@@ -20,10 +20,13 @@ export const HostProvider = ({ children }) => {
     const [amenities, setAmenities] = useState([])
     const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
     const [nightlyRate, setNightlyRate] = useState()
+    const [cleaningFee, setCleaningFee] = useState()
+    const [serviceFee, setServiceFee] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
     const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
     const [isServiceDogVisible, setIsServiceDogVisible] =  useState(false);
+    const [isReserveReady, setIsReserveReady] = useState(false)
     const [guestQtyObj, setGuestQtyObj] = useState({
         adults: 1,
         children: 0,
@@ -42,6 +45,8 @@ export const HostProvider = ({ children }) => {
             setCancelData(host[0].cancellation_policy)
             setAdditionalRules(host[0].house_rules.additional_rules)
             setNightlyRate(host[0].nightly_rate)
+            setCleaningFee(host[0].cleaning_fee)
+            setServiceFee(host[0].service_fee)
             setAmenities(host[0].amenities)
         };
         
@@ -255,6 +260,8 @@ export const HostProvider = ({ children }) => {
                 cancelData,
                 additionalRules,
                 nightlyRate,
+                cleaningFee,
+                serviceFee,
                 openAmenities,
                 closeAmenities,
                 showAllAmenities,
@@ -262,6 +269,8 @@ export const HostProvider = ({ children }) => {
                 dateRange,
                 emptyCalendar,
                 isMiniCalendarVisible,
+                isReserveReady,
+                setIsReserveReady,
                 openMiniCalendar,
                 closeMiniCalendar,
                 miniCalenderRef,

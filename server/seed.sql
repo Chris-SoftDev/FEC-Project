@@ -180,7 +180,7 @@ INSERT INTO currencies (currency, symbol) VALUES
 ('Uruguayan peso', 'UYU - $U');
 
 
-INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules, nightly_rate, amenities) VALUES (
+INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules, nightly_rate, cleaning_fee, service_fee, amenities) VALUES (
     '{
             "name": "Tag",
             "joined": "November 2017",
@@ -239,6 +239,8 @@ INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house
                 ]
         }'::jsonb,
         160,
+        125,
+        63,
         '{
             "scenic_views": true,
             "valley_view": true,

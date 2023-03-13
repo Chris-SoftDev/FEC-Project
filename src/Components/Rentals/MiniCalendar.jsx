@@ -13,7 +13,7 @@ function MiniCalendar() {
     const [checkOutDate, setCheckOutDate] = useState('')
 
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
-    const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
+    const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0; 
 
     const modifiers = {
         from: dateRange.from,
@@ -84,7 +84,7 @@ function MiniCalendar() {
             <div className="mini-calendar-modal-header" ref={miniCalenderHeaderRef}>
                 <div className="mini-calendar-modal-header-select-dates-container">
                     <div className='number-of-nights'>
-                        {dateRange.from && dateRange.to ? `${numDays} nights in Boise` : 'Select dates'}
+                        {dateRange.from && dateRange.to ? `${numNights} nights in Boise` : 'Select dates'}
                     </div>
                     <div className='date-range'>
                         {dateRange.from && dateRange.to ?
