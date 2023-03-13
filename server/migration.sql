@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS languages, currencies, reviews, ratings, property, images;
+DROP TABLE IF EXISTS languages, currencies, reviews, ratings, property, images, booked_days;
 
 CREATE TABLE languages (
     language_id SERIAL PRIMARY KEY,
@@ -53,5 +53,6 @@ CREATE TABLE property (
 
 CREATE TABLE booked_days (
     booked_days_id SERIAL,
-    booked_from 
-)
+    from_date DATE,
+    to_date DATE
+);

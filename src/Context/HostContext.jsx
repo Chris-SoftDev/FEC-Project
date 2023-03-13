@@ -32,6 +32,7 @@ export const HostProvider = ({ children }) => {
     const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
     const [isServiceDogVisible, setIsServiceDogVisible] =  useState(false);
     const [isReserveReady, setIsReserveReady] = useState(false)
+    const [daysBooked, setDaysBooked] = useState([])
     const [guestQtyObj, setGuestQtyObj] = useState({
         adults: 1,
         children: 0,
@@ -58,6 +59,16 @@ export const HostProvider = ({ children }) => {
         
         fetchHostData();
     },[]) 
+
+    useEffect(() => {
+        const fetchBookedDays = async () => {
+        const response = await fetch('http://localhost:3000/booked');
+        const days = await response.json();
+        setDaysBooked(days)
+        };
+
+        fetchBookedDays()
+    },[])
 
     const openHouseRules = () => {
         setShowHouseRules(true)
@@ -360,7 +371,8 @@ export const HostProvider = ({ children }) => {
                 openServiceDog,
                 closeServiceDog,
                 isServiceDogVisible,
-                amenities
+                amenities,
+                daysBooked
             }}>
             {children}
         </HostContext.Provider>
