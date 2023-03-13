@@ -1,7 +1,16 @@
+* {
+    box-sizing: border-box;
+  }
+
 .Rental-List {
-    
         list-style-type: none;
-      
+        text-align: left !important;
+        
+        
+}
+
+.Rental-Text-Bottom {
+    margin-bottom: 20px;
 }
 
 .Rental-Box {
@@ -10,7 +19,6 @@
     flex: row;
     flex-direction: left !important;
     text-align: left !important;
-    
     font-size: 18px;
     font-weight: 200;
 }
@@ -19,15 +27,14 @@
     font-size: 14px;
     font-weight: 200;
     flex: 1;
-    flex-direction: left !important;
-    
+    flex-direction: left !important;  
 }
+
 .Rental-Section-Header {
 font-weight: 500;
 }
 
 .Rental-List-Child {
-
     padding-top: 18px;
     float: left;
     margin-left: 5px;
@@ -45,25 +52,16 @@ font-weight: 500;
     display: flex;
     overflow: hidden;
     border-bottom: 1px solid rgba(221, 221, 221, .7);
-
 }
+
 .Rental-Text-Cont {
     display: flex;
     flex-direction: column;
-    
-
 }
+
 .Rental-Picture-Cont {
     padding-left: 80px;
-
 }
-/* .Rental-Text-Top {
-
-}
-
-.Rental-Text-Bottom {
-
-} */
 
 .Rental-List {
     display: flex;
@@ -87,131 +85,112 @@ font-weight: 500;
 }
 
 .rental-img-container img{
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
 }
 .rental-self-checkin {
+    display: flex;
     border-bottom: 1px solid rgba(221, 221, 221, .7);
     flex-direction: column;
-    
-
 }
 
 .rental-aircover {
     border-bottom: 1px solid rgba(221, 221, 221, .7);
+    /* text-align: left; */
+    padding-top: 32px;
+    padding-bottom: 18px;
+
+}
+.rental-aircover-section {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.rental-airCover-image {
+    width: 120px;
+    height: 26px;
+    margin-bottom: 12px;
 
 }
 
-.rental-about {
-    border-bottom: 1px solid rgba(221, 221, 221, .7);
+.rental-aircover-desc {
+    text-align: left !important;
+    margin: 0px;
+    font-size: 16px;
+    line-height: 20px;
 
 }
+
+.self-check-in-container{
+    display: flex;
+    flex-direction: column !important;
+    margin-top: 1.7em;
+    min-height: 15vh;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);  
+}
+
 .door-icon{
+    
+    display: flex;
+    flex-shrink: 0 !important;
     height: 24px;
     width: 24px;
+    flex: 1;
 }
 
 .door-icon svg{
     height: 24px;
     width: 24px;
-}
-
-.self-check-in-container{
-    display: flex;
-    flex-direction: row;
     margin-top: 1.7em;
-    width:95%;
-    border-bottom: 1px solid rgba(221, 221, 221, .7);
-}
-
-.self-check-in-info{
-    font-size:15.5px;
-    font-weight: 500 !important;
-    margin-left: 0em;
-    margin-top:.2em;
-    margin-bottom: 2em;
-}
-
-.self-check-in-description {
-    font-size:14.5px;
-    font-weight: 300;
-    margin-left: 1em;
-    margin-top:.2em;
-    margin-bottom: 2em;
 }
 
 .key-icon{
+    flex: 1;
     height: 24px;
     width: 24px;
+    display: flex;
+    flex-direction: row;
 }
 
 .key-icon svg{
     height: 24px;
     width: 24px;
+    margin-top: 1.7em;
 }
 
-.key-description{
-    font-size:15.5px;
-    font-weight: 500 !important;
-    margin-left: 0em;
-    margin-top:.2em;
-    margin-bottom: 2em;
-}
-
-.key-description-second{
-    font-size:14.5px;
-    font-weight: 300;
-    margin-left: 1em;
-    margin-top:.2em;
-    margin-bottom: 2em;
-
-}
 
 .heart-icon{
+    flex: 1;
     height: 24px;
     width: 24px;
+    display: flex;
+    flex-direction: row;
 }
 
 .heart-icon svg{
     height: 24px;
     width: 24px;
+    margin-top: 1.7em;
 }
 
-.heart-description {
-    font-size:15.5px;
-    font-weight: 500 !important;
-    margin-left: 0em;
-    margin-top:.2em;
-    margin-bottom: 2em;
-
-}
-
-.heart-description-second {
-    font-size:14.5px;
-    font-weight: 300;
-    margin-left: 1em;
-    margin-top:.2em;
-    margin-bottom: 2em;
-    
-}
 .rental-aircover {
     display: flex;
     justify-content: left !important;
     flex-direction: column;
+    text-align: left;
 }
 .airCover-image {
     height: 24px;
     justify-content: left !important;
+    text-align: left;
 }
 
-.rental-aircover-desc {
-    flex-direction: left !important;
+.rental-aircover-desc-fix{
     font-size:14.5px;
-    font-weight: 300;
-    margin-left: 1em;
-    margin-top:.2em;
-    margin-bottom: 2em;
+    font-weight: 400;
 
 }
 
@@ -222,9 +201,15 @@ font-weight: 500;
     font-weight: 500;
     text-decoration: underline;
     text-decoration-color: rgb(34, 34, 34);
-    margin-bottom: 3.5em;
+    margin-bottom: 30px;
+    text-align: left;
+    
 }
+.learn-more-link-under {
+    margin-top: 5px;
+    border-bottom: 1px solid rgba(221, 221, 221, .7);
 
+}
 .arrow{
     width: 10px;
     height: 10px;
@@ -233,14 +218,111 @@ font-weight: 500;
 
 .rental-about {
     overflow: hidden;
+    text-align: left;
+    padding-top: 10px;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 2em;
 }
 
 .rental-about-span {
     flex-direction: left !important;
-    font-size:14.5px;
+    font-size:15.5px;
     font-weight: 300;
-    margin-left: 1em;
+    margin-left: 0em;
     margin-top:.2em;
-    margin-bottom: 2em;
+    margin-bottom: 0em;
+    padding-top: 10px;
+    text-align: left;
     
 }
+
+.rental-about-showmore-link {
+    display: flex;
+    margin-top: 1em;
+    text-align: left;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: rgb(34, 34, 34);
+    margin-bottom: 10px;
+
+}
+
+.self-checkin-door{
+    display: flex;
+    flex-direction: row !important;
+    margin-top: 1.7em;
+    width:95%;
+    
+}
+
+.self-check-in-door-info{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-left: 3em;
+    
+    text-align: left !important;
+}
+
+.self-check-in-door-description{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 3.4em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    color: #717171;
+    text-align: left !important;
+}
+
+.self-checkin-key{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+    
+}
+
+.self-check-in-key-info{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-left: 3em;
+    margin-top:.2em;
+    text-align: left !important;
+}
+
+.self-check-in-key-description{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 3.4em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    color: #717171;
+    text-align: left !important;
+}
+
+.self-checkin-heart{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.7em;
+    width:95%;
+    
+}
+
+.self-check-in-heart-info{
+    font-size:15.5px;
+    font-weight: 300;
+    margin-left: 3em;
+    margin-top:.2em;
+    text-align: left !important;
+}
+
+.self-check-in-heart-description{
+    font-size: 13.5px;
+    font-weight: 300;
+    margin-left: 3.4em;
+    margin-bottom: 2em;
+    margin-top:.5em;
+    color: #717171;
+    text-align: left !important;
+}
+

@@ -10,10 +10,10 @@ export default function ShowRentalLearn() {
     return (
         <>
             {showRentalState && (
-                <div className="modal-overlay" ref={miniLearnMoreRef} >
-                    <div className='rule-modal-container'>
-                        <div className='rules-modal'>
-                            <div className='rules-close-btn'onClick={closeRental}>
+                <div className="modal-overlay"  >
+                    <div className='learn-modal-container'>
+                        <div className='learn-modal'ref={miniLearnMoreRef}>
+                            <div className='learn-close-btn'onClick={closeRental}>
                                 <button>
                                     <svg viewBox='0 0 32 32'>  
                                         <path d="m6 6 20 20"></path>
@@ -21,7 +21,7 @@ export default function ShowRentalLearn() {
                                     </svg>
                                 </button>
                             </div>
-                            <div className='rules-content-container'>
+                            <div className='learn-content-container'>
                                 <h2 className='airCover-title'>
                                     <img className="airCover-image" src="https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg" alt="AirCover"></img>
                                 </h2>
@@ -29,21 +29,25 @@ export default function ShowRentalLearn() {
                                     AirCover is comprehensive protection included for free with every booking. 
                                 </div>
                                 <div className='learn-modal-grid'>
-                                    <div>
-                                        <h3 className="learn-modal-grid-titles"> Booking Protection Guarantee</h3>
-                                        <div className="learn-modal-grid-desc">In the unlikely event a Host needs to cancel your booking within 30 days of check-in, we'll find you a similar or better home, or we'll refund you.</div>
+                                    <div className="learn-modal-grid-left">
+                                        <div>
+                                            <div className="learn-modal-grid-titles"> Booking Protection Guarantee</div>
+                                            <div className="learn-modal-grid-desc">In the unlikely event a Host needs to cancel your booking within 30 days of check-in, we'll find you a similar or better home, or we'll refund you.</div>
+                                        </div>
+                                        <div>
+                                            <div className="learn-modal-grid-titles">Get-What-You-Booked-Guarantee</div>
+                                            <div className="learn-modal-grid-desc">If at any time during your stay you find your listing isn't as advertised--for example, the refrigerator stops working and your Host can't easily fix it, or it has fewer bedrooms than listed--you'll have three days to report it and we'll find you a similar or better home, or we'll refund you.</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="learn-modal-grid-titles">Get-What-You-Booked-Guarantee</h3>
-                                        <div className="learn-modal-grid-desc">If at any time during your stay you find your listing isn't as advertised--for example, the refrigerator stops working and your Host can't easily fix it, or it has fewer bedrooms than listed--you'll have three days to report it and we'll find you a similar or better home, or we'll refund you.</div>
-                                    </div>
-                                    <div>
-                                        <h3 className="learn-modal-grid-titles">Check-In Guarantee</h3>
-                                        <div className="learn-modal-grid-desc">If you can't check into your home and the Host cannot resolve the issue, we'll find you a similar or better home for the length of your original stay, or we'll refund you.</div>
-                                    </div>
-                                    <div>
-                                        <h3 className="learn-modal-grid-titles">24-hour Safety Line</h3>
-                                        <div className="learn-modal-grid-desc">IF you ever feel unsafe, you;ll get priority access to specially-trained safety agents, day or night.</div>
+                                    <div className="learn-modal-grid-right">
+                                        <div>
+                                            <div className="learn-modal-grid-titles">Check-In Guarantee</div>
+                                            <div className="learn-modal-grid-desc">If you can't check into your home and the Host cannot resolve the issue, we'll find you a similar or better home for the length of your original stay, or we'll refund you.</div>
+                                        </div>
+                                        <div>
+                                            <div className="learn-modal-grid-titles">24-hour Safety Line</div>
+                                            <div className="learn-modal-grid-desc">IF you ever feel unsafe, you;ll get priority access to specially-trained safety agents, day or night.</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className='learn-modal-details'>
