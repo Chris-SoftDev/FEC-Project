@@ -10,7 +10,7 @@ import './RentalModal.css';
 
 function RentalModal() {
     const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
-    const { isMiniCalendarVisible, isReserveReady, openMiniCalendar, nightlyRate, cleaningFee, serviceFee, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef, guestQtyObj, setIsReserveReady } = useContext(HostContext)
+    const { isMiniCalendarVisible, isReserveReady, openMiniCalendar, nightlyRate, cleaningFee, serviceFee, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef, guestQtyObj } = useContext(HostContext)
     const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
 
     const guestQtyStr = (obj) => {
