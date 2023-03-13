@@ -81,8 +81,8 @@ function RentalDescription() {
                             </svg>   
                         </div>
                         <div className='self-checkin-sub-desc'>
-                            <div className='self-check-in-key-info'>Highly rated Host</div>
-                            <div className='self-check-in-key-description'>Tag&Sherilyn has received 5-star ratings from 95% of recent guests</div>
+                            <div className='self-check-in-heart-info'>Highly rated Host</div>
+                            <div className='self-check-in-heart-description'>Tag&Sherilyn has received 5-star ratings from 95% of recent guests</div>
                         </div>
                     </div>
                 </div> 
