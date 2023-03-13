@@ -1,9 +1,64 @@
-.router-header{
+.router-header {
   height: 60px;
-  width: 1000px;
-
+  width: 100%;
+  display: flex;
+}
+.link-back-button {
+  padding-left: 22px;
+  padding-top: 18px;
 }
 
+.rental-header-property-links {
+  padding-top: 18px;
+  padding-right: 20px;
+}
+
+.padding-container {
+  padding-top: 34px;
+}
+
+.router-outer-container {
+  height: 100% width 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.router-img-container {
+  width: 742px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.router-large-img {
+  width: 100%;
+  margin-bottom: 3px;
+}
 .router-large-img img {
-  width: 800px;
+  width: 100%;
+}
+
+.double-img-container {
+  width: 100%;
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.left-img-container {
+  width: 50%;
+  margin-right: 8px;
+  margin-bottom: 2px;
+}
+.left-img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.right-img-container {
+  width: 50%;
+  margin-bottom: 2px;
+}
+.right-img-container img {
+  width: 100%;
+  height: 100%;
 }

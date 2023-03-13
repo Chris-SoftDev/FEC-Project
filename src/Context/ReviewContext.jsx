@@ -128,7 +128,7 @@ export const ReviewProvider = ({ children }) => {
         accuracy,
         location,
         value,
-        totalAvg,
+        totalAvg
       }}
     >
       {children}
