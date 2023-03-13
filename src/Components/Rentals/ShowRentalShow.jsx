@@ -6,13 +6,13 @@ import "./ShowRentalShow.css"
 
 export default function ShowRentalShow() {
 
-    const { showRentalMore, closeShowMore, miniLearnMoreRef } = useContext(RentalContext)
+    const { showRentalMore, closeShowMore, miniShowMoreRef } = useContext(RentalContext)
     return (
         <>
             {showRentalMore && (
                 <div className="modal-overlay" >
-                    <div className='show-modal-container'>
-                        <div className='show-modal' ref={miniLearnMoreRef}>
+                    <div className='show-modal-container' ref={miniShowMoreRef}>
+                        <div className='show-modal' >
                             <div className='show-close-btn'onClick={closeShowMore}>
                                 <button>
                                     <svg viewBox='0 0 32 32'>  

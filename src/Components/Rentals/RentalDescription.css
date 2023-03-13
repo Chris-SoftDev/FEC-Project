@@ -1,16 +1,15 @@
 * {
     box-sizing: border-box;
-  }
+}
 
 .Rental-List {
         list-style-type: none;
-        text-align: left !important;
-        
-        
+        text-align: left !important;  
 }
 
 .Rental-Text-Bottom {
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .Rental-Box {
@@ -31,14 +30,16 @@
 }
 
 .Rental-Section-Header {
-font-weight: 500;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 .Rental-List-Child {
-    padding-top: 18px;
+    padding-top: 8px;
     float: left;
+    text-align: left !important;
     margin-left: 5px;
-    font-size: 16px;
+    font-size: 15px;
     
 }
 .rental-img-container{
@@ -57,10 +58,8 @@ font-weight: 500;
 .Rental-Text-Cont {
     display: flex;
     flex-direction: column;
-}
-
-.Rental-Picture-Cont {
-    padding-left: 80px;
+    text-align: left;
+    width: 75%;
 }
 
 .Rental-List {
@@ -76,12 +75,20 @@ font-weight: 500;
     margin: 0;
 }
 
+.Rental-Picture-Cont {
+    
+    display: flex;
+    text-align: right;
+    margin-left: 40px;
+}
+
 .rental-img-container{
+    display: flex;
     width: 64px;
     height: 64px;
     border-radius: 50%;
     padding-left: 60px;
-
+    text-align: right;
 }
 
 .rental-img-container img{
@@ -89,6 +96,7 @@ font-weight: 500;
     height: 48px;
     border-radius: 50%;
 }
+
 .rental-self-checkin {
     display: flex;
     border-bottom: 1px solid rgba(221, 221, 221, .7);
@@ -100,20 +108,19 @@ font-weight: 500;
     /* text-align: left; */
     padding-top: 32px;
     padding-bottom: 18px;
-
 }
+
 .rental-aircover-section {
     display: flex;
     text-align: left;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .rental-airCover-image {
     width: 120px;
     height: 26px;
     margin-bottom: 12px;
-
 }
 
 .rental-aircover-desc {
@@ -121,7 +128,6 @@ font-weight: 500;
     margin: 0px;
     font-size: 16px;
     line-height: 20px;
-
 }
 
 .self-check-in-container{
@@ -133,7 +139,6 @@ font-weight: 500;
 }
 
 .door-icon{
-    
     display: flex;
     flex-shrink: 0 !important;
     height: 24px;
@@ -161,7 +166,6 @@ font-weight: 500;
     margin-top: 1.7em;
 }
 
-
 .heart-icon{
     flex: 1;
     height: 24px;
@@ -182,6 +186,7 @@ font-weight: 500;
     flex-direction: column;
     text-align: left;
 }
+
 .airCover-image {
     height: 24px;
     justify-content: left !important;
@@ -191,7 +196,6 @@ font-weight: 500;
 .rental-aircover-desc-fix{
     font-size:14.5px;
     font-weight: 400;
-
 }
 
 .learn-more-link {
@@ -202,14 +206,14 @@ font-weight: 500;
     text-decoration: underline;
     text-decoration-color: rgb(34, 34, 34);
     margin-bottom: 30px;
-    text-align: left;
-    
+    text-align: left;   
 }
+
 .learn-more-link-under {
     margin-top: 5px;
     border-bottom: 1px solid rgba(221, 221, 221, .7);
-
 }
+
 .arrow{
     width: 10px;
     height: 10px;
@@ -233,8 +237,7 @@ font-weight: 500;
     margin-top:.2em;
     margin-bottom: 0em;
     padding-top: 10px;
-    text-align: left;
-    
+    text-align: left; 
 }
 
 .rental-about-showmore-link {
@@ -245,30 +248,28 @@ font-weight: 500;
     text-decoration: underline;
     text-decoration-color: rgb(34, 34, 34);
     margin-bottom: 10px;
-
 }
 
 .self-checkin-door{
     display: flex;
     flex-direction: row !important;
-    margin-top: 1.7em;
+    margin-top: .5em;
     width:95%;
-    
 }
 
 .self-check-in-door-info{
     font-size:15.5px;
     font-weight: 300;
     margin-left: 3em;
-    
     text-align: left !important;
+    font-weight: 400;
 }
 
 .self-check-in-door-description{
     font-size: 13.5px;
     font-weight: 300;
     margin-left: 3.4em;
-    margin-bottom: 2em;
+    margin-bottom: .5em;
     margin-top:.5em;
     color: #717171;
     text-align: left !important;
@@ -278,8 +279,7 @@ font-weight: 500;
     display: flex;
     flex-direction: row;
     margin-top: 1.7em;
-    width:95%;
-    
+    width:95%; 
 }
 
 .self-check-in-key-info{
@@ -288,13 +288,14 @@ font-weight: 500;
     margin-left: 3em;
     margin-top:.2em;
     text-align: left !important;
+    font-weight: 400;
 }
 
 .self-check-in-key-description{
     font-size: 13.5px;
     font-weight: 300;
     margin-left: 3.4em;
-    margin-bottom: 2em;
+    margin-bottom: .5em;
     margin-top:.5em;
     color: #717171;
     text-align: left !important;
@@ -305,7 +306,6 @@ font-weight: 500;
     flex-direction: row;
     margin-top: 1.7em;
     width:95%;
-    
 }
 
 .self-check-in-heart-info{
@@ -314,13 +314,14 @@ font-weight: 500;
     margin-left: 3em;
     margin-top:.2em;
     text-align: left !important;
+    font-weight: 400;
 }
 
 .self-check-in-heart-description{
     font-size: 13.5px;
     font-weight: 300;
     margin-left: 3.4em;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     margin-top:.5em;
     color: #717171;
     text-align: left !important;
