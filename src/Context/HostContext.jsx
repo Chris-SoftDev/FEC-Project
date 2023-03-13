@@ -381,8 +381,7 @@ export const HostProvider = ({ children }) => {
                 closeServiceDog,
                 isServiceDogVisible,
                 amenities,
-                daysBooked,
-                setIsReserveReady
+                daysBooked
             }}>
             {children}
         </HostContext.Provider>

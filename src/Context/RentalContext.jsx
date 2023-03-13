@@ -71,9 +71,7 @@ export const RentalProvider = ({ children }) => {
             openShowMore,
             closeShowMore,
             showRentalMore,
-            miniShowMoreRef,
-            showRentalMore           
-
+            miniShowMoreRef        
             }}
         >
             {children}
