@@ -6,7 +6,7 @@ import './MiniNavBar.css'
 
 function MiniNavBar() {
     const { scrollToPhotos, scrollToAmenities, scrollToReviews, scrollToLocation, scrollToCalendar, isMiniNavReserveVisible } = useContext(MiniNavContext)
-    const { nightlyRate } = useContext(HostContext)
+    const { nightlyRate, isReserveReady } = useContext(HostContext)
     const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
     
     function amountOfReviews(rev) {
@@ -50,11 +50,20 @@ function MiniNavBar() {
                             <button className='mini-navbar-reserve-rate-rating-reviews' onClick={openAllRev}>{totalReviews} reviews</button>
                         </div>
                         </div>
-                    <div className="mini-navbar-reserve-btn-container">
-                        <div className="mini-navbar-reserve-btn">
-                            <button type='submit' onClick={scrollToCalendar}>Check availability</button>
+                    {isReserveReady ? (
+                        <div className="mini-navbar-reserve-btn-container">
+                            <div className="mini-navbar-reserve-btn">
+                                <button type='submit'>Reserve</button>
+                            </div>
                         </div>
-                    </div>
+                    ) : 
+                    (
+                        <div className="mini-navbar-reserve-btn-container">
+                            <div className="mini-navbar-reserve-btn">
+                                <button type='submit' onClick={scrollToCalendar}>Check availability</button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

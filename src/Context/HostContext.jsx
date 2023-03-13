@@ -18,7 +18,7 @@ export const HostProvider = ({ children }) => {
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
     const [amenities, setAmenities] = useState([])
-    const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
+    const [dateRange, setDateRange] = useState({from: "", to: ""})
     const [nightlyRate, setNightlyRate] = useState()
     const [cleaningFee, setCleaningFee] = useState()
     const [serviceFee, setServiceFee] = useState()
