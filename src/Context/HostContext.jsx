@@ -7,6 +7,10 @@ export const HostProvider = ({ children }) => {
     const guestQtyModalRef = useRef()
     const guestQtyBtnRef = useRef()
     const serviceDogRef = useRef()
+    const keyboardModalRef = useRef()
+    const houseRulesModalRef = useRef()
+    const cancellationModalRef = useRef()
+    const safetyModalRef = useRef()
     const [showHouseRules, setShowHouseRules] = useState(false)
     const [showMoreSafety, setShowMoreSafety] = useState(false)
     const [showCancellation, setShowCancellation] = useState(false)
@@ -18,20 +22,17 @@ export const HostProvider = ({ children }) => {
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
     const [amenities, setAmenities] = useState([])
-    const [dateRange, setDateRange] = useState({from: "", to: ""}) //dates in Mar 14, 2023 format
+    const [dateRange, setDateRange] = useState({from: "", to: ""})
     const [nightlyRate, setNightlyRate] = useState()
     const [cleaningFee, setCleaningFee] = useState()
     const [serviceFee, setServiceFee] = useState()
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
     const [propertyLocation, setPropertyLocation] = useState([])
-    const keyboardModalRef = useRef()
-    const houseRulesModalRef = useRef()
-    const cancellationModalRef = useRef()
-    const safetyModalRef = useRef()
     const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
     const [isServiceDogVisible, setIsServiceDogVisible] =  useState(false);
     const [isReserveReady, setIsReserveReady] = useState(false)
+    const [daysBooked, setDaysBooked] = useState([])
     const [guestQtyObj, setGuestQtyObj] = useState({
         adults: 1,
         children: 0,
@@ -58,6 +59,16 @@ export const HostProvider = ({ children }) => {
         
         fetchHostData();
     },[]) 
+
+    useEffect(() => {
+        const fetchBookedDays = async () => {
+        const response = await fetch('http://localhost:3000/booked');
+        const days = await response.json();
+        setDaysBooked(days)
+        };
+
+        fetchBookedDays()
+    },[])
 
     const openHouseRules = () => {
         setShowHouseRules(true)
@@ -91,6 +102,16 @@ export const HostProvider = ({ children }) => {
         setShowAllAmenities(false)
     }
 
+    // Service Dog Modal Functions
+    const openServiceDog = () => {
+        setIsServiceDogVisible(true)
+    }
+    
+    const closeServiceDog = () => {
+        setIsServiceDogVisible(false)
+    }
+    
+    //Guest Qty Functions
     const toggleGuestQty = () => {
         setIsGuestQtyVisible(!isGuestQtyVisible)
     }
@@ -99,16 +120,6 @@ export const HostProvider = ({ children }) => {
         setIsGuestQtyVisible(false)
     }
 
-    // Service Dog Modal Functions
-    const openServiceDog = () => {
-        setIsServiceDogVisible(true)
-    }
-
-    const closeServiceDog = () => {
-        setIsServiceDogVisible(false)
-    }
-
-    //Guest Qty Functions
     const increaseAdultGuests = () => {
         setGuestQtyObj({
             ...guestQtyObj,
@@ -168,6 +179,7 @@ export const HostProvider = ({ children }) => {
     // Calendar Functions
     const emptyCalendar = () => {
         setDateRange({from: "", to: ""})
+        setIsReserveReady(false)
     }
 
     const convertDateObjToStr = (date) => {
@@ -360,7 +372,8 @@ export const HostProvider = ({ children }) => {
                 openServiceDog,
                 closeServiceDog,
                 isServiceDogVisible,
-                amenities
+                amenities,
+                daysBooked
             }}>
             {children}
         </HostContext.Provider>

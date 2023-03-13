@@ -1,10 +1,12 @@
 .main-container {
-    max-width: 3000px;
+    max-width: 100%;
 }
 
 .content-container {
-    max-width: 3000px;
+    max-width: 100%;
 }
+
+
 
 .accom-container {
     display: block;
@@ -13,7 +15,7 @@
     padding: 25px 0;
 }
 
-#accommodations {
+.accommodations {
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -117,26 +119,166 @@
 }
 
 @media screen and (max-width: 1127px) {
-    #accommodations {
-        /* overflow-x: auto; */
-        position: relative;
-        display:flex;
-        overflow-x: scroll;
-        width: 60%;
+    /* this styling does not work
+    :root {
+        --column-size: min(100%, 720px);
+        --slider-size: min(100%, 470px);
+        --slider-border-radius: 2em;
+        --slider-fullbleed-gap: 40px;
     }
 
-    .amen-column-cont {
+    .accommodations {
         display: flex;
-        flex-direction: column;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        width: var(--slider-size);
+        margin: 1em auto;
+        border-radius: var(--slider-border-radius);
+
     }
 
-    #amen-column-2 {
-        /* visibility: hidden; */
+    .accommodations {
+        -ms-overflow-style: none;
+        scrollbar-width: none; !!!not supported by chrome 
+    }
+
+    .accommodations::-webkit-scrollbar {
         display: none;
     }
+
+    .bed-container {
+        scroll-snap-align: center;
+        flex: 0 0 var(--slider-size);
+        width: var(--slider-size);
+        box-sizing: content-box;
+        display: flex;
+    }
+
+    .bed {
+        flex: 1;
+        display:grid;
+        min-height: 180px;
+        aspect-ratio: 16/9;
+        display: grid;
+        place-content: center;
+    }
+
+    .full-bleed {
+        width: 100vw;
+        margin-left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .accommodations.full-bleed {
+        border-radius: 0;
+    }
+
+    .accommodations.full-bleed .bed{
+        border-radius: var(--slider-border-radius);
+    }
+
+    .accommodations.full-bleed .bed-container {
+        margin-right: var(--slider-fullbleed-gap);
+    }
+
+    .accommodations.full-bleed .slidewrapper:first-child {
+        margin-right: 0;
+        padding-right: calc(50vw - (var(--slider-size)/2));
+    }
+    */
+
+
+
+     /* .accommodations {
+        
+        
+        display: grid;
+        flex-flow: row;
+        flex-basis: auto;
+        overflow-y: scroll;
+        width: 230px;
+        height: 180px;
+    } */
+
+    .accommodations {
+        padding: 0px 18px 30px !important;
+        transition-duration: 0.5s, 0.5s, 0.5s !important;
+        transition-timing-function: ease, ease, ease !important;
+        transition-delay: 0s, 0s, 0s !important;
+        transition-property: -ms-transform, -webkit-transform, transform !important;
+        white-space: nowrap !important;
+        overflow-x: scroll !important;
+        overflow-y: hidden;
+        margin-bottom: 30px !important;
+        display: flex !important;
+        width: 515px;
+        scroll-snap-type: y mandatory;
+        scroll-padding: 30%;
+    }
+
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    div {
+        display: block;
+    }
+
+    .bed-container{
+        min-width: 230px !important;
+        min-height: 180px !important;
+
+    }
+
+    
+    /* .amen-column-cont {
+        display: flex;
+        flex-direction: column;
+    } */
+    
+    #amen-column-2 {
+        visibility: hidden;
+        display: none;
+    }  
+    /*
+    /* #bed-3 {
+        display: none;
+    } */
 
     /* .bed-container {
         width: 100%;
     } */
 }
+
+@media screen and (max-width: 844px) {
+    .accommodations {
+        padding: 0px 18px 30px !important;
+        transition-duration: 0.5s, 0.5s, 0.5s !important;
+        transition-timing-function: ease, ease, ease !important;
+        transition-delay: 0s, 0s, 0s !important;
+        transition-property: -ms-transform, -webkit-transform, transform !important;
+        white-space: nowrap !important;
+        overflow-x: auto !important;
+        margin-bottom: 30px !important;
+        display: flex !important;
+        width: 260px;
+    }
+
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    div {
+        display: block;
+    }
+
+    .bed-container{
+        min-width: 230px !important;
+        min-height: 180px !important;
+    }
+}
+
+
 

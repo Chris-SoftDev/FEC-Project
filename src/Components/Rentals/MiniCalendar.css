@@ -177,9 +177,21 @@
     justify-content: space-between;
 }
 
-.mini-calendar-footer-keyboard-icon{
+.mini-calendar-footer-keyboard-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.mini-calendar-footer-keyboard-icon svg {
     height: 24px;
     width: 24px;
+    margin-top: 13px;
+}
+
+.mini-calendar-footer-keyboard-icon:hover {
+    background-color: rgba(235, 235, 235, 0.55);
+    cursor: pointer;
 }
 
 .mini-calendar-footer-clear-dates {
