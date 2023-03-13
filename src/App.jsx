@@ -1,6 +1,6 @@
 import "./App.css";
 import MobileNavbar from "./Components/NavBar/MobileNavBar";
-import NavBar from "./Components/NavBar/Navbar";
+import NavBar from "./Components/NavBar/NavBar";
 import Rentals from "./Components/Rentals/Rentals";
 import Reviews from "./Components/Reviews/Reviews";
 import Host from "./Components/Host/Host";
