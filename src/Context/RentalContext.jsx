@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useRef } from "react";
+import React, { createContext, useState, useEffect, useRef } from "react";
 
 const RentalContext = createContext();
 
@@ -59,7 +59,12 @@ export const RentalProvider = ({ children }) => {
           ? (document.body.parentElement.style.overflowY = "clip")
           : (document.body.parentElement.style.overflowY = "auto");
       }, [showRentalState]);
-
+    
+    const ScrollButton = () => {
+          window.scrollTo({ top: 4500, behavior: 'smooth' });
+        
+    }
+      
       
     return (
         <RentalContext.Provider 
@@ -71,7 +76,8 @@ export const RentalProvider = ({ children }) => {
             openShowMore,
             closeShowMore,
             showRentalMore,
-            miniShowMoreRef        
+            miniShowMoreRef,
+            ScrollButton        
             }}
         >
             {children}
