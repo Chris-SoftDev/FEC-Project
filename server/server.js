@@ -15,7 +15,7 @@ app.use(
 );
 
 app.use(express.json());
-app.use(express.static("../dist"));
+app.use(express.static("dist"));
 
 app.route("/languages").get(async (req, res) => {
   try {
