@@ -31,7 +31,9 @@ CREATE TABLE ratings (
 
 CREATE TABLE images (
   id SERIAL PRIMARY KEY,
-  url VARCHAR(500)
+  large_img VARCHAR(500),
+  left_img VARCHAR(500),
+  right_img VARCHAR(500)
 );
 
 

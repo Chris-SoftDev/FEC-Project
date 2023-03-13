@@ -37,29 +37,36 @@ INSERT INTO ratings (cleanliness, accuracy, communication, location, check_in, v
 
 
 
-INSERT INTO images (url) VALUES
-('https://a0.muscache.com/im/pictures/563de9e7-dd5c-4389-a1ae-758f5c90f551.jpg?im_w=1200'),
-('https://a0.muscache.com/im/pictures/00e24393-69c0-4077-883c-d71eacf28d3e.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/ce7c192d-faa9-4c38-9c1e-db4d1cdd696d.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/cf7e5cb9-9e15-44fd-a4f1-625c92d3e5db.jpg?im_w=1200'),
-('https://a0.muscache.com/im/pictures/6fb0f548-2453-42cd-91d6-01b4b2a26c8d.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/38e66be5-df0b-46aa-a102-c2ad39aec4ae.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/ec02beaf-e49a-4703-8344-63990512a2ce.jpg?im_w=1200'),
-('https://a0.muscache.com/im/pictures/98329a47-4996-490b-b3eb-12c304809a45.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/8df89d89-4371-4e80-af33-25047e79c1be.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/fe75f0cf-8f58-4eec-83b9-6103040634e7.jpg?im_w=1200'),
-('https://a0.muscache.com/im/pictures/32a3cccc-8286-4bf8-b645-e02ab0e01d1e.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/a310eee5-9612-4af1-898a-4ab29e9e43bd.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/a9dfab94-b074-4f35-a149-22954adf5a16.jpg?im_w=1200'),
-('https://a0.muscache.com/im/pictures/533b952d-4f0c-4c0b-9111-aa6bf31a18f7.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/0517d896-a98d-4445-ae43-38667891c75c.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/1189a8b0-988b-42ae-b53c-bb5a8a264a47.jpg?im_w=1200'),
-('https://a0.muscache.com/im/pictures/a0853800-1a3c-4a01-bbe9-ecf3d2a795f2.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/6f812b04-ced1-4226-b4c3-9b87f3433ef9.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/61408a60-901b-4472-9f88-622e32895da4.jpg?im_w=1200'),
-('https://a0.muscache.com/im/pictures/09c9b900-e486-4508-ba94-cea898e911e2.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/af66294e-5ddc-4d25-a3a2-b09be2fa53ea.jpg?im_w=720'),
-('https://a0.muscache.com/im/pictures/884d5505-0ace-4510-8b18-e9a601c47ccb.jpg?im_w=1200');
+INSERT INTO images (large_img,left_img, right_img) VALUES
+('https://a0.muscache.com/im/pictures/563de9e7-dd5c-4389-a1ae-758f5c90f551.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/00e24393-69c0-4077-883c-d71eacf28d3e.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/ce7c192d-faa9-4c38-9c1e-db4d1cdd696d.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/cf7e5cb9-9e15-44fd-a4f1-625c92d3e5db.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/6fb0f548-2453-42cd-91d6-01b4b2a26c8d.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/38e66be5-df0b-46aa-a102-c2ad39aec4ae.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/ec02beaf-e49a-4703-8344-63990512a2ce.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/98329a47-4996-490b-b3eb-12c304809a45.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/8df89d89-4371-4e80-af33-25047e79c1be.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/fe75f0cf-8f58-4eec-83b9-6103040634e7.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/32a3cccc-8286-4bf8-b645-e02ab0e01d1e.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/a310eee5-9612-4af1-898a-4ab29e9e43bd.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/a9dfab94-b074-4f35-a149-22954adf5a16.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/533b952d-4f0c-4c0b-9111-aa6bf31a18f7.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/0517d896-a98d-4445-ae43-38667891c75c.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/1189a8b0-988b-42ae-b53c-bb5a8a264a47.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/a0853800-1a3c-4a01-bbe9-ecf3d2a795f2.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/6f812b04-ced1-4226-b4c3-9b87f3433ef9.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/61408a60-901b-4472-9f88-622e32895da4.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/09c9b900-e486-4508-ba94-cea898e911e2.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/af66294e-5ddc-4d25-a3a2-b09be2fa53ea.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/884d5505-0ace-4510-8b18-e9a601c47ccb.jpg?im_w=1200',null,null);
 
 INSERT INTO languages (language, country) VALUES 
 ('English', 'United States'),
