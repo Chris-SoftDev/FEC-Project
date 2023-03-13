@@ -8,7 +8,7 @@ export const RegionProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchCurrencies = async () => {
-            const response = await fetch('http://localhost:3000/currencies');
+            const response = await fetch('/currencies');
             const data = await response.json();
             setCurrencyData(data);
         };
@@ -18,7 +18,7 @@ export const RegionProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchLanguages = async () => {
-            const response = await fetch('http://localhost:3000/languages');
+            const response = await fetch('/languages');
             const data = await response.json();
             setLanguageData(data);
         };
