@@ -6,8 +6,7 @@ import './MiniCalendar.css'
 
 function MiniCalendar() {
     const miniCalenderHeaderRef = useRef()
-    const { miniCalenderRef, closeMiniCalendar } = useContext(HostContext)
-    const { dateRange, setDateRange, emptyCalendar, convertDateObjToStr, openKeyboardModal } = useContext(HostContext)
+    const { dateRange, setDateRange, emptyCalendar, convertDateObjToStr, openKeyboardModal, miniCalenderRef, closeMiniCalendar } = useContext(HostContext)
 
     const [checkInDate, setCheckInDate] = useState('')
     const [checkOutDate, setCheckOutDate] = useState('')

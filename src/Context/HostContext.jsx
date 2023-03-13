@@ -7,6 +7,10 @@ export const HostProvider = ({ children }) => {
     const guestQtyModalRef = useRef()
     const guestQtyBtnRef = useRef()
     const serviceDogRef = useRef()
+    const keyboardModalRef = useRef()
+    const houseRulesModalRef = useRef()
+    const cancellationModalRef = useRef()
+    const safetyModalRef = useRef()
     const [showHouseRules, setShowHouseRules] = useState(false)
     const [showMoreSafety, setShowMoreSafety] = useState(false)
     const [showCancellation, setShowCancellation] = useState(false)
@@ -25,10 +29,6 @@ export const HostProvider = ({ children }) => {
     const [isMiniCalendarVisible, setIsMiniCalendarVisible] = useState(false)
     const [keyboardModal, setKeyboardModal] = useState(false)
     const [propertyLocation, setPropertyLocation] = useState([])
-    const keyboardModalRef = useRef()
-    const houseRulesModalRef = useRef()
-    const cancellationModalRef = useRef()
-    const safetyModalRef = useRef()
     const [isGuestQtyVisible, setIsGuestQtyVisible] = useState(false)
     const [isServiceDogVisible, setIsServiceDogVisible] =  useState(false);
     const [isReserveReady, setIsReserveReady] = useState(false)
@@ -102,6 +102,16 @@ export const HostProvider = ({ children }) => {
         setShowAllAmenities(false)
     }
 
+    // Service Dog Modal Functions
+    const openServiceDog = () => {
+        setIsServiceDogVisible(true)
+    }
+    
+    const closeServiceDog = () => {
+        setIsServiceDogVisible(false)
+    }
+    
+    //Guest Qty Functions
     const toggleGuestQty = () => {
         setIsGuestQtyVisible(!isGuestQtyVisible)
     }
@@ -110,16 +120,6 @@ export const HostProvider = ({ children }) => {
         setIsGuestQtyVisible(false)
     }
 
-    // Service Dog Modal Functions
-    const openServiceDog = () => {
-        setIsServiceDogVisible(true)
-    }
-
-    const closeServiceDog = () => {
-        setIsServiceDogVisible(false)
-    }
-
-    //Guest Qty Functions
     const increaseAdultGuests = () => {
         setGuestQtyObj({
             ...guestQtyObj,
@@ -179,6 +179,7 @@ export const HostProvider = ({ children }) => {
     // Calendar Functions
     const emptyCalendar = () => {
         setDateRange({from: "", to: ""})
+        setIsReserveReady(false)
     }
 
     const convertDateObjToStr = (date) => {
