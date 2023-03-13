@@ -11,7 +11,7 @@ import './RentalCalendar.css';
 
 function RentalCalendar() {
 
-    const { dateRange, setDateRange, emptyCalendar, openKeyboardModal, keyboardModal, propertyLocation, daysBooked} = useContext(HostContext)
+    const { dateRange, setDateRange, emptyCalendar, openKeyboardModal, keyboardModal, propertyLocation, disableDays} = useContext(HostContext)
     const { calendarRef } = useContext(MiniNavContext)
  
     const defaultMonth =new Date(2023,2) //start of calendar
@@ -38,17 +38,6 @@ function RentalCalendar() {
             mediaQuery.removeEventListener("change", handleMediaQuery);
         };
     }, []);
-
-
-    //maps over dates from data and places it in disabled dates on date picker component
-    const disableDays = daysBooked.map((booking) => {
-        const fromDate = new Date(booking.from_date);
-        const toDate = new Date(booking.to_date);
-        return {
-          from: new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate()),
-          to: new Date(toDate.getFullYear(), toDate.getMonth(), toDate.getDate())
-        };
-    });
 
     return (
 
