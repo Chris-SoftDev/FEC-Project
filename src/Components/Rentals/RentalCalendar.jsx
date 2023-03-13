@@ -16,14 +16,14 @@ function RentalCalendar() {
 
     const defaultMonth =new Date(2023,2) //start of calendar
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
-    const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
+    const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0; 
     
     return (
 
         <div className='calendar-main-container' ref={calendarRef}>
             <div className='calendar-title'>
                 <div className='number-of-nights'>
-                    {dateRange.from && dateRange.to ? `${numDays} nights in Boise` : 'Select check-in date'}
+                    {dateRange.from && dateRange.to ? `${numNights} nights in Boise` : 'Select check-in date'}
                 </div>
                 <div className='date-range'>
                     {dateRange.from && dateRange.to ?

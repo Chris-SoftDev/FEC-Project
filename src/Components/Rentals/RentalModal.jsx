@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { differenceInDays } from 'date-fns';
 import HostContext from '../../Context/HostContext';
 import ReviewContext from '../../Context/ReviewContext'
 import MiniNavContext from '../../Context/MiniNavContext';
@@ -9,7 +10,7 @@ import './RentalModal.css';
 
 function RentalModal() {
     const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
-    const { isMiniCalendarVisible, openMiniCalendar, nightlyRate, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef, guestQtyObj } = useContext(HostContext)
+    const { isMiniCalendarVisible, isReserveReady, openMiniCalendar, nightlyRate, cleaningFee, serviceFee, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef, guestQtyObj, setIsReserveReady } = useContext(HostContext)
     const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
 
     const guestQtyStr = (obj) => {
@@ -42,6 +43,7 @@ function RentalModal() {
     
     const totalReviews = amountOfReviews(getReviews);
     const ratingAvg = Math.round(totalAvg * 100) / 100
+    const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0;
 
     return ( 
         <>
@@ -89,9 +91,36 @@ function RentalModal() {
                                 {isGuestQtyVisible && <GuestQty />}
                             </div>
                         </div>
-                        <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
-                            <button type='submit' onClick={openMiniCalendar}>Check availability</button>
-                        </div>
+                        {(isReserveReady) ? (
+                            <>
+                                <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
+                                    <button type='submit'>Reserve</button>
+                                </div>
+                                <div className="rental-modal-reserve-fees-container">
+                                    <div className='rental-modal-reserve-fees-header'>You won't be charged yet</div>
+                                    <div className="rental-modal-reserve-fees-charges-container">
+                                        <div className="rental-modal-reserve-fees-charges-category">${nightlyRate} x {numNights} nights</div>
+                                        <div className='rental-modal-reserve-fees-charges'>${nightlyRate * numNights}</div>
+                                    </div>
+                                    <div className="rental-modal-reserve-fees-charges-container">
+                                        <div className="rental-modal-reserve-fees-charges-category">Cleaning Fee</div>
+                                        <div className='rental-modal-reserve-fees-charges'>${cleaningFee}</div>
+                                    </div>
+                                    <div className="rental-modal-reserve-fees-charges-container">
+                                        <div className="rental-modal-reserve-fees-charges-category">Groundbnb service fee</div>
+                                        <div className='rental-modal-reserve-fees-charges'>${serviceFee}</div>
+                                    </div>
+                                </div>
+                                <div className="rental-modal-reserve-total-container">
+                                    <div>Total before taxes</div>
+                                    <div>${(nightlyRate * numNights) + cleaningFee + serviceFee}</div>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
+                                <button onClick={openMiniCalendar}>Check availability</button>
+                            </div>
+                        )}
                     </div>
                 </div>
                 
