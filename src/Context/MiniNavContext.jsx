@@ -3,13 +3,13 @@ import { createContext, useState, useEffect, useRef } from "react";
 const MiniNavContext = createContext();
 
 export const MiniNavProvider = ({ children }) => {
+  const amenitiesRef = useRef();
+  const calendarRef = useRef();
+  const locationRef = useRef();
   const miniNavRef = useRef()
   const photosRef = useRef();
-  const amenitiesRef = useRef();
   const reviewsRef = useRef();
-  const locationRef = useRef();
   const rentalModalFooterRef = useRef();
-  const calendarRef = useRef();
   const [isMiniNavVisible, setIsMiniNavVisible] = useState()
   const [isMiniNavReserveVisible, setIsMiniNavReserveVisible] = useState()
 

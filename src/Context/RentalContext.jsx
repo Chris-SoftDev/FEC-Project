@@ -8,7 +8,6 @@ export const RentalProvider = ({ children }) => {
     const [showRentalMore, setShowRentalMore] = useState(false)
     const miniLearnMoreRef = useRef()
     
-
     const openRental = () => {
         setshowRentalState(true)
       }
@@ -33,8 +32,6 @@ export const RentalProvider = ({ children }) => {
         if (showRentalState || showRentalMore && miniLearnMoreRef.current && !miniLearnMoreRef.current.contains(e.target)) {
             setshowRentalState(false)
             setShowRentalMore(false)
-            
-            
         }
         }
         document.addEventListener("mousedown", checkIfClickedOutside)
@@ -60,16 +57,12 @@ export const RentalProvider = ({ children }) => {
             miniLearnMoreRef,
             openShowMore,
             closeShowMore,
-            showRentalMore
-            
-              
+            showRentalMore           
             }}
         >
             {children}
         </RentalContext.Provider>
-
     )
-
 }
 
 export default RentalContext

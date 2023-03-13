@@ -3,7 +3,7 @@ import { useEffect, createContext, useState, useRef } from "react";
 const ReviewContext = createContext();
 
 export const ReviewProvider = ({ children }) => {
-  
+  const shareMenuRef = useRef()
   const [showReview, setshowReview] = useState(false);
   const [getReviews, setgetReviews] = useState([]);
   const [image, setimage] = useState([]);
@@ -16,7 +16,6 @@ export const ReviewProvider = ({ children }) => {
   const [value, setValue] = useState([]);
   const [totalAvg, settotalAvg] = useState([]);
   const [isShareMenuVisible, setIsShareMenuVisible] = useState(false);
-  const shareMenuRef = useRef()
   const [getAllImage,setgetAllImage] = useState([])
 
   useEffect(() => {
@@ -28,9 +27,6 @@ export const ReviewProvider = ({ children }) => {
 
     fetchAllImages();
   }, []);
-
-
-
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -90,7 +86,6 @@ export const ReviewProvider = ({ children }) => {
       ? (document.body.parentElement.style.overflowY = "clip")
       : (document.body.parentElement.style.overflowY = "auto");
   }, [isShareMenuVisible, showReview]);
-
 
 
   useEffect(() => {
