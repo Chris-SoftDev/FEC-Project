@@ -30,7 +30,7 @@ export const RentalProvider = ({ children }) => {
       useEffect(() => {
         const checkIfClickedOutside = e => {
         // If the menu is open and the clicked target is not within the menu, then close the menu (miniLearnMoreRef.current && !
-        if (showRentalState && miniLearnMoreRef.current && !miniLearnMoreRef.current.contains(e.target)) {
+        if (showRentalState || showRentalMore && miniLearnMoreRef.current && !miniLearnMoreRef.current.contains(e.target)) {
             setshowRentalState(false)
             setShowRentalMore(false)
             
