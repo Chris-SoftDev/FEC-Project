@@ -155,7 +155,7 @@ INSERT INTO currencies (currency, symbol) VALUES
 ('Uruguayan peso', 'UYU - $U');
 
 
-INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules, nightly_rate) VALUES (
+INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules, nightly_rate, location) VALUES (
     '{
             "name": "Tag",
             "joined": "November 2017",
@@ -209,6 +209,12 @@ INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house
                     "-This property has a private septic system. Kindly place feminine and other sanitary products in the garbage. DO NOT flush them as they can cause catastrophic sewer failure. (We''re certain that a sewer failure will not ''enhance'' the quality of your stay!)",
                     "-Exterior lights must be turned off during the quiet hours of 10pm to 8am. This is to limit light pollution in the neighborhood."
                 ]
-        }'::jsonb,
-        160
+    }'::jsonb,
+    160,
+    '{
+        "title": "Mountaintop Getaway w/Stunning Views and Hot Tub",
+        "city": "Boise",
+        "state": "Idaho",
+        "country": "United States"
+    }',
 );

@@ -4,14 +4,14 @@ import "./ShowSafety.css"
 
 export default function ShowSafety() {
 
-    const { showMoreSafety, closeSafety, safetyData } = useContext(HostContext)
+    const { showMoreSafety, closeSafety, safetyData, safetyModalRef } = useContext(HostContext)
 
 
     return (
         <>
             {showMoreSafety && (
                 <div className="modal-overlay">
-                    <div className='safety-modal-container'>
+                    <div className='safety-modal-container' ref={safetyModalRef}>
                         <div className="safety-modal">
                             <div className='rules-close-btn'onClick={closeSafety}>
                                 <button>
