@@ -36,6 +36,38 @@ INSERT INTO ratings (cleanliness, accuracy, communication, location, check_in, v
 (5, 5, 5, 5, 5, 4);
 
 
+
+INSERT INTO images (large_img,left_img, right_img) VALUES
+('https://a0.muscache.com/im/pictures/563de9e7-dd5c-4389-a1ae-758f5c90f551.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/00e24393-69c0-4077-883c-d71eacf28d3e.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/ce7c192d-faa9-4c38-9c1e-db4d1cdd696d.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/cf7e5cb9-9e15-44fd-a4f1-625c92d3e5db.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/6fb0f548-2453-42cd-91d6-01b4b2a26c8d.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/38e66be5-df0b-46aa-a102-c2ad39aec4ae.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/ec02beaf-e49a-4703-8344-63990512a2ce.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/98329a47-4996-490b-b3eb-12c304809a45.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/8df89d89-4371-4e80-af33-25047e79c1be.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/fe75f0cf-8f58-4eec-83b9-6103040634e7.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/32a3cccc-8286-4bf8-b645-e02ab0e01d1e.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/a310eee5-9612-4af1-898a-4ab29e9e43bd.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/a9dfab94-b074-4f35-a149-22954adf5a16.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/533b952d-4f0c-4c0b-9111-aa6bf31a18f7.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/0517d896-a98d-4445-ae43-38667891c75c.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/1189a8b0-988b-42ae-b53c-bb5a8a264a47.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/a0853800-1a3c-4a01-bbe9-ecf3d2a795f2.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/6f812b04-ced1-4226-b4c3-9b87f3433ef9.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/61408a60-901b-4472-9f88-622e32895da4.jpg?im_w=1200',
+'https://a0.muscache.com/im/pictures/09c9b900-e486-4508-ba94-cea898e911e2.jpg?im_w=720',
+'https://a0.muscache.com/im/pictures/af66294e-5ddc-4d25-a3a2-b09be2fa53ea.jpg?im_w=720'),
+
+('https://a0.muscache.com/im/pictures/884d5505-0ace-4510-8b18-e9a601c47ccb.jpg?im_w=1200',null,null);
+
 INSERT INTO languages (language, country) VALUES 
 ('English', 'United States'),
 ('Azərbaycan dili', 'Azərbaycan'),
@@ -155,7 +187,7 @@ INSERT INTO currencies (currency, symbol) VALUES
 ('Uruguayan peso', 'UYU - $U');
 
 
-INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules, nightly_rate, amenities) VALUES (
+INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house_rules, nightly_rate, location, cleaning_fee, service_fee, amenities) VALUES (
     '{
             "name": "Tag",
             "joined": "November 2017",
@@ -212,60 +244,75 @@ INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house
                     "-This property has a private septic system. Kindly place feminine and other sanitary products in the garbage. DO NOT flush them as they can cause catastrophic sewer failure. (We''re certain that a sewer failure will not ''enhance'' the quality of your stay!)",
                     "-Exterior lights must be turned off during the quiet hours of 10pm to 8am. This is to limit light pollution in the neighborhood."
                 ]
-        }'::jsonb,
-        160,
-        '{
-            "scenic_views": true,
-            "valley_view": true,
-            "mountain_view": true,
-            "bathtub": true,
-            "hair_dryer": true,
-            "shampoo": true,
-            "hot_water": true,
-            "free_washer": true,
-            "free_dryer": true,
-            "essentials": true,
-            "essentials_items": "Towels, bed sheets, soap, and toilet paper",
-            "hangers": true,
-            "bed_linens": true,
-            "extra_pillows_and_blankets": true,
-            "iron": true,
-            "tv": true,
-            "tv_apps": "HDTV with Hulu, Amazon Prime Video, Apple TV, HBO Max, Netflix, Roku",
-            "game_console": true,
-            "ac_unit": true,
-            "ac_unit": true,
-            "indoor_fireplace": true,
-            "heating": true,
-            "wifi": true,
-            "dedicated_workspace": true,
-            "kitchen": true,
-            "kitchen_info": "Space where guests can cook their own meals",
-            "refrigerator": true,
-            "microwave": true,
-            "cooking_basics": true,
-            "cooking_basics_info": "Pots and pans, oil, salt and pepper",
-            "dishes_and_silverware": true,
-            "dishes_and_silverware_info": "Bowls, chopsticks, plates, cups, etc.",
-            "dishwasher": true,
-            "stove": true,
-            "oven": true,
-            "coffee_maker": true,
-            "baking_sheet": true,
-            "barbeque_utensils": true,
-            "barbeque_utensils_info": "Grill, charcoal, bamboo skewers/iron skewers, etc.",
-            "bread_maker": true,
-            "private_entrance": true,
-            "private_entrance_info": "Separate street or building entrance",
-            "patio_or_balcony": true,
-            "backyard": true,
-            "backyard_info": "An open space on the property usually covered in grass",
-            "outdoor_furniture": true,
-            "bbq_grill": true,
-            "parking": true,
-            "hot_tub_or_pool": true,
-            "long_term_stay": true,
-            "long_term_stay_info": "Allow stay for 28 days or more",
-            "smart_lock": true
-        }'
+    }'::jsonb,
+    160,
+    '{
+        "title": "Mountaintop Getaway w/Stunning Views and Hot Tub",
+        "city": "Boise",
+        "state": "Idaho",
+        "country": "United States"
+    }',
+    125,
+    63,
+    '{
+        "scenic_views": true,
+        "valley_view": true,
+        "mountain_view": true,
+        "bathtub": true,
+        "hair_dryer": true,
+        "shampoo": true,
+        "hot_water": true,
+        "free_washer": true,
+        "free_dryer": true,
+        "essentials": true,
+        "essentials_items": "Towels, bed sheets, soap, and toilet paper",
+        "hangers": true,
+        "bed_linens": true,
+        "extra_pillows_and_blankets": true,
+        "iron": true,
+        "tv": true,
+        "tv_apps": "HDTV with Hulu, Amazon Prime Video, Apple TV, HBO Max, Netflix, Roku",
+        "game_console": true,
+        "ac_unit": true,
+        "ac_unit": true,
+        "indoor_fireplace": true,
+        "heating": true,
+        "wifi": true,
+        "dedicated_workspace": true,
+        "kitchen": true,
+        "kitchen_info": "Space where guests can cook their own meals",
+        "refrigerator": true,
+        "microwave": true,
+        "cooking_basics": true,
+        "cooking_basics_info": "Pots and pans, oil, salt and pepper",
+        "dishes_and_silverware": true,
+        "dishes_and_silverware_info": "Bowls, chopsticks, plates, cups, etc.",
+        "dishwasher": true,
+        "stove": true,
+        "oven": true,
+        "coffee_maker": true,
+        "baking_sheet": true,
+        "barbeque_utensils": true,
+        "barbeque_utensils_info": "Grill, charcoal, bamboo skewers/iron skewers, etc.",
+        "bread_maker": true,
+        "private_entrance": true,
+        "private_entrance_info": "Separate street or building entrance",
+        "patio_or_balcony": true,
+        "backyard": true,
+        "backyard_info": "An open space on the property usually covered in grass",
+        "outdoor_furniture": true,
+        "bbq_grill": true,
+        "parking": true,
+        "hot_tub_or_pool": true,
+        "long_term_stay": true,
+        "long_term_stay_info": "Allow stay for 28 days or more",
+        "smart_lock": true
+    }'
 );
+
+INSERT into booked_days (from_date, to_date) VALUES 
+('03/02/2023', '03/08/2023'),
+('03/19/2023', '03/22/2023'),
+('05/11/2023', '05/19/2023'),
+('04/02/2023', '04/08/2023'),
+('04/16/2023', '04/22/2023')

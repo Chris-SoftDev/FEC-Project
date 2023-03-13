@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import HostContext from '../../Context/HostContext'
 import NavContext from "../../Context/NavContext";
+import ReviewContext from '../../Context/ReviewContext';
 import LoginMenu from "../NavBar/LoginMenu";
 import ShowCancel from './ShowCancel';
 import ShowRules from './ShowRules'
@@ -10,7 +11,16 @@ import './Host.css'
 function Host() {
 	const { showHouseRules, openHouseRules, showCancellation, openCancellation, showMoreSafety, openSafety, hostData, cohostData, rulesData, safetyData, cancelData} = useContext(HostContext)
 	const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
+	const { getReviews } = useContext(ReviewContext)
 
+	function amountOfReviews(rev) {
+        for (let i = 0; i < rev.length; i++) {
+        const element = rev.length;
+        return element;
+        }
+    }
+    
+    const totalReviews = amountOfReviews(getReviews);
 
 	return ( 
 		<>
@@ -33,7 +43,7 @@ function Host() {
 										<path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fillRule="evenodd"></path>
 									</svg>
 								</div>
-								<p>210 Reviews</p>
+								<p>{totalReviews} Reviews</p>
 							</div>
 							{hostData.identity_verified ? (<div className="verification">
                 				<div className ="shield-icon">

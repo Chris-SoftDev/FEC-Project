@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import HostContext from '../../Context/HostContext'
 import MiniNavContext from '../../Context/MiniNavContext';
 import KeyboardModal from './KeyboardModal'
@@ -11,19 +11,51 @@ import './RentalCalendar.css';
 
 function RentalCalendar() {
 
-    const { dateRange, setDateRange, emptyCalendar, openKeyboardModal, keyboardModal } = useContext(HostContext)
+    const { dateRange, setDateRange, emptyCalendar, openKeyboardModal, keyboardModal, propertyLocation, daysBooked} = useContext(HostContext)
     const { calendarRef } = useContext(MiniNavContext)
-
+ 
     const defaultMonth =new Date(2023,2) //start of calendar
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
-    const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
-    
+    const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0; 
+    const [numberOfCalendars, setNumberOfCalendars] = useState(2);
+
+
+    //to handle change from 2 calendars to 1, based of max width of page 1199px
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 1199px)");
+        const handleMediaQuery = (event) => {
+            if (event.matches) {
+                setNumberOfCalendars(1);
+            } else {
+                setNumberOfCalendars(2);
+            }
+        };
+        //add event listener to detect changes to media query 
+        mediaQuery.addEventListener("change", handleMediaQuery);
+
+        return () => {
+            //cleanup event listener, to prevent memory leaks
+            mediaQuery.removeEventListener("change", handleMediaQuery);
+        };
+    }, []);
+
+
+    //maps over dates from data and places it in disabled dates on date picker component
+    const disableDays = daysBooked.map((booking) => {
+        const fromDate = new Date(booking.from_date);
+        const toDate = new Date(booking.to_date);
+        return {
+          from: new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate()),
+          to: new Date(toDate.getFullYear(), toDate.getMonth(), toDate.getDate())
+        };
+    });
+
     return (
 
         <div className='calendar-main-container' ref={calendarRef}>
             <div className='calendar-title'>
                 <div className='number-of-nights'>
-                    {dateRange.from && dateRange.to ? `${numDays} nights in Boise` : 'Select check-in date'}
+                    {dateRange.from && dateRange.to ? `${numNights} nights in ${propertyLocation.city}` : 'Select check-in date'}
                 </div>
                 <div className='date-range'>
                     {dateRange.from && dateRange.to ?
@@ -33,14 +65,15 @@ function RentalCalendar() {
             </div>
             <div className='calendar-container'>
                 <DayPicker
-                    numberOfMonths={2} //two calendars mode
+                    numberOfMonths={numberOfCalendars} //number of calendars based off media query use effect (line 24)
                     defaultMonth={defaultMonth} //start month of Calendar
                     fromMonth={defaultMonth} //start month of Calendar
-                    toDate={new Date(2023, 9)} //last month of Calendars
+                    toDate={new Date(2023, 9, 31)} //last month of Calendars
                     mode="range" //select mulitple days
                     selected={dateRange} //this state is located in hostcontext
-                    onSelect={setDateRange}
-                    //modifiers={modifiers} 
+                    onSelect={setDateRange} //based on whats clicked will set it in our dateRange state
+                    disabled={disableDays}//days that are disabled on calendar
+                    min={2}
                 />
             </div>
             <div className='calendar-footer'>

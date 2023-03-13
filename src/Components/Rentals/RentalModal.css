@@ -260,3 +260,38 @@
     height: 16px;
     fill: #717171;
 }
+
+.rental-modal-reserve-fees-container {
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.rental-modal-reserve-fees-header {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.rental-modal-reserve-fees-charges-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.rental-modal-reserve-fees-charges-category {
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.rental-modal-reserve-fees-charges{
+    font-size: 15px;
+}
+
+.rental-modal-reserve-total-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 600;
+}

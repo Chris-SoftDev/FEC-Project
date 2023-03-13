@@ -4,13 +4,13 @@ import "./ShowCancel.css"
 
 export default function ShowCancel() {
 
-    const { showCancellation, closeCancellation } = useContext(HostContext)
+    const { showCancellation, closeCancellation, cancellationModalRef } = useContext(HostContext)
 
     return (
         <>
             {showCancellation && (
                 <div className="modal-overlay">
-                    <div className='cancel-modal-container'>
+                    <div className='cancel-modal-container' ref={cancellationModalRef}>
                         <div className="cancel-modal">
                             <div className='cancel-close-btn'onClick={closeCancellation}>
                                 <button>

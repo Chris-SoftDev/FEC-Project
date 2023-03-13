@@ -4,13 +4,13 @@ import "./KeyboardModal.css"
 
 export default function ShowCancel() {
 
-    const { keyboardModal, closeKeyboardModal } = useContext(HostContext)
+    const { keyboardModal, closeKeyboardModal, keyboardModalRef } = useContext(HostContext)
 
 
     return (
         <>
             {keyboardModal && (<div className='modal-overlay'>
-                <div className='keyboard-modal'>
+                <div className='keyboard-modal' ref={keyboardModalRef}>
                     <div className='keyboard-modal-title'>Keyboard shortcuts</div>
                     <div className='keyboard-modal-content-container'>
                         <div className='focus-leftarrow-container'>
