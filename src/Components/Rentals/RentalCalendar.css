@@ -85,6 +85,10 @@
     border: 1px solid #222222;
 }
 
+.rdp-day_disabled:not(.rdp-day_selected) { /*line across dates that are booked*/
+    text-decoration: line-through;
+}
+
 .calendar-footer{
     display: flex;
     flex-direction: row;
@@ -129,10 +133,14 @@
 }
 
 @media screen and (max-width: 1199px) {
-    .rdp-months div:nth-of-type(2) {
+    /* .rdp-months div:nth-of-type(2) {
         display: none;
-    }
- 
+    } */
+    .date-picker__calendar {
+        display: block;
+        width: 100%;
+      }
+      
     .rdp-months{
         width: 100%;
         justify-content: center;

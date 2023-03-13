@@ -15,7 +15,7 @@ app.use(
 );
 
 app.use(express.json());
-app.use(express.static("../"));
+app.use(express.static("dist"));
 
 app.route("/languages").get(async (req, res) => {
   try {
@@ -62,13 +62,14 @@ app.route("/ratings").get(async (req, res) => {
 
 app.route("/ratings/avg").get(async (req, res) => {
   try {
-    const data = await db.query(`SELECT AVG((cleanliness + accuracy + communication + location + check_in + value) / 6) AS overall_avg FROM ratings;
+    const data =
+      await db.query(`SELECT AVG((cleanliness + accuracy + communication + location + check_in + value) / 6) AS overall_avg FROM ratings;
     `);
     res.status(200).json(data.rows);
-      } catch (error) {
-        res.status(500).json({ message: error.message });
-      }
-    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
 app.route("/property").get(async (req, res) => {
   try {
@@ -79,10 +80,18 @@ app.route("/property").get(async (req, res) => {
   }
 });
 
-
 app.route("/images").get(async (req, res) => {
   try {
     const data = await db.query(`SELECT * FROM images`);
+    res.status(200).json(data.rows);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+app.route("/booked").get(async (req, res) => {
+  try {
+    const data = await db.query(`SELECT * FROM booked_days`);
     res.status(200).json(data.rows);
   } catch (error) {
     res.status(500).json({ message: error.message });

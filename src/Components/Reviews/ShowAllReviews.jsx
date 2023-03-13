@@ -28,21 +28,30 @@ export default function ShowAllReviews() {
         <div className="modal-layout">
           <div className="exit-modal-container">
             <div className="exit-modal">
-              <div className="container-holding-btn">
-                <div className="button-container">
-                  <button className="close-modal" onClick={closeAllRev}>
-                    X
-                  </button>
-                </div>
-              </div>
+              <div id="close-review-btn" onClick={closeAllRev}>
+                <button>
+                  <svg viewBox="0 0 32 32">
+                    <path d="m6 6 20 20"></path>
+                    <path d="m26 6-20 20"></path>
+                  </svg>
+                </button>
+            </div>
               <div className="Modal-review-input-container">
-                <div className="Star-review">
+                <div className="star-review-container">
                   <div className="modal-dynamic-reviews">
-                  <i className="fa-solid fa-star"></i>
-                    {totalDec}  {totalReviews} reviews
+                  <i className="fa-solid fa-star fa-xs" ></i>
+                    {totalDec} · {totalReviews} reviews
                   </div>
-                  <div className="Modal-input-container">
+                  <div className="show-all-search-input-container">
+                    <div className="Loupe-container">
+                      <svg viewBox="0 0 32 32">
+                        <g fill="none">
+                        <path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path>
+                        </g>
+                      </svg>
+                    </div>
                     <input
+                      
                       className="input"
                       type="text"
                       placeholder="Search here"

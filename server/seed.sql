@@ -310,3 +310,9 @@ INSERT INTO property (host_info, cohost_info, safety, cancellation_policy, house
     }'
 );
 
+INSERT into booked_days (from_date, to_date) VALUES 
+('03/02/2023', '03/08/2023'),
+('03/19/2023', '03/22/2023'),
+('05/11/2023', '05/19/2023'),
+('04/02/2023', '04/08/2023'),
+('04/16/2023', '04/22/2023')
