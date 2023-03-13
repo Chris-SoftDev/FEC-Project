@@ -1,15 +1,37 @@
-DROP TABLE IF EXISTS languages, currencies, reviews, ratings, property, images, booked_days;
+DROP TABLE IF EXISTS host, property, reservations, booked_days, reviews, ratings, images, languages, currencies;
 
-CREATE TABLE languages (
-    language_id SERIAL PRIMARY KEY,
-    language VARCHAR NOT NULL, 
-    country VARCHAR NOT NULL
+CREATE TABLE host (
+    host_id SERIAL PRIMARY KEY,
+    host_info JSONB,
+    cohost_info JSONB
 );
 
-CREATE TABLE currencies (
-    currency_id SERIAL PRIMARY KEY,
-    currency VARCHAR NOT NULL, 
-    symbol TEXT NOT NULL
+CREATE TABLE property (
+    property_id SERIAL PRIMARY KEY,
+    host_id INTEGER,
+    safety JSONB,
+    cancellation_policy JSONB,
+    house_rules JSONB,
+    location JSONB,
+    amenities JSONB,
+    nightly_rate INTEGER,
+    cleaning_fee INTEGER, 
+    service_fee INTEGER,
+    CONSTRAINT fk_host FOREIGN KEY(host_id) REFERENCES host(host_id) ON DELETE CASCADE 
+);
+
+CREATE TABLE reservations (
+    reservation_id SERIAL PRIMARY KEY,
+    property_id INTEGER,
+    from_date DATE,
+    to_date DATE,
+    CONSTRAINT fk_property FOREIGN KEY(property_id) REFERENCES property(property_id) ON DELETE CASCADE
+);
+
+CREATE TABLE booked_days (
+    booked_days_id SERIAL,
+    from_date DATE,
+    to_date DATE
 );
 
 CREATE TABLE reviews (
@@ -36,23 +58,14 @@ CREATE TABLE images (
   right_img VARCHAR(500)
 );
 
-
-CREATE TABLE property (
-    property_id SERIAL,
-    host_info JSONB,
-    cohost_info JSONB,
-    safety JSONB,
-    cancellation_policy JSONB,
-    house_rules JSONB,
-    nightly_rate INTEGER,
-    location JSONB,
-    cleaning_fee INTEGER, 
-    service_fee INTEGER, 
-    amenities JSONB
+CREATE TABLE languages (
+    language_id SERIAL PRIMARY KEY,
+    language VARCHAR NOT NULL, 
+    country VARCHAR NOT NULL
 );
 
-CREATE TABLE booked_days (
-    booked_days_id SERIAL,
-    from_date DATE,
-    to_date DATE
+CREATE TABLE currencies (
+    currency_id SERIAL PRIMARY KEY,
+    currency VARCHAR NOT NULL, 
+    symbol TEXT NOT NULL
 );

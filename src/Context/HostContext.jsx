@@ -44,29 +44,38 @@ export const HostProvider = ({ children }) => {
     
     useEffect(() => {
         const fetchHostData = async () => {
-            const response = await fetch(`${fetchUrl}/property`);
-            const host = await response.json();
-            setHostData(host[0].host_info);
-            setCohostData(host[0].cohost_info)
-            setSafetyData(host[0].safety)
-            setRulesData(host[0].house_rules)
-            setCancelData(host[0].cancellation_policy)
-            setAdditionalRules(host[0].house_rules.additional_rules)
-            setNightlyRate(host[0].nightly_rate)
-            setPropertyLocation(host[0].location)
-            setCleaningFee(host[0].cleaning_fee)
-            setServiceFee(host[0].service_fee)
-            setAmenities(host[0].amenities)
+            const response = await fetch(`${fetchUrl}/host`);
+            const data = await response.json();
+            setHostData(data[0].host_info);
+            setCohostData(data[0].cohost_info)
         };
         
         fetchHostData();
+    },[])
+
+    useEffect(() => {
+        const fetchPropertyData = async () => {
+            const response = await fetch(`${fetchUrl}/property`);
+            const data = await response.json();
+            setSafetyData(data[0].safety)
+            setRulesData(data[0].house_rules)
+            setCancelData(data[0].cancellation_policy)
+            setAdditionalRules(data[0].house_rules.additional_rules)
+            setNightlyRate(data[0].nightly_rate)
+            setPropertyLocation(data[0].location)
+            setCleaningFee(data[0].cleaning_fee)
+            setServiceFee(data[0].service_fee)
+            setAmenities(data[0].amenities)
+        };
+        
+        fetchPropertyData();
     },[]) 
 
     useEffect(() => {
         const fetchBookedDays = async () => {
-        const response = await fetch(`${fetchUrl}/booked`);
-        const days = await response.json();
-        setDaysBooked(days)
+            const response = await fetch(`${fetchUrl}/booked`);
+            const days = await response.json();
+            setDaysBooked(days)
         };
 
         fetchBookedDays()
