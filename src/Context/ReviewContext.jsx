@@ -3,7 +3,8 @@ import { useEffect, createContext, useState, useRef } from "react";
 const ReviewContext = createContext();
 
 export const ReviewProvider = ({ children }) => {
-  const shareMenuRef = useRef()
+  const shareMenuRef = useRef();
+  const modalReviewRef = useRef();
   const [showReview, setshowReview] = useState(false);
   const [getReviews, setgetReviews] = useState([]);
   const [image, setimage] = useState([]);
@@ -16,9 +17,9 @@ export const ReviewProvider = ({ children }) => {
   const [value, setValue] = useState([]);
   const [totalAvg, settotalAvg] = useState([]);
   const [isShareMenuVisible, setIsShareMenuVisible] = useState(false);
-  const [getAllImage,setgetAllImage] = useState([])
+  const [getAllImage, setgetAllImage] = useState([]);
 
-  const fetchUrl = 'http://localhost:3000';
+  const fetchUrl = "http://localhost:3000";
 
   useEffect(() => {
     const fetchAllImages = async () => {
@@ -89,25 +90,46 @@ export const ReviewProvider = ({ children }) => {
       : (document.body.parentElement.style.overflowY = "auto");
   }, [isShareMenuVisible, showReview]);
 
-
   useEffect(() => {
-    const checkIfClickedOutside = e => {
+    const checkIfClickedOutside = (e) => {
       // If the menu is open and the clicked target is not within the menu, then close the menu
-      if (isShareMenuVisible && shareMenuRef.current && !shareMenuRef.current.contains(e.target)) {
-        setIsShareMenuVisible(false)
+      if (
+        isShareMenuVisible &&
+        shareMenuRef.current &&
+        !shareMenuRef.current.contains(e.target)
+      ) {
+        setIsShareMenuVisible(false);
       }
-    }
-    document.addEventListener("mousedown", checkIfClickedOutside)
+    };
+    document.addEventListener("mousedown", checkIfClickedOutside);
     return () => {
       // Cleanup the event listener
-      document.removeEventListener("mousedown", checkIfClickedOutside)
-    }
-  }, [isShareMenuVisible])
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [isShareMenuVisible]);
 
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      // If the menu is open and the clicked target is not within the menu, then close the menu
+      if (
+        showReview &&
+        modalReviewRef.current &&
+        !modalReviewRef.current.contains(e.target)
+      ) {
+        setshowReview(false);
+      }
+    };
+    document.addEventListener("mousedown", checkIfClickedOutside);
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [showReview]);
 
   return (
     <ReviewContext.Provider
       value={{
+        modalReviewRef,
         getAllImage,
         shareMenuRef,
         isShareMenuVisible,
@@ -125,7 +147,7 @@ export const ReviewProvider = ({ children }) => {
         accuracy,
         location,
         value,
-        totalAvg
+        totalAvg,
       }}
     >
       {children}

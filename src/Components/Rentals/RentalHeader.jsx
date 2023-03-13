@@ -62,7 +62,7 @@ function RentalHeader() {
             </button>
             <div className="rating-spacer">·</div>
             <button className="rating-location">
-              Boise, Idaho, United States
+            <Link to='/location' style={linkStyle}>Boise, Idaho, United States</Link> 
             </button>
           </div>
           <div className="rental-header-property-links">
