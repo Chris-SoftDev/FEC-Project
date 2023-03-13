@@ -4,12 +4,12 @@ import "./ShowRules.css"
 
 export default function ShowRules() {
 
-    const { showHouseRules, closeHouseRules, rulesData, additionalRules } = useContext(HostContext)
+    const { showHouseRules, closeHouseRules, rulesData, additionalRules, houseRulesModalRef } = useContext(HostContext)
     return (
         <>
             {showHouseRules && (
                 <div className="modal-overlay">
-                    <div className='rule-modal-container'>
+                    <div className='rule-modal-container' ref={houseRulesModalRef}>
                         <div className='rules-modal'>
                             <div className='rules-close-btn'onClick={closeHouseRules}>
                                 <button>

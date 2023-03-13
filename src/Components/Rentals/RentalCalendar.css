@@ -83,7 +83,7 @@
 .rdp-button:hover:not([disabled]):not(.rdp-day_selected) { /*hover for the days not selected*/
     background-color: white !important;
     border: 1px solid #222222;
-  }
+}
 
 .calendar-footer{
     display: flex;
@@ -120,32 +120,52 @@
     border: none;
     border-radius: 10%;
     background-color: white;
+    font-family: 'Inter', sans-serif;
     font-size:14px;
-    margin-right: 2em;
+    font-weight: 500;
+    margin-right: 2.5em;
     text-decoration-line: underline;
+    text-underline-offset: 1px;
 }
 
-
-  @media screen and (max-width: 768px) {
-    /* Media query for screen size smaller than 768px */
+@media screen and (max-width: 1199px) {
     .rdp-months div:nth-of-type(2) {
-      display: none;
+        display: none;
     }
-
-    .rdp{
+ 
+    .rdp-months{
         width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 949px) {
+    .rdp-months{
+        width: 100%;
+        justify-content: left;
     }
 
+    .calendar-footer{
+        width:500px;
+    }
+
+    .clear-dates{
+        margin-right: 13em;
+    }
+  }
+
+  @media screen and (max-width: 743px) {
     .rdp-months{
         width: 100%;
         justify-content: center;
     }
 
-    .rdp-months div:nth-of-type(1) {
-        max-width:100%
-      }
+    .keyboard-icon{
+        display: none;
+    }
 
-    .rdp-caption{ /*month and year*/
-        font-size: 20px;
+    .calendar-footer{
+        width:100%;
+        justify-content: center;
     }
   }

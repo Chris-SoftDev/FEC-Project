@@ -113,9 +113,10 @@
 .share-btn{
   width: 250px;
   height: 74px;
-  border: 1px solid black;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  margin: 10px;
+  /* margin-top: 15px; */
+  margin-bottom: 15px;
 }
 
 .btn{
@@ -128,7 +129,9 @@
   font-size: 16px;
   font-weight: 500;
 }
-
+.btn:hover{
+  background-color: rgba(235, 235, 235, 0.55)
+}
 .share-svg-container{
   display: flex;
   flex-direction: row;
@@ -143,12 +146,9 @@
 .whatsApp-svg{
   width: 34px;
   height: 34px;
+  
 }
 
-.facebook-svg{
-  width: 34px;
-  height: 34px;
-}
 
 .email-svg {
   width: 32px;
@@ -163,9 +163,4 @@
 .messenger-svg {
   width: 32px;
   height: 32px;
-}
-
-.messages-svg {
-  width: 32px;
-  height: 32px;  
 }

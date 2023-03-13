@@ -11,19 +11,23 @@ import './RentalCalendar.css';
 
 function RentalCalendar() {
 
-    const { dateRange, setDateRange, emptyCalendar, openKeyboardModal, keyboardModal } = useContext(HostContext)
+    const { dateRange, setDateRange, emptyCalendar, openKeyboardModal, keyboardModal, propertyLocation } = useContext(HostContext)
     const { calendarRef } = useContext(MiniNavContext)
 
     const defaultMonth =new Date(2023,2) //start of calendar
     const formattedFromDate = dateRange.from ? format(dateRange.from, 'MMM d, yyyy') : '';
-    const numDays = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) + 1 : 0; 
+    const numNights = dateRange.from && dateRange.to ? differenceInDays(dateRange.to, dateRange.from) : 0; 
+
     
+    const disableDays = [
+        {from: new Date(2023, 4, 11), to: new Date(2023, 4, 15) }
+    ]
     return (
 
         <div className='calendar-main-container' ref={calendarRef}>
             <div className='calendar-title'>
                 <div className='number-of-nights'>
-                    {dateRange.from && dateRange.to ? `${numDays} nights in Boise` : 'Select check-in date'}
+                    {dateRange.from && dateRange.to ? `${numNights} nights in ${propertyLocation.city}` : 'Select check-in date'}
                 </div>
                 <div className='date-range'>
                     {dateRange.from && dateRange.to ?
@@ -40,7 +44,7 @@ function RentalCalendar() {
                     mode="range" //select mulitple days
                     selected={dateRange} //this state is located in hostcontext
                     onSelect={setDateRange}
-                    //modifiers={modifiers} 
+                    disabled={disableDays}
                 />
             </div>
             <div className='calendar-footer'>
