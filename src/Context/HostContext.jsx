@@ -39,10 +39,12 @@ export const HostProvider = ({ children }) => {
         infants: 0,
         pets: 0
     })
+
+    const fetchUrl = 'http://localhost:3000';
     
     useEffect(() => {
         const fetchHostData = async () => {
-            const response = await fetch('http://localhost:3000/property');
+            const response = await fetch(`${fetchUrl}/property`);
             const host = await response.json();
             setHostData(host[0].host_info);
             setCohostData(host[0].cohost_info)
@@ -62,7 +64,7 @@ export const HostProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchBookedDays = async () => {
-        const response = await fetch('http://localhost:3000/booked');
+        const response = await fetch(`${fetchUrl}/booked`);
         const days = await response.json();
         setDaysBooked(days)
         };
@@ -381,8 +383,7 @@ export const HostProvider = ({ children }) => {
                 closeServiceDog,
                 isServiceDogVisible,
                 amenities,
-                daysBooked,
-                setIsReserveReady
+                daysBooked
             }}>
             {children}
         </HostContext.Provider>

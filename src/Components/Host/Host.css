@@ -461,7 +461,7 @@
 
    .thingstoknow-cancellation{
         order:1;
-        margin-left: -.5em;
+        margin-left: -1px;
         width: 100%;
         border-bottom: 1px solid rgba(221, 221, 221, .7);
    }
@@ -469,7 +469,6 @@
    .thingstoknow-safety{
         order:3;
         width: 100%;
-        border-bottom: 1px solid rgba(221, 221, 221, .7);
    }
 
    .thingstoknow-content li{
