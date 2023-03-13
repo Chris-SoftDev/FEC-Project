@@ -6,43 +6,51 @@ import ShowRentalLearn from './ShowRentalLearn';
 import ShowRentalShow from './ShowRentalShow';
 
 function RentalDescription() {
-    const { showRentalState, openRental, miniLearnMoreRef, showRentalMore, openShowMore } = useContext(RentalContext)
+    const { showRentalState, openRental, miniLearnMoreRef, showRentalMore, openShowMore, ScrollButton } = useContext(RentalContext)
     const {hostData, rulesData} = useContext(HostContext)
 
     return (
         <>
         <div className='Rental-Selection-Holder'>
+            
             <div className='Rental-Text-Cont'>
+                
                 <div className='Rental-Text-Top'>
-                    <h2 className='Rental-Section-Header'>Entire cabin hosted by Tag & Sherilyn</h2>
-                </div>
-                <div className='Rental-Text-Bottom'>
-                    <ul className='Rental-List'>
+                    <div className='Rental-Text-Top-Cont'>
+                        <h2 className='Rental-Section-Header'>Entire cabin hosted by Tag & Sherilyn</h2>
+                    </div>
+
+                    <ol className='Rental-List-Parent'>
                         <li className='Rental-List-Child' >
                             <span>5 guests</span>
                         </li>
                         <li className='Rental-List-Child'>
-                            <span aria-hidden="true" > · </span>    
+                            <span aria-hidden="true"className='Rental-List-Span' > · </span>    
                             <span aria-hidden="true">3 bedrooms</span>
                         </li> 
                         <li className='Rental-List-Child'>
-                            <span aria-hidden="true"> · </span>
+                            <span aria-hidden="true"className='Rental-List-Span'> · </span>
                             <span>4 beds</span>
                             
                         </li>
                         <li className='Rental-List-Child'>
-                            <span aria-hidden="true"> · </span>    
+                            <span aria-hidden="true"className='Rental-List-Span'> · </span>    
                             <span>2 baths</span>
                         </li>
-                    </ul>
+                    </ol>
                 </div>
+
+                <div className='Rental-Text-Bottom'>
+                    <div className='Rental-Picture-Cont'>
+                        <div className= "rental-img-container">
+                            <img src={hostData.url} onClick={ScrollButton}></img>			
+                        </div>
+                    </div>    
+                 </div>
+
             </div>
-            <div className='Rental-Picture-Cont'>
-                
-                <div className= "rental-img-container">
-                    <img src={hostData.url}></img>			
-				</div>
-            </div>
+
+           
         </div>
         {/* <div className='rental-self-checkin'>  */}
             <div className='self-check-in-container'>
