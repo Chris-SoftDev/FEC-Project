@@ -145,7 +145,8 @@
 }
 
 .movement {
-  padding: 35px;
+  padding: 40px;
+  margin-right: 40px;
 }
 
 .box1 {
@@ -222,7 +223,7 @@
   width: 16px;
   text-align: left;
   position: relative;
-  left: -8px;
+  left: -32px;
 }
 
 .link-back-button button {
