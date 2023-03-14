@@ -19,7 +19,7 @@ export const ReviewProvider = ({ children }) => {
   const [isShareMenuVisible, setIsShareMenuVisible] = useState(false);
   const [getAllImage, setgetAllImage] = useState([]);
 
-  const fetchUrl = "http://localhost:3000";
+  const fetchUrl = "";
 
   useEffect(() => {
     const fetchAllImages = async () => {

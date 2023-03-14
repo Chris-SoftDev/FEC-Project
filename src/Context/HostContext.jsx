@@ -42,7 +42,7 @@ export const HostProvider = ({ children }) => {
         pets: 0
     })
 
-    const fetchUrl = 'http://localhost:3000';
+    const fetchUrl = '';
     
     useEffect(() => {
         const fetchHostData = async () => {

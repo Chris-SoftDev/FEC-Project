@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS host, property, reservations, booked_days, reviews, ratings, images, languages, currencies;
+DROP TABLE IF EXISTS host, property, reservations, reviews, ratings, images, languages, currencies;
 
 CREATE TABLE host (
     host_id SERIAL PRIMARY KEY,

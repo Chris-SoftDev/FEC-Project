@@ -106,7 +106,7 @@ function RentalModal() {
         }
     }
 
-    const fetchUrl = 'http://localhost:3000';
+    const fetchUrl = '';
     
     const totalReviews = amountOfReviews(getReviews);
     const ratingAvg = Math.round(totalAvg * 100) / 100
