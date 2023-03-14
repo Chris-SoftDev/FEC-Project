@@ -98,6 +98,10 @@
     margin-right: 8px;
 }
 
+#camera {
+    width: 80%
+}
+
 .amen-modal-group {
     display:flex;
     flex-direction: row;

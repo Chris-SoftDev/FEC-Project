@@ -10,7 +10,9 @@ export const NavProvider = ({ children }) => {
   const [isProfileMenuVisible, setIsProfileMenuVisible] = useState(false);
   const [isLoginMenuVisible, setIsLoginMenuVisible] = useState(false);
   const [isLangMenuVisible, setIsLangMenuVisible] = useState(false);
-  const [langMenuOption, setLangMenuOption] = useState('language')
+  const [langMenuOption, setLangMenuOption] = useState('language');
+  const [isFooterLangMenuVisible, setIsFooterLangMenuVisible] = useState(false);
+  const [isFooterCurrencyMenuVisible, setIsFooterCurrencyMenuVisible] = useState(false)
 
   const toggleProfileMenu = () => {
     setIsProfileMenuVisible(!isProfileMenuVisible)
@@ -38,6 +40,25 @@ export const NavProvider = ({ children }) => {
     setIsLangMenuVisible(false);
     setLangMenuOption('language');
   }
+
+  /**Caleb's additions */
+  const openFooterLangMenu = () => {
+    setIsFooterLangMenuVisible(true)
+  }
+
+  const closeFooterLangMenu = () => {
+    setIsFooterLangMenuVisible(false)
+  }
+
+  const openFooterCurrMenu = () => {
+    setIsFooterCurrencyMenuVisible(true)
+  }
+
+  const closeFooterCurrMenu = () => {
+    setIsFooterCurrencyMenuVisible(false)
+  }
+  /**Caleb's additions */
+
 
   // Profile Menu outside-click, close-menu use-effect
   useEffect(() => {
@@ -110,7 +131,13 @@ export const NavProvider = ({ children }) => {
         isLoginMenuVisible,
         isLangMenuVisible,
         langMenuOption,
-        setLangMenuOption
+        setLangMenuOption,
+        isFooterLangMenuVisible,
+        openFooterLangMenu,
+        closeFooterLangMenu,
+        isFooterCurrencyMenuVisible,
+        openFooterCurrMenu,
+        closeFooterCurrMenu
       }}
     >
       {children}
