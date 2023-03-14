@@ -4,6 +4,21 @@ Hi and welcome to the Pit Vipers Groundbnb Application
 
 Groundbnb is an application designed to help students of Galvanize's Operation Level Up practice and learn front-end web development using the React library. Inspired by Airbnb, this website mimics the basic functionality of the Airbnb website for non-logged-in users. It allows users to view detailed information about a Airbnb property, including the property's description, amenities, location, host and co-host information, and reviews. The website is built using multiple components, each with its own unique functionality, which is detailed below. Additionally, the website uses a Node Express server to retrieve dynamic data, and it is deployed on the Railway platform.
 
+## Features
+
+The app includes the following features:
+
+- Single property display with comprehensive host, cohost, and property information.
+- Multiple property photos to help you make informed decisions.
+- Dynamic calendar selection system that sends date ranges to the database and displays those dates as unavailable to other users.
+- Map location display using Google API with draggable map functionality to explore the surrounding area.
+- User-friendly interface with a burger menu that pops up a login and sign-up modal.
+- Easy date selection using the calendar system to reserve the number of nights with adults, children, infants, and pets, and calculate the total cost of your stay with cleaning and other fees.
+- Reviews section to read other user experiences.
+- Ability to view the languages and currencies Airbnb can translate to for your convenience.
+- Responsive design for desktop and mobile devices
+
+---
 
 ## Getting Started
 
@@ -51,24 +66,3 @@ This app consists of the following components:
 - `Reviews`: Displays reviews from previous guests, including ratings and comments on their stay at the rental property.
 - `Host`: Provides information about the host of the rental property, including their name, profile picture, and a brief bio. Also displays co-host information, contact host information, house rules, safety information, and cancellation policy information. This component allows users to learn more about the host and their policies, as well as to contact them directly with any questions or concerns.
 - `Footer`: Displays important links and information at the bottom of the website, such as contact information, social media links, and legal notices.
-
-
-## Features
-
-The app includes the following features:
-
--
--
--
-- Responsive design for desktop and mobile devices
-
----
-
-
-## State
-
-This app uses the following state variables:
-
--
--
--
