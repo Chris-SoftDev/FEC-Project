@@ -1,0 +1,136 @@
+.container-trans {
+    width: 100%;
+    margin-top: 24px;
+    padding-bottom: 24px;
+}
+
+.outer-container-trans {
+    width: 484px;
+    height: 105px;
+}
+
+.inner-container-trans {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    padding: 16px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 8px;
+}
+
+.content-trans {
+    display: flex;
+    flex-direction: column;
+    width: 451px;
+    width: 379px;
+}
+
+.header-trans {
+    display: flex;
+    flex-direction: row;
+    color: rgb(34, 34, 34);
+    font-family: 'Manrope', sans-serif;
+}
+
+.icon-trans {
+    margin-left: 8px;
+}
+
+.icon-trans svg {
+    width: 19px;
+    height: 19px;
+}
+
+.footer-trans {
+    margin-top: 8px;
+    color: rgb(114, 114, 114);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+}
+
+.btn-container-trans {
+    margin: auto;
+    padding-left: 24px;
+}
+
+#btn-trans{
+    width: 48px;
+    height: 32px;
+    padding: 1px 4px;
+    background-color: rgb(190, 190, 190);
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+#btn-trans:hover {
+    background-color: #717171;
+    border: 1px solid #717171;
+}
+
+.inner-btn-trans {
+    position: relative;
+    left: -3px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #fff;
+}
+
+.header-lang-ops {
+    margin-bottom: 24px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.list-lang-ops {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: -8px;
+    padding: 0;
+    list-style: none;
+}
+
+.list-lang-ops li {
+    min-width: 180px;
+    width: 20%;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.list-lang-ops button {
+    width: 100%;
+    padding: 9px 12px;
+    background-color: #fff;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.list-lang-ops button:hover {
+    background-color: rgb(247, 247, 247);
+}
+
+.list-lang-ops button:focus {
+    border: 1px solid #000000;
+}
+
+.lang-ops {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.25px;
+    margin-bottom: 2px;
+}
+
+.country {
+    font-size: 14px;
+    color: rgb(113, 113, 113);
+    letter-spacing: -0.05px;
+}
