@@ -42,7 +42,7 @@ export const HostProvider = ({ children }) => {
         pets: 0
     })
 
-    const fetchUrl = '';
+    const fetchUrl = 'https://fec-project-production.up.railway.app';
     
     useEffect(() => {
         const fetchHostData = async () => {
