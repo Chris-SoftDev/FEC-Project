@@ -6,6 +6,7 @@ import LoginMenu from "../NavBar/LoginMenu";
 import ShowAllReviews from "../Reviews/ShowAllReviews";
 import ShareMenu from "./ShareMenu";
 import AllPhotosRouter from "./AllPhotosRouter";
+import HostContext from "../../Context/HostContext";
 
 import "./RentalHeader.css";
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
@@ -22,6 +23,7 @@ function RentalHeader() {
   const { miniNavRef, photosRef } = useContext(MiniNavContext);
   const { isLoginMenuVisible, openLoginMenu } = useContext(NavContext);
   const { openShareMenu, isShareMenuVisible } = useContext(ReviewContext);
+  const { propertyLocation } = useContext(HostContext);
 
   const { totalAvg, getReviews, showReview, openAllRev } =
     useContext(ReviewContext);
@@ -44,7 +46,7 @@ function RentalHeader() {
     <>
       <div className="rental-header-container" ref={photosRef}>
         <div className="rental-header-property-title">
-          Mountaintop Getaway w/Stunning Views and Hot Tub
+          {propertyLocation.title}
         </div>
         <div className="rental-header-property-details-container">
           <div className="rental-header-property-details">
@@ -62,7 +64,7 @@ function RentalHeader() {
             </button>
             <div className="rating-spacer">·</div>
             <button className="rating-location">
-            <Link to='/location' style={linkStyle}>Boise, Idaho, United States</Link> 
+            <Link to='/location' style={linkStyle}>{propertyLocation.city}, {propertyLocation.state}, {propertyLocation.country}</Link> 
             </button>
           </div>
           <div className="rental-header-property-links">
