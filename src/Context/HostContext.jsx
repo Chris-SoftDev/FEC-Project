@@ -33,6 +33,8 @@ export const HostProvider = ({ children }) => {
     const [isServiceDogVisible, setIsServiceDogVisible] =  useState(false);
     const [isReserveReady, setIsReserveReady] = useState(false)
     const [daysBooked, setDaysBooked] = useState([])
+    const [currentHostId, setCurrentHostId] = useState(1)  // TODO: Fixed data based on property selection
+    const [currentPropertyId, setCurrentPropertyId] = useState(1) // TODO: Fixed data based on property selection
     const [guestQtyObj, setGuestQtyObj] = useState({
         adults: 1,
         children: 0,
@@ -44,7 +46,7 @@ export const HostProvider = ({ children }) => {
     
     useEffect(() => {
         const fetchHostData = async () => {
-            const response = await fetch(`${fetchUrl}/host`);
+            const response = await fetch(`${fetchUrl}/host/${currentHostId}`);
             const data = await response.json();
             setHostData(data[0].host_info);
             setCohostData(data[0].cohost_info)
@@ -55,7 +57,7 @@ export const HostProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchPropertyData = async () => {
-            const response = await fetch(`${fetchUrl}/property`);
+            const response = await fetch(`${fetchUrl}/property/${currentPropertyId}`);
             const data = await response.json();
             setSafetyData(data[0].safety)
             setRulesData(data[0].house_rules)
@@ -73,9 +75,9 @@ export const HostProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchBookedDays = async () => {
-            const response = await fetch(`${fetchUrl}/booked`);
-            const days = await response.json();
-            setDaysBooked(days)
+            const response = await fetch(`${fetchUrl}/reservations/${currentPropertyId}`);
+            const data = await response.json();
+            setDaysBooked(data)
         };
 
         fetchBookedDays()
@@ -344,6 +346,7 @@ export const HostProvider = ({ children }) => {
     return (
         <HostContext.Provider 
             value ={{
+                currentPropertyId,
                 showHouseRules,
                 openHouseRules,
                 closeHouseRules,
@@ -403,6 +406,7 @@ export const HostProvider = ({ children }) => {
                 isServiceDogVisible,
                 amenities,
                 daysBooked,
+                setDaysBooked,
                 disableDays
             }}>
             {children}

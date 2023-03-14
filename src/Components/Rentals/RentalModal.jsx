@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { differenceInDays } from 'date-fns';
 import HostContext from '../../Context/HostContext';
 import ReviewContext from '../../Context/ReviewContext'
@@ -10,8 +10,53 @@ import './RentalModal.css';
 
 function RentalModal() {
     const { isMiniNavVisible, rentalModalFooterRef } = useContext(MiniNavContext)
-    const { isMiniCalendarVisible, isReserveReady, openMiniCalendar, nightlyRate, cleaningFee, serviceFee, dateRange, toggleGuestQty, isGuestQtyVisible, convertDateObjToStr, guestQtyBtnRef, guestQtyObj } = useContext(HostContext)
     const { getReviews, openAllRev, totalAvg } = useContext(ReviewContext)
+    const { 
+        currentPropertyId, 
+        isMiniCalendarVisible, 
+        isReserveReady, 
+        openMiniCalendar, 
+        nightlyRate, 
+        cleaningFee, 
+        serviceFee, 
+        dateRange, 
+        toggleGuestQty, 
+        isGuestQtyVisible, 
+        convertDateObjToStr, 
+        guestQtyBtnRef, 
+        guestQtyObj,
+        setDaysBooked,
+        setDateRange
+    } = useContext(HostContext)
+    
+    
+    // state to store selected dates and guests quantity for reservation
+    const [reservationData, setReservationData] = useState({
+        from_date: '',
+        to_date: '',
+        guests: {
+            adults: 0,
+            children: 0,
+            infants: 0,
+            pets: 0,
+        }
+    });
+
+    // Updates Reservation State when user modifies selected dates or guest qty
+    useEffect(() => {
+        const fromDate = new Date(dateRange.from);
+        const toDate = new Date(dateRange.to);
+        setReservationData({
+            from_date: fromDate.toLocaleDateString('en-US'), //Converts date object to  mm/dd/yyyy string
+            to_date: toDate.toLocaleDateString('en-US'),
+            guests: {
+                adults: guestQtyObj.adults,
+                children: guestQtyObj.children,
+                infants: guestQtyObj.infants,
+                pets: guestQtyObj.pets
+            }
+        })
+    }, [dateRange, guestQtyObj]);
 
     const guestQtyStr = (obj) => {
         let resultStr = '';
@@ -33,6 +78,26 @@ function RentalModal() {
     
         return resultStr
     }
+
+    const handleReserveButtonClick = async () => {
+        const options = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(reservationData)
+        }
+
+        const response = await fetch(`${fetchUrl}/reservations/${currentPropertyId}`, options)
+        const data = await response.json();
+        setDaysBooked(data)
+        clearDates()
+    };
+
+    const clearDates = () => {
+        setDateRange({from: '', to: ''})
+    }
     
     function amountOfReviews(rev) {
         for (let i = 0; i < rev.length; i++) {
@@ -40,6 +105,8 @@ function RentalModal() {
         return element;
         }
     }
+
+    const fetchUrl = 'http://localhost:3000';
     
     const totalReviews = amountOfReviews(getReviews);
     const ratingAvg = Math.round(totalAvg * 100) / 100
@@ -94,7 +161,7 @@ function RentalModal() {
                         {(isReserveReady) ? (
                             <>
                                 <div className="rental-modal-content-footer" ref={rentalModalFooterRef}>
-                                    <button type='submit'>Reserve</button>
+                                    <button type='submit' onClick={handleReserveButtonClick}>Reserve</button>
                                 </div>
                                 <div className="rental-modal-reserve-fees-container">
                                     <div className='rental-modal-reserve-fees-header'>You won't be charged yet</div>
