@@ -220,6 +220,9 @@
     margin-bottom: 30px;
     text-align: left;   
 }
+.learn-more-link:hover {
+    cursor: pointer;
+}
 
 .learn-more-link-under {
     margin-top: 5px;
@@ -261,7 +264,9 @@
     text-decoration-color: rgb(34, 34, 34);
     margin-bottom: 10px;
 }
-
+.rental-about-showmore-link:hover {
+    cursor: pointer;
+}
 .self-checkin-door{
     display: flex;
     flex-direction: row !important;
