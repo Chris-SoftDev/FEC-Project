@@ -17,23 +17,57 @@ app.use(
 app.use(express.json());
 app.use(express.static("dist"));
 
-app.route("/host").get(async (req, res) => {
+app.route("/host/:id").get(async (req, res) => {
+  const { id } = req.params;
   try {
-    const data = await db.query(`SELECT * FROM host`);
+    const data = await db.query(`SELECT * FROM host WHERE host_id = ${id}`);
     res.status(200).json(data.rows);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
 
-app.route("/property").get(async (req, res) => {
+app.route("/property/:id").get(async (req, res) => {
+  const { id } = req.params;
   try {
-    const data = await db.query(`SELECT * FROM property`);
+    const data = await db.query(
+      `SELECT * FROM property WHERE property_id = ${id}`
+    );
     res.status(200).json(data.rows);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
+
+app
+  .route("/reservations/:id")
+  .get(async (req, res) => {
+    const { id } = req.params;
+    try {
+      const data = await db.query(
+        `SELECT * FROM reservations WHERE property_id = ${id}`
+      );
+      res.status(200).json(data.rows);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  })
+  .post(async (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    const guests = JSON.stringify(body.guests);
+    try {
+      await db.query(
+        `INSERT INTO reservations (property_id, from_date, to_date, guests) VALUES (${id}, '${body.from_date}', '${body.to_date}', '${guests}')`
+      );
+      const data = await db.query(
+        `SELECT * FROM reservations WHERE property_id = ${id}`
+      );
+      res.status(201).json(data.rows);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  });
 
 app.route("/languages").get(async (req, res) => {
   try {
@@ -92,15 +126,6 @@ app.route("/ratings/avg").get(async (req, res) => {
 app.route("/images").get(async (req, res) => {
   try {
     const data = await db.query(`SELECT * FROM images`);
-    res.status(200).json(data.rows);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
-app.route("/booked").get(async (req, res) => {
-  try {
-    const data = await db.query(`SELECT * FROM booked_days`);
     res.status(200).json(data.rows);
   } catch (error) {
     res.status(500).json({ message: error.message });

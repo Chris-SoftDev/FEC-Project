@@ -132,12 +132,19 @@ INSERT INTO property (host_id, safety, cancellation_policy, house_rules, locatio
     63
 );
 
-INSERT into booked_days (from_date, to_date) VALUES 
-('03/02/2023', '03/08/2023'),
-('03/19/2023', '03/22/2023'),
-('05/11/2023', '05/19/2023'),
-('04/02/2023', '04/08/2023'),
-('04/16/2023', '04/22/2023');
+INSERT into reservations (property_id, from_date, to_date, guests) VALUES 
+(1, '03/02/2023', '03/08/2023', '{
+    "adults": "1",
+    "children": "1",
+    "infants": "0",
+    "pets": "1"
+}'),
+(1, '04/09/2023', '04/13/2023', '{
+    "adults": "2",
+    "children": "3",
+    "infants": "1",
+    "pets": "1"
+}');
 
 INSERT INTO reviews (user_name, comment, img_url, review_date)
 VALUES 

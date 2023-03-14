@@ -28,12 +28,14 @@
     margin-bottom: 1em;
 }
 
-
 .host-img-container{
     width: 64px;
     height: 64px;
     border-radius: 50%;
+}
 
+.host-img-container:hover{
+    cursor: pointer;
 }
 
 .host-img-container img{
@@ -129,6 +131,10 @@
     flex-direction: row;
     margin-top: .5em;
     margin-bottom: .8em;
+}
+
+.cohost-img-container:hover{
+    cursor: pointer;
 }
 
 .cohost-name{
