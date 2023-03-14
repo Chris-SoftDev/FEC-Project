@@ -53,7 +53,7 @@ function MiniNavBar() {
                     {isReserveReady ? (
                         <div className="mini-navbar-reserve-btn-container">
                             <div className="mini-navbar-reserve-btn">
-                                <button type='submit'>Reserve</button>
+                                <button type='submit' onClick={scrollToCalendar}>Reserve</button>
                             </div>
                         </div>
                     ) : 
