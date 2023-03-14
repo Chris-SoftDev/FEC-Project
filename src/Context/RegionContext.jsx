@@ -6,7 +6,7 @@ export const RegionProvider = ({ children }) => {
     const [currencyData, setCurrencyData] = useState([]);
     const [languageData, setLanguageData] = useState([]);
 
-    const fetchUrl = 'http://localhost:3000';
+    const fetchUrl = '';
 
     useEffect(() => {
         const fetchCurrencies = async () => {
