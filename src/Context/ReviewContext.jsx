@@ -19,7 +19,7 @@ export const ReviewProvider = ({ children }) => {
   const [isShareMenuVisible, setIsShareMenuVisible] = useState(false);
   const [getAllImage, setgetAllImage] = useState([]);
 
-  const fetchUrl = "https://fec-project-production.up.railway.app";
+  const fetchUrl = "http://localhost:3000";
 
   useEffect(() => {
     const fetchAllImages = async () => {
