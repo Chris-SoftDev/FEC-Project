@@ -25,13 +25,8 @@ CREATE TABLE reservations (
     property_id INTEGER,
     from_date DATE,
     to_date DATE,
+    guests JSONB,
     CONSTRAINT fk_property FOREIGN KEY(property_id) REFERENCES property(property_id) ON DELETE CASCADE
-);
-
-CREATE TABLE booked_days (
-    booked_days_id SERIAL,
-    from_date DATE,
-    to_date DATE
 );
 
 CREATE TABLE reviews (
