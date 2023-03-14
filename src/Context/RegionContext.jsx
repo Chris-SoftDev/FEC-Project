@@ -18,13 +18,14 @@ export const RegionProvider = ({ children }) => {
         fetchCurrencies();
     }, []) 
 
+    
     useEffect(() => {
         const fetchLanguages = async () => {
             const response = await fetch(`${fetchUrl}/languages`);
             const data = await response.json();
             setLanguageData(data);
         };
-
+        
         fetchLanguages();
     }, []) 
 

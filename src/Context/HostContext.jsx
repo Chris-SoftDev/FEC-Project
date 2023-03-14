@@ -22,6 +22,7 @@ export const HostProvider = ({ children }) => {
     const [additionalRules, setAdditionalRules] = useState([])
     const [showAllAmenities, setShowAllAmenities] = useState(false)
     const [amenities, setAmenities] = useState([])
+    const [bedrooms, setBedrooms] = useState([])
     const [dateRange, setDateRange] = useState({from: "", to: ""})
     const [nightlyRate, setNightlyRate] = useState()
     const [cleaningFee, setCleaningFee] = useState()
@@ -68,6 +69,7 @@ export const HostProvider = ({ children }) => {
             setCleaningFee(data[0].cleaning_fee)
             setServiceFee(data[0].service_fee)
             setAmenities(data[0].amenities)
+            setBedrooms(data[0].bedrooms)
         };
         
         fetchPropertyData();
@@ -405,6 +407,7 @@ export const HostProvider = ({ children }) => {
                 closeServiceDog,
                 isServiceDogVisible,
                 amenities,
+                bedrooms,
                 daysBooked,
                 setDaysBooked,
                 disableDays

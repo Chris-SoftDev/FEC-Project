@@ -14,6 +14,7 @@ CREATE TABLE property (
     house_rules JSONB,
     location JSONB,
     amenities JSONB,
+    bedrooms JSONB,
     nightly_rate INTEGER,
     cleaning_fee INTEGER, 
     service_fee INTEGER,

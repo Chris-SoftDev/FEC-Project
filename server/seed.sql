@@ -17,7 +17,7 @@ INSERT INTO host (host_info, cohost_info) VALUES (
     }'
 );
 
-INSERT INTO property (host_id, safety, cancellation_policy, house_rules, location, amenities, nightly_rate, cleaning_fee, service_fee) VALUES (
+INSERT INTO property (host_id, safety, cancellation_policy, house_rules, location, amenities, bedrooms, nightly_rate, cleaning_fee, service_fee) VALUES (
     1,
 
     '{
@@ -125,6 +125,12 @@ INSERT INTO property (host_id, safety, cancellation_policy, house_rules, locatio
         "long_term_stay": true,
         "long_term_stay_info": "Allow stay for 28 days or more",
         "smart_lock": true
+    }',
+
+    '{
+        "bedroom_1": true,
+        "bedroom_2": true,
+        "bedroom_3": true
     }',
     
     160,
