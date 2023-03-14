@@ -106,7 +106,7 @@ function RentalModal() {
         }
     }
 
-    const fetchUrl = '';
+    const fetchUrl = 'https://fec-project-production.up.railway.app';
     
     const totalReviews = amountOfReviews(getReviews);
     const ratingAvg = Math.round(totalAvg * 100) / 100

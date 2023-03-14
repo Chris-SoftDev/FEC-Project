@@ -6,7 +6,7 @@ export const RegionProvider = ({ children }) => {
     const [currencyData, setCurrencyData] = useState([]);
     const [languageData, setLanguageData] = useState([]);
 
-    const fetchUrl = '';
+    const fetchUrl = 'https://fec-project-production.up.railway.app';
 
     useEffect(() => {
         const fetchCurrencies = async () => {
