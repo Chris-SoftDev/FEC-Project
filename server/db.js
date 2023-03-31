@@ -5,7 +5,7 @@ dotenv.config({ path: "./server/.env" });
 
 const { Pool } = pg;
 const db_conn = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: 'postgresql://postgres:EvlZRLjkzjBNoKZPjPXJ@containers-us-west-184.railway.app:5660/railway',
 });
 
 export default db_conn;
