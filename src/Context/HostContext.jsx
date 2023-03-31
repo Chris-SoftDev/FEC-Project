@@ -43,7 +43,7 @@ export const HostProvider = ({ children }) => {
         pets: 0
     })
 
-    const fetchUrl = 'https://airbnbclone-production-879b.up.railway.app';
+    const fetchUrl = 'https://fec-project-production.up.railway.app';
     
     useEffect(() => {
         const fetchHostData = async () => {
