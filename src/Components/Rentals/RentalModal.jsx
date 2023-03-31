@@ -106,7 +106,7 @@ function RentalModal() {
         }
     }
 
-    const fetchUrl = 'http://localhost:3000';
+    const fetchUrl = 'https://airbnbclone-production-879b.up.railway.app/';
     
     const totalReviews = amountOfReviews(getReviews);
     const ratingAvg = Math.round(totalAvg * 100) / 100
