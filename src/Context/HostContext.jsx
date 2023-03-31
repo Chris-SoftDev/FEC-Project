@@ -247,15 +247,21 @@ export const HostProvider = ({ children }) => {
     //to close keyboard modal when clicking outside of it
     useEffect(() => {
         const checkIfClickedOutside = e => {
+            //if keyboardModal =true meaning OPENED & that keyboardModal'sRef exists && 
+            //and to see if clicks are not within the keyboardModal's ref
           if (keyboardModal && keyboardModalRef.current && !keyboardModalRef.current.contains(e.target)) {
-            setKeyboardModal(false)
+            setKeyboardModal(false) // if above consitions are met sets keyboardmodal to false so CLOSE it
           }
         }
+        //event object added to entire document that listens for mouse clicks 
+        //whenever a click occurs it will call the checkIfClickedOutside function
         document.addEventListener("mousedown", checkIfClickedOutside)
         return () => {
+            //within the return statement is a cleanup function to 
+            //remove the event listener to prevent memory leakages
           document.removeEventListener("mousedown", checkIfClickedOutside)
         }
-      }, [keyboardModal])
+      }, [keyboardModal])//ONLY runs when keyboardModal state CHANGES
 
     //to close show rules modal when clicking outside of it
     useEffect(() => {
