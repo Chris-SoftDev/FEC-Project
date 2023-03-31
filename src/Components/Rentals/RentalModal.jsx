@@ -106,7 +106,7 @@ function RentalModal() {
         }
     }
 
-    const fetchUrl = 'https://airbnbclone-production-879b.up.railway.app/';
+    const fetchUrl = 'https://airbnbclone-production-879b.up.railway.app';
     
     const totalReviews = amountOfReviews(getReviews);
     const ratingAvg = Math.round(totalAvg * 100) / 100
